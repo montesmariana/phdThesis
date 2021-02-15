@@ -1,0 +1,14 @@
+# (PART) Visualization tool {-}
+
+# An interface to the world of clouds
+
+In this part (which will have who knows how many chapters) I mean to describe
+the visualization tool. It was originally created by [Thomas Wielfart](https://github.com/tokenclouds/tokenclouds.github.io),
+but around July 2019 I started to play around with the code and learn Javascript
+and [D3](https://d3js.org), culminating in the [present version](https://github.com/montesmariana/NephoVis).
+
+This section will include the technical description of the workflow, as it pertains
+to the tool itself and to the processing work made before (the Python module, other
+Python and R functions), and a sort of manual of how it's used. It will be more or less
+redundant with the paper I wrote with Kris in December [@montes_heylen],
+more or less like vignettes for documentation (as of now, it is still not documented).

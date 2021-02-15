@@ -1,0 +1,42 @@
+# (PART) The language of clouds {-}
+
+# Nonsense or no senses?
+
+In this part, which will have who knows how many chapters, I will delve into the
+theroetico-methodological insights --the theoretical impact, if you will-- of
+my analyses.
+
+I will have to describe the annotation procedure (probably) but, more importantly,
+discuss the main theoretical observations derived from my studies.
+
+The main points, for now, are:
+
+- From cloud interpretation, what we see are not necessarily senses, but rather
+"common/shared/similar" contexts of usage.
+
+- There is no single optimal solution for every item.
+
+- Because of the second point, what do the different parameter settings do,
+for specific items? (What kind of info do they pick up?)
+    + This is also material for the first part of the project's monograph
+
+Currently (but there is still much research to do) I think that
+different parameters offer different perspectives, but picking out different aspects
+of the context.
+Those perspectives won't be relevant for all lemmas --prepositions, if dependency-informed,
+are relevant for *hoop* but not for other nouns. Even that relevance is gradual.
+We might be able to generalize, classifying items depending on which parameter settings
+are relevant to them, or depending on what they would look like with certain or all kinds
+of parameters.
+
+Say, *horde* and *heffen* look quite good with just any setting, while *haten* looks awful always.
+Still, this is based on the current way of computing vectors,
+which adds the type-level vectors of the tokens instead of averaging over them
+(which is what I thought they did).
+And I still have to look at the adjectives and revise nouns and verbs using the medoids based on
+euclidean distances.
+
+Will these analyses change my current conclusions? Chan chan chaaaannn...
+
+In any case, I will try to look at all of that in the last two weeks of February and then
+discuss with DG the content for this part `r emo::ji("smile")`.
