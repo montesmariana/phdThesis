@@ -1,0 +1,6 @@
+# NephoVis
+
+In this chapter I will describe the visualization tool itself, as was done in the paper with Kris.
+It should include a brief introduction mentioning D3.js and Github Pages
+and describe the current features.
+I should leave the data format to the end because I expect I will change it.

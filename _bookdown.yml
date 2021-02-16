@@ -6,6 +6,9 @@ language:
 rmd_files: [
   "index.Rmd",
   "viz_1.Rmd",
+  "viz_2.Rmd",
+  "viz_3.Rmd",
+  "viz_4.Rmd",
   "theo_1.Rmd",
   "references.Rmd"
 ]

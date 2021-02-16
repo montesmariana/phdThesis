@@ -1,0 +1,7 @@
+# Exploring parameter settings
+
+In this chapter I would give a brief review of why some parameters where fixed to
+certain values and why we explored others along a certain range.
+
+This would include procrustes/euclidean, addition/average, the range for PPMI,
+the values set because Kiela + Clark...

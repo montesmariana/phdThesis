@@ -1,0 +1,9 @@
+# Parameter settings
+
+In this chapter I will describe the various parameter settings we have explored:
+which are the possible decisions, which ones we have set and which were looked at,
+why. This should be preceded by an explanation of the workflow itself.
+
+(Maybe I can export from what I had already written?)
+
+Maybe I can add the medoids discussion here?
