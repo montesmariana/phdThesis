@@ -8,13 +8,10 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "This is my PhD dissertation, still a draft, always perfectable."
+cover-image: "cover_heart.png"
 ---
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+```{r, code=readLines("src/init.R"), include = FALSE}
 ```
 
 # Introduction {-}

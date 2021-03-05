@@ -70,6 +70,14 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{fontspec}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{hhline}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -78,7 +86,7 @@
 
 \title{Cloud Gazing As A Pro}
 \author{Mariana Montes}
-\date{2021-02-15}
+\date{2021-03-05}
 
 \begin{document}
 \maketitle
@@ -111,6 +119,388 @@ checking different combinations and exploring different avenues,
 and lead, check, study and compare manual annotation of 33 lemmas.
 
 That is what I'm going to write about.
+
+\hypertarget{part-visualization-tool}{%
+\part{Visualization tool}\label{part-visualization-tool}}
+
+\hypertarget{an-interface-to-the-world-of-clouds}{%
+\chapter{An interface to the world of clouds}\label{an-interface-to-the-world-of-clouds}}
+
+In this part (which will have who knows how many chapters) I mean to describe
+the visualization tool. It was originally created by \href{https://github.com/tokenclouds/tokenclouds.github.io}{Thomas Wielfart},
+but around July 2019 I started to play around with the code and learn Javascript
+and \href{https://d3js.org}{D3}, culminating in the \href{https://github.com/montesmariana/NephoVis}{present version}.
+
+This section will include the technical description of the workflow, as it pertains
+to the tool itself and to the processing work made before (the Python module, other
+Python and R functions), and a sort of manual of how it's used. It will be more or less
+redundant with the paper I wrote with Kris in December \citep{montes_heylen},
+more or less like vignettes for documentation (as of now, it is still not documented).
+
+\hypertarget{parameter-settings}{%
+\chapter{Parameter settings}\label{parameter-settings}}
+
+In this chapter I will describe the various parameter settings we have explored:
+which are the possible decisions, which ones we have set and which were looked at,
+why. This should be preceded by an explanation of the workflow itself.
+
+\hypertarget{first-steps}{%
+\section{First steps}\label{first-steps}}
+
+Both the targets and the first and second order features are lemma/part-of-speech pairs,
+such as \emph{haak/verb} (the verb \emph{haken} `to hook/crochet'),
+\emph{beslissing/noun} (the noun \emph{beslissing} `decision'), \emph{in/prep}
+(the preposition \emph{in} `in').
+The features (or context words) can have any part of speech except for punctuation
+and have a minimum relative frequency frequency of 1 in 2 million (absolute frequency of 227)
+after discarding punctuation from the token count in the full
+QLVLNews corpus. There are 60533 such lemmas in the corpus.
+
+(This threshold is more or less arbitrary, but we're assuming that words with a lower frequency
+won't have a rich enough vectorial representation.)
+
+In the steps between defining corpus and types and obtaining a the token-level vectors,
+we have two main kinds of parameters to explore.
+\textbf{First-order parameters} influence which context features will be selected
+from the immediate environment of the target tokens,
+while the \textbf{second-order parameters} influence the shape of the vectors
+that represent such first-order features.
+
+In order to visualize the tokens, we have performed dimensionality reduction, i.e.
+a process by which we try to represent relative distances between items in a low-dimensional space
+while preserving the distances in high-dimensional space as much as possible.
+This procedure will be described in {[}appropriate section{]}.
+
+\hypertarget{first-order-selection-parameters}{%
+\section{First-order selection parameters}\label{first-order-selection-parameters}}
+
+We call the immediate context of a token the \textbf{first order context}: therefore,
+first-order parameters are those that influence which elements in the immediate environment
+of the token will be included in modeling said token. This was made in two stages:
+one dependent on whether syntactic information was use, and one independent of it.
+
+It goes without saying that the parameter space is virtually unlimited, and decisions
+had to be made regarding which particular settings would be explored. We tried to
+keep the parameter settings different enough from each other to have some variation.
+The decisions were based on a mix of literature \citep{kiela_systematic_2014},
+linguistic intuition and generalizations over the annotation of our very targets.
+As part of the annotation task, the annotators had to select the items in the
+immediate context that had helped them select the appropriate tag. In order to remove
+noise from misunderstandings and idiosyncrasy, we only looked at pairs (or trios) of
+annotators that had agreed with each other and with our final annotation and ranked
+the context words over which they had agreed. The distance and dependency information
+of these context words were used to inform some of our decisions below.
+
+On the first stage, the main distinction is made by \texttt{BASE}: between bag-of-words (\texttt{BOW}) based
+and dependency-based models (\texttt{LEMMAPATH} and \texttt{LEMMAREL}).
+The former are further split by window size (\texttt{FOC-WIN}), part-of-speech filters (\texttt{FOC-POS})
+and whether sentence boundaries are respected (\texttt{BOUND}).
+
+\begin{description}
+\tightlist
+\item[\texttt{FOC-WIN} (first order window)]
+A symmetric window of 3, 5 or 10 tokens to each side of the target was used.
+
+Of course, virtually any other value is possible {[}add references!{]}. Windows of
+5 and 10 are typical in the literature {[}sources?{]}, while 3 was enough to capture most
+of the context words tagged as informative by the annotators.
+\item[\texttt{FOC-POS} (first order part-of-speech)]
+A restriction was placed to only select (common) nouns, adjectives, verbs and adverbs (\texttt{lex})
+in the surroundings of the token. If no restriction is placed, the value of this parameter is \texttt{all}.
+
+Of course, other selections are possible. {[}add reference{]} distinguish between
+\texttt{nav}, which only includes common nouns, adjectives, and verbs, and \texttt{nav-nap}, which
+expand the selection to proper nouns, adverbs and prepositions.
+
+A more detailed research on different combinations would be material for further
+research. As we will see, the \texttt{lex} filter is often redundant with the one based on
+association strength.
+\item[\texttt{BOUNDARIES}]
+Given information on the limits of sentences (e.g.~in corpora annotated for
+syntactic dependencies), we can exclude context words beyond the sentence of the target (\texttt{bound})
+or include them (\texttt{nobound}).
+
+This parameter seems to be virtually irrelevant. It was thought as a way of
+leveling the comparison with the dependency-based models, which by definition don't
+include context words beyond the sentence, but they don't seem to make a difference.
+\end{description}
+
+The distinction between BOW- and dependency-based model doesn't rely so much on
+which context words are selected but on how tailored the selection is to the specific
+tokens. For example, a closed-class element like a preposition may be distinctive
+of particular usage patterns in which a term might occur. However, such a frequent,
+multifunctional word could easily occur in the immediate raw context of the target
+without actually being related to it. Unfortunately, just narrowing the window span
+doesn't solve the problem, since it would also drastically reduce the number of
+context words available for the token and for any other token in the model.
+In contrast, we could also have context words that are directly linked to the target
+but separated by many other words in between, and enlarging the window to include
+them would imply too much noise for this token and for any other token in the model.
+
+A dependency-based model, instead, will only include context words in a certain
+syntactic relationship to the target, regardless of the number of words in between.
+The actual selection process takes two forms in our case: by path length and by
+relationship. The former, which we call \texttt{LEMMAPATH}, is similar to a window size
+but counts the steps in a dependency path instead of slots in a bag-of-words window.
+The latter, \texttt{LEMMAREL}, matches the dependency paths to specific templates inspired
+by the context words tagged as informative by the annotators.
+
+To exemplify, let's look at (1) and take \emph{herhalen} `to repeat' as the target.
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  \emph{De geschiedenis rond Remmelink herhaalt zich.} `The history around Remmelink repeats itself.'
+\end{enumerate}
+
+\begin{description}
+\tightlist
+\item[\texttt{LEMMAPATH}]
+This set of dependency-based models selects the features that enter a syntactic
+relation with the target with a maximum number of steps.
+
+The possible values we have included are \texttt{selection2} and \texttt{selection3}, which filter
+out context words more than two or three steps away, respectively, and \texttt{weight}, which
+gives a larger weight to context words that are closer in the dependency path.
+
+A one-step dependency path is either the head of the target or its direct dependent.
+Such features are included by both \texttt{selection2} and \texttt{selection3} and receive a weight of 1 in \texttt{weight}.
+In (1) this includes the subject, \emph{geschiedenis} `history', and the reflexive pronoun \emph{zich},
+which depend directly on it. If the target was \emph{geschiedenis} `history', \emph{herhalen} `to repeat',
+its head, would be selected.
+
+A two-step dependency path is either the head of the head of the target, the dependent of its dependent,
+or its sibling. Such features are included by both \texttt{selection2} and \texttt{selection3} and receive a weight of 2/3 in \texttt{weight}.
+In (1) this includes the determiner \emph{de} and the modifier \emph{rond} `around' directly depending on
+a \emph{geschiedenis} `history'.
+
+A three-step dependency path is either the head of the head of the head of the target,
+the sibiling of the head of its head, the dependent of the dependent of its dependent,
+or the dependent of a sibling. A typical case of the last path is the subject of a passive construction with a modal,
+where the target is the verb in participium (\emph{belastingen} `taxes' in \emph{de belastingen moeten geheven worden} `the taxes must be levied').
+Such features are included in \texttt{selection3} but excluded from \texttt{selection2} and receive a weight of 1/3 in \texttt{weight}.
+In (1) this corresponds to \emph{Remmelink}, the object of \emph{rond} `around'.
+
+Features more than 3 steps away from the target are always excluded.
+While some features four steps away can be interesting, such as passive subjects of a verb with two modals, they are not that frequent and may not be worth the noise included by accepting all features with so many steps between them and the target. To catch those relationships, \texttt{LEMMAREL} is a more efficient method.
+There are no context words more than three steps away from the target in (1).
+\item[\texttt{LEMMAREL}]
+This set of dependency-based models selects the features that enter in a certain
+syntactic relation with the target. They are tailored to the part-of-speech of the target,
+and each group expands on the selection of the group before it. The specific selections
+are listed in Table \ref{tab:lemmareltable}.
+\end{description}
+
+\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+\begin{longtable}[c]{|p{0.75in}|p{16.02in}|p{11.21in}|p{15.43in}}
+
+\caption{Dependency paths selected by different `LEMMAREL` values.}\label{tab:lemmareltable}\\
+
+\hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}groups}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.02in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}nouns}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 11.21in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}verbs}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 15.43in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}adjectives}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}
+
+\endfirsthead
+
+\hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}groups}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.02in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}nouns}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 11.21in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}verbs}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 15.43in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}adjectives}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}\endhead
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.02in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 11.21in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 15.43in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.02in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 11.21in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 15.43in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}3}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 16.02in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 11.21in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 15.43in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-4}
+
+\end{longtable}
+
+\hypertarget{ppmi-weighting}{%
+\subsection{PPMI weighting}\label{ppmi-weighting}}
+
+The \texttt{PPMI} parameter is taken outside the set of first-order parameters because it can both filter out first-order features and reshape their vector representations. In truth, the choice of \textbf{p}ositive \textbf{p}ointwise \textbf{m}utual \textbf{i}nformation (PPMI) over other weighting mechanisms, as well as setting a threshold or not, is already a parameter setting, which in these circumstances is set to PPMI and a threshold of 0. In all cases, the PPMI was calculated based on a 4-4 window (that could also be a variable parameter).
+
+This parameter can take three values. \texttt{selection} and \texttt{weight} mean that only the first-order features with a PPMI \textgreater{} 0 with the target type are selected, and the rest discarded, while \texttt{no} does not apply the filter. The difference between \texttt{selection} and \texttt{weight} is that the former only uses the value to filter the context features, while the latter also weighs their vectors with that value.
+
+\hypertarget{second-order-selection}{%
+\subsection{Second-order selection}\label{second-order-selection}}
+
+The selection of second-order features influences the shape of the vectors: how the selected first-order features are represented. While the frequency transformation and the window on which such values were computed could be varied, they were set to fixed values, namely PPMI and 4-4 respectively. The parameters that were varied across, although we don't expect drastic differences between the models, are vector length and part-of-speech.
+
+\begin{description}
+\tightlist
+\item[\texttt{SOC-POS} (second order part-of-speech)]
+This parameter can take two values: \texttt{nav} and \texttt{all}. In the former case, a selection of 13771 lect-neutral nouns, adjectives and verbs made by Stefano is taken as the set of possible second-order features. In the latter, all lemmas with frequency above 227 and any part-of-speech are considered.
+\item[\texttt{LENGTH}]
+Vector length is the number of second-order features and therefore the dimensionality of the matrices on which the distance matrices are based, although the amount is not all that changes. It is applied after filtering by part-of-speech.
+
+We have selected two values: \texttt{5000} and \texttt{FOC}. The former includes the 5000 most frequent elements of the possible features, while the latter takes the intersection between the possible second-order-features and the first-order-features, regardless of frequency. With \texttt{SOC-POS:all}, \texttt{FOC} will include all first-order features of that model, while with \texttt{SOC-POS:nav}, only those included in Stefano's selection.
+
+The actual number of dimensions resulting from \texttt{FOC} depends on the strictness of the first order filter. This information can be found on the plots that, for each staal, show how many first order context words are left after each combination of first order filters.
+\end{description}
+
+\hypertarget{foc-as-soc}{%
+\subsubsection{FOC as SOC}\label{foc-as-soc}}
+
+What does it mean to use the same first-order context words as second-order context words?
+
+First, depending on the number of target tokens and the strictness of the filter, there could be a different number of context words, ranging in the hundreds or low thousands.
+
+Second, the context words will be compared based on their co-occurrence with each other. The behaviour of a context word outside the context of the target will be largely ignored: of course, the association strength between two items has to do with their co-occurrence across the whole corpus, as well as their non-co-occurrence, but it will only be included in the second order vector of the first item if the second is also among the first order context words.
+
+\hypertarget{medoids}{%
+\section{Medoids}\label{medoids}}
+
+The multiple parameters return a huge number of models, and while purely quantitative methods might
+be able to process and compare them, it is not feasible for a human to look at hundreds of clouds
+and stay sane enough to make out anything from them. A more efficient --and easier on the human mind--
+way to approach this is, instead, to look at representative models.
+
+{[}Describe PAM?{]}
+
+This method requires us to choose a number of medoids beforehand, which is not an easy
+task. If we wanted the medoids to represent the best clustering solution, we could run
+the algorithm with different values of \(k\) and compare the results with measures such
+as silhouette width, as suggested by Levshina \citeyearpar{levshina_how_2015}. However, that is not
+necessarily our goal. We want to be able to see as much variation as possible, while keeping
+the number of different models manageable (i.e.~below 9). It is not particularly problematic
+if these models are redundant, as long as we can ensure that all the phenomena that we
+are interested in are represented in them.
+
+For example, given a lemma with multiple senses, it might be the case that some models
+group the tokens of one sense, and others group the tokens of another: we would like to see
+representatives of both kinds. {[}add example{]}
+
+There is no guarantee that the method with the best silhouette returns all the variation we
+are interested in --our goal is, rather, to limit the number of different models we need to
+examine from the total number, say 200, to a more manageable amount, like 8.
+In the same terms, there is also no guarantee that when we identify something interesting
+in a medoid, i.e.~an island for a particular usage pattern, all the models in the cluster of
+that medoid, and only those models, will share that characteristic. In order to check that,
+we can look at random samples (again, of 8 or 9 models) of each of the clusters and
+visually compare them to their medoids. This doesn't need to be as thorough an examination as
+that of the medoids themselves: it suffices to check if the random sample is not too different
+and seems to share the characteristic of interest. {[}add example{]}
+
+In general terms, for the characteristics identified in the case studies that make up this
+investigation, we can be quite confident that the medoids are representative of the models in
+their clusters. However, depending on the concreteness of the phenomena, the variation across
+models, the clarity of the visualization and the wishful thinking that might lurk in the
+researchers' minds, it might be the case that something found or assessed in a medoid is not
+shared by the models in its cluster. The comparison needed with the random sample should be
+fast and honest and is strongly recommended: if the medoids are representative, you can see it
+in an instant; if they are not, it just takes a bit longer to admit it. It is \emph{not} the same as actually studying and comparing 64 different models.
+
+{[}add an example of something not working, like hoekig medoid 3?{]}
+
+\hypertarget{exploring-parameter-settings}{%
+\chapter{Exploring parameter settings}\label{exploring-parameter-settings}}
+
+In this chapter I would give a brief review of why some parameters where fixed to
+certain values and why we explored others along a certain range.
+
+This would include procrustes/euclidean, addition/average, the range for PPMI,
+the values set because Kiela + Clark\ldots{}
+
+\hypertarget{nephovis}{%
+\chapter{NephoVis}\label{nephovis}}
+
+In this chapter I will describe the visualization tool itself, as was done in the paper with Kris.
+It should include a brief introduction mentioning D3.js and Github Pages
+and describe the current features.
+I should leave the data format to the end because I expect I will change it.
+
+\hypertarget{part-the-language-of-clouds}{%
+\part{The language of clouds}\label{part-the-language-of-clouds}}
+
+\hypertarget{nonsense-or-no-senses}{%
+\chapter{Nonsense or no senses?}\label{nonsense-or-no-senses}}
+
+In this part, which will have who knows how many chapters, I will delve into the
+theroetico-methodological insights --the theoretical impact, if you will-- of
+my analyses.
+
+I will have to describe the annotation procedure (probably) but, more importantly,
+discuss the main theoretical observations derived from my studies.
+
+The main points, for now, are:
+
+\begin{itemize}
+\item
+  From cloud interpretation, what we see are not necessarily senses, but rather
+  ``common/shared/similar'' contexts of usage.
+\item
+  There is no single optimal solution for every item.
+\item
+  Because of the second point, what do the different parameter settings do,
+  for specific items? (What kind of info do they pick up?)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This is also material for the first part of the project's monograph
+  \end{itemize}
+\end{itemize}
+
+Currently (but there is still much research to do) I think that
+different parameters offer different perspectives, but picking out different aspects
+of the context.
+Those perspectives won't be relevant for all lemmas --prepositions, if dependency-informed,
+are relevant for \emph{hoop} but not for other nouns. Even that relevance is gradual.
+We might be able to generalize, classifying items depending on which parameter settings
+are relevant to them, or depending on what they would look like with certain or all kinds
+of parameters.
+
+Say, \emph{horde} and \emph{heffen} look quite good with just any setting, while \emph{haten} looks awful always.
+Still, this is based on the current way of computing vectors,
+which adds the type-level vectors of the tokens instead of averaging over them
+(which is what I thought they did).
+And I still have to look at the adjectives and revise nouns and verbs using the medoids based on
+euclidean distances.
+
+Will these analyses change my current conclusions? Chan chan chaaaannn\ldots{}
+
+In any case, I will try to look at all of that in the last two weeks of February and then
+discuss with DG the content for this part 😄.
+
+\hypertarget{the-nature-of-clouds}{%
+\chapter{The nature of clouds}\label{the-nature-of-clouds}}
+
+\begin{description}
+\tightlist
+\item[Clouds don't necessarily show senses]
+but usage patterns --the senses are well distinguished
+insofar they match those usage patterns. But we could have one usage pattern for multiple
+senses, multiple usage patterns for one sense, and, more importantly, different degrees
+of definition of each usage pattern.
+\item[It is not a matter of frequency]
+we can have infrequent senses/patterns that are nonetheless strong enough to form
+a clear group; and
+
+extremely frequent senses can also be grouped separately, they don't necessarily
+absorb the minor senses/patterns, if their pattern is characteristic enough.
+\end{description}
 
   \bibliography{book.bib,packages.bib}
 
