@@ -1,5 +1,5 @@
 --- 
-title: "Cloud Gazing As A Pro"
+title: "Cloudspotting: Visual analytics for distributional semantics"
 author: "Mariana Montes"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

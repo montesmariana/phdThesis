@@ -1,0 +1,14 @@
+tab:lemmareltable
+acknowledgments
+an-interface-to-the-world-of-clouds
+parameter-settings
+first-steps
+first-order-selection-parameters
+ppmi-weighting
+second-order-selection
+foc-as-soc
+medoids
+exploring-parameter-settings
+nephovis
+nonsense-or-no-senses
+the-nature-of-clouds

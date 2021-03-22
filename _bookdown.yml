@@ -5,6 +5,7 @@ language:
     chapter_name: "Chapter "
 rmd_files: [
   "index.Rmd",
+  "gracias.Rmd",
   "viz_1.Rmd",
   "viz_2.Rmd",
   "viz_3.Rmd",
