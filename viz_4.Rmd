@@ -1,6 +1,52 @@
 # NephoVis
 
-In this chapter I will describe the visualization tool itself, as was done in the paper with Kris.
-It should include a brief introduction mentioning D3.js and Github Pages
-and describe the current features.
-I should leave the data format to the end because I expect I will change it.
+In this chapter we will learn how to use the visualization tool to explore
+and compare token-level vector space models.
+
+As of this moment, the tool can be found at a
+[Github Page](https://montesmariana.github.io/NephoVis), that is,
+a [Github repository](https://github.com/montesmariana/NephoVis) that can be rendered
+as a static website. It obtains its data from a [submodule](https://github.com/montesmariana/tokenclouds);
+an interested user could clone the repository and just modify the path to the data.
+
+<!-- TODO Decide on a data format -->
+
+The code for the visualization is written in Javascript, making heavy use of the
+[D3.js](https://d3.js) library, which was designed for beautiful web-based
+**d**ata-**d**riven visualization. While it is known of its steep learning curve,
+it can be useful to think of it in terms of R's vectorized approach: it links
+DOM elements to arrays and manipulates them based on the items' properties.
+
+The main rationale and framework for this visualization tool was developed by
+Thomas Wielfaert [@wielfaert_visual_2019]; the code can be found
+[here](https://github.com/tokenclouds/tokenclouds.github.io/LeTok/)
+<!-- TODO add his dissertation? -->
+The current implementation would not exist without this foundational setup. However,
+a number of the available features were added later.
+
+The description of the tool will follow the expected workflow of an user, starting
+in [Level 1](#level_1), moving on to [Level 2](#level_2) and diving deeper in
+[Level 3](#level_3). Finally, Section \@ref(wishlist) goes into the Beta features
+that require better development and testing, as well as ideas that we might want to
+implement in the future. In any case, it must be noted that from July 2019 to
+`r Sys.Date()` the user and developer have been the same person, with occasional,
+valuable input from other members of the Nephological Semantics project. The
+project could certainly benefit from a wider input of suggestions.
+
+<!-- NOTE we might actually want to dedicate a section to the shared features of levels 2 and 3 -->
+
+## Level 1 {#level_1}
+
+<!-- TODO describe Level 1 -->
+
+## Level 2 {#level_2}
+
+<!-- TODO describe level 2 -->
+
+## Level 3 {#level_3}
+
+<!-- TODO describe level 3 -->
+
+## Wishlist {#wishlist}
+
+<!-- TODO add things for future development? -->

@@ -18,21 +18,17 @@ cover-image: "cover_heart.png"
 
 Here I'm starting the first draft ever of my PhD dissertation.
 There are reports scattered all over the place, but here I will try to write things already
-thinking of a Final Product. I need a layout (briefly discussed a week ago) and
+thinking of a Final Product. I need a layout (briefly discussed at the end of February) and
 I will slowly start building the final text.
 
 The original title (in any case, the title of my project) was
 *Methodological triangulation in corpus-based distributional semantics*,
-which indicates I'm going to compare several corpus-based methods.
-
-I was going to do some behavioral profiles, but that might prove a bit tough right now.
-A bit too much.
-In any case, I did compare manual annotation with token-vector models.
+but the triangulation part was lost somewhere along the way.
 
 What I really did do was develop the visualization,
 based on [Thomas Wielfaert's original code](https://github.com/tokenclouds/tokenclouds.github.io),
 analyze the parameter settings in multiple ways,
 checking different combinations and exploring different avenues,
-and lead, check, study and compare manual annotation of 33 lemmas.
+and lead, check, study and compare manual annotation of 32 lemmas.
 
 That is what I'm going to write about.

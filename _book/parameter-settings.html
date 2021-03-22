@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Parameter settings | Cloudspotting: Visual analytics for distributional semantics</title>
+<title>Chapter 2 Parameter settings | Cloudspotting: Visual analytics for distributional semantics</title>
 <meta name="author" content="Mariana Montes">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
@@ -33,15 +33,15 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Introduction</a></li>
-<li><a class="" href="acknowledgments.html"><span class="header-section-number">1</span> Acknowledgments</a></li>
+<li><a class="" href="acknowledgments.html">Acknowledgments</a></li>
 <li class="book-part">Visualization tool</li>
-<li><a class="" href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">2</span> An interface to the world of clouds</a></li>
-<li><a class="active" href="parameter-settings.html"><span class="header-section-number">3</span> Parameter settings</a></li>
-<li><a class="" href="exploring-parameter-settings.html"><span class="header-section-number">4</span> Exploring parameter settings</a></li>
-<li><a class="" href="nephovis.html"><span class="header-section-number">5</span> NephoVis</a></li>
+<li><a class="" href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">1</span> An interface to the world of clouds</a></li>
+<li><a class="active" href="parameter-settings.html"><span class="header-section-number">2</span> Parameter settings</a></li>
+<li><a class="" href="exploring-parameter-settings.html"><span class="header-section-number">3</span> Exploring parameter settings</a></li>
+<li><a class="" href="nephovis.html"><span class="header-section-number">4</span> NephoVis</a></li>
 <li class="book-part">The language of clouds</li>
-<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">6</span> Nonsense or no senses?</a></li>
-<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">7</span> The nature of clouds</a></li>
+<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">5</span> Nonsense or no senses?</a></li>
+<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">6</span> The nature of clouds</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -50,16 +50,16 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="parameter-settings" class="section level1" number="3">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="parameter-settings" class="section level1" number="2">
 <h1>
-<span class="header-section-number">3</span> Parameter settings<a class="anchor" aria-label="anchor" href="#parameter-settings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2</span> Parameter settings<a class="anchor" aria-label="anchor" href="#parameter-settings"><i class="fas fa-link"></i></a>
 </h1>
 <p>In this chapter I will describe the various parameter settings we have explored:
 which are the possible decisions, which ones we have set and which were looked at,
 why. This should be preceded by an explanation of the workflow itself.</p>
-<div id="first-steps" class="section level2" number="3.1">
+<div id="first-steps" class="section level2" number="2.1">
 <h2>
-<span class="header-section-number">3.1</span> First steps<a class="anchor" aria-label="anchor" href="#first-steps"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1</span> First steps<a class="anchor" aria-label="anchor" href="#first-steps"><i class="fas fa-link"></i></a>
 </h2>
 <p>Both the targets and the first and second order features are lemma/part-of-speech pairs,
 such as <em>haak/verb</em> (the verb <em>haken</em> ‘to hook/crochet’),
@@ -82,9 +82,9 @@ a process by which we try to represent relative distances between items in a low
 while preserving the distances in high-dimensional space as much as possible.
 This procedure will be described in [appropriate section].</p>
 </div>
-<div id="first-order-selection-parameters" class="section level2" number="3.2">
+<div id="first-order-selection-parameters" class="section level2" number="2.2">
 <h2>
-<span class="header-section-number">3.2</span> First-order selection parameters<a class="anchor" aria-label="anchor" href="#first-order-selection-parameters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2</span> First-order selection parameters<a class="anchor" aria-label="anchor" href="#first-order-selection-parameters"><i class="fas fa-link"></i></a>
 </h2>
 <p>We call the immediate context of a token the <strong>first order context</strong>: therefore,
 first-order parameters are those that influence which elements in the immediate environment
@@ -95,7 +95,7 @@ had to be made regarding which particular settings would be explored. We tried t
 keep the parameter settings different enough from each other to have some variation.
 The decisions were based on a mix of literature <span class="citation">(<a href="references.html#ref-kiela_systematic_2014" role="doc-biblioref">Kiela and Clark 2014</a>)</span>,
 linguistic intuition and generalizations over the annotation of our very targets.
-<!-- [Reference to wherever I talk about it] -->
+<!-- TODO Reference to wherever I talk about it -->
 As part of the annotation task, the annotators had to select the items in the
 immediate context that had helped them select the appropriate tag. In order to remove
 noise from misunderstandings and idiosyncrasy, we only looked at pairs (or trios) of
@@ -196,10 +196,10 @@ There are no context words more than three steps away from the target in (1).
 <dd>This set of dependency-based models selects the features that enter in a certain
 syntactic relation with the target. They are tailored to the part-of-speech of the target,
 and each group expands on the selection of the group before it. The specific selections
-are listed in Table <a href="parameter-settings.html#tab:lemmareltable">3.1</a>.
+are listed in Table <a href="parameter-settings.html#tab:lemmareltable">2.1</a>.
 </dd>
 </dl>
-<template id="52126c2f-1948-4fea-9245-7da7d0ddc0bc"><style>
+<template id="8845ebed-d780-4fdc-8dae-a2a33a57ca30"><style>
 .tabwid table{
   border-collapse:collapse;
   line-height:1;
@@ -235,42 +235,42 @@ background-color: transparent;
 }
 </style>
 <div class="tabwid">
-<style>.cl-4c0ac914{border-collapse:collapse;}.cl-4bfec362{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4bfeea68{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4bfeea69{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4bff3842{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3843{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3844{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3845{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3846{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3847{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3848{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff3849{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff384a{width:1111.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff384b{width:54.2pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff384c{width:1153.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4bff5f34{width:807.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}caption {color: #777;margin-top: 10px;margin-bottom: 10px;text-align: center;}</style>
-<div class="inline-table"><table class="cl-4c0ac914">
+<style>.cl-7f9f48a2{border-collapse:collapse;}.cl-7f8f0046{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7f8f2742{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7f8f2743{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7f8f9c18{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c19{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1a{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1b{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1c{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1d{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1e{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1f{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c20{width:1111.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c21{width:54.2pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c22{width:1153.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8fc300{width:807.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}caption {color: #777;margin-top: 10px;margin-bottom: 10px;text-align: center;}</style>
+<div class="inline-table"><table class="cl-7f9f48a2">
 <caption class="Table Caption">
-<span id="tab:lemmareltable">Table 3.1: </span>Dependency paths selected by different <code>LEMMAREL</code> values.
+<span id="tab:lemmareltable">Table 2.1: </span>Dependency paths selected by different <code>LEMMAREL</code> values.
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<td class="cl-4bff384b"><p class="cl-4bfeea68"><span class="cl-4bfec362">groups</span></p></td>
-<td class="cl-4bff384c"><p class="cl-4bfeea68"><span class="cl-4bfec362">nouns</span></p></td>
-<td class="cl-4bff5f34"><p class="cl-4bfeea68"><span class="cl-4bfec362">verbs</span></p></td>
-<td class="cl-4bff384a"><p class="cl-4bfeea68"><span class="cl-4bfec362">adjectives</span></p></td>
+<td class="cl-7f8f9c21"><p class="cl-7f8f2742"><span class="cl-7f8f0046">groups</span></p></td>
+<td class="cl-7f8f9c22"><p class="cl-7f8f2742"><span class="cl-7f8f0046">nouns</span></p></td>
+<td class="cl-7f8fc300"><p class="cl-7f8f2742"><span class="cl-7f8f0046">verbs</span></p></td>
+<td class="cl-7f8f9c20"><p class="cl-7f8f2742"><span class="cl-7f8f0046">adjectives</span></p></td>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bff3843"><p class="cl-4bfeea69"><span class="cl-4bfec362">1</span></p></td>
-<td class="cl-4bff3844"><p class="cl-4bfeea69"><span class="cl-4bfec362">modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject</span></p></td>
-<td class="cl-4bff3845"><p class="cl-4bfeea69"><span class="cl-4bfec362">direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target</span></p></td>
-<td class="cl-4bff3842"><p class="cl-4bfeea69"><span class="cl-4bfec362">nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between</span></p></td>
+<td class="cl-7f8f9c19"><p class="cl-7f8f2743"><span class="cl-7f8f0046">1</span></p></td>
+<td class="cl-7f8f9c1a"><p class="cl-7f8f2743"><span class="cl-7f8f0046">modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject</span></p></td>
+<td class="cl-7f8f9c1b"><p class="cl-7f8f2743"><span class="cl-7f8f0046">direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target</span></p></td>
+<td class="cl-7f8f9c18"><p class="cl-7f8f2743"><span class="cl-7f8f0046">nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bff3843"><p class="cl-4bfeea69"><span class="cl-4bfec362">2</span></p></td>
-<td class="cl-4bff3844"><p class="cl-4bfeea69"><span class="cl-4bfec362">conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object</span></p></td>
-<td class="cl-4bff3845"><p class="cl-4bfeea69"><span class="cl-4bfec362">conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement</span></p></td>
-<td class="cl-4bff3842"><p class="cl-4bfeea69"><span class="cl-4bfec362">object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)</span></p></td>
+<td class="cl-7f8f9c19"><p class="cl-7f8f2743"><span class="cl-7f8f0046">2</span></p></td>
+<td class="cl-7f8f9c1a"><p class="cl-7f8f2743"><span class="cl-7f8f0046">conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object</span></p></td>
+<td class="cl-7f8f9c1b"><p class="cl-7f8f2743"><span class="cl-7f8f0046">conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement</span></p></td>
+<td class="cl-7f8f9c18"><p class="cl-7f8f2743"><span class="cl-7f8f0046">object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-4bff3847"><p class="cl-4bfeea69"><span class="cl-4bfec362">3</span></p></td>
-<td class="cl-4bff3848"><p class="cl-4bfeea69"><span class="cl-4bfec362">objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier</span></p></td>
-<td class="cl-4bff3849"><p class="cl-4bfeea69"><span class="cl-4bfec362"></span></p></td>
-<td class="cl-4bff3846"><p class="cl-4bfeea69"><span class="cl-4bfec362"></span></p></td>
+<td class="cl-7f8f9c1d"><p class="cl-7f8f2743"><span class="cl-7f8f0046">3</span></p></td>
+<td class="cl-7f8f9c1e"><p class="cl-7f8f2743"><span class="cl-7f8f0046">objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier</span></p></td>
+<td class="cl-7f8f9c1f"><p class="cl-7f8f2743"><span class="cl-7f8f0046"></span></p></td>
+<td class="cl-7f8f9c1c"><p class="cl-7f8f2743"><span class="cl-7f8f0046"></span></p></td>
 </tr>
 </tbody>
 </table></div>
-</div></template><div id="c73209c9-2e5d-4698-bdcb-e9715f3e821c"></div>
+</div></template><div id="8ac5203f-e48a-4a57-963f-6b5448ee58bb"></div>
 <script>
-var dest = document.getElementById("c73209c9-2e5d-4698-bdcb-e9715f3e821c");
-var template = document.getElementById("52126c2f-1948-4fea-9245-7da7d0ddc0bc");
+var dest = document.getElementById("8ac5203f-e48a-4a57-963f-6b5448ee58bb");
+var template = document.getElementById("8845ebed-d780-4fdc-8dae-a2a33a57ca30");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -281,16 +281,16 @@ if(caption) {
 var fantome = dest.attachShadow({mode: 'open'});
 var templateContent = template.content;
 fantome.appendChild(templateContent);
-</script><div id="ppmi-weighting" class="section level3" number="3.2.1">
+</script><div id="ppmi-weighting" class="section level3" number="2.2.1">
 <h3>
-<span class="header-section-number">3.2.1</span> PPMI weighting<a class="anchor" aria-label="anchor" href="#ppmi-weighting"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2.1</span> PPMI weighting<a class="anchor" aria-label="anchor" href="#ppmi-weighting"><i class="fas fa-link"></i></a>
 </h3>
 <p>The <code>PPMI</code> parameter is taken outside the set of first-order parameters because it can both filter out first-order features and reshape their vector representations. In truth, the choice of <strong>p</strong>ositive <strong>p</strong>ointwise <strong>m</strong>utual <strong>i</strong>nformation (PPMI) over other weighting mechanisms, as well as setting a threshold or not, is already a parameter setting, which in these circumstances is set to PPMI and a threshold of 0. In all cases, the PPMI was calculated based on a 4-4 window (that could also be a variable parameter).</p>
 <p>This parameter can take three values. <code>selection</code> and <code>weight</code> mean that only the first-order features with a PPMI &gt; 0 with the target type are selected, and the rest discarded, while <code>no</code> does not apply the filter. The difference between <code>selection</code> and <code>weight</code> is that the former only uses the value to filter the context features, while the latter also weighs their vectors with that value.</p>
 </div>
-<div id="second-order-selection" class="section level3" number="3.2.2">
+<div id="second-order-selection" class="section level3" number="2.2.2">
 <h3>
-<span class="header-section-number">3.2.2</span> Second-order selection<a class="anchor" aria-label="anchor" href="#second-order-selection"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2.2</span> Second-order selection<a class="anchor" aria-label="anchor" href="#second-order-selection"><i class="fas fa-link"></i></a>
 </h3>
 <p>The selection of second-order features influences the shape of the vectors: how the selected first-order features are represented. While the frequency transformation and the window on which such values were computed could be varied, they were set to fixed values, namely PPMI and 4-4 respectively. The parameters that were varied across, although we don’t expect drastic differences between the models, are vector length and part-of-speech.</p>
 <dl>
@@ -306,9 +306,9 @@ fantome.appendChild(templateContent);
 <dd>The actual number of dimensions resulting from <code>FOC</code> depends on the strictness of the first order filter. This information can be found on the plots that, for each staal, show how many first order context words are left after each combination of first order filters.
 </dd>
 </dl>
-<div id="foc-as-soc" class="section level4" number="3.2.2.1">
+<div id="foc-as-soc" class="section level4" number="2.2.2.1">
 <h4>
-<span class="header-section-number">3.2.2.1</span> FOC as SOC<a class="anchor" aria-label="anchor" href="#foc-as-soc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2.2.1</span> FOC as SOC<a class="anchor" aria-label="anchor" href="#foc-as-soc"><i class="fas fa-link"></i></a>
 </h4>
 <p>What does it mean to use the same first-order context words as second-order context words?</p>
 <p>First, depending on the number of target tokens and the strictness of the filter, there could be a different number of context words, ranging in the hundreds or low thousands.</p>
@@ -316,15 +316,15 @@ fantome.appendChild(templateContent);
 </div>
 </div>
 </div>
-<div id="medoids" class="section level2" number="3.3">
+<div id="medoids" class="section level2" number="2.3">
 <h2>
-<span class="header-section-number">3.3</span> Medoids<a class="anchor" aria-label="anchor" href="#medoids"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.3</span> Medoids<a class="anchor" aria-label="anchor" href="#medoids"><i class="fas fa-link"></i></a>
 </h2>
 <p>The multiple parameters return a huge number of models, and while purely quantitative methods might
 be able to process and compare them, it is not feasible for a human to look at hundreds of clouds
 and stay sane enough to make out anything from them. A more efficient –and easier on the human mind–
 way to approach this is, instead, to look at representative models.</p>
-<p>[Describe PAM?]</p>
+<!-- QUESTION: Describe PAM? -->
 <p>This method requires us to choose a number of medoids beforehand, which is not an easy
 task. If we wanted the medoids to represent the best clustering solution, we could run
 the algorithm with different values of <span class="math inline">\(k\)</span> and compare the results with measures such
@@ -335,7 +335,8 @@ if these models are redundant, as long as we can ensure that all the phenomena t
 are interested in are represented in them.</p>
 <p>For example, given a lemma with multiple senses, it might be the case that some models
 group the tokens of one sense, and others group the tokens of another: we would like to see
-representatives of both kinds. [add example]</p>
+representatives of both kinds.
+<!-- TODO add example --></p>
 <p>There is no guarantee that the method with the best silhouette returns all the variation we
 are interested in –our goal is, rather, to limit the number of different models we need to
 examine from the total number, say 200, to a more manageable amount, like 8.
@@ -354,25 +355,25 @@ researchers’ minds, it might be the case that something found or assessed in a
 shared by the models in its cluster. The comparison needed with the random sample should be
 fast and honest and is strongly recommended: if the medoids are representative, you can see it
 in an instant; if they are not, it just takes a bit longer to admit it. It is <em>not</em> the same as actually studying and comparing 64 different models.</p>
-<p>[add an example of something not working, like hoekig medoid 3?]</p>
+<!-- TODO add an example of something not working, like hoekig medoid 3? -->
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">2</span> An interface to the world of clouds</a></div>
-<div class="next"><a href="exploring-parameter-settings.html"><span class="header-section-number">4</span> Exploring parameter settings</a></div>
+<div class="prev"><a href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">1</span> An interface to the world of clouds</a></div>
+<div class="next"><a href="exploring-parameter-settings.html"><span class="header-section-number">3</span> Exploring parameter settings</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#parameter-settings"><span class="header-section-number">3</span> Parameter settings</a></li>
-<li><a class="nav-link" href="#first-steps"><span class="header-section-number">3.1</span> First steps</a></li>
+<li><a class="nav-link" href="#parameter-settings"><span class="header-section-number">2</span> Parameter settings</a></li>
+<li><a class="nav-link" href="#first-steps"><span class="header-section-number">2.1</span> First steps</a></li>
 <li>
-<a class="nav-link" href="#first-order-selection-parameters"><span class="header-section-number">3.2</span> First-order selection parameters</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ppmi-weighting"><span class="header-section-number">3.2.1</span> PPMI weighting</a></li>
-<li><a class="nav-link" href="#second-order-selection"><span class="header-section-number">3.2.2</span> Second-order selection</a></li>
+<a class="nav-link" href="#first-order-selection-parameters"><span class="header-section-number">2.2</span> First-order selection parameters</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ppmi-weighting"><span class="header-section-number">2.2.1</span> PPMI weighting</a></li>
+<li><a class="nav-link" href="#second-order-selection"><span class="header-section-number">2.2.2</span> Second-order selection</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#medoids"><span class="header-section-number">3.3</span> Medoids</a></li>
+<li><a class="nav-link" href="#medoids"><span class="header-section-number">2.3</span> Medoids</a></li>
 </ul>
 
       <div class="book-extra">
