@@ -5,3 +5,4 @@ certain values and why we explored others along a certain range.
 
 This would include procrustes/euclidean, addition/average, the range for PPMI,
 the values set because Kiela + Clark...
+<!-- FIXME add appropriate citation -->

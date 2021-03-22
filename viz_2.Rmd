@@ -42,7 +42,7 @@ had to be made regarding which particular settings would be explored. We tried t
 keep the parameter settings different enough from each other to have some variation.
 The decisions were based on a mix of literature [@kiela_systematic_2014],
 linguistic intuition and generalizations over the annotation of our very targets.
-<!-- [Reference to wherever I talk about it] -->
+<!-- TODO Reference to wherever I talk about it -->
 As part of the annotation task, the annotators had to select the items in the
 immediate context that had helped them select the appropriate tag. In order to remove
 noise from misunderstandings and idiosyncrasy, we only looked at pairs (or trios) of
@@ -186,7 +186,7 @@ be able to process and compare them, it is not feasible for a human to look at h
 and stay sane enough to make out anything from them. A more efficient --and easier on the human mind--
 way to approach this is, instead, to look at representative models.
 
-[Describe PAM?]
+<!-- QUESTION: Describe PAM? -->
 
 This method requires us to choose a number of medoids beforehand, which is not an easy
 task. If we wanted the medoids to represent the best clustering solution, we could run
@@ -199,7 +199,8 @@ are interested in are represented in them.
 
 For example, given a lemma with multiple senses, it might be the case that some models
 group the tokens of one sense, and others group the tokens of another: we would like to see
-representatives of both kinds. [add example]
+representatives of both kinds.
+<!-- TODO add example -->
 
 There is no guarantee that the method with the best silhouette returns all the variation we
 are interested in --our goal is, rather, to limit the number of different models we need to
@@ -221,4 +222,4 @@ shared by the models in its cluster. The comparison needed with the random sampl
 fast and honest and is strongly recommended: if the medoids are representative, you can see it
 in an instant; if they are not, it just takes a bit longer to admit it. It is *not* the same as actually studying and comparing 64 different models.
 
-[add an example of something not working, like hoekig medoid 3?]
+<!-- TODO add an example of something not working, like hoekig medoid 3? -->
