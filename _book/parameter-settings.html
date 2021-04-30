@@ -37,11 +37,12 @@
 <li class="book-part">Visualization tool</li>
 <li><a class="" href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">1</span> An interface to the world of clouds</a></li>
 <li><a class="active" href="parameter-settings.html"><span class="header-section-number">2</span> Parameter settings</a></li>
-<li><a class="" href="exploring-parameter-settings.html"><span class="header-section-number">3</span> Exploring parameter settings</a></li>
+<li><a class="" href="from-corpora-to-clouds.html"><span class="header-section-number">3</span> From corpora to clouds</a></li>
 <li><a class="" href="nephovis.html"><span class="header-section-number">4</span> NephoVis</a></li>
+<li><a class="" href="hdbscan.html"><span class="header-section-number">5</span> HDBSCAN</a></li>
 <li class="book-part">The language of clouds</li>
-<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">5</span> Nonsense or no senses?</a></li>
-<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">6</span> The nature of clouds</a></li>
+<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">6</span> Nonsense or no senses?</a></li>
+<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">7</span> The nature of clouds</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -93,7 +94,7 @@ one dependent on whether syntactic information was use, and one independent of i
 <p>It goes without saying that the parameter space is virtually unlimited, and decisions
 had to be made regarding which particular settings would be explored. We tried to
 keep the parameter settings different enough from each other to have some variation.
-The decisions were based on a mix of literature <span class="citation">(<a href="references.html#ref-kiela_systematic_2014" role="doc-biblioref">Kiela and Clark 2014</a>)</span>,
+The decisions were based on a mix of literature <span class="citation">(<a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela and Clark 2014</a>)</span>,
 linguistic intuition and generalizations over the annotation of our very targets.
 <!-- TODO Reference to wherever I talk about it -->
 As part of the annotation task, the annotators had to select the items in the
@@ -199,7 +200,7 @@ and each group expands on the selection of the group before it. The specific sel
 are listed in Table <a href="parameter-settings.html#tab:lemmareltable">2.1</a>.
 </dd>
 </dl>
-<template id="8845ebed-d780-4fdc-8dae-a2a33a57ca30"><style>
+<!-- BUG Check formatting for PDF and EPUB because it is ugly in the former and nonexistent in the latter --><template id="ba99d1ff-1838-46ff-a6d7-8d7f68d67de6"><style>
 .tabwid table{
   border-collapse:collapse;
   line-height:1;
@@ -235,42 +236,42 @@ background-color: transparent;
 }
 </style>
 <div class="tabwid">
-<style>.cl-7f9f48a2{border-collapse:collapse;}.cl-7f8f0046{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7f8f2742{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7f8f2743{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7f8f9c18{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c19{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1a{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1b{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1c{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1d{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1e{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c1f{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c20{width:1111.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c21{width:54.2pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8f9c22{width:1153.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7f8fc300{width:807.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}caption {color: #777;margin-top: 10px;margin-bottom: 10px;text-align: center;}</style>
-<div class="inline-table"><table class="cl-7f9f48a2">
+<style>.cl-8c1ec6d2{border-collapse:collapse;}.cl-8c109fb2{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8c10c6a4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8c10c6a5{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8c113b84{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b85{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b86{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b87{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b88{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b89{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b8a{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b8b{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b8c{width:1111.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b8d{width:54.2pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c113b8e{width:1153.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8c1162b2{width:807.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-8c1ec6d2">
 <caption class="Table Caption">
 <span id="tab:lemmareltable">Table 2.1: </span>Dependency paths selected by different <code>LEMMAREL</code> values.
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<td class="cl-7f8f9c21"><p class="cl-7f8f2742"><span class="cl-7f8f0046">groups</span></p></td>
-<td class="cl-7f8f9c22"><p class="cl-7f8f2742"><span class="cl-7f8f0046">nouns</span></p></td>
-<td class="cl-7f8fc300"><p class="cl-7f8f2742"><span class="cl-7f8f0046">verbs</span></p></td>
-<td class="cl-7f8f9c20"><p class="cl-7f8f2742"><span class="cl-7f8f0046">adjectives</span></p></td>
+<td class="cl-8c113b8d"><p class="cl-8c10c6a4"><span class="cl-8c109fb2">groups</span></p></td>
+<td class="cl-8c113b8e"><p class="cl-8c10c6a4"><span class="cl-8c109fb2">nouns</span></p></td>
+<td class="cl-8c1162b2"><p class="cl-8c10c6a4"><span class="cl-8c109fb2">verbs</span></p></td>
+<td class="cl-8c113b8c"><p class="cl-8c10c6a4"><span class="cl-8c109fb2">adjectives</span></p></td>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-7f8f9c19"><p class="cl-7f8f2743"><span class="cl-7f8f0046">1</span></p></td>
-<td class="cl-7f8f9c1a"><p class="cl-7f8f2743"><span class="cl-7f8f0046">modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject</span></p></td>
-<td class="cl-7f8f9c1b"><p class="cl-7f8f2743"><span class="cl-7f8f0046">direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target</span></p></td>
-<td class="cl-7f8f9c18"><p class="cl-7f8f2743"><span class="cl-7f8f0046">nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between</span></p></td>
+<td class="cl-8c113b85"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">1</span></p></td>
+<td class="cl-8c113b86"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject</span></p></td>
+<td class="cl-8c113b87"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target</span></p></td>
+<td class="cl-8c113b84"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-7f8f9c19"><p class="cl-7f8f2743"><span class="cl-7f8f0046">2</span></p></td>
-<td class="cl-7f8f9c1a"><p class="cl-7f8f2743"><span class="cl-7f8f0046">conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object</span></p></td>
-<td class="cl-7f8f9c1b"><p class="cl-7f8f2743"><span class="cl-7f8f0046">conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement</span></p></td>
-<td class="cl-7f8f9c18"><p class="cl-7f8f2743"><span class="cl-7f8f0046">object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)</span></p></td>
+<td class="cl-8c113b85"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">2</span></p></td>
+<td class="cl-8c113b86"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object</span></p></td>
+<td class="cl-8c113b87"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement</span></p></td>
+<td class="cl-8c113b84"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-7f8f9c1d"><p class="cl-7f8f2743"><span class="cl-7f8f0046">3</span></p></td>
-<td class="cl-7f8f9c1e"><p class="cl-7f8f2743"><span class="cl-7f8f0046">objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier</span></p></td>
-<td class="cl-7f8f9c1f"><p class="cl-7f8f2743"><span class="cl-7f8f0046"></span></p></td>
-<td class="cl-7f8f9c1c"><p class="cl-7f8f2743"><span class="cl-7f8f0046"></span></p></td>
+<td class="cl-8c113b89"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">3</span></p></td>
+<td class="cl-8c113b8a"><p class="cl-8c10c6a5"><span class="cl-8c109fb2">objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier</span></p></td>
+<td class="cl-8c113b8b"><p class="cl-8c10c6a5"><span class="cl-8c109fb2"></span></p></td>
+<td class="cl-8c113b88"><p class="cl-8c10c6a5"><span class="cl-8c109fb2"></span></p></td>
 </tr>
 </tbody>
 </table></div>
-</div></template><div id="8ac5203f-e48a-4a57-963f-6b5448ee58bb"></div>
+</div></template><div class="flextable-shadow-host" id="3d0573ca-9362-4fff-a5ca-2952b44d6e3d"></div>
 <script>
-var dest = document.getElementById("8ac5203f-e48a-4a57-963f-6b5448ee58bb");
-var template = document.getElementById("8845ebed-d780-4fdc-8dae-a2a33a57ca30");
+var dest = document.getElementById("3d0573ca-9362-4fff-a5ca-2952b44d6e3d");
+var template = document.getElementById("ba99d1ff-1838-46ff-a6d7-8d7f68d67de6");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -328,7 +329,7 @@ way to approach this is, instead, to look at representative models.</p>
 <p>This method requires us to choose a number of medoids beforehand, which is not an easy
 task. If we wanted the medoids to represent the best clustering solution, we could run
 the algorithm with different values of <span class="math inline">\(k\)</span> and compare the results with measures such
-as silhouette width, as suggested by Levshina <span class="citation">(<a href="references.html#ref-levshina_how_2015" role="doc-biblioref">2015</a>)</span>. However, that is not
+as silhouette width, as suggested by <span class="citation"><a href="references.html#ref-levshina_2015" role="doc-biblioref">Levshina</a> (<a href="references.html#ref-levshina_2015" role="doc-biblioref">2015</a>)</span>. However, that is not
 necessarily our goal. We want to be able to see as much variation as possible, while keeping
 the number of different models manageable (i.e. below 9). It is not particularly problematic
 if these models are redundant, as long as we can ensure that all the phenomena that we
@@ -361,7 +362,7 @@ in an instant; if they are not, it just takes a bit longer to admit it. It is <e
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">1</span> An interface to the world of clouds</a></div>
-<div class="next"><a href="exploring-parameter-settings.html"><span class="header-section-number">3</span> Exploring parameter settings</a></div>
+<div class="next"><a href="from-corpora-to-clouds.html"><span class="header-section-number">3</span> From corpora to clouds</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -391,7 +392,7 @@ in an instant; if they are not, it just takes a bit longer to admit it. It is <e
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-03-22.</p>
+    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-04-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

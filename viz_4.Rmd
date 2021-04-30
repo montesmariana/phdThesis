@@ -4,12 +4,13 @@ In this chapter we will learn how to use the visualization tool to explore
 and compare token-level vector space models.
 
 As of this moment, the tool can be found at a
-[Github Page](https://montesmariana.github.io/NephoVis), that is,
-a [Github repository](https://github.com/montesmariana/NephoVis) that can be rendered
-as a static website. It obtains its data from a [submodule](https://github.com/montesmariana/tokenclouds);
+[Github Page](https://qlvl.github.io/NephoVis), that is,
+a [Github repository](https://github.com/qlvl/NephoVis) that can be rendered
+as a static website [@montes.qlvl_2021].
+It obtains its data from a [submodule](https://github.com/qlvl/tokenclouds);
 an interested user could clone the repository and just modify the path to the data.
 
-<!-- TODO Decide on a data format -->
+<!-- TODO Decide on a data format: API?? -->
 
 The code for the visualization is written in Javascript, making heavy use of the
 [D3.js](https://d3.js) library, which was designed for beautiful web-based
@@ -18,34 +19,77 @@ it can be useful to think of it in terms of R's vectorized approach: it links
 DOM elements to arrays and manipulates them based on the items' properties.
 
 The main rationale and framework for this visualization tool was developed by
-Thomas Wielfaert [@wielfaert_visual_2019]; the code can be found
-[here](https://github.com/tokenclouds/tokenclouds.github.io/LeTok/)
-<!-- TODO add his dissertation? -->
+Thomas Wielfaert [@wielfaert.etal_2019]; that code can be found
+[here](https://github.com/tokenclouds/tokenclouds.github.io/LeTok/).
+
 The current implementation would not exist without this foundational setup. However,
 a number of the available features were added later.
 
-The description of the tool will follow the expected workflow of an user, starting
-in [Level 1](#level_1), moving on to [Level 2](#level_2) and diving deeper in
-[Level 3](#level_3). Finally, Section \@ref(wishlist) goes into the Beta features
+The description of the tool will not immediately follow the expected workflow of an user.
+Instead, we will start with the lowest level, [Level 3](#level_3),
+which represents individual token-level clouds,
+zoom out into [Level 2](#level_2), which shows multiple token-level clouds simultaneously,
+which will make the most abstract level, [Level 1](#level_1), more clear.
+Afterwards (Section \@ref(workflow)) we will briefly simulate the path an user would take from Level 1 to Level 3.
+This perspective was also taken in @montes.heylen_Submitted.
+Finally, Section \@ref(wishlist) goes into the Beta features
 that require better development and testing, as well as ideas that we might want to
 implement in the future. In any case, it must be noted that from July 2019 to
 `r Sys.Date()` the user and developer have been the same person, with occasional,
 valuable input from other members of the Nephological Semantics project. The
 project could certainly benefit from a wider input of suggestions.
 
+<!-- NOTE following Shneiderman‘s Visual Information Seeking Mantra: “Overview first, zoom and filter, then details-on-demand” [-@shneiderman_1996 97], the tool organizes the full range of available information along three levels. -->
+
 <!-- NOTE we might actually want to dedicate a section to the shared features of levels 2 and 3 -->
 
-## Level 1 {#level_1}
-
-<!-- TODO describe Level 1 -->
-
-## Level 2 {#level_2}
-
-<!-- TODO describe level 2 -->
 
 ## Level 3 {#level_3}
 
-<!-- TODO describe level 3 -->
+Level 3 of the visualization tool shows a zoomable scatterplot in which each glyph represents a token, i.e. an instance of the target lexical item. The name of the model, coding the parameter settings as described in
+<!-- FIXME add crossreference -->
+, is indicated on the top. It is possible to map colors and shapes to categorical variables (such as sense labels) and sizes to numerical variables (such as number of available context words) and to select tokens with a given value by clicking on the corresponding legend key.
+
+<!-- COMBAK add example -->
+
+## Level 2 {#level_2}
+
+Level 2 of the visualization is *not* a scatterplot matrix, although it looks like one and the code was inspired by Mike Bostock's example. Instead, it is just an array of small plots next to each other and wrap of easier readability.
+
+Each of them represents a different model and the same basic features from Level 3 are available: color, shape and size coding, selection by clicking and brushing, and finding the context by hovering over the tokens.
+
+<!-- COMBAK add example -->
+
+Because they are model-dependent, highlighted context and searching tokens by context word are meaningless in this level, where multiple models are being shown simultaneously. The key contribution of this level, next to the superficial visual comparison of the shape of each plot, is the ability to select one or more tokens in a plot and highlighting them in the rest of the plots as well. Thanks to this functionality, the user can compare the relative position of a group of tokens in a model against that in a different model.
+
+## Level 1 {#level_1}
+
+Level 1 shows one zoomable scatterplot, similar to Level 3, but with each glyph representing one model, instead of one token. As a reminder of the difference, the default shape in Level 1 is a wye (“Y”), while that in the other levels is a circle. The data represented by this scatterplot is not the distance between tokens anymore, but that between models, as described at the beginning of Section 3. This scatterplot aims to represent the similarity between models and allows the user to select the models to inspect according to different criteria. Categorical variables (e.g. whether sentence boundaries are used) can be mapped to colors and shapes, as shown in Figure 5, and numerical variables (e.g. number of tokens in the model) can be mapped to size. A selection of buttons on the left panel, as well as the legends for color and shape, can be used to filter models with a certain parameter setting. Otherwise, models can be selected by clicking on the glyphs that represent them.
+
+## The full story {#workflow}
+
+The increasing granularity from Level 1 to Level 3 and the manner of access to different functionalities respect the mantra “Overview first, zoom and filter, then details-on-demand” [@shneiderman_1996 97].
+The individual plots in Levels 1 and 3 are literally zoomable; and in all cases it is possible to select items (either models, in Level 1, or tokens, in the other two), for more detailed inspection. Finally, a number of features show details on demand, such as the names of the models in Level 1 and the context of the tokens in the other two levels.
+
+In practice, the user will start with Level 1, the scatterplot of models, and can look for structure in the distribution of the parameters on the plot. For example, color coding may reveal that models with nouns, adjectives, verbs and adverbs as first-order context words are very different from those without strong filters for part-of-speech, while the use of sentence boundaries makes little difference. Depending on whether the user wants to compare models similar or different to each other, or which parameters they would like to keep fixed, they will use individual selection or the buttons to choose models for Level 2. In our case, we click on “Select medoids”, which selects the 8 models returned by a partitioning algorithm, which offers a wide range of variation in a manageable number of plots.
+
+In Level 2 the user can already compare the shapes that the models take in their respective plots, the distribution of categories like sense labels, and the number of lost tokens. In addition, the “distance matrix” button offers a heatmap of the pairwise distances between the selected models. In the case of heffen, the restrictive collocational patterns it presents lead to crisp clusters in the visualization and consistent organization across models. However, models with less clearly defined structure may prove harder to understand. In both cases, the brushing and linking functionality highlights whether tokens that are grouped in one model are also grouped in a different model. From here, the user might switch back and forth between Level 2 and Level 3 for a more detailed inspection of the models.
+
+### Examining context words
+
+While it is possible to look at the individual context of each token by hovering over them, it loses track of the larger patterns we want to understand. That is the purpose of the frequency tables in levels 2 and 3.
+
+In any given model, tokens might be close together because they share a context word, and/or because their context words are (based on the second-order modelling) similar to each other. First-order parameters are, by definition, directly responsible for the selection of context words that will be used to model each token. Therefore, when inspecting a model, we might want to know which context word(s) pull certain tokens together, or why tokens that we expect to be together are far apart instead. In other words, if each model offers a different perspective on the distributional behavior of a token, we want to understand what informs said perspective.
+
+In Level 3, individual tokens and groups of them may be selected in different ways. Given such a selection, clicking on “Frequency table” will open a table with one row per context word, a column indicating in how many of the selected tokens it occurs, and more columns with pre-computed information (e.g. PMI values).
+
+The following five columns include pre-computed frequency information, such as the raw co-occurrence frequency and PMI value between the context word and the target based on windows of 10 and 4, and raw frequency in the corpus.
+These values can be interesting if we would like to strengthen or weaken filters for a smarter selection of context words. This particular model uses dependency-based information as well as a PMI threshold of 0 to select context words.
+
+In Level 2, while comparing different models, the frequency table takes a different form. There is still one context word per row, but the number of tokens with which it co-occurs will depend on the model.
+The columns in this table are all computed by the visualization based on the lists of context words per token per model. Next to the column with the name of the context word, the default table shows one column called "total" and one per model, headed by the corresponding number. The columns for each model match the second column in their Level 3 frequency table: they indicate with how many of the selected tokens the context word co-occurs. The "total" column, in contrast, reveals the union of this selection: with how many of the selected tokens the context word co-occurs in at least one model.
+
+The default table counts how many of the selected tokens co-occur with each of the context words, but it does not use information from other tokens outside the selection, i.e. the cue validity or association strength of the context words for the selected group. For that purpose, a dropdown button in the top left corner of the frequency table offers a small range of transformations, such as odds ratio, Fisher Exact, cue validity, etc. One such option shows the absolute frequencies within and outside the selection, where the green columns count the number of selected tokens that co-occur with each context word, and the white columns count the number of tokens outside of the selection co-occurring with those context words.
 
 ## Wishlist {#wishlist}
 

@@ -40,7 +40,7 @@ one dependent on whether syntactic information was use, and one independent of i
 It goes without saying that the parameter space is virtually unlimited, and decisions
 had to be made regarding which particular settings would be explored. We tried to
 keep the parameter settings different enough from each other to have some variation.
-The decisions were based on a mix of literature [@kiela_systematic_2014],
+The decisions were based on a mix of literature [@kiela.clark_2014],
 linguistic intuition and generalizations over the annotation of our very targets.
 <!-- TODO Reference to wherever I talk about it -->
 As part of the annotation task, the annotators had to select the items in the
@@ -135,6 +135,8 @@ syntactic relation with the target. They are tailored to the part-of-speech of t
 and each group expands on the selection of the group before it. The specific selections
 are listed in Table \@ref(tab:lemmareltable).
 
+<!-- BUG Check formatting for PDF and EPUB because it is ugly in the former and nonexistent in the latter -->
+
 ```{r, "lemmareltable", anchor = "Table", echo=FALSE}
 # Looks really bad in pdf, but at least computes!
 lrel <- jsonlite::read_json("assets/lemmarel.json")
@@ -191,7 +193,7 @@ way to approach this is, instead, to look at representative models.
 This method requires us to choose a number of medoids beforehand, which is not an easy
 task. If we wanted the medoids to represent the best clustering solution, we could run
 the algorithm with different values of $k$ and compare the results with measures such
-as silhouette width, as suggested by Levshina [-@levshina_how_2015]. However, that is not
+as silhouette width, as suggested by @levshina_2015. However, that is not
 necessarily our goal. We want to be able to see as much variation as possible, while keeping
 the number of different models manageable (i.e. below 9). It is not particularly problematic
 if these models are redundant, as long as we can ensure that all the phenomena that we

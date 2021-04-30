@@ -5,10 +5,21 @@
 In this part (which will have who knows how many chapters) I mean to describe
 the visualization tool. It was originally created by [Thomas Wielfart](https://github.com/tokenclouds/tokenclouds.github.io),
 but around July 2019 I started to play around with the code and learn Javascript
-and [D3](https://d3js.org), culminating in the [present version](https://github.com/montesmariana/NephoVis).
+and [D3](https://d3js.org), culminating in the [present version](https://github.com/qlvl/NephoVis) [@montes.qlvl_2021].
 
 This section will include the technical description of the workflow, as it pertains
 to the tool itself and to the processing work made before (the Python module, other
 Python and R functions), and a sort of manual of how it's used. It will be more or less
-redundant with the paper I wrote with Kris in December [@montes_heylen],
+redundant with the paper I wrote with Kris in December [@montes.heylen_Submitted],
 more or less like vignettes for documentation (as of now, it is still not documented).
+
+<!-- From Montes & Heylen -->
+
+The high level of automatization of vector space models makes it possible to analyze semantic patterns in huge amounts of corpus data. While this has the advantage of making semantic analyses more data-driven, this also implies a lower level of control for the linguist, who is confronted with advanced statistical output that is not straightforwardly interpretable in terms of the linguistic phenomena under investigation. In the case of vector space models, and especially an approach that combines multiple parameter settings to generate a multitude of models, the output is an array of distance matrices that “somehow” models different aspects of probabilistic semantic structure. To interpret and understand statistical modelling from a linguistic perspective, we turn to visual analytics.
+
+Visual analytics aims to integrate statistical data analysis with techniques from information visualization so that human analysts can recognize, interpret and reason about the statistical patterns that the data analysis reveals [@card.etal_1999]. Importantly, a visual analytics approach offers a manipulable, interactive visualization that, unlike static diagrams, enables the exploration of a space of parameter values and modelling outputs.
+
+Lexical semantic research with vector space models would benefit from a tool that aids
+i) the visualization of distance matrices based on high-dimensional data,
+ii) the comparison of multiple models and
+iii) more detailed examination of the input to these models.

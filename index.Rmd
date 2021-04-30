@@ -4,11 +4,10 @@ author: "Mariana Montes"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
+bibliography: [assets/bib/PhDCitations.bib, assets/bib/packages.bib]
+biblio-style: apa
 link-citations: yes
 description: "This is my PhD dissertation, still a draft, always perfectable."
-cover-image: "cover_heart.png"
 ---
 
 ```{r, code=readLines("src/init.R"), include = FALSE}

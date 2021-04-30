@@ -37,7 +37,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Cloud Gazing As A Pro},
+  pdftitle={Cloudspotting: Visual analytics for distributional semantics},
   pdfauthor={Mariana Montes},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -81,12 +81,13 @@
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
+\usepackage[style=apa,]{biblatex}
+\addbibresource{assets/bib/PhDCitations.bib}
+\addbibresource{assets/bib/packages.bib}
 
-\title{Cloud Gazing As A Pro}
+\title{Cloudspotting: Visual analytics for distributional semantics}
 \author{Mariana Montes}
-\date{2021-03-05}
+\date{2021-04-30}
 
 \begin{document}
 \maketitle
@@ -101,24 +102,50 @@
 
 Here I'm starting the first draft ever of my PhD dissertation.
 There are reports scattered all over the place, but here I will try to write things already
-thinking of a Final Product. I need a layout (briefly discussed a week ago) and
+thinking of a Final Product. I need a layout (briefly discussed at the end of February) and
 I will slowly start building the final text.
 
 The original title (in any case, the title of my project) was
 \emph{Methodological triangulation in corpus-based distributional semantics},
-which indicates I'm going to compare several corpus-based methods.
-
-I was going to do some behavioral profiles, but that might prove a bit tough right now.
-A bit too much.
-In any case, I did compare manual annotation with token-vector models.
+but the triangulation part was lost somewhere along the way.
 
 What I really did do was develop the visualization,
 based on \href{https://github.com/tokenclouds/tokenclouds.github.io}{Thomas Wielfaert's original code},
 analyze the parameter settings in multiple ways,
 checking different combinations and exploring different avenues,
-and lead, check, study and compare manual annotation of 33 lemmas.
+and lead, check, study and compare manual annotation of 32 lemmas.
 
 That is what I'm going to write about.
+
+\hypertarget{acknowledgments}{%
+\chapter*{Acknowledgments}\label{acknowledgments}}
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+The words in this pages, the thoughts they try to convey, are the result of
+years of thinking, discussing, studying, learning. My voice weaves them together,
+but it draws from so many sources that have encouraged my growth, stood by me,
+fed my curiosity, passion and enthusiasm for everything that makes up this text.
+
+For their support and their ideas, I want to thank my supervisors Dirk Geeraerts,
+Dirk Speelman and Benedikt Szmrecsanyi. Each of them gave their own piece, building
+my confidence, encouraging me to keep exploring and learning. My main supervisor,
+Dirk Geeraerts, deserves a special acknowledgment for all the hours in deep
+discussion on the complex issue that is \emph{meaning}, and what all this is about after
+all. I appreciate his patience and his engagement. Every time we talked I left
+feeling more excited and passionate about the topic, more confident and happy.
+Hartelijk bedankt.
+
+I must also thank my colleagues from the Linguistics Department at KU Leuven,
+which at the different stages of my years here have been a lovely company and
+support system. In particular, I would like to thank the members of the
+Nephological Semantics project, with whom I shared so much of the excitement and
+frustrations of our common project.
+
+When I joined the project, I already brought with me my own history and connection
+to (cognitive) linguistics, corpora, statistics and programming. I honestly wouldn't
+be where I am today if it weren't for my parents, Miguel and Patricia. They have
+always supported and fostered my study and my interests, given me the tools to
+grow, to face new challenges. I know I can, because they believe it too.
 
 \hypertarget{part-visualization-tool}{%
 \part{Visualization tool}\label{part-visualization-tool}}
@@ -129,13 +156,22 @@ That is what I'm going to write about.
 In this part (which will have who knows how many chapters) I mean to describe
 the visualization tool. It was originally created by \href{https://github.com/tokenclouds/tokenclouds.github.io}{Thomas Wielfart},
 but around July 2019 I started to play around with the code and learn Javascript
-and \href{https://d3js.org}{D3}, culminating in the \href{https://github.com/montesmariana/NephoVis}{present version}.
+and \href{https://d3js.org}{D3}, culminating in the \href{https://github.com/qlvl/NephoVis}{present version} \autocite{montes.qlvl_2021}.
 
 This section will include the technical description of the workflow, as it pertains
 to the tool itself and to the processing work made before (the Python module, other
 Python and R functions), and a sort of manual of how it's used. It will be more or less
-redundant with the paper I wrote with Kris in December \citep{montes_heylen},
+redundant with the paper I wrote with Kris in December \autocite{montes.heylen_Submitted},
 more or less like vignettes for documentation (as of now, it is still not documented).
+
+The high level of automatization of vector space models makes it possible to analyze semantic patterns in huge amounts of corpus data. While this has the advantage of making semantic analyses more data-driven, this also implies a lower level of control for the linguist, who is confronted with advanced statistical output that is not straightforwardly interpretable in terms of the linguistic phenomena under investigation. In the case of vector space models, and especially an approach that combines multiple parameter settings to generate a multitude of models, the output is an array of distance matrices that ``somehow'' models different aspects of probabilistic semantic structure. To interpret and understand statistical modelling from a linguistic perspective, we turn to visual analytics.
+
+Visual analytics aims to integrate statistical data analysis with techniques from information visualization so that human analysts can recognize, interpret and reason about the statistical patterns that the data analysis reveals \autocite{card.etal_1999}. Importantly, a visual analytics approach offers a manipulable, interactive visualization that, unlike static diagrams, enables the exploration of a space of parameter values and modelling outputs.
+
+Lexical semantic research with vector space models would benefit from a tool that aids
+i) the visualization of distance matrices based on high-dimensional data,
+ii) the comparison of multiple models and
+iii) more detailed examination of the input to these models.
 
 \hypertarget{parameter-settings}{%
 \chapter{Parameter settings}\label{parameter-settings}}
@@ -182,7 +218,7 @@ one dependent on whether syntactic information was use, and one independent of i
 It goes without saying that the parameter space is virtually unlimited, and decisions
 had to be made regarding which particular settings would be explored. We tried to
 keep the parameter settings different enough from each other to have some variation.
-The decisions were based on a mix of literature \citep{kiela_systematic_2014},
+The decisions were based on a mix of literature \autocite{kiela.clark_2014},
 linguistic intuition and generalizations over the annotation of our very targets.
 As part of the annotation task, the annotators had to select the items in the
 immediate context that had helped them select the appropriate tag. In order to remove
@@ -377,12 +413,10 @@ be able to process and compare them, it is not feasible for a human to look at h
 and stay sane enough to make out anything from them. A more efficient --and easier on the human mind--
 way to approach this is, instead, to look at representative models.
 
-{[}Describe PAM?{]}
-
 This method requires us to choose a number of medoids beforehand, which is not an easy
 task. If we wanted the medoids to represent the best clustering solution, we could run
 the algorithm with different values of \(k\) and compare the results with measures such
-as silhouette width, as suggested by Levshina \citeyearpar{levshina_how_2015}. However, that is not
+as silhouette width, as suggested by \textcite{levshina_2015}. However, that is not
 necessarily our goal. We want to be able to see as much variation as possible, while keeping
 the number of different models manageable (i.e.~below 9). It is not particularly problematic
 if these models are redundant, as long as we can ensure that all the phenomena that we
@@ -390,7 +424,7 @@ are interested in are represented in them.
 
 For example, given a lemma with multiple senses, it might be the case that some models
 group the tokens of one sense, and others group the tokens of another: we would like to see
-representatives of both kinds. {[}add example{]}
+representatives of both kinds.
 
 There is no guarantee that the method with the best silhouette returns all the variation we
 are interested in --our goal is, rather, to limit the number of different models we need to
@@ -412,24 +446,294 @@ shared by the models in its cluster. The comparison needed with the random sampl
 fast and honest and is strongly recommended: if the medoids are representative, you can see it
 in an instant; if they are not, it just takes a bit longer to admit it. It is \emph{not} the same as actually studying and comparing 64 different models.
 
-{[}add an example of something not working, like hoekig medoid 3?{]}
+\hypertarget{from-corpora-to-clouds}{%
+\chapter{From corpora to clouds}\label{from-corpora-to-clouds}}
 
-\hypertarget{exploring-parameter-settings}{%
-\chapter{Exploring parameter settings}\label{exploring-parameter-settings}}
+The main goal of the distributional models discussed in this text is to explore semasiological structure
+from textual data. The starting point is a corpus, and one of the most tangible outputs is the visual representation
+as a cloud.
 
-In this chapter I would give a brief review of why some parameters where fixed to
-certain values and why we explored others along a certain range.
+In this chapter we will describe the path needed to take to generate clouds from the raw,
+seemingly indomitable ocean that is a corpus.
 
-This would include procrustes/euclidean, addition/average, the range for PPMI,
-the values set because Kiela + Clark\ldots{}
+First, we will describe token-level vector space models are created.
+Section \ref{vector-creation} will explain count-based models, but this is by no means the only viable path.
+Other techniques, such as BERT \autocite{BERT}, that can generate vectors for individual instances of a word,
+can be used for the first stage of this workflow.
+
+Once we have token-level vectors, we need to process them. For visualization purposes,
+we need to reduce the numerous dimensions of the vectors to a manageable number, such as 2.
+Section \ref{dim-reduction} will explore and compare a few alternatives.
+
+The same output that is put through dimensionality reduction for the visualization can also
+be submitted to other forms of analysis such as clustering algorithms, whose results may
+even be combined with the visualization. We will look into HDBSCAN in
+
+\hypertarget{vector-creation}{%
+\section{A cloud machine}\label{vector-creation}}
+
+At the core of vector space models, \emph{aka} distributional models, we find the Distributional Hypothesis, which is most often linked to Harris's observation that ``difference of meaning correlates with difference of distribution'' \autocite*[ 156]{harris_1954}. In other words, items that occur in similar contexts in a given corpus will be semantically similar, while those that occur in different contexts will be semantically different. Crucially, this does not imply that we can describe an individual item with their distributional properties, but that comparing the distribution of two items can tell us something about their semantic relationship \autocite[ 19]{sahlgren_2006}.
+
+Distributional models operationalize this idea by representing words as vectors (i.e.~arrays of numbers) coding frequency information. Typically, the raw frequency is transformed to some association strength measure, such as pointwise mutual information \autocite[PMI, see][]{church.hanks_1989}, which compares the frequency with which two words occur close to each other and the expected frequency if the words were independent. For example, Table \ref{tab:vec1} shows small vectors representing the English nouns \emph{linguistic}, \emph{lexicography}, \emph{research} and \emph{chocolate}, as well as the adjective \emph{computational}, as series of association strengths with a set of lemmas. Empty cells indicate that the word in the row and the word in the column never co-occur in the corpus (given a certain window span).
+
+\providecommand{\docline}[3]{\noalign{\global\setlength{\arrayrulewidth}{#1}}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+\caption{Example of type-level vectors.}\label{tab:vec1}\\
+
+\hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}target}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}language/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}word/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}flemish/j}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}english/j}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}speak/v}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-6}
+
+\endfirsthead
+
+\hhline{>{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}->{\arrayrulecolor[HTML]{666666}\global\arrayrulewidth=2pt}-}
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}target}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}language/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}word/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}flemish/j}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}english/j}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}speak/v}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-6}\endhead
+
+
+
+\multicolumn{6}{!{\color[HTML]{FFFFFF}\vrule width 0pt}>{\raggedright}p{\dimexpr 4.5in+10\tabcolsep+5\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}PMI values based on symmetric window of 10; frequency data from GloWbE.}}} \\
+
+\endfoot
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}linguistics/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}4.37}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.99}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}3.16}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.41}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}lexicography/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}3.51}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2.18}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2.19}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}2.09}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}computational/j}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.60}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.08}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.00}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.80}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}research/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.20}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.84}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}0.04}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.50}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.38}}} \\
+
+
+
+
+
+\multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}chocolate/n}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.72}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.53}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}1.28}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-0.73}}} & \multicolumn{1}{!{\color[HTML]{000000}\vrule width 0pt}>{\raggedleft}p{\dimexpr 0.75in+0\tabcolsep+0\arrayrulewidth}!{\color[HTML]{000000}\vrule width 0pt}}{\fontsize{11}{11}\selectfont{\textcolor[HTML]{000000}{\global\setmainfont{Arial}-1.13}}} \\
+
+\noalign{\global\setlength{\arrayrulewidth}{2pt}}\arrayrulecolor[HTML]{666666}\cline{1-6}
+
+\end{longtable}
+
+Each row is a vector coding the distributional information of the lemma it represents. As we can see in this example, words with similar vectors (e.g.~\emph{linguistics} and \emph{lexicography}) are semantically similar, while words with different vectors (e.g.~\emph{linguistics} and \emph{chocolate}) are semantically different.
+
+The vectors in Table \ref{tab:vec1} are type-level vectors: each of them aggregates over all the instances of a given word, e.g.~\emph{linguistics}, to build an overall profile. As a result, it collapses the internal variation of the lemma, i.e.~its semasiological structure. In order to uncover such information, we need to build vectors for the individual instances or tokens, relying on the same principle: items occurring in similar contexts will be semantically similar. For instance, we might want to model the three (artificial) occurrences of \emph{study} in (2) through (4), where the target item is in italics.
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Would you like to \emph{study} lexicography?
+\item
+  They \emph{study} this in computational linguistics as well.
+\item
+  I eat chocolate while I \emph{study}.
+\end{enumerate}
+
+Given that, at the aggregate level, a word can co-occur with thousands of different words, type-level vectors can include thousands of values. In contrast, token-level vectors can only have as many values as the individual window size comprises, which drastically reduces the chances of overlap between vectors. In fact, the three examples don't share any item other than the target. As a solution, inspired by \textcite{schutze_1998}, we replace the context words around the token with their respective type-level vectors \autocite{heylen.etal_2015,depascale_2019}.
+
+For example, we could represent example (2) with the vector for its context word \emph{lexicography}, that is, the second row in Table \ref{tab:vec1}; example (3) with the sum of the vectors for \emph{linguistics} (row 1) and \emph{computational} (row 3); and example (4) with the vector for \emph{chocolate} (row 5). This not only solves the sparsity issue, ensuring overlap between the vectors, but also allows us to find similarity between (2) and (3) based on the similarity between the vectors for \emph{lexicography} and \emph{linguistics}.
+
+From applying this method we obtain numerical representations of occurrences of a word. We can compare them to each other by calculating pairwise distances, which is at the base of clustering analyses and visualization techniques based on dimensionality reduction. However, in order to obtain this result we need to make a number of decisions involved, mostly, in defining the context that will be used to represent an item \autocite[Cf.][ 83]{bolognesi_2020}.
+
+\hypertarget{dim-reduction}{%
+\section{Dimensionality reduction}\label{dim-reduction}}
+
+Dimensionality reduction refers to algorithms that try to locate different items on a low-dimensional space (e.g.~2D) preserving their distances in the high-dimensional space (e.g.~5000D) as well as possible.
+The literature up to today tends to go for either multidimensional scaling (MDS) or t-stochastic neighbor embeddings (t-SNE),
+which may be run on R with the function \texttt{metaMDS()} of the \{vegan\} package \autocite{R-vegan}
+and \texttt{Rtsne()} of the homonymous package \autocite{R-Rtsne}, respectively.
+
+MDS is an ordination technique, like principal components analysis (PCA). It tries out different low-dimensional configurations and tries to maximize the correlation between the pairwise distances in the high-dimensional space and those in the low-dimensional space: items that are close together in one space should stay close together in the other, and items that are far apart in one space should stay far apart in the other.
+It can be evaluated via the stress level, the complement of the correlation coefficient: if the correlation between the pairwise distances is 0.85, the stress level is 0.15.
+Unlike PCA, however, the dimensions are not meaningful \emph{per se}; two different runs of MDS may result in plots that mirror each other while representing the same thing. Nonethelesss, the R implementation rotates the plot so that the horizontal axis represents the maximum variation.
+In cognitive linguistics literature both metric \autocite{hilpert.correiasaavedra_2017,hilpert.flach_2020,koptjevskaja-tamm.sahlgren_2014}
+and nonmetric MDS \autocite{heylen.etal_2015,heylen.etal_2012,depascale_2019,perek_2016} have been used.
+
+The second technique, t-SNE \autocite{Rtsne2008,Rtsne2014}, has also been incorporated in cognitive distributional semantics \autocite{depascale_2019,perek_2018}.
+The algorithm is quite different from MDS, but for our purposes the crucial point is that it prioritizes preserving local similarity structure instead of the global structure: items that are close together in the high-dimensional space should stay close together in the low-dimensional space, but those that are far apart in the high-dimensional space may be even farther apart in low-dimensional space. This leads to nice, tight clusters but the distance between them is less interpretable than in an MDS plot.
+T-SNE was the state-of-the-art visualization technique for word vectors in computational linguistics \autocite{smilkov.etal_2016} but is now generally being replaced by UMAP.
+
+In both cases we need to state the desired number of dimensions before running the algorithm --for visualization purposes, the most useful choice is 2. Three dimensions are difficult to interpret if projected on a 2D space, such as a screen \autocites[ 18]{card.etal_1999}[ 222]{wielfaert.etal_2019}. In addition, t-SNE requires setting a parameter called perplexity, which basically sets how many neighbors the preserved local structure should cover.
 
 \hypertarget{nephovis}{%
 \chapter{NephoVis}\label{nephovis}}
 
-In this chapter I will describe the visualization tool itself, as was done in the paper with Kris.
-It should include a brief introduction mentioning D3.js and Github Pages
-and describe the current features.
-I should leave the data format to the end because I expect I will change it.
+In this chapter we will learn how to use the visualization tool to explore
+and compare token-level vector space models.
+
+As of this moment, the tool can be found at a
+\href{https://qlvl.github.io/NephoVis}{Github Page}, that is,
+a \href{https://github.com/qlvl/NephoVis}{Github repository} that can be rendered
+as a static website \autocite{montes.qlvl_2021}.
+It obtains its data from a \href{https://github.com/qlvl/tokenclouds}{submodule};
+an interested user could clone the repository and just modify the path to the data.
+
+The code for the visualization is written in Javascript, making heavy use of the
+\href{https://d3.js}{D3.js} library, which was designed for beautiful web-based
+\textbf{d}ata-\textbf{d}riven visualization. While it is known of its steep learning curve,
+it can be useful to think of it in terms of R's vectorized approach: it links
+DOM elements to arrays and manipulates them based on the items' properties.
+
+The main rationale and framework for this visualization tool was developed by
+Thomas Wielfaert \autocite{wielfaert.etal_2019}; that code can be found
+\href{https://github.com/tokenclouds/tokenclouds.github.io/LeTok/}{here}.
+
+The current implementation would not exist without this foundational setup. However,
+a number of the available features were added later.
+
+The description of the tool will not immediately follow the expected workflow of an user.
+Instead, we will start with the lowest level, \protect\hyperlink{level_3}{Level 3},
+which represents individual token-level clouds,
+zoom out into \protect\hyperlink{level_2}{Level 2}, which shows multiple token-level clouds simultaneously,
+which will make the most abstract level, \protect\hyperlink{level_1}{Level 1}, more clear.
+Afterwards (Section \ref{workflow}) we will briefly simulate the path an user would take from Level 1 to Level 3.
+This perspective was also taken in \textcite{montes.heylen_Submitted}.
+Finally, Section \ref{wishlist} goes into the Beta features
+that require better development and testing, as well as ideas that we might want to
+implement in the future. In any case, it must be noted that from July 2019 to
+2021-04-30 the user and developer have been the same person, with occasional,
+valuable input from other members of the Nephological Semantics project. The
+project could certainly benefit from a wider input of suggestions.
+
+\hypertarget{level_3}{%
+\section{Level 3}\label{level_3}}
+
+Level 3 of the visualization tool shows a zoomable scatterplot in which each glyph represents a token, i.e.~an instance of the target lexical item. The name of the model, coding the parameter settings as described in
+, is indicated on the top. It is possible to map colors and shapes to categorical variables (such as sense labels) and sizes to numerical variables (such as number of available context words) and to select tokens with a given value by clicking on the corresponding legend key.
+
+\hypertarget{level_2}{%
+\section{Level 2}\label{level_2}}
+
+Level 2 of the visualization is \emph{not} a scatterplot matrix, although it looks like one and the code was inspired by Mike Bostock's example. Instead, it is just an array of small plots next to each other and wrap of easier readability.
+
+Each of them represents a different model and the same basic features from Level 3 are available: color, shape and size coding, selection by clicking and brushing, and finding the context by hovering over the tokens.
+
+Because they are model-dependent, highlighted context and searching tokens by context word are meaningless in this level, where multiple models are being shown simultaneously. The key contribution of this level, next to the superficial visual comparison of the shape of each plot, is the ability to select one or more tokens in a plot and highlighting them in the rest of the plots as well. Thanks to this functionality, the user can compare the relative position of a group of tokens in a model against that in a different model.
+
+\hypertarget{level_1}{%
+\section{Level 1}\label{level_1}}
+
+Level 1 shows one zoomable scatterplot, similar to Level 3, but with each glyph representing one model, instead of one token. As a reminder of the difference, the default shape in Level 1 is a wye (``Y''), while that in the other levels is a circle. The data represented by this scatterplot is not the distance between tokens anymore, but that between models, as described at the beginning of Section 3. This scatterplot aims to represent the similarity between models and allows the user to select the models to inspect according to different criteria. Categorical variables (e.g.~whether sentence boundaries are used) can be mapped to colors and shapes, as shown in Figure 5, and numerical variables (e.g.~number of tokens in the model) can be mapped to size. A selection of buttons on the left panel, as well as the legends for color and shape, can be used to filter models with a certain parameter setting. Otherwise, models can be selected by clicking on the glyphs that represent them.
+
+\hypertarget{workflow}{%
+\section{The full story}\label{workflow}}
+
+The increasing granularity from Level 1 to Level 3 and the manner of access to different functionalities respect the mantra ``Overview first, zoom and filter, then details-on-demand'' \autocite[ 97]{shneiderman_1996}.
+The individual plots in Levels 1 and 3 are literally zoomable; and in all cases it is possible to select items (either models, in Level 1, or tokens, in the other two), for more detailed inspection. Finally, a number of features show details on demand, such as the names of the models in Level 1 and the context of the tokens in the other two levels.
+
+In practice, the user will start with Level 1, the scatterplot of models, and can look for structure in the distribution of the parameters on the plot. For example, color coding may reveal that models with nouns, adjectives, verbs and adverbs as first-order context words are very different from those without strong filters for part-of-speech, while the use of sentence boundaries makes little difference. Depending on whether the user wants to compare models similar or different to each other, or which parameters they would like to keep fixed, they will use individual selection or the buttons to choose models for Level 2. In our case, we click on ``Select medoids'', which selects the 8 models returned by a partitioning algorithm, which offers a wide range of variation in a manageable number of plots.
+
+In Level 2 the user can already compare the shapes that the models take in their respective plots, the distribution of categories like sense labels, and the number of lost tokens. In addition, the ``distance matrix'' button offers a heatmap of the pairwise distances between the selected models. In the case of heffen, the restrictive collocational patterns it presents lead to crisp clusters in the visualization and consistent organization across models. However, models with less clearly defined structure may prove harder to understand. In both cases, the brushing and linking functionality highlights whether tokens that are grouped in one model are also grouped in a different model. From here, the user might switch back and forth between Level 2 and Level 3 for a more detailed inspection of the models.
+
+\hypertarget{examining-context-words}{%
+\subsection{Examining context words}\label{examining-context-words}}
+
+While it is possible to look at the individual context of each token by hovering over them, it loses track of the larger patterns we want to understand. That is the purpose of the frequency tables in levels 2 and 3.
+
+In any given model, tokens might be close together because they share a context word, and/or because their context words are (based on the second-order modelling) similar to each other. First-order parameters are, by definition, directly responsible for the selection of context words that will be used to model each token. Therefore, when inspecting a model, we might want to know which context word(s) pull certain tokens together, or why tokens that we expect to be together are far apart instead. In other words, if each model offers a different perspective on the distributional behavior of a token, we want to understand what informs said perspective.
+
+In Level 3, individual tokens and groups of them may be selected in different ways. Given such a selection, clicking on ``Frequency table'' will open a table with one row per context word, a column indicating in how many of the selected tokens it occurs, and more columns with pre-computed information (e.g.~PMI values).
+
+The following five columns include pre-computed frequency information, such as the raw co-occurrence frequency and PMI value between the context word and the target based on windows of 10 and 4, and raw frequency in the corpus.
+These values can be interesting if we would like to strengthen or weaken filters for a smarter selection of context words. This particular model uses dependency-based information as well as a PMI threshold of 0 to select context words.
+
+In Level 2, while comparing different models, the frequency table takes a different form. There is still one context word per row, but the number of tokens with which it co-occurs will depend on the model.
+The columns in this table are all computed by the visualization based on the lists of context words per token per model. Next to the column with the name of the context word, the default table shows one column called ``total'' and one per model, headed by the corresponding number. The columns for each model match the second column in their Level 3 frequency table: they indicate with how many of the selected tokens the context word co-occurs. The ``total'' column, in contrast, reveals the union of this selection: with how many of the selected tokens the context word co-occurs in at least one model.
+
+The default table counts how many of the selected tokens co-occur with each of the context words, but it does not use information from other tokens outside the selection, i.e.~the cue validity or association strength of the context words for the selected group. For that purpose, a dropdown button in the top left corner of the frequency table offers a small range of transformations, such as odds ratio, Fisher Exact, cue validity, etc. One such option shows the absolute frequencies within and outside the selection, where the green columns count the number of selected tokens that co-occur with each context word, and the white columns count the number of tokens outside of the selection co-occurring with those context words.
+
+\hypertarget{wishlist}{%
+\section{Wishlist}\label{wishlist}}
+
+\hypertarget{hdbscan}{%
+\chapter{HDBSCAN}\label{hdbscan}}
+
+The visual exploration is extremely useful for a thorough, qualitative description
+of the vector space models. However, such an application can also become an obstacle
+to a truly systematic, scientific description. I would avoid talking about objectivity:
+neither of us, individually, can truly be objective, and we should instead strive for a
+humble admission of our own partiality and a fruitful combination of all our partialities.
+
+When describing a cloud ---in particular these clouds that refuse to show clear images,
+perfect sense disambiguation, distinct clusters---, how can we ensure that what we
+see will be found by other researchers? How can we make our observations, if not
+inherently valid, at least reproducible?
+This is, after all, the goal we strive for when we embark on quantitative methods.
+
+One tool that can help us systematize our observations, such as the tightness or at least
+existEnce of distinct islands on a plot, is
+Hierarchical Density-Based Spatial Clustering of Applications (HDBSCAN) \autocite{campello.etal_2013}.
+This algorithm basically tries to distinguish dense areas separated by less dense areas\footnote{For a friendly description of how the algorithm works, the reader is directed to \textcite{mcinnes.etal_2016}; for an even friendlier explanation, find the authors on YouTube.}
+and allows for noisy data. In other words, unlike traditional hierarchical clustering,
+it will not try to cluster all of the points in the dataset, but instead may discard those
+that are too far from everything else. Moreover, in comparison to its non hierarchical counterpart,
+DBSCAN,
+it requires only one parameter to be set \emph{a priori}, namely \(minPts\).
+
+The \(minPts\) parameter indicates the minimum size of a dense group of points to be considered
+a cluster. An isolated dense group of points for which \(n < minPts\) will be considered noise.
+In the case studies described here we have fixed \(minPts\) to 8, which seems a reasonable
+size for the smallest clusters, but it would be interested to look more systematically into
+the effect of lowering this threshold. Rising the threshold, on the other hand, would
+increase the proportion of points that are considered noise, which is already very high.
+
+Like other clustering algorithms and the dimensionality reduction techniques,
+HDBSCAN can take a token-context matrix as input or a distance matrix. We have used
+the transformed distance matrix, that is, the same input fed into the t-SNE algorithm,
+for the \texttt{hdbscan()} function of the \{dbscan\} R package \autocite{R-dbscan}. The output includes,
+among other things, the cluster assignment, with noise points assigned to a cluster 0,
+and epsilon values, which can be used as an estimate of density.
+
+HDBSCAN estimates the density of {[}the area in which we find{]} a point \(a\) by calculating its
+core distance \(core_{k}(a)\), which is the distance to its \(k\) nearest neighbor, \(k\) being \(minPts - 1\).
+Then it recalculates the distance matrix by defining a new distance measure, called
+\emph{mutual reachability}, which is defined as the maximum between the distance between
+the items \(d(a, b)\) and each of their core distances.
+
+\[d_{mreach-k}(a,b) = max(core_{k}(a), core_{k}(b), d(a,b))\]
+
+Once the algorithm obtains these distances, it uses a single linkage method to create
+hierarchical clusters, then using again \(minPts\) and other calculations to merge them
+into the final selection. The \texttt{eps} (epsilon) values returned by \texttt{hdbscan()} indicate
+the height, in the single linkeage tree, at which each point was joined to a cluster,
+and can thus be used as a proxy for its ``density''.
+
+This is intuitively more clear if we map the clustering solution to colors and the
+\texttt{eps} value to transparency in a t-SNE plot with perplexity 30. For the most part,
+the results converge, which has two main upsides. In the first place, we have independent
+confirmation of the structure found by t-SNE, as a different algorithm processing
+the same input returns compatible output. Second, insofar the HDBSCAN output matches
+our visual assessment, it can systematize it and render it reproducible.
+
+This wonders notwithstanding, the compatibility between the HDBSCAN output and visual examination is not guaranteed. We might find interesting tokens that are discarded as noise, or structure within
+a single HDBSCAN cluster. However, it must be noted that this match (or lack thereof)
+has been assessed only between \texttt{dbscan::hdbscan()} with \(minPts = 8\) and
+\texttt{Rtsne::Rtsne()} with \(perplexity = 30\). It would be an interesting avenue for further research to experiment with other combinations, and of course UMAP output.
 
 \hypertarget{part-the-language-of-clouds}{%
 \part{The language of clouds}\label{part-the-language-of-clouds}}
@@ -502,6 +806,6 @@ extremely frequent senses can also be grouped separately, they don't necessarily
 absorb the minor senses/patterns, if their pattern is characteristic enough.
 \end{description}
 
-  \bibliography{book.bib,packages.bib}
+\printbibliography
 
 \end{document}

@@ -37,11 +37,12 @@
 <li class="book-part">Visualization tool</li>
 <li><a class="active" href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">1</span> An interface to the world of clouds</a></li>
 <li><a class="" href="parameter-settings.html"><span class="header-section-number">2</span> Parameter settings</a></li>
-<li><a class="" href="exploring-parameter-settings.html"><span class="header-section-number">3</span> Exploring parameter settings</a></li>
+<li><a class="" href="from-corpora-to-clouds.html"><span class="header-section-number">3</span> From corpora to clouds</a></li>
 <li><a class="" href="nephovis.html"><span class="header-section-number">4</span> NephoVis</a></li>
+<li><a class="" href="hdbscan.html"><span class="header-section-number">5</span> HDBSCAN</a></li>
 <li class="book-part">The language of clouds</li>
-<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">5</span> Nonsense or no senses?</a></li>
-<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">6</span> The nature of clouds</a></li>
+<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">6</span> Nonsense or no senses?</a></li>
+<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">7</span> The nature of clouds</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -57,12 +58,19 @@
 <p>In this part (which will have who knows how many chapters) I mean to describe
 the visualization tool. It was originally created by <a href="https://github.com/tokenclouds/tokenclouds.github.io">Thomas Wielfart</a>,
 but around July 2019 I started to play around with the code and learn Javascript
-and <a href="https://d3js.org">D3</a>, culminating in the <a href="https://github.com/montesmariana/NephoVis">present version</a>.</p>
+and <a href="https://d3js.org">D3</a>, culminating in the <a href="https://github.com/qlvl/NephoVis">present version</a> <span class="citation">(<a href="references.html#ref-montes.qlvl_2021" role="doc-biblioref">Montes and QLVL 2021</a>)</span>.</p>
 <p>This section will include the technical description of the workflow, as it pertains
 to the tool itself and to the processing work made before (the Python module, other
 Python and R functions), and a sort of manual of how it’s used. It will be more or less
-redundant with the paper I wrote with Kris in December <span class="citation">(<a href="references.html#ref-montes_heylen" role="doc-biblioref">Montes and Heylen Forthcoming</a>)</span>,
+redundant with the paper I wrote with Kris in December <span class="citation">(<a href="references.html#ref-montes.heylen_Submitted" role="doc-biblioref">Montes and Heylen, n.d.</a>)</span>,
 more or less like vignettes for documentation (as of now, it is still not documented).</p>
+<!-- From Montes & Heylen -->
+<p>The high level of automatization of vector space models makes it possible to analyze semantic patterns in huge amounts of corpus data. While this has the advantage of making semantic analyses more data-driven, this also implies a lower level of control for the linguist, who is confronted with advanced statistical output that is not straightforwardly interpretable in terms of the linguistic phenomena under investigation. In the case of vector space models, and especially an approach that combines multiple parameter settings to generate a multitude of models, the output is an array of distance matrices that “somehow” models different aspects of probabilistic semantic structure. To interpret and understand statistical modelling from a linguistic perspective, we turn to visual analytics.</p>
+<p>Visual analytics aims to integrate statistical data analysis with techniques from information visualization so that human analysts can recognize, interpret and reason about the statistical patterns that the data analysis reveals <span class="citation">(<a href="references.html#ref-card.etal_1999" role="doc-biblioref">Card, Mackinlay, and Shneiderman 1999</a>)</span>. Importantly, a visual analytics approach offers a manipulable, interactive visualization that, unlike static diagrams, enables the exploration of a space of parameter values and modelling outputs.</p>
+<p>Lexical semantic research with vector space models would benefit from a tool that aids
+i) the visualization of distance matrices based on high-dimensional data,
+ii) the comparison of multiple models and
+iii) more detailed examination of the input to these models.</p>
 
 </div>
   <div class="chapter-nav">
@@ -87,7 +95,7 @@ more or less like vignettes for documentation (as of now, it is still not docume
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-03-22.</p>
+    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-04-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
