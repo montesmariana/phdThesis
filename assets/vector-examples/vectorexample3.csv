@@ -1,0 +1,6 @@
+target,linguistics/n,lexicography/n,research/n,chocolate/n,computational/j
+linguistics/n,7.7384977,NA,2.1136959,NA,6.916062
+computational/j,6.916062,NA,2.424274,NA,7.02234
+research/n,2.1136959,NA,3.0652208,-0.4266268,2.424274
+chocolate/n,NA,NA,-0.4266268,5.785928,NA
+lexicography/n,NA,NA,NA,NA,NA

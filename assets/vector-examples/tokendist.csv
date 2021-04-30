@@ -1,0 +1,4 @@
+study1,study2,study3,token
+1,0.96,0,study<sub>1</sub>
+0.96,1,0,study<sub>2</sub>
+0,0,1,study<sub>3</sub>
