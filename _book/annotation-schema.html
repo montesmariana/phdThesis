@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Annotation schema | Cloudspotting: Visual analytics for distributional semantics</title>
+<meta name="author" content="Mariana Montes">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.5.1/jquery-3.5.1.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Cloudspotting: Visual analytics for distributional semantics</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="acknowledgments.html">Acknowledgments</a></li>
+<li class="book-part">Visualization tool</li>
+<li><a class="" href="an-interface-to-the-world-of-clouds.html"><span class="header-section-number">1</span> An interface to the world of clouds</a></li>
+<li><a class="" href="parameter-settings.html"><span class="header-section-number">2</span> Parameter settings</a></li>
+<li><a class="" href="from-corpora-to-clouds.html"><span class="header-section-number">3</span> From corpora to clouds</a></li>
+<li><a class="" href="nephovis.html"><span class="header-section-number">4</span> NephoVis</a></li>
+<li><a class="" href="hdbscan.html"><span class="header-section-number">5</span> HDBSCAN</a></li>
+<li><a class="active" href="annotation-schema.html"><span class="header-section-number">6</span> Annotation schema</a></li>
+<li class="book-part">The language of clouds</li>
+<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">7</span> Nonsense or no senses?</a></li>
+<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">8</span> The nature of clouds</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/montesmariana/phdThesis">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="annotation-schema" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Annotation schema<a class="anchor" aria-label="anchor" href="#annotation-schema"><i class="fas fa-link"></i></a>
+</h1>
+<!-- QUESTION Should we include all the definitions and translations and examples here or in an appendix? What about estimated and actual frequencies? -->
+<p>For these case studies, we selected 34 Dutch lemmas to annotate and model with token level vector spaces, two of which (<em>herkennen</em> and <em>spoor</em>) were discarded.
+The selection process will be presented in Section <a href="annotation-schema.html#selection">6.1</a>, with a description of the selected items and what we expect their annotation to look like (eventually, what we expect the clouds to look like as well). A short description of the corpus <span class="citation">(QLVLNewsCorpus, <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>)</span> will follow. The annotation procedure will be the focus of the <a href="annotation-schema.html#annotation">6.5</a>.
+Students (later called <em>annotators</em>) were recruited and hired to manually annotate samples of the selected lemmas, and while the administrative procedure itself is not of great interest to the project, a number of practical issues will be discussed: the distribution of tokens, the assignment of tasks (in particular, the graphic interface provided) and the processing/analysis of the data.</p>
+<div id="selection" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Selection of items<a class="anchor" aria-label="anchor" href="#selection"><i class="fas fa-link"></i></a>
+</h2>
+<p>For this case study 34 Dutch lexical items were selected. We aimed to cover a variety of polysemy phenomena, which will be addressed in the specific sections for each part of speech: section <a href="annotation-schema.html#nouns">6.1.1</a> for nouns, section <a href="annotation-schema.html#adjs">6.1.2</a> for adjectives, and section <a href="annotation-schema.html#verbs">6.1.3</a> for verbs.
+By modelling different parts of speech and different kinds of polysemy, we expect to develop more robust generalizations regarding the parameter settings that best model specific phenomena.</p>
+<p>The selection procedure mixed some introspection (thinking of words that could be interesting), looking up lexical resources (going through a tentative list of dictionary entries to figure out what kind of polysemy we could expect) and corpus data (surveying a sample of concordances for evidence of the expected polysemy). While dictionaries were an essential resource to sketch the sense labels the annotators would have to choose from, we also adjusted them to a more manageable granularity. The concordances were also crucial to estimate sense distribution and adjust the granularity of the definitions. We didn’t want an overwhelmingly frequent sense to affect the annotators judgement, and very infrequent senses might be hard to model or at least to visualise in the 2D representations. Still, we did allow for some complexity and subtlety in some cases.</p>
+<p>In a number of cases, the corpus survey (reading a concordance of 40-50 randomly selected instances) invalidated options that intuitively or according to the dictionary definitions would have conformed to our requirements. When judging such a discrepancy, it is important to take into account the composition of the corpus. The topics addressed in newspapers and the terms used to talk about them are not representative of everyday life or the entirety of language. Only as long as we keep these limitations in mind, can we draw valid conclusions from our data.</p>
+<p>We also had cases of adjectives that could be used in adverbial form and weren’t always properly tagged for part-of-speech, so we had to discard them. We made a difference between cases such as <em>hoopvol</em> ‘hopeful,’ which often occurs in predicative contexts with a verb that is not copula (e.g. <em>ik ben hoopvol gestemd</em> ‘it makes me hopeful,’ <em>hij kijkt hoopvol omhoog</em> ‘he looks up hopeful(ly)’) but still predicates over an entity, and cases such as <em>gemiddeld</em> ‘average,’ which could either predicate over an entity, as in <em>gemiddelde student</em> ‘average student,’ or a predicate, as in <em>zij eet gemiddeld 3 koekjes elke dag</em> ‘she eats in average 3 cookies per day.’ Sometimes the incorrectly tagged cases (adverbs tagged as adjectives) were infrequent enough to be dismissed, but in some other cases they were so many we had to discard the lemma as candidate. While the only direct consequence is that a certain potentially interesting lemma couldn’t be investigated, this also should be taken into account when relying on the part-of-speech tagger in other steps of the workflow.</p>
+<p>The next subsection describes the selected nouns, adjectives and verbs, the QLVLNewsCorpus and the sampling method. For each selected item I will give an approximate equivalent in English and the definitions and examples as were provided to the annotators. A hypothesis of what the annotations for those items would look like will also be provided.</p>
+<!-- TODO use flextable -->
+<div id="nouns" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> The nouns<a class="anchor" aria-label="anchor" href="#nouns"><i class="fas fa-link"></i></a>
+</h3>
+<p>The 8 nouns all exhibit homonymy and polysemy in at least one of the homonyms.</p>
+<ul>
+<li><p>Three nouns have one polysemous homonym and one non polysemous (<em>hoop</em> ‘hope/bunch,’ <em>spot</em> ‘ridicule/show or spotlight’ and <em>horde</em> ‘horde/hurdle’);</p></li>
+<li><p>four nouns have two polysemous homonyms (<em>schaal</em> ‘scale/dish or shell,’ <em>blik</em> ‘look/tin,’ <em>stof</em> ‘substance or fabric or topic/dust,’ <em>staal</em> ‘steal/sample’);</p></li>
+<li><p>one noun has three homonyms, of which two polysemous: <em>spoor</em> ‘footprint or trace/train(line, rail, company)/spur.’ This noun was later discarded because it proved too complicated, but the data is available for reanalysis.</p></li>
+</ul>
+<p>For each group, the definitions, examples and expected relative frequency will be shown.</p>
+<div id="one-polysemous-homonym" class="section level4" number="6.1.1.1">
+<h4>
+<span class="header-section-number">6.1.1.1</span> One polysemous homonym<a class="anchor" aria-label="anchor" href="#one-polysemous-homonym"><i class="fas fa-link"></i></a>
+</h4>
+<p>The nouns in Table <a href="annotation-schema.html#tab:nouns-1">6.1</a> have one frequent homonym and another one equally or less frequent and polysemic (so the sense distribution is probably very skewed). The polysemy phenomena represented by the polysemic homonym are different: metaphor for <em>horde</em>, metaphor/generalization for <em>hoop</em> and metonymy for <em>spot</em>, where one of those senses (‘spotlight’) can be used literally or metaphorically (and annotators might either merge them or assign <em>geen</em> to the figurative uses).</p>
+<template id="fb0cbd2e-5b2b-466d-a648-7ec12d4aad7d"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f1e9a062{border-collapse:collapse;}.cl-f1da92ca{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f1da92cb{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f1da92cc{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1da92cd{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f1da92ce{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f1e9a062">
+<caption class="Table Caption">
+<span id="tab:nouns-1">Table 6.1: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f1da92ce"><p class="cl-f1da92cb"><span class="cl-f1da92ca">lemma</span></p></td>
+<td class="cl-f1da92ce"><p class="cl-f1da92cb"><span class="cl-f1da92ca">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f1da92cc"><p class="cl-f1da92cb"><span class="cl-f1da92ca">hoop</span></p></td>
+<td class="cl-f1da92cc"><p class="cl-f1da92cb"><span class="cl-f1da92ca">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f1da92cc"><p class="cl-f1da92cb"><span class="cl-f1da92ca">spot</span></p></td>
+<td class="cl-f1da92cc"><p class="cl-f1da92cb"><span class="cl-f1da92ca">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f1da92cd"><p class="cl-f1da92cb"><span class="cl-f1da92ca">horde</span></p></td>
+<td class="cl-f1da92cd"><p class="cl-f1da92cb"><span class="cl-f1da92ca">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="57a3e5d7-fbe3-4a44-a352-ea54bedb6f5f"></div>
+<script>
+var dest = document.getElementById("57a3e5d7-fbe3-4a44-a352-ea54bedb6f5f");
+var template = document.getElementById("fb0cbd2e-5b2b-466d-a648-7ec12d4aad7d");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="two-polysemous-homonyms" class="section level4" number="6.1.1.2">
+<h4>
+<span class="header-section-number">6.1.1.2</span> Two polysemous homonyms<a class="anchor" aria-label="anchor" href="#two-polysemous-homonyms"><i class="fas fa-link"></i></a>
+</h4>
+<p>The homonyms in Table <a href="annotation-schema.html#tab:nouns-2">6.2</a> also present a variety of polysemy phenomena. For <em>blik</em>, the frequent homonym (‘look’) has a concrete sense with a metonymic and a metaphoric extension, while the infrequent one can refer to a material (‘tin’), an object made of that material or its content: the distinction is quite clear but might depend on the specificity of the context and be very infrequent. Similarly, <em>stof</em> presents one frequent homonym with two concrete, referentially distinct senses and an abstract one, and another with a subtle, context-specificity dependent difference. <em>schaal</em> exhibits subtle perspective shifts in one homonym (‘scale’) and refers to different concrete objects with the second (‘shell,’ ‘dish,’ ‘scale dish’). Finally, <em>staal</em> ‘steal’ could refer, like <em>blik</em>, to either the material or an object made of it, while the ‘sample’ homonym is sensitive to construal (focus on the use as evidence, when it’s the case): it’s likely to present high confusion and/or a very skewed distribution in both homonyms separately.</p>
+<template id="34752d9e-4036-4589-8e2e-859a2285ff66"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f22097c0{border-collapse:collapse;}.cl-f211431a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f211431b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f211431c{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f211431d{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f211431e{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f22097c0">
+<caption class="Table Caption">
+<span id="tab:nouns-2">Table 6.2: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f211431e"><p class="cl-f211431b"><span class="cl-f211431a">lemma</span></p></td>
+<td class="cl-f211431e"><p class="cl-f211431b"><span class="cl-f211431a">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f211431c"><p class="cl-f211431b"><span class="cl-f211431a">schaal</span></p></td>
+<td class="cl-f211431c"><p class="cl-f211431b"><span class="cl-f211431a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f211431c"><p class="cl-f211431b"><span class="cl-f211431a">blik</span></p></td>
+<td class="cl-f211431c"><p class="cl-f211431b"><span class="cl-f211431a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f211431c"><p class="cl-f211431b"><span class="cl-f211431a">staal</span></p></td>
+<td class="cl-f211431c"><p class="cl-f211431b"><span class="cl-f211431a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f211431d"><p class="cl-f211431b"><span class="cl-f211431a">stof</span></p></td>
+<td class="cl-f211431d"><p class="cl-f211431b"><span class="cl-f211431a">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="1e5bc021-b98a-42fd-8902-eb66fe4697e2"></div>
+<script>
+var dest = document.getElementById("1e5bc021-b98a-42fd-8902-eb66fe4697e2");
+var template = document.getElementById("34752d9e-4036-4589-8e2e-859a2285ff66");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script><!-- #### Three homonyms --><!-- The last noun, *spoor* (Table \@ref(tab:spoor)), exists to spice up the task. It presents at least three distinct homonyms (the one meaning 'spore' was not deemed frequent enough to show up in the definitions). One, in the realm of 'footprint, trace', is presented with four senses: a concrete (foot)print, a generalized application referring to general evidence of someone's (past) presence, one metaphorical and one more specific where the entity to be identified (a substance) is indeed present but in small quantities. The second homonym, relating to trains, could refer to either the vehicle itself, the railroad or the company, and the distinction will depend on the clarity of the context. Finally, the homonym relating to spurs occurs mostly in an idiom; the figurative sense is not explicit in the definition, but the example *is* the idiom, so it should be easy enough to identify. -->
+</div>
+</div>
+<div id="adjs" class="section level3" number="6.1.2">
+<h3>
+<span class="header-section-number">6.1.2</span> The adjectives<a class="anchor" aria-label="anchor" href="#adjs"><i class="fas fa-link"></i></a>
+</h3>
+<p>The selection of adjectives includes 13 lemmas presenting different kinds of polysemy phenomena:</p>
+<ul>
+<li><p>three have a metonymic reading (<em>hoopvol</em> ‘hopeful,’ <em>geestig</em> ‘witty’ and <em>hachelijk</em> ‘dangerous/critical’);</p></li>
+<li><p>four have metaphoric readings (<em>hoekig</em> ‘angulous/clumsy,’ <em>dof</em> ‘dull,’ <em>heilzaam</em> ‘healthy/beneficial’ and <em>gekleurd</em> ‘colorful, POC, tainted’);</p></li>
+<li><p>three present some other form of similarity between the readings (<em>geldig</em> ‘valid,’ <em>hemels</em> ‘heavenly’ and <em>gemeen</em> ‘shared/public/mean/serious’);</p></li>
+<li><p>three are more complex (<em>heet</em> ‘hot’ for different entities and metaphorically, <em>grijs</em> ‘gray,’ with metaphorical and metonymical extensions and <em>goedkoop</em> ‘cheap,’ with different entities and metaphorically).</p></li>
+</ul>
+<p>For each group, the definitions and examples provided to the annotators will be shown with their estimated relative frequency and some considerations will be made regarding what we expect from the annotators.</p>
+<div id="metonymic-cases" class="section level4" number="6.1.2.1">
+<h4>
+<span class="header-section-number">6.1.2.1</span> Metonymic cases<a class="anchor" aria-label="anchor" href="#metonymic-cases"><i class="fas fa-link"></i></a>
+</h4>
+<p>As illustrated in Table <a href="annotation-schema.html#tab:meton-adj">6.3</a>, for each of these three adjectives two senses were offered as options. For <em>geestig</em> and <em>hoopvol</em>, one of the senses is anthropocentric (it’s mainly or exclusively applied to people), although such distinction is not made explicit in the definitions of <em>geestig</em> (only suggested in the example). The expected frequency of the anthropomorphic sense is in both cases much higher than the other one. In <em>hachelijk</em>’s case, the difference is a matter of temporal or telic perspective, so probably harder to distinguish, and it’s probably more likely that annotators suggest the second sense as an alternative to the first one (assigning the ‘critical’ interpretation to something potentially dangerous) than the other way around.</p>
+<template id="c4bc014b-f8bc-4fab-bc79-99947f0bc740"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f24a2dec{border-collapse:collapse;}.cl-f23b58f8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f23b58f9{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f23b58fa{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f23b58fb{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f23b58fc{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f24a2dec">
+<caption class="Table Caption">
+<span id="tab:meton-adj">Table 6.3: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f23b58fc"><p class="cl-f23b58f9"><span class="cl-f23b58f8">lemma</span></p></td>
+<td class="cl-f23b58fc"><p class="cl-f23b58f9"><span class="cl-f23b58f8">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f23b58fa"><p class="cl-f23b58f9"><span class="cl-f23b58f8">hoopvol</span></p></td>
+<td class="cl-f23b58fa"><p class="cl-f23b58f9"><span class="cl-f23b58f8">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f23b58fa"><p class="cl-f23b58f9"><span class="cl-f23b58f8">geestig</span></p></td>
+<td class="cl-f23b58fa"><p class="cl-f23b58f9"><span class="cl-f23b58f8">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f23b58fb"><p class="cl-f23b58f9"><span class="cl-f23b58f8">hachelijk</span></p></td>
+<td class="cl-f23b58fb"><p class="cl-f23b58f9"><span class="cl-f23b58f8">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="4e177607-1ec3-4f86-a9a4-f7426f6cfb70"></div>
+<script>
+var dest = document.getElementById("4e177607-1ec3-4f86-a9a4-f7426f6cfb70");
+var template = document.getElementById("c4bc014b-f8bc-4fab-bc79-99947f0bc740");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="metaphoric-cases" class="section level4" number="6.1.2.2">
+<h4>
+<span class="header-section-number">6.1.2.2</span> Metaphoric cases<a class="anchor" aria-label="anchor" href="#metaphoric-cases"><i class="fas fa-link"></i></a>
+</h4>
+<p>The adjectives with metaphoric extensions, presented in Table <a href="annotation-schema.html#tab:metaf-adj">6.4</a>, have different numbers of senses. <em>heilzaam</em> has two distinctions, between metaphoric and specialization: one refers to something specifically/literally healthy, and the other one is broader and less concrete. <em>hoekig</em> and <em>gekleurd</em> present three sense distinctions, one of which is particularly concrete and the most frequent and another one explicitly anthropocentric. The third sense distinction has a different quality: rather synesthetic for <em>hoekig</em> and in an abstract, very much metaphoric for <em>gekleurd</em>. Finally, <em>dof</em> has all four kinds of senses: concrete, synesthetic, anthropocentric and abstract.</p>
+<template id="91a7a6ef-3551-4d1e-ab74-2d8518489d21"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f2720362{border-collapse:collapse;}.cl-f261fe2c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f261fe2d{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f2629a58{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f2629a59{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f2629a5a{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f2720362">
+<caption class="Table Caption">
+<span id="tab:metaf-adj">Table 6.4: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f2629a5a"><p class="cl-f261fe2d"><span class="cl-f261fe2c">lemma</span></p></td>
+<td class="cl-f2629a5a"><p class="cl-f261fe2d"><span class="cl-f261fe2c">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f2629a58"><p class="cl-f261fe2d"><span class="cl-f261fe2c">heilzaam</span></p></td>
+<td class="cl-f2629a58"><p class="cl-f261fe2d"><span class="cl-f261fe2c">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f2629a58"><p class="cl-f261fe2d"><span class="cl-f261fe2c">gekleurd</span></p></td>
+<td class="cl-f2629a58"><p class="cl-f261fe2d"><span class="cl-f261fe2c">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f2629a58"><p class="cl-f261fe2d"><span class="cl-f261fe2c">hoekig</span></p></td>
+<td class="cl-f2629a58"><p class="cl-f261fe2d"><span class="cl-f261fe2c">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f2629a59"><p class="cl-f261fe2d"><span class="cl-f261fe2c">dof</span></p></td>
+<td class="cl-f2629a59"><p class="cl-f261fe2d"><span class="cl-f261fe2c">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="56984f47-686c-47dd-993b-1be77d57c8e1"></div>
+<script>
+var dest = document.getElementById("56984f47-686c-47dd-993b-1be77d57c8e1");
+var template = document.getElementById("91a7a6ef-3551-4d1e-ab74-2d8518489d21");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="similarity" class="section level4" number="6.1.2.3">
+<h4>
+<span class="header-section-number">6.1.2.3</span> Similarity<a class="anchor" aria-label="anchor" href="#similarity"><i class="fas fa-link"></i></a>
+</h4>
+<p>The group of adjectives in Table <a href="annotation-schema.html#tab:simil-adj">6.5</a> present sense distinctions that could be roughly summarized under the title of ‘similarity,’ and are between generalization and shift of focus. <em>geldig</em> and <em>hemels</em> offer two options, one restricted to a specific context and one much broader. The relation between the relative frequencies of those senses are inverted (the specific sense of <em>geldig</em> is less frequent than the general one, while in <em>hemels</em> it’s the other way around). We would expect that the specific sense would not be offered as alternative to the general sense as much as the other way around.</p>
+<p>The case of <em>gemeen</em> is quite complex, involving a number of rather subtle distinctions. The limits between the first and the second one and between the third and the fifth are hard to establish; the fourth sense seems more clear but if the context isn’t specific enough it could be easily confused with the fifth. In addition, the senses are not always mutually exclusive, and a certain instance could very well conflate or be ambiguous between two senses.</p>
+<template id="f1cae98b-181e-43a9-b9c3-e06eb68806ab"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f29e2cee{border-collapse:collapse;}.cl-f28d5504{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f28d5505{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f28df392{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f28df393{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f28df394{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f29e2cee">
+<caption class="Table Caption">
+<span id="tab:simil-adj">Table 6.5: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f28df394"><p class="cl-f28d5505"><span class="cl-f28d5504">lemma</span></p></td>
+<td class="cl-f28df394"><p class="cl-f28d5505"><span class="cl-f28d5504">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f28df392"><p class="cl-f28d5505"><span class="cl-f28d5504">geldig</span></p></td>
+<td class="cl-f28df392"><p class="cl-f28d5505"><span class="cl-f28d5504">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f28df392"><p class="cl-f28d5505"><span class="cl-f28d5504">hemels</span></p></td>
+<td class="cl-f28df392"><p class="cl-f28d5505"><span class="cl-f28d5504">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f28df393"><p class="cl-f28d5505"><span class="cl-f28d5504">gemeen</span></p></td>
+<td class="cl-f28df393"><p class="cl-f28d5505"><span class="cl-f28d5504">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="62050608-83b0-4e74-81ae-52b5727eabbb"></div>
+<script>
+var dest = document.getElementById("62050608-83b0-4e74-81ae-52b5727eabbb");
+var template = document.getElementById("f1cae98b-181e-43a9-b9c3-e06eb68806ab");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="complex-cases" class="section level4" number="6.1.2.4">
+<h4>
+<span class="header-section-number">6.1.2.4</span> Complex cases<a class="anchor" aria-label="anchor" href="#complex-cases"><i class="fas fa-link"></i></a>
+</h4>
+<p>The last group of adjectives, listed in Tables <a href="annotation-schema.html#tab:heet">6.6</a>, <a href="annotation-schema.html#tab:grijs">6.7</a> and <a href="annotation-schema.html#tab:goedkoop">6.8</a>, have a large number of possible senses with more than one polysemy phenomenon, so they could be treated separately.</p>
+<p><em>heet</em> presents three very concrete senses that differ in perspective (temperatures of different kinds of things). The second half is metaphorical, of which one synesthetic, one anthropocentric and very specific, and one more abstract and also quite specific. Furthermore, there is no exclusive sense tag for idiomatic expressions, which are quite frequent; they are expected to be tagged with the concrete senses (and maybe a comment on their figurative interpretation), but annotators might also use the <em>geen</em> tag for those cases.</p>
+<template id="beced897-f584-445d-8afa-2b6818756d56"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f2c818d8{border-collapse:collapse;}.cl-f2b93fde{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f2b98e76{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f2b9e934{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f2b9e935{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f2c818d8">
+<caption class="Table Caption">
+<span id="tab:heet">Table 6.6: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f2b9e935"><p class="cl-f2b98e76"><span class="cl-f2b93fde">lemma</span></p></td>
+<td class="cl-f2b9e935"><p class="cl-f2b98e76"><span class="cl-f2b93fde">text</span></p></td>
+</tr></thead>
+<tbody><tr style="overflow-wrap:break-word;">
+<td class="cl-f2b9e934"><p class="cl-f2b98e76"><span class="cl-f2b93fde">heet</span></p></td>
+<td class="cl-f2b9e934"><p class="cl-f2b98e76"><span class="cl-f2b93fde">Coming soon</span></p></td>
+</tr></tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="93c4e960-5a9e-4da2-8859-969078277bbb"></div>
+<script>
+var dest = document.getElementById("93c4e960-5a9e-4da2-8859-969078277bbb");
+var template = document.getElementById("beced897-f584-445d-8afa-2b6818756d56");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script><p><em>grijs</em> presents a very frequent, concrete sense, two specific metonymic extensions, one anthropocentric sense, one rather abstract and another very specific metaphor.</p>
+<template id="afde2c95-c737-4542-9379-14e468eb7742"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f2ef8594{border-collapse:collapse;}.cl-f2e0117c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f2e042f0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f2e090d4{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f2e090d5{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f2ef8594">
+<caption class="Table Caption">
+<span id="tab:grijs">Table 6.7: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f2e090d5"><p class="cl-f2e042f0"><span class="cl-f2e0117c">lemma</span></p></td>
+<td class="cl-f2e090d5"><p class="cl-f2e042f0"><span class="cl-f2e0117c">text</span></p></td>
+</tr></thead>
+<tbody><tr style="overflow-wrap:break-word;">
+<td class="cl-f2e090d4"><p class="cl-f2e042f0"><span class="cl-f2e0117c">grijs</span></p></td>
+<td class="cl-f2e090d4"><p class="cl-f2e042f0"><span class="cl-f2e0117c">Coming soon</span></p></td>
+</tr></tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="6b3200e3-28b4-48b7-bd34-651af61e8184"></div>
+<script>
+var dest = document.getElementById("6b3200e3-28b4-48b7-bd34-651af61e8184");
+var template = document.getElementById("afde2c95-c737-4542-9379-14e468eb7742");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script><p><em>goedkoop</em>, on the other hand, presents “only” 4 sense distinctions: a concrete, prototypical and frequent sense, two perspectival shifts and a clear metaphor.</p>
+<template id="fdb86b21-98b3-4916-89a6-1371b735dcb6"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f32212d4{border-collapse:collapse;}.cl-f311ab6a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f311ab6b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f3127234{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f3127235{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f32212d4">
+<caption class="Table Caption">
+<span id="tab:goedkoop">Table 6.8: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f3127235"><p class="cl-f311ab6b"><span class="cl-f311ab6a">lemma</span></p></td>
+<td class="cl-f3127235"><p class="cl-f311ab6b"><span class="cl-f311ab6a">text</span></p></td>
+</tr></thead>
+<tbody><tr style="overflow-wrap:break-word;">
+<td class="cl-f3127234"><p class="cl-f311ab6b"><span class="cl-f311ab6a">goedkoop</span></p></td>
+<td class="cl-f3127234"><p class="cl-f311ab6b"><span class="cl-f311ab6a">Coming soon</span></p></td>
+</tr></tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="d97d70a7-9d1e-4b0b-b6a0-21bcefdd1658"></div>
+<script>
+var dest = document.getElementById("d97d70a7-9d1e-4b0b-b6a0-21bcefdd1658");
+var template = document.getElementById("fdb86b21-98b3-4916-89a6-1371b735dcb6");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+</div>
+<div id="verbs" class="section level3" number="6.1.3">
+<h3>
+<span class="header-section-number">6.1.3</span> The verbs<a class="anchor" aria-label="anchor" href="#verbs"><i class="fas fa-link"></i></a>
+</h3>
+<p>For the verbs, we selected a range of combinations of syntactic and semantic variation:</p>
+<ul>
+<li><p>Transitive verbs where the sense distinction is related to the objects it can take (<em>haten</em> ‘hate,’ <em>huldigen</em> ‘honor/hold (attitudes, opinions, stances),’ <em>heffen</em> ‘raise,’ <em>herroepen</em> ‘annul (a law)/retract (statement)’);</p></li>
+<li><p>Verbs that could be transitive, with a distinction based on the object, or intranstive (<em>helpen</em> ‘help,’ <em>herstructureren</em> ‘restructure’);</p></li>
+<li><p>Verbs that could be transitive, with a distinction based on the object, or reflexive (<em>diskwalificeren</em> ‘disqualify,’ <em>herhalen</em> ‘repeat,’ <em>herinneren</em> ‘remember/remind,’ <em>herkennen</em> ‘recognize’);</p></li>
+<li><p>Verbs that could be transitive, intransitive or reflexive, with semantic distinctions within the transtive structure (<em>harden</em> ‘make/become hard, tolerate,’ <em>herstellen</em> ‘heal/repair’);</p></li>
+<li><p>A verb with semantic distinctions within both the transitive and the intransitive structures (but also other problems): <em>haken</em> ‘hook’ (literally or metaphorically), ‘crochet,’ ‘make someone trip’ (when the object is a person or <em>pootje</em> ‘leg’), ‘get stuck’ in the intransitive form as <em>blijven haken</em> (literally or metaphorically).</p></li>
+</ul>
+<p>For each of the groups, the definitions, examples and relative frequencies of the senses will be summarized in tables.</p>
+<div id="only-transitive" class="section level4" number="6.1.3.1">
+<h4>
+<span class="header-section-number">6.1.3.1</span> Only transitive<a class="anchor" aria-label="anchor" href="#only-transitive"><i class="fas fa-link"></i></a>
+</h4>
+<p>The verbs in the first group (Table <a href="annotation-schema.html#tab:tr-verbs">6.9</a>) are always transitive and their different senses correlate with the possible direct objects they could take. <em>haten</em> and <em>heffen</em> are probably more easy to distinguish, the former having an anthropocentric distinction (basically, hating people against disliking things, but with possible gray areas in between, depending on how that object is construed) and the latter presenting a rather clear and common metaphor, between physical objects and abstract entities such as taxes being raised. <em>huldigen</em> and <em>herroepen</em> instead have slightly more subtle differences, but the former (between honoring someone/something and holding and opinion) is probably stronger and easier to distinguish than the latter, between retracting a statement or annuling a decree (which again could be interpreted differently depending on how the entity is construed, how prototypical it is).</p>
+<template id="4302d355-507e-441c-8e8a-102582ada767"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f35165d4{border-collapse:collapse;}.cl-f342ca1a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f3430b1a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f34333a6{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f34333a7{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f34333a8{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f35165d4">
+<caption class="Table Caption">
+<span id="tab:tr-verbs">Table 6.9: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f34333a8"><p class="cl-f3430b1a"><span class="cl-f342ca1a">lemma</span></p></td>
+<td class="cl-f34333a8"><p class="cl-f3430b1a"><span class="cl-f342ca1a">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f34333a6"><p class="cl-f3430b1a"><span class="cl-f342ca1a">haten</span></p></td>
+<td class="cl-f34333a6"><p class="cl-f3430b1a"><span class="cl-f342ca1a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f34333a6"><p class="cl-f3430b1a"><span class="cl-f342ca1a">huldigen</span></p></td>
+<td class="cl-f34333a6"><p class="cl-f3430b1a"><span class="cl-f342ca1a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f34333a6"><p class="cl-f3430b1a"><span class="cl-f342ca1a">heffen</span></p></td>
+<td class="cl-f34333a6"><p class="cl-f3430b1a"><span class="cl-f342ca1a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f34333a7"><p class="cl-f3430b1a"><span class="cl-f342ca1a">herroepen</span></p></td>
+<td class="cl-f34333a7"><p class="cl-f3430b1a"><span class="cl-f342ca1a">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="07d72efa-8b35-4beb-bc1f-c75e5a3c1d13"></div>
+<script>
+var dest = document.getElementById("07d72efa-8b35-4beb-bc1f-c75e5a3c1d13");
+var template = document.getElementById("4302d355-507e-441c-8e8a-102582ada767");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="transitive-and-intransitive" class="section level4" number="6.1.3.2">
+<h4>
+<span class="header-section-number">6.1.3.2</span> Transitive and intransitive<a class="anchor" aria-label="anchor" href="#transitive-and-intransitive"><i class="fas fa-link"></i></a>
+</h4>
+<p>The verbs that alternate between transitive and intransitive constructions (Table <a href="annotation-schema.html#tab:tr2a-verbs">6.10</a>) are quite subtle and might present a lot of confusion, particularly because the intransitive cases are very similar to one of the transitive cases, and it might seem that the object is just ellided. For <em>herstructureren</em>, one transitive sense and the intransitive one (exemplified with a reflexive…) are more specific, regarding companies and with the connotation that the personnel is being reduced, while the other transitive sense is broader and might be selected in contexts with less specificity. It might also depend on world knowledge (whether the annotators know or can guess that a certain object -or the subject in the intransitive construction- is a company) and how prominent the implication of personnel reduction is. For <em>helpen</em>, the distinction between the transitive uses is rather subtle (the “collaboration” sense is exclusive of animate subjects, but that’s not explicit in the definitions), so there might be some disagreement in their annotation, but if the intransitive sense is confused with the transitive ones, it should only be with the first one.</p>
+<template id="c1c2be6d-aecf-406d-a160-8756378bde9d"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f38bbf04{border-collapse:collapse;}.cl-f379392e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f379392f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f3793930{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f3793931{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f3793932{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f38bbf04">
+<caption class="Table Caption">
+<span id="tab:tr2a-verbs">Table 6.10: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f3793932"><p class="cl-f379392f"><span class="cl-f379392e">lemma</span></p></td>
+<td class="cl-f3793932"><p class="cl-f379392f"><span class="cl-f379392e">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f3793930"><p class="cl-f379392f"><span class="cl-f379392e">helpen</span></p></td>
+<td class="cl-f3793930"><p class="cl-f379392f"><span class="cl-f379392e">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f3793931"><p class="cl-f379392f"><span class="cl-f379392e">herstructureren</span></p></td>
+<td class="cl-f3793931"><p class="cl-f379392f"><span class="cl-f379392e">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="134353f7-4d68-4309-a5c1-593aef143b4d"></div>
+<script>
+var dest = document.getElementById("134353f7-4d68-4309-a5c1-593aef143b4d");
+var template = document.getElementById("c1c2be6d-aecf-406d-a160-8756378bde9d");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="transitive-and-reflexive" class="section level4" number="6.1.3.3">
+<h4>
+<span class="header-section-number">6.1.3.3</span> Transitive and reflexive<a class="anchor" aria-label="anchor" href="#transitive-and-reflexive"><i class="fas fa-link"></i></a>
+</h4>
+<p>It could be argued that the distinction between the argument structures in the previous group (transitive versus intransitive) is more clear than that in this group (between transitive and reflexive), since the reflexive pronoun <em>could</em> in some contexts be interpreted as a direct object. However, the intransitive senses in the previous group could also be understood as transitive cases with the object outside of context (true?), while the reflexive argument structure here (Table <a href="annotation-schema.html#tab:tr2b-verbs">6.11</a>) is more strongly distinguishable from the transitive one. It might be tricky with <em>diskwalificeren</em>, where the reflexive argument structure pretty much replicates the transitive senses, in a particular case where someone disqualifies themselves. The possibility to distinguish between the transitive cases, which differ in specificity, relies instead on the clarity of the context. For <em>herkennen</em>, the sense distinction between the three transitive uses is quite subtle, and much sharper between transitive and reflexive; for <em>herhalen</em>, what could be an object in the transitive senses (but probably wouldn’t) is the subject in the reflexive, so the distinction should be very clear, while the transitive uses differ in the kind of objects that they take, with certain prototypical nouns (and the possibility of clauses for the second sense) and maybe some borderline cases. Finally, <em>herinneren</em> shows both a clear distinction between reflexive and transitive uses and a further argument structure distinction between transitive uses, either with or without an <em>aan</em> complement (which might be absent in the restricted context).</p>
+<template id="268d1580-251e-4079-8c4c-1d114b0aeff5"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f3d28e02{border-collapse:collapse;}.cl-f3bca38a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f3bccc0c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f3bccc0d{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f3bccc0e{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f3bccc0f{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f3d28e02">
+<caption class="Table Caption">
+<span id="tab:tr2b-verbs">Table 6.11: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f3bccc0f"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">lemma</span></p></td>
+<td class="cl-f3bccc0f"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f3bccc0d"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">diskwalificeren</span></p></td>
+<td class="cl-f3bccc0d"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f3bccc0d"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">herhalen</span></p></td>
+<td class="cl-f3bccc0d"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f3bccc0d"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">herinneren</span></p></td>
+<td class="cl-f3bccc0d"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f3bccc0e"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">herkennen</span></p></td>
+<td class="cl-f3bccc0e"><p class="cl-f3bccc0c"><span class="cl-f3bca38a">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="b58a1b5e-b509-45b8-9f65-e3c941ba264d"></div>
+<script>
+var dest = document.getElementById("b58a1b5e-b509-45b8-9f65-e3c941ba264d");
+var template = document.getElementById("268d1580-251e-4079-8c4c-1d114b0aeff5");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="transitive-intransitive-and-reflexive" class="section level4" number="6.1.3.4">
+<h4>
+<span class="header-section-number">6.1.3.4</span> Transitive, intransitive and reflexive<a class="anchor" aria-label="anchor" href="#transitive-intransitive-and-reflexive"><i class="fas fa-link"></i></a>
+</h4>
+<p>The verbs in Table <a href="annotation-schema.html#tab:tr3-verbs">6.12</a> can occur in the three argument structures: transitive (with three different senses), intransitive and reflexive. In the case of <em>harden</em>, the transitive can be concrete, figurative, or concrete with a different sense and in a specific construction, namely <em>(niet) te harden</em>; the intransitive structure is similar to the concrete transitive, but taking its object as subject, and the reflexive is similar to the second transitive. If senses of different argument structures were confused, the intransitive would be with the first and the reflexive with the second. The <em>(niet) te harden</em> uses should be easy to isolate, with strong agreement between annotators and high confidence. For <em>herstellen</em>, the transitive structure presents three possible senses: one concrete, one figurative but not presented as such, and one abstract that is very subtly different from the second one. The reflexive is very close to the figurative sense and the intransitive is more specific to concrete healing (rather than repairing) and should not be confused with the others.</p>
+<template id="2e4912f4-63ca-4816-8252-3c86e2d57388"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f413ec26{border-collapse:collapse;}.cl-f4010be2{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f40184fa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f401abe2{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f401abe3{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f401abe4{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f413ec26">
+<caption class="Table Caption">
+<span id="tab:tr3-verbs">Table 6.12: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f401abe4"><p class="cl-f40184fa"><span class="cl-f4010be2">lemma</span></p></td>
+<td class="cl-f401abe4"><p class="cl-f40184fa"><span class="cl-f4010be2">text</span></p></td>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f401abe2"><p class="cl-f40184fa"><span class="cl-f4010be2">harden</span></p></td>
+<td class="cl-f401abe2"><p class="cl-f40184fa"><span class="cl-f4010be2">Coming soon</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-f401abe3"><p class="cl-f40184fa"><span class="cl-f4010be2">herstellen</span></p></td>
+<td class="cl-f401abe3"><p class="cl-f40184fa"><span class="cl-f4010be2">Coming soon</span></p></td>
+</tr>
+</tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="3777119f-4127-4cef-b39b-b9cf1c14fe24"></div>
+<script>
+var dest = document.getElementById("3777119f-4127-4cef-b39b-b9cf1c14fe24");
+var template = document.getElementById("2e4912f4-63ca-4816-8252-3c86e2d57388");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+<div id="haken" class="section level4" number="6.1.3.5">
+<h4>
+<span class="header-section-number">6.1.3.5</span> Haken<a class="anchor" aria-label="anchor" href="#haken"><i class="fas fa-link"></i></a>
+</h4>
+<p><em>haken</em> was presented with two transitive senses, two intransitive and one transitive/intransitive. The transitive senses are both concrete and literal and differ in specificity: one sense refers particularly to making somebody trip. Intransitive uses differ in literality and, while both might occur with <em>blijven</em>, only the figurative definition mentions it (apparently restricting it). No figurative options are mentioned for the transitive senses, so if they occur annotators might either tag them as transitive concrete, intransitive figurative, or <em>geen</em>. Finally, one sense that can occur as transitive or intransitve (ellided object) is that of ‘crochet’; it’s so specific that it shouldn’t be confused with others and would probably have high confidence.</p>
+<template id="f2123815-91e1-4485-9f4d-f6ba1d1c8d51"><style>
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style>
+<div class="tabwid">
+<style>.cl-f4420070{border-collapse:collapse;}.cl-f4327740{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f432f21a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f43318f8{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f43318f9{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f4420070">
+<caption class="Table Caption">
+<span id="tab:haken">Table 6.13: </span>Some caption.
+</caption>
+<thead><tr style="overflow-wrap:break-word;">
+<td class="cl-f43318f9"><p class="cl-f432f21a"><span class="cl-f4327740">lemma</span></p></td>
+<td class="cl-f43318f9"><p class="cl-f432f21a"><span class="cl-f4327740">text</span></p></td>
+</tr></thead>
+<tbody><tr style="overflow-wrap:break-word;">
+<td class="cl-f43318f8"><p class="cl-f432f21a"><span class="cl-f4327740">haken</span></p></td>
+<td class="cl-f43318f8"><p class="cl-f432f21a"><span class="cl-f4327740">Coming soon</span></p></td>
+</tr></tbody>
+</table></div>
+</div></template><div class="flextable-shadow-host" id="61a2596a-7f79-4744-8efa-f694f7a6a296"></div>
+<script>
+var dest = document.getElementById("61a2596a-7f79-4744-8efa-f694f7a6a296");
+var template = document.getElementById("f2123815-91e1-4485-9f4d-f6ba1d1c8d51");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+</div>
+</div>
+</div>
+<div id="expectations-for-the-annotation" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Expectations for the annotation<a class="anchor" aria-label="anchor" href="#expectations-for-the-annotation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Here a first set of expectations for the annotations of the types has been summarized in six points, but discussion and revision are needed. They are formulated as predictions and followed by suggestions on how to confirm them. Some ‘technical’ terms are:</p>
+<ul>
+<li>
+<strong>majority sense</strong>, meaning the sense tag that most of the annotators assigned to a given token.</li>
+<li>
+<strong>alternative sense/annotation</strong>, meaning a sense tag assigned to a given token, different from the majority sense.</li>
+<li>
+<strong>(be) confuse(d)</strong>, meaning there is disagreement on the annotation.
+<!-- Should still find out how to talk about the asymmetry: some senses can have alternatives or be alternatives or both. -->
+</li>
+</ul>
+<blockquote>
+<p>NOTE: It could also be useful to find some literature into this kind of annotations. I’m identifying the anthropocentrism of some sense distinctions as particularly foregrounded, but other than some considerations in the metaphor literature I don’t really have theoretical backup. On the other hand, what I’ve seen of the ‘geen’ annotations this far partially supports this intuition: some annotators would refuse to assign the <em>horde 1</em> tag to cases of <em>horde</em> + <em>KTM’s/vrachtwagens/danceprojecten/insecten</em>.</p>
+</blockquote>
+<div id="for-all-types" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> For all types<a class="anchor" aria-label="anchor" href="#for-all-types"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Very specific senses will not be confused with more general senses</strong>.
+When the majority sense is a very specific one, the only alternative annotation will be <em>geen</em>.
+Concretely:</li>
+</ol>
+<ul>
+<li>
+<em>haken 5</em> and <em>haken 3</em> will not be confused with each other nor with other senses.</li>
+<li>
+<em>heet 4</em> should not be confused with other senses.</li>
+</ul>
+<!-- 2. **Literal/concrete senses will be easier to agree upon than figurative senses** --><!-- If there are distinct options for literal and figurative senses, when majority sense is concrete/physical, alternative annotations will be rarely figurative. The literal option, instead, will be a more frequent alternative for the figurative majority cases. --><!-- Or: cases with more confusion in the annotation are probably not concrete, or just don't have enough context. --><ol start="2" style="list-style-type: decimal">
+<li>
+<strong>Metaphor will be easier to identify than metonymy/specialization</strong>
+If the metaphoric sense is an option distinct from the concrete/literal one, it won’t often be confused with the literal counterpart; annotators will agree it’s figurative. For metonymy and specialisation, there will be more disagreement and less confidence.
+Concretely:</li>
+</ol>
+<ul>
+<li>
+<em>spoor 1.1</em> and <em>spoor 1.2</em> will be confused with each other more than with <em>spoor 1.3</em> and also that more than with <em>spoor 1.4</em>
+</li>
+<li>
+<em>blik 1.1</em> will be confused with <em>1.2</em> more than with <em>1.3</em>.</li>
+<li>
+<em>grijs 1</em> will be confused with <em>2</em> and <em>3</em> more than with <em>6</em>.</li>
+<li>
+<em>goedkoop 1</em> will be confused with <em>2</em> and <em>3</em> more than with <em>4</em>
+</li>
+<li>adjectives with metaphoric distinctions (<em>hoekig</em>, <em>dof</em>, <em>gekleurd</em>, <em>heilzaam</em>) will present less confusion than those with metonymic distinctions (<em>hachelijk</em>, <em>hoopvol</em>, <em>geestig</em>)</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>
+<strong>Anthropocentric senses will be more easily distinguishable</strong>.
+If the definition explicitly restricts the application to people, it won’t be alternative annotation with other, non anthropo-exclusive senses. Borderline cases, due probably to unspecified context, would have low confidence.
+Concretely:</li>
+</ol>
+<ul>
+<li>There should be low confusion in <em>haten</em>, or at least low confidence in borderline cases</li>
+<li>
+<em>heet 5</em> should not be confused with others</li>
+<li>
+<em>grijs 4</em> should not be confused with other senses (except maybe 3, which is derived from it)</li>
+<li>
+<em>gekleurd 2</em> should not be confused with others</li>
+<li>
+<em>hoekig 3</em> should not be confused with others</li>
+<li>
+<em>dof 3</em> should not be confused with others</li>
+<li>
+<em>hoopvol</em> will present less confusion than <em>geestig</em> and they both will present less confusion than <em>hachelijk</em>
+</li>
+</ul>
+</div>
+<div id="only-for-nouns" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Only for nouns<a class="anchor" aria-label="anchor" href="#only-for-nouns"><i class="fas fa-link"></i></a>
+</h3>
+<ol start="4" style="list-style-type: decimal">
+<li>
+<strong>Homonyms will not be confused with each other</strong>.
+When a majority sense is from one homonym, alternative annotations will be of the same homonym or <em>geen</em>.</li>
+</ol>
+</div>
+</div>
+<div id="only-for-verbs" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Only for verbs<a class="anchor" aria-label="anchor" href="#only-for-verbs"><i class="fas fa-link"></i></a>
+</h2>
+<p>The next two predictions overlap, and could explain different verb groupings (sometimes, different argument structure <em>implies</em> subject distinction, but which is more prominent?).</p>
+<ol start="5" style="list-style-type: decimal">
+<li>
+<strong>Argument structure will be easier to identify than semantic differences.</strong>
+Senses that differ in argument structure will not be confused with each other (won’t be each other’s alternatives) as much as senses with the same argument structure but different kinds of objects. The distinction will be probably easier to make with reflexive than with intransitive cases.
+Concretely: in general, transitive senses will be confused with each other but not with senses of a different argument structure (unless that sense is semantically very similar to that transitive sense). Cases that might generate confusion between different argument structures are:</li>
+</ol>
+<ul>
+<li>gral. trans. <em>haken</em> and fig. intrans. <em>haken</em> in cases of fig. trans. <em>haken</em>
+</li>
+<li>fig. trans. <em>harden</em> and refl. <em>harden</em>
+</li>
+<li>fig./abs. trans. <em>herstellen</em> and refl. <em>herstellen</em>
+</li>
+<li>spec. trans. <em>herstructrureren</em> and intrans. <em>herstructureren</em>
+</li>
+<li>
+<em>helpen 1</em> and intrans. <em>helpen</em>
+</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>
+<strong>Senses that require different subjects will be easier to identify than senses that require different objects or prepositional arguments</strong>
+Senses with different subject restrictions won’t be each other alternatives. I’m thinking that subject restrictions are often linked to animacy, while object restriction might be more subtle in these cases.
+Concretely: in general, senses of any argument structure will not be confused with each other if one takes (mostly) animate subjects and the other one (mostly) inanimate subjects.</li>
+</ol>
+</div>
+<div id="corpus" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> The corpus and samples<a class="anchor" aria-label="anchor" href="#corpus"><i class="fas fa-link"></i></a>
+</h2>
+<p>The exploration of these samples of concordances also served for the calculation of the number of tokens we would have annotate. Regardless of the actual frequency of the items in the corpus, we extracted a minimum 240 tokens of each type (thinking of 6 batches of 40 tokens), and raised the amount to 280 if any of the senses had a relative frequency below 20% in the sample, to 320 if it was below 10%, and 360 if there were many senses and therefore some had a low frequency.
+<!-- The table below illustrates this distribution. --></p>
+<!-- SWEET: Our plan for the annotation is to distribute the sample of concordances in batches of 40 tokens and hire students to annotate one batch of each of 12 different types. Hiring 40 students, every token is annotated by 2 different students; since some of them are willing to annotate twice as much, some will be annotated by 3. -->
+<p>The sample of tokens was selected almost absolutely randomly. First all the instances of each type were extracted from the corpus; then, for each type as many <em>files</em> as tokens we wanted to extract were selected, and from each file I randomly selected one token. Therefore, there qre no two instances of the same lemma from the same file in the samples.</p>
+<p>The corpus is a selection of the LeNC and TwNC corpora, which include newspapers articles from Flanders and the Netherlands. This selection, performed by <a href="@de_pascale_token-based_2019">Stefano De Pascale</a> with an eye on a lectally balanced corpus, containes 4,614,267 types and 519,996,217 tokens (roughly 520M, 260 from Flanders and 260 from the Netherlands). The articles in the subcorpus were published between 1999 and 2004 in both quality and popular newspapers from both countries.</p>
+</div>
+<div id="annotation" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Annotation procedure<a class="anchor" aria-label="anchor" href="#annotation"><i class="fas fa-link"></i></a>
+</h2>
+<div id="assigning-batches-to-annotators" class="section level3" number="6.5.1">
+<h3>
+<span class="header-section-number">6.5.1</span> Assigning batches to annotators<a class="anchor" aria-label="anchor" href="#assigning-batches-to-annotators"><i class="fas fa-link"></i></a>
+</h3>
+<div id="some-issues-because-we-are-humans" class="section level4" number="6.5.1.1">
+<h4>
+<span class="header-section-number">6.5.1.1</span> Some issues, because we are humans<a class="anchor" aria-label="anchor" href="#some-issues-because-we-are-humans"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+</div>
+<div id="annotation-toolinterface" class="section level3" number="6.5.2">
+<h3>
+<span class="header-section-number">6.5.2</span> Annotation tool/interface<a class="anchor" aria-label="anchor" href="#annotation-toolinterface"><i class="fas fa-link"></i></a>
+</h3>
+<p>At the beginning of October 48 students from the General Linguistics course of the 2nd year of the Bachelor in Linguistics in KU Leuven were recruited to work as annotators of our tokens. Each of them was tasked with annotating 40 tokens of each of 12 types (at least three nouns, four adjectives and four verbs, plus one of either of the categories), a total of 480 tokens, for which we expect them to work an average of 10 hours, spread over 6 weeks. Students had the option of subscribing to double the number of tokens (and hours, and pay). Both the types and the sets of tokens were assigned randomly, while keeping in mind the part-of-speech distribution (the idea was to shuffle the tokens but for an issue in the code they were not, so different batches have tokens from different sources… I noticed too late).</p>
+<p>The annotation includes three compulsory pieces of information and one normally optional. For each of the tokens, they had to:</p>
+<ol style="list-style-type: decimal">
+<li>assign a sense from a set of definitions/examples we will provide. If none of the senses is satisfactory, they may choose a “None of the above” options.</li>
+<li>express the confidence of their decision in a Likert scale of 6 (illustrated as a star rating).</li>
+<li>identify the words of the context (15 tokens to the left and to the right of the target, disregarding sentence boundaries but respecting those of the article) that helped them assign a sense.</li>
+<li>if they couldn’t assign a sense, they have to explain why. If they did assign one, they still have the option of adding extra information or thoughts on the annotation process, but it’s not compulsory.</li>
+</ol>
+<p>Since entering textual information in a spreadsheet can easily lead to typos and inconsistencies and, furthermore, annotating the relevant context words (cues) is challenging with such system (you either have one row per contextword and decide a value for all the cases, or you select a reliable system for listing the context words, which couldn’t be lemma or wordform but, better, position), we designed a user-friendly visual interface that transforms button-output in a json file with all the information required.</p>
+<!-- COMBAK Make the interface available again in its original form??? -->
+<p>The <a href="http://montesmariana.github.io/Annotation/">interface</a> had a menu of types and, for the selected type, two tabs: an overview of the concordance lines and an annotation workspace. In the annotation workspace, they could read each line individually, click on the button corresponding to the sense they want to assign, rate their confidence with star rating, click on the words they found useful and enter any other comments. The overview section didn’t only let them see the whole set of tokens to analyze, but the target items change color once they have been annotated and are themselves links to the Annotation tab for their concordance lines.</p>
+<p>Since the site is a static webpage (a github page) and public, it doesn’t gather information. It is indeed only an interface, and the users had to download the files with the data they have entered, in JSON format. They can also upload/open files from previous work, so they don’t need to do everything in one go. Eventually, they had to send the JSON file to us.</p>
+<p>The goals of the interface are twofold:</p>
+<ul>
+<li>it reduces typos and inconsistances for values that should be straightforward and present little variation (it was much faster to design the interface than it would have been to check the typos in 480 tokens times 40 annotators), and</li>
+<li>it makes the annotation experience simpler and even more pleasant, letting the annotators focus their energies in the lexicographical task itself rather than in technicalities.</li>
+</ul>
+<p>This is particularly evident for the task of selecting the relevant context words. With a spreadsheet, it would be either necessary to have separate rows per context words and annotate all of them (to make sure you are not forgetting any) or make a list of items in a cell of the row of the relevant concordance. That list would need to have something truly identifying of the context word, therefore not the form or the lemma but the position (since a same item could occur more than once in the context and not always have the same relevance), and counting them reliably would be time consuming and prone to errors. Clicking on the words so that the program itself lists the position of the relevant words, also making it visible which words were selected, solves both the easiness and reliability issues.</p>
+<div id="known-issues" class="section level4" number="6.5.2.1">
+<h4>
+<span class="header-section-number">6.5.2.1</span> Known issues<a class="anchor" aria-label="anchor" href="#known-issues"><i class="fas fa-link"></i></a>
+</h4>
+<p>The interface did have some issues, the consequences of which affect the output.</p>
+<p>One technical issue was a bug in the code of the annotation, for which context words selected by an annotator might be replaced by other context words of the same wordform, but in a previous position. Once that bug was found, the annotators were warned, but not all of them necessarily checked their previous annotation very thoroughly. In any case, this only affects wordforms that occur more than once in the same concordance (which is not very often) and could be cleaned with some reasoning.</p>
+<p>Another issue had to do with the format of the corpus, and could have been dealt with better. On the one hand, different sentences in the concordance were indiciated with a <code class="sourceCode html"><span class="kw">&lt;sentence&gt;&lt;/sentence&gt;</span></code> but had no impact in the rendering of the concordance, they were just replaced by empty spaces. They could’ve been replaced by <code class="sourceCode html"><span class="kw">&lt;p&gt;&lt;/p&gt;</span></code> tags. On the other hand, at some point of the corpus processing (before we had access to it), someone must have replaced all <em>&amp;</em> with <em>and</em>, so that HTML entities like <em>&amp;quot;</em>, which would’ve translated into a <em>"</em>, are rendered as <em>andquot;</em>, which was extremely confusing for the annotators, especially in already complicated concordances full of them. This issue was identified too late (and in any case, if the corpus already reads it as <em>andquot;</em> instead of <em>"</em>, the confusion is for both).</p>
+</div>
+<div id="output" class="section level4" number="6.5.2.2">
+<h4>
+<span class="header-section-number">6.5.2.2</span> Output<a class="anchor" aria-label="anchor" href="#output"><i class="fas fa-link"></i></a>
+</h4>
+<p>From each student, we received a file in json format where both their username and annotations where recorded. After checking that all tokens were annotated in all required variables (and that all ‘geen’ cases had comments), the results were turned into tables and merged. After a number of attempts, we have two main tables:</p>
+<p>First, a <a href="C:/Users/u0118974/Box%20Sync/Nederlands%20wolken/Output/Merges/token_annotation.tsv">register of tokens</a>, where each row is a token (id: <strong>token_id</strong>) and the variables are only:
+- <strong>type</strong>: the type that token belongs to;
+- <strong>batch</strong>: the batch (set of 40 tokens) that token belongs to, named with the type plus a number;
+- <strong>majority_sense</strong>: the majority sense, or the tag that most of the annotators agreed on;
+- When the tag was ‘geen’ (“none of the above”), I classified the comments into kinds of justification that became alternative senses: <em>between</em> (doubt between given alternatives), <em>not_listed</em> (suggestion of a different alternative from those given), <em>unclear</em> (insufficient or confusing context, unknown words) and <em>wrong_lemma</em> (issues with lemmatization, part-of-speech tagging or even spelling, so that the concordance does not really correspond to the wanted target);
+- when there was no agreement between two annotators (or three in the case of four annotations), the majority sense becomes <em>no_agreement</em>;
+- <strong>majority_agree</strong>: the proportion (0-1) of annotators that voted for the majority sense;
+- <strong>majority_conf</strong>: the mean confidence (standardized by username-type combination) of the agreeing annotations;
+- <strong>mean_conf</strong>: the mean confidence (standardized by username-type combination) of all the annotations of the token.</p>
+<p>Second, a <a href="C:/Users/u0118974/Box%20Sync/Nederlands%20wolken/Output/Merges/long_tokens.tsv">register of annotations</a>, where each row is a token-annotation combination (there is no row-id, but <strong>token_id</strong> identifies the tokens and <strong>annotator</strong> identifies the annotations as <em>ann_1</em>, <em>ann_2</em>, <em>ann_3</em> or <em>ann_4</em>). For each row, the following variables are registered:
+- <strong>type</strong>: the type that token belongs to;
+- <strong>batch</strong>: the batch (set of 40 tokens) that token belongs to, named with the type plus a number;
+- <strong>username</strong>: the name of the annotator (easier for me to keep track of, but nothing to publish);
+- <strong>code</strong>: codename of the annotator, combining the number of ‘student’ (set of batches of 12 different types) and number of annotator (matching the <strong>annotator</strong> variable);
+- <strong>annotators</strong>: number of annotators who tagged the given token (normally 3). Not a very important variable;
+- <strong>original_sense</strong>: the sense tag applied by the annotator; either a sense represented by the name of the type and a number, or <em>geen</em> for “none of the above”;
+- <strong>confidence</strong>: the confidence assigned by the annotator, with minimum 0 (1 star) and maximum 5 (6 stars);
+- <strong>conf_std</strong>: standardized confidence values, grouping by <strong>username</strong> and <strong>type</strong><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;There is a lot of variation across annotators in how they used their confidence (even within the same set of tokens). There is also a wide variation depending on type, for each username. It also makes sense to use this criterion.&lt;/p&gt;"><sup>2</sup></a>;
+- <strong>comments</strong>: the comments given by the annnotators, which are <em>normally</em> empty, unless the sense is <em>geen</em> (some annotators also commented tokens where they assigned an actual sense tag);
+- <strong>geen_reason</strong>: a classification of the comments given by the annotators, grouping them in the categories described before (<em>between</em>, <em>other_sense</em>, <em>unclear</em> and <em>wrong_lemma</em>);
+- <strong>sense</strong>: the modified sense annotation, replacing the <em>geen</em> annotations of <strong>original_sense</strong> with the categories from <strong>geen_reason</strong>;
+- <strong>annotations</strong>: the number of different values of <strong>sense</strong> for that given token (so that 1 equals to total agreement);
+- <strong>agree_nr</strong>: the proportion (0-1) of annotators that assigned the <strong>sense</strong> of a given row to the <strong>token_id</strong> of that row;
+- <strong>agree_fct</strong>: a categorical version of <strong>agree_nr</strong>, where <em>full</em> represents full agreement between annotators, <em>none</em> no agreement, <em>half</em> that two out of four agreed, <em>minority</em> that the current row has a disgreeing annotation of the token and <em>majority</em> if this annotation agrees with the majority for that token.
+- There is no column with cues, but they are stored <em>somewhere</em> so I can retrieve them when I want to start working on them.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="hdbscan.html"><span class="header-section-number">5</span> HDBSCAN</a></div>
+<div class="next"><a href="nonsense-or-no-senses.html"><span class="header-section-number">7</span> Nonsense or no senses?</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#annotation-schema"><span class="header-section-number">6</span> Annotation schema</a></li>
+<li>
+<a class="nav-link" href="#selection"><span class="header-section-number">6.1</span> Selection of items</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#nouns"><span class="header-section-number">6.1.1</span> The nouns</a></li>
+<li><a class="nav-link" href="#adjs"><span class="header-section-number">6.1.2</span> The adjectives</a></li>
+<li><a class="nav-link" href="#verbs"><span class="header-section-number">6.1.3</span> The verbs</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#expectations-for-the-annotation"><span class="header-section-number">6.2</span> Expectations for the annotation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#for-all-types"><span class="header-section-number">6.2.1</span> For all types</a></li>
+<li><a class="nav-link" href="#only-for-nouns"><span class="header-section-number">6.2.2</span> Only for nouns</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#only-for-verbs"><span class="header-section-number">6.3</span> Only for verbs</a></li>
+<li><a class="nav-link" href="#corpus"><span class="header-section-number">6.4</span> The corpus and samples</a></li>
+<li>
+<a class="nav-link" href="#annotation"><span class="header-section-number">6.5</span> Annotation procedure</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#assigning-batches-to-annotators"><span class="header-section-number">6.5.1</span> Assigning batches to annotators</a></li>
+<li><a class="nav-link" href="#annotation-toolinterface"><span class="header-section-number">6.5.2</span> Annotation tool/interface</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/montesmariana/phdThesis/blob/master/viz_6.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/montesmariana/phdThesis/edit/master/viz_6.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-05-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>

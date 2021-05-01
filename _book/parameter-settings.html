@@ -40,9 +40,10 @@
 <li><a class="" href="from-corpora-to-clouds.html"><span class="header-section-number">3</span> From corpora to clouds</a></li>
 <li><a class="" href="nephovis.html"><span class="header-section-number">4</span> NephoVis</a></li>
 <li><a class="" href="hdbscan.html"><span class="header-section-number">5</span> HDBSCAN</a></li>
+<li><a class="" href="annotation-schema.html"><span class="header-section-number">6</span> Annotation schema</a></li>
 <li class="book-part">The language of clouds</li>
-<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">6</span> Nonsense or no senses?</a></li>
-<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">7</span> The nature of clouds</a></li>
+<li><a class="" href="nonsense-or-no-senses.html"><span class="header-section-number">7</span> Nonsense or no senses?</a></li>
+<li><a class="" href="the-nature-of-clouds.html"><span class="header-section-number">8</span> The nature of clouds</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -200,7 +201,7 @@ and each group expands on the selection of the group before it. The specific sel
 are listed in Table <a href="parameter-settings.html#tab:lemmareltable">2.1</a>.
 </dd>
 </dl>
-<!-- BUG Check formatting for PDF and EPUB because it is ugly in the former and nonexistent in the latter --><template id="31835dd4-e17e-472e-bf21-e16fc5fa9414"><style>
+<!-- BUG Check formatting for PDF and EPUB because it is ugly in the former and nonexistent in the latter --><template id="5a4ccb6d-ddda-4fb1-865d-cc0d1499b185"><style>
 .tabwid table{
   border-collapse:collapse;
   line-height:1;
@@ -236,42 +237,42 @@ background-color: transparent;
 }
 </style>
 <div class="tabwid">
-<style>.cl-c73fa89c{border-collapse:collapse;}.cl-c736860e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c736d3fc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c736d3fd{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c73748c8{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748c9{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748ca{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748cb{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748cc{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748cd{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748ce{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748cf{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748d0{width:1111.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748d1{width:54.2pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c73748d2{width:1153.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7376fec{width:807.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table class="cl-c73fa89c">
+<style>.cl-f148d182{border-collapse:collapse;}.cl-f13c3f80{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f13c3f81{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f13c3f82{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f13ca60a{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca60b{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca60c{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca60d{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca60e{width:1111.3pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca60f{width:54.2pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca610{width:1153.4pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca611{width:807.5pt;background-color:transparent;vertical-align: top;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca612{width:1111.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca613{width:54.2pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13ca614{width:1153.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f13cccfc{width:807.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-f148d182">
 <caption class="Table Caption">
 <span id="tab:lemmareltable">Table 2.1: </span>Dependency paths selected by different <code>LEMMAREL</code> values.
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<td class="cl-c73748d1"><p class="cl-c736d3fc"><span class="cl-c736860e">groups</span></p></td>
-<td class="cl-c73748d2"><p class="cl-c736d3fc"><span class="cl-c736860e">nouns</span></p></td>
-<td class="cl-c7376fec"><p class="cl-c736d3fc"><span class="cl-c736860e">verbs</span></p></td>
-<td class="cl-c73748d0"><p class="cl-c736d3fc"><span class="cl-c736860e">adjectives</span></p></td>
+<td class="cl-f13ca613"><p class="cl-f13c3f81"><span class="cl-f13c3f80">groups</span></p></td>
+<td class="cl-f13ca614"><p class="cl-f13c3f81"><span class="cl-f13c3f80">nouns</span></p></td>
+<td class="cl-f13cccfc"><p class="cl-f13c3f81"><span class="cl-f13c3f80">verbs</span></p></td>
+<td class="cl-f13ca612"><p class="cl-f13c3f81"><span class="cl-f13c3f80">adjectives</span></p></td>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c73748c9"><p class="cl-c736d3fd"><span class="cl-c736860e">1</span></p></td>
-<td class="cl-c73748ca"><p class="cl-c736d3fd"><span class="cl-c736860e">modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject</span></p></td>
-<td class="cl-c73748cb"><p class="cl-c736d3fd"><span class="cl-c736860e">direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target</span></p></td>
-<td class="cl-c73748c8"><p class="cl-c736d3fd"><span class="cl-c736860e">nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between</span></p></td>
+<td class="cl-f13ca60b"><p class="cl-f13c3f82"><span class="cl-f13c3f80">1</span></p></td>
+<td class="cl-f13ca60c"><p class="cl-f13c3f82"><span class="cl-f13c3f80">modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject</span></p></td>
+<td class="cl-f13ca60d"><p class="cl-f13c3f82"><span class="cl-f13c3f80">direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target</span></p></td>
+<td class="cl-f13ca60a"><p class="cl-f13c3f82"><span class="cl-f13c3f80">nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c73748c9"><p class="cl-c736d3fd"><span class="cl-c736860e">2</span></p></td>
-<td class="cl-c73748ca"><p class="cl-c736d3fd"><span class="cl-c736860e">conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object</span></p></td>
-<td class="cl-c73748cb"><p class="cl-c736d3fd"><span class="cl-c736860e">conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement</span></p></td>
-<td class="cl-c73748c8"><p class="cl-c736d3fd"><span class="cl-c736860e">object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)</span></p></td>
+<td class="cl-f13ca60b"><p class="cl-f13c3f82"><span class="cl-f13c3f80">2</span></p></td>
+<td class="cl-f13ca60c"><p class="cl-f13c3f82"><span class="cl-f13c3f80">conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items of whose modifier the target is object</span></p></td>
+<td class="cl-f13ca60d"><p class="cl-f13c3f82"><span class="cl-f13c3f80">conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement</span></p></td>
+<td class="cl-f13ca60a"><p class="cl-f13c3f82"><span class="cl-f13c3f80">object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-c73748cd"><p class="cl-c736d3fd"><span class="cl-c736860e">3</span></p></td>
-<td class="cl-c73748ce"><p class="cl-c736d3fd"><span class="cl-c736860e">objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier</span></p></td>
-<td class="cl-c73748cf"><p class="cl-c736d3fd"><span class="cl-c736860e"></span></p></td>
-<td class="cl-c73748cc"><p class="cl-c736d3fd"><span class="cl-c736860e"></span></p></td>
+<td class="cl-f13ca60f"><p class="cl-f13c3f82"><span class="cl-f13c3f80">3</span></p></td>
+<td class="cl-f13ca610"><p class="cl-f13c3f82"><span class="cl-f13c3f80">objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier</span></p></td>
+<td class="cl-f13ca611"><p class="cl-f13c3f82"><span class="cl-f13c3f80"></span></p></td>
+<td class="cl-f13ca60e"><p class="cl-f13c3f82"><span class="cl-f13c3f80"></span></p></td>
 </tr>
 </tbody>
 </table></div>
-</div></template><div class="flextable-shadow-host" id="8c0db551-7837-4757-a97e-70ed89b1f0ac"></div>
+</div></template><div class="flextable-shadow-host" id="10ee1635-a083-4fa7-ad99-2d7ff8aa750b"></div>
 <script>
-var dest = document.getElementById("8c0db551-7837-4757-a97e-70ed89b1f0ac");
-var template = document.getElementById("31835dd4-e17e-472e-bf21-e16fc5fa9414");
+var dest = document.getElementById("10ee1635-a083-4fa7-ad99-2d7ff8aa750b");
+var template = document.getElementById("5a4ccb6d-ddda-4fb1-865d-cc0d1499b185");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -392,7 +393,7 @@ in an instant; if they are not, it just takes a bit longer to admit it. It is <e
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-04-30.</p>
+    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-05-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

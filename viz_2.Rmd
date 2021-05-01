@@ -137,7 +137,7 @@ are listed in Table \@ref(tab:lemmareltable).
 
 <!-- BUG Check formatting for PDF and EPUB because it is ugly in the former and nonexistent in the latter -->
 
-```{r, "lemmareltable", anchor = "Table", echo=FALSE}
+```{r, "lemmareltable", anchor = "Table"}
 # Looks really bad in pdf, but at least computes!
 lrel <- jsonlite::read_json("assets/lemmarel.json")
 tibble(
