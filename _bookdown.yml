@@ -14,5 +14,6 @@ rmd_files: [
   "viz_6.Rmd",
   "theo_1.Rmd",
   "theo_2.Rmd",
+  "app_1.Rmd",
   "references.Rmd"
 ]

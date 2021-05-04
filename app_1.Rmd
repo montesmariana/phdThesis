@@ -1,0 +1,30 @@
+# (APPENDIX) Appendix {-}
+
+# Definitions
+<!-- TODO Add frequency, maybe annotation data? Decide on order -->
+<!-- NOTE This is not properly rendered in pdf, but it is rendered -->
+
+```{r, "basic-def-function", include = FALSE}
+definitions <- readxl::read_excel(here::here("assets", "definitions.xlsx"))
+show_def <- function(l) {
+  tb_def <- definitions %>% filter(lemma == l) %>%
+    rename(sense = code, Dutch = definition, English = definition_translation) %>%
+    flextable(col_keys = c("sense", "Dutch", "English")) %>%
+    flextable::compose(j = "Dutch",
+                       value = as_paragraph(Dutch, ": ",
+                                            as_chunk(example, props = officer::fp_text(italic = TRUE)))) %>%
+    flextable::compose(j = "English",
+                       value = as_paragraph(English, ": ",
+                                            as_chunk(example_translation, props = officer::fp_text(italic = TRUE)))) %>%
+    autofit()
+  
+  cat("    \n")
+  cat("## ", l, "    \n")
+  cat(knitr::knit_print(tb_def))
+}
+```
+
+```{r, echo = FALSE, results = 'asis'}
+lapply(unique(definitions$lemma), show_def)
+```
+

@@ -1,0 +1,10 @@
+
+
+{{lemma}}
+
+```{r, results='asis'}
+for (sense in {{senses}}) {
+  cat(":    ", sense, "    \n")
+}
+```
+

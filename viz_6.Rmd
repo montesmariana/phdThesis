@@ -2,21 +2,22 @@
 
 <!-- QUESTION Should we include all the definitions and translations and examples here or in an appendix? What about estimated and actual frequencies? -->
 For these case studies, we selected 34 Dutch lemmas to annotate and model with token level vector spaces, two of which (*herkennen* and *spoor*) were discarded.
-The selection process will be presented in Section \@ref(selection), with a description of the selected items and what we expect their annotation to look like (eventually, what we expect the clouds to look like as well). A short description of the corpus [QLVLNewsCorpus, @depascale_2019] will follow. The annotation procedure will be the focus of the \@ref(annotation).
-Students (later called *annotators*) were recruited and hired to manually annotate samples of the selected lemmas, and while the administrative procedure itself is not of great interest to the project, a number of practical issues will be discussed: the distribution of tokens, the assignment of tasks (in particular, the graphic interface provided) and the processing/analysis of the data.
+The selection process will be presented in Section \@ref(selection), with a description of the selected items and what we expected their annotation and clouds to look like. A short description of the corpus [QLVLNewsCorpus, @depascale_2019] will follow. The annotation procedure will be the focus of Section \@ref(annotation).
+Bachelor students of Linguistics at KU Leuven (later called *annotators*) were recruited and hired to manually annotate samples of the selected lemmas, and while the administrative procedure itself is not of great interest to the project, a number of practical issues will be discussed: the distribution of tokens, the assignment of tasks (in particular, the graphic interface provided) and the processing/analysis of the data.
 
 ## Selection of items {#selection}
 
 For this case study 34 Dutch lexical items were selected. We aimed to cover a variety of polysemy phenomena, which will be addressed in the specific sections for each part of speech: section \@ref(nouns) for nouns, section \@ref(adjs) for adjectives, and section \@ref(verbs) for verbs.
-By modelling different parts of speech and different kinds of polysemy, we expect to develop more robust generalizations regarding the parameter settings that best model specific phenomena.
+By modeling different parts of speech and different kinds of polysemy, we expected to develop more robust generalizations regarding the parameter settings that best model specific phenomena.
 
 The selection procedure mixed some introspection (thinking of words that could be interesting), looking up lexical resources (going through a tentative list of dictionary entries to figure out what kind of polysemy we could expect) and corpus data (surveying a sample of concordances for evidence of the expected polysemy). While dictionaries were an essential resource to sketch the sense labels the annotators would have to choose from, we also adjusted them to a more manageable granularity. The concordances were also crucial to estimate sense distribution and adjust the granularity of the definitions. We didn't want an overwhelmingly frequent sense to affect the annotators judgement, and very infrequent senses might be hard to model or at least to visualise in the 2D representations. Still, we did allow for some complexity and subtlety in some cases.
 
-In a number of cases, the corpus survey (reading a concordance of 40-50 randomly selected instances) invalidated options that intuitively or according to the dictionary definitions would have conformed to our requirements. When judging such a discrepancy, it is important to take into account the composition of the corpus. The topics addressed in newspapers and the terms used to talk about them are not representative of everyday life or the entirety of language. Only as long as we keep these limitations in mind, can we draw valid conclusions from our data.
+In a number of cases, the corpus survey (reading a concordance of 40-50 randomly selected instances) invalidated options that intuitively or according to the dictionary definitions would have conformed to our requirements. When judging such a discrepancy, it is important to take into account the composition of the corpus. The topics addressed in newspapers and the terms used to talk about them are certainly not representative of everyday life or the entirety of language.
 
-We also had cases of adjectives that could be used in adverbial form and weren't always properly tagged for part-of-speech, so we had to discard them. We made a difference between cases such as _hoopvol_ 'hopeful', which often occurs in predicative contexts with a verb that is not copula (e.g. _ik ben hoopvol gestemd_ 'it makes me hopeful', _hij kijkt hoopvol omhoog_ 'he looks up hopeful(ly)') but still predicates over an entity, and cases such as _gemiddeld_ 'average', which could either predicate over an entity, as in _gemiddelde student_ 'average student', or a predicate, as in _zij eet gemiddeld 3 koekjes elke dag_ 'she eats in average 3 cookies per day'. Sometimes the incorrectly tagged cases (adverbs tagged as adjectives) were infrequent enough to be dismissed, but in some other cases they were so many we had to discard the lemma as candidate. While the only direct consequence is that a certain potentially interesting lemma couldn't be investigated, this also should be taken into account when relying on the part-of-speech tagger in other steps of the workflow.
+We also had cases of adjectives that could be used in adverbial form and were not always properly tagged for part-of-speech, so we had to discard them. We made a difference between cases such as _hoopvol_ 'hopeful', which often occurs in predicative contexts with a verb that is not copula (e.g. _ik ben hoopvol gestemd_ 'it makes me hopeful', _hij kijkt hoopvol omhoog_ 'he looks up hopeful(ly)') but still predicates over an entity, and cases such as _gemiddeld_ 'average', which could either predicate over an entity, as in _gemiddelde student_ 'average student', or a predicate, as in _zij eet gemiddeld 3 koekjes elke dag_ 'she eats in average 3 cookies per day'. Sometimes the incorrectly tagged cases (adverbs tagged as adjectives) were infrequent enough to be dismissed, but in some other cases they were so many we had to discard the lemma as candidate. While the only direct consequence is that a certain potentially interesting lemma couldn't be investigated, this also should be taken into account when relying on the part-of-speech tagger in other steps of the workflow.
 
-The next subsection describes the selected nouns, adjectives and verbs, the QLVLNewsCorpus and the sampling method. For each selected item I will give an approximate equivalent in English and the definitions and examples as were provided to the annotators. A hypothesis of what the annotations for those items would look like will also be provided.
+The next subsections describe the selected nouns, adjectives and verbs, the QLVLNewsCorpus and the sampling method. This includes a general description of the polysemy phenomena and hypotheses, but the specific definitions, examples and translations can be found in Appendix XX.
+<!-- TODO add appendix with definitions and proper references -->
 
 <!-- TODO use flextable -->
 ```{r, include=FALSE}
@@ -51,28 +52,13 @@ The 8 nouns all exhibit homonymy and polysemy in at least one of the homonyms.
 
 - one noun has three homonyms, of which two polysemous: *spoor* 'footprint or trace/train(line, rail, company)/spur'. This noun was later discarded because it proved too complicated, but the data is available for reanalysis.
 
-For each group, the definitions, examples and expected relative frequency will be shown.
+The nouns in the first group have one frequent homonym and another one equally or less frequent and polysemic (so the sense distribution is probably very skewed). The polysemy phenomena represented by the polysemic homonym are different: metaphor for *horde* 'hurdle', metaphor/generalization for *hoop* 'heap' and metonymy for *spot* ('short video/spotlight'). In this latter case, the 'spotlight' sense can further be used literally or metaphorically, but this distinction was not included among the definitions given to the annotators.
+<!-- COMBAK Does it show up in the dictionaries? -->
 
-#### One polysemous homonym
-
-The nouns in Table \@ref(tab:nouns-1) have one frequent homonym and another one equally or less frequent and polysemic (so the sense distribution is probably very skewed). The polysemy phenomena represented by the polysemic homonym are different: metaphor for *horde*, metaphor/generalization for *hoop* and metonymy for *spot*, where one of those senses ('spotlight') can be used literally or metaphorically (and annotators might either merge them or assign *geen* to the figurative uses).
-
-```{r, "nouns-1", anchor = "Table"}
-show_defs(c('hoop', 'spot', 'horde'))
-# %>% 
-#   row_spec(c(1:2, 4, 7), color = "white", background = "#66c2a5") %>% 
-#   row_spec(c(3, 5:6, 8:9), color = "white", background = "#fc8d62")
-```
-
-#### Two polysemous homonyms
-
-The homonyms in Table \@ref(tab:nouns-2) also present a variety of polysemy phenomena. For *blik*, the frequent homonym ('look') has a concrete sense with a metonymic and a metaphoric extension, while the infrequent one can refer to a material ('tin'), an object made of that material or its content: the distinction is quite clear but might depend on the specificity of the context and be very infrequent. Similarly, *stof* presents one frequent homonym with two concrete, referentially distinct senses and an abstract one, and another with a subtle, context-specificity dependent difference. *schaal* exhibits subtle perspective shifts in one homonym ('scale') and refers to different concrete objects with the second ('shell', 'dish', 'scale dish'). Finally, *staal* 'steal' could refer, like *blik*, to either the material or an object made of it, while the 'sample' homonym is sensitive to construal (focus on the use as evidence, when it's the case): it's likely to present high confusion and/or a very skewed distribution in both homonyms separately.
-
-```{r, nouns-2, anchor = "Table"}
-show_defs(c('schaal', 'blik', 'staal', 'stof')) #%>% 
-  # row_spec(c(1:3, 7:9, 13:14, 17:19), color = "white", background = "#66c2a5") %>% 
-  # row_spec(c(4:6, 10:12, 15:16, 20:21), color = "white", background = "#fc8d62")
-```
+Those in the second group also present a variety of polysemy phenomena. For *blik*, the frequent homonym ('look') has a concrete sense with a metonymic and a metaphoric extension, while the infrequent one can refer to a material ('tin'), an object made of that material or its content: the distinction is quite clear but might depend on the specificity of the context and be very infrequent.
+<!-- NOTE I might want to revise this. I had misintepreted the distinction, but so did the annotators, and the metonymic sense actually didn't exist... but there is a metaphoric sense, that is just super infrequent!! -->
+Similarly, *stof* presents one frequent homonym with two concrete, referentially distinct senses ('substance' and 'fabric') andd an abstract one ('topic'), and another with a subtle, context-specificity dependent difference ('dust (in the air)' or 'reducing something to dust, pulverize'). *Schaal* exhibits subtle perspective shifts in one homonym ('scale', e.g. "scale of Celsius" as opposed to "large scale") and refers to different concrete objects with the second ('shell', 'dish', 'scale dish').
+Finally, *staal* 'steal' could refer, like *blik* 'tin', to either the material or an object made of it, while the 'sample' homonym is sensitive to construal (sample as evidence, or in general): it's likely to present high confusion and/or a very skewed distribution in both homonyms separately.
 
 <!-- #### Three homonyms -->
 
@@ -84,61 +70,35 @@ The selection of adjectives includes 13 lemmas presenting different kinds of pol
 
 - three have a metonymic reading (*hoopvol* 'hopeful', *geestig* 'witty' and *hachelijk* 'dangerous/critical');
 
-- four have metaphoric readings (*hoekig* 'angulous/clumsy', *dof* 'dull', *heilzaam* 'healthy/beneficial' and *gekleurd* 'colorful, POC, tainted');
+- four have metaphoric readings (*hoekig* 'angulous/clumsy', *dof* 'dull', *heilzaam* 'healthy/beneficial' and *gekleurd* 'colorful, person of color, tainted');
 
 - three present some other form of similarity between the readings (*geldig* 'valid', *hemels* 'heavenly' and *gemeen* 'shared/public/mean/serious');
 
 - three are more complex (*heet* 'hot' for different entities and metaphorically, *grijs* 'gray', with metaphorical and metonymical extensions and *goedkoop* 'cheap', with different entities and metaphorically).
 
-For each group, the definitions and examples provided to the annotators will be shown with their estimated relative frequency and some considerations will be made regarding what we expect from the annotators.
+Within the first group, for each of the three adjectives two senses were offered as options.
+For *geestig* and *hoopvol*, one of the senses is anthropocentric, i.e. it's mainly or exclusively applied to people, although such distinction is not made explicit in the definitions of *geestig* but only suggested in the example. The expected frequency of the anthropomorphic sense is in both cases much higher than the other one.
+In *hachelijk*'s case, the difference is a matter of temporal or telic perspective, so probably harder to distinguish, and it's probably more likely that annotators suggest the second sense as an alternative to the first one (assigning the 'critical' interpretation to something potentially dangerous) than the other way around.
 
-#### Metonymic cases
+The adjectives with metaphoric extensions, have different numbers of senses. *Heilzaam* has two distinctions, somewhere between metaphoric and specialization: one refers to something specifically/literally healthy, and the other one is broader and less concrete.
+*Hoekig* and *gekleurd* present three sense distinctions, one of which is particularly concrete and the most frequent and another one explicitly anthropocentric. The third sense distinction has a different quality: synaesthetic for *hoekig* and very much metaphoric for *gekleurd*.
+Finally, *dof* has all four kinds of senses: concrete, synaesthetic, anthropocentric and abstract.
 
-As illustrated in Table \@ref(tab:meton-adj), for each of these three adjectives two senses were offered as options. For *geestig* and *hoopvol*, one of the senses is anthropocentric (it's mainly or exclusively applied to people), although such distinction is not made explicit in the definitions of *geestig* (only suggested in the example). The expected frequency of the anthropomorphic sense is in both cases much higher than the other one. In *hachelijk*'s case, the difference is a matter of temporal or telic perspective, so probably harder to distinguish, and it's probably more likely that annotators suggest the second sense as an alternative to the first one (assigning the 'critical' interpretation to something potentially dangerous) than the other way around.
-
-```{r, meton-adj, anchor = "Table"}
-show_defs(c('hoopvol', 'geestig', 'hachelijk'))
-```
-
-#### Metaphoric cases
-
-The adjectives with metaphoric extensions, presented in Table \@ref(tab:metaf-adj), have different numbers of senses. *heilzaam* has two distinctions, between metaphoric and specialization: one refers to something specifically/literally healthy, and the other one is broader and less concrete. *hoekig* and *gekleurd* present three sense distinctions, one of which is particularly concrete and the most frequent and another one explicitly anthropocentric. The third sense distinction has a different quality: rather synesthetic for *hoekig* and in an abstract, very much metaphoric for *gekleurd*. Finally, *dof* has all four kinds of senses: concrete, synesthetic, anthropocentric and abstract.
-
-```{r, metaf-adj, anchor = "Table"}
-show_defs(c('heilzaam', 'gekleurd', 'hoekig', 'dof'))
-```
-
-#### Similarity
-
-The group of adjectives in Table \@ref(tab:simil-adj) present sense distinctions that could be roughly summarized under the title of 'similarity', and are between generalization and shift of focus. *geldig* and *hemels* offer two options, one restricted to a specific context and one much broader. The relation between the relative frequencies of those senses are inverted (the specific sense of *geldig* is less frequent than the general one, while in *hemels* it's the other way around). We would expect that the specific sense would not be offered as alternative to the general sense as much as the other way around.
+The third group of adjectives present sense distinctions that could be roughly summarized under the title of 'similarity', and are between generalization and shift of focus.
+*Geldig* 'valid' and *hemels* 'heavenly' offer two options, one restricted to a specific context and one much broader. The relation between the relative frequencies of those senses are inverted: the specific sense of *geldig* is less frequent than the general one, while in *hemels* it's the other way around.
+We would expect that the specific sense would not be offered as alternative to the general sense as much as the other way around.
 
 The case of *gemeen* is quite complex, involving a number of rather subtle distinctions. The limits between the first and the second one and between the third and the fifth are hard to establish; the fourth sense seems more clear but if the context isn't specific enough it could be easily confused with the fifth. In addition, the senses are not always mutually exclusive, and a certain instance could very well conflate or be ambiguous between two senses.
 
-```{r, simil-adj, anchor = "Table"}
-show_defs(c('geldig', 'hemels', 'gemeen'))
-```
+The last group of adjectives have a large number of possible senses with more than one polysemy phenomenon.
 
-#### Complex cases
+*Heet* 'hot' presents, first, three very concrete senses that differ in perspective: temperatures of different kinds of things.
+<!-- IDEA: cite K-tamm? -->
+The second half is metaphorical, of which one synaesthetic, one anthropocentric and very specific, and one more abstract and also quite specific. Crucially, there is no exclusive sense tag for idiomatic expressions, which are quite frequent; they are expected to be tagged with the concrete senses (and maybe a comment on their figurative interpretation), but annotators might also use the *geen* tag for those cases.
 
-The last group of adjectives, listed in Tables \@ref(tab:heet), \@ref(tab:grijs) and \@ref(tab:goedkoop), have a large number of possible senses with more than one polysemy phenomenon, so they could be treated separately.
+*Grijs* presents a very frequent, concrete sense, two specific metonymic extensions, one anthropocentric sense, one rather abstract and another very specific metaphor.
 
-*heet* presents three very concrete senses that differ in perspective (temperatures of different kinds of things). The second half is metaphorical, of which one synesthetic, one anthropocentric and very specific, and one more abstract and also quite specific. Furthermore, there is no exclusive sense tag for idiomatic expressions, which are quite frequent; they are expected to be tagged with the concrete senses (and maybe a comment on their figurative interpretation), but annotators might also use the *geen* tag for those cases.
-
-```{r, heet, anchor = "Table"}
-show_defs(c('heet'))
-```
-
-*grijs* presents a very frequent, concrete sense, two specific metonymic extensions, one anthropocentric sense, one rather abstract and another very specific metaphor.
-
-```{r, grijs, anchor = "Table"}
-show_defs(c('grijs'))
-```
-
-*goedkoop*, on the other hand, presents "only" 4 sense distinctions: a concrete, prototypical and frequent sense, two perspectival shifts and a clear metaphor.
-
-```{r, goedkoop, anchor = "Table"}
-show_defs(c('goedkoop'))
-```
+*Goedkoop*, on the other hand, presents a modest set of 4 sense distinctions: a concrete, prototypical and frequent sense, two perspectival shifts and a clear metaphor.
 
 ### The verbs {#verbs}
 
@@ -146,59 +106,40 @@ For the verbs, we selected a range of combinations of syntactic and semantic var
 
 - Transitive verbs where the sense distinction is related to the objects it can take (*haten* 'hate', *huldigen* 'honor/hold (attitudes, opinions, stances)', *heffen* 'raise', *herroepen* 'annul (a law)/retract (statement)');
 
-- Verbs that could be transitive, with a distinction based on the object, or intranstive (*helpen* 'help', *herstructureren* 'restructure');
+- Verbs that could be transitive, with a distinction based on the object, or intransitive (*helpen* 'help', *herstructureren* 'restructure');
 
-- Verbs that could be transitive, with a distinction based on the object, or reflexive (*diskwalificeren* 'disqualify', *herhalen* 'repeat', *herinneren* 'remember/remind', *herkennen* 'recognize');
+- Verbs that could be transitive, with a distinction based on the object, or reflexive (*diskwalificeren* 'disqualify', *herhalen* 'repeat', *herinneren* 'remember/remind', *herkennen* 'recognize'), of which *herkennen* was discarded;
 
-- Verbs that could be transitive, intransitive or reflexive, with semantic distinctions within the transtive structure (*harden* 'make/become hard, tolerate', *herstellen* 'heal/repair');
+- Verbs that could be transitive, intransitive or reflexive, with semantic distinctions within the transitive structure (*harden* 'make/become hard, tolerate', *herstellen* 'heal/repair');
 
-- A verb with semantic distinctions within both the transitive and the intransitive structures (but also other problems): _haken_ 'hook' (literally or metaphorically), 'crochet', 'make someone trip' (when the object is a person or _pootje_ 'leg'), 'get stuck' in the intransitive form as _blijven haken_ (literally or metaphorically).
+- A verb with semantic distinctions within both the transitive and the intransitive structures (but also other problems): _haken_ 'hook' (literally or metaphorically), 'crochet', 'make someone trip' (when the object is a person or _pootje_ 'leg'), and 'get stuck' in the intransitive form as _blijven haken_ (literally or metaphorically).
 
-For each of the groups, the definitions, examples and relative frequencies of the senses will be summarized in tables.
+The verbs in the first group are always transitive and their different senses correlate with the possible direct objects they could take. *Haten* and *heffen* are probably more easy to distinguish, the former having an anthropocentric distinction (basically, hating people against disliking things, but with possible gray areas in between, depending on how that object is construed) and the latter presenting a rather clear and common metaphor, between physical objects and abstract entities such as taxes being levied.
+*Huldigen* and *herroepen* instead have slightly more subtle differences, but the former (between honoring someone/something and holding and opinion) is probably stronger and easier to distinguish than the latter, between retracting a statement or annuling a decree (which again could be interpreted differently depending on how the entity is construed, how prototypical it is).
 
-#### Only transitive
+The verbs that alternate between transitive and intransitive constructions are quite subtle and might present a lot of confusion, particularly because the intransitive uses are semantically very similar to one of the transitive cases.
+For *herstructureren*, one transitive sense and the intransitive one (exemplified with a reflexive...) are more specific, regarding companies and with the connotation that the personnel is being reduced, while the other transitive sense is broader and might be selected in contexts with less specificity. It might also depend on world knowledge (whether the annotators know or can guess that a certain object -or the subject in the intransitive construction- is a company) and how prominent the implication of personnel reduction is.
+For *helpen*, the distinction between the transitive uses is rather subtle (the "collaboration" sense is exclusive of animate subjects, but that's not explicit in the definitions), so there might be some disagreement in their annotation, but if the intransitive sense is confused with the transitive ones, it should only be with the first one.
 
-The verbs in the first group (Table \@ref(tab:tr-verbs)) are always transitive and their different senses correlate with the possible direct objects they could take. *haten* and *heffen* are probably more easy to distinguish, the former having an anthropocentric distinction (basically, hating people against disliking things, but with possible gray areas in between, depending on how that object is construed) and the latter presenting a rather clear and common metaphor, between physical objects and abstract entities such as taxes being raised. *huldigen* and *herroepen* instead have slightly more subtle differences, but the former (between honoring someone/something and holding and opinion) is probably stronger and easier to distinguish than the latter, between retracting a statement or annuling a decree (which again could be interpreted differently depending on how the entity is construed, how prototypical it is).
+Next to the opposition of transitive and intransitive cases, we find the opposition between transitive and reflexive cases, which for some verbs can be interpreted as specific situation where the object and the subject coincide.
+This is particularly the case with *diskwalificeren*, where the reflexive argument structure pretty much replicates the transitive senses, in a particular case where someone disqualifies themselves. The possibility to distinguish between the transitive cases, which differ in specificity (sport context against more general, mostly political context), relies instead on the clarity of the context.
+<!-- For *herkennen*, the sense distinction between the three transitive uses is quite subtle, and much sharper between transitive and reflexive; -->
+for *herhalen*, what could be an object in the transitive senses (but probably wouldn't) is the subject in the reflexive, so the distinction should be very clear, while the transitive uses differ in the kind of objects that they take, with certain prototypical nouns (and the possibility of clauses for the second sense) and maybe some borderline cases.
+Finally, *herinneren* shows both a clear distinction between reflexive and transitive uses and a further argument structure distinction between transitive uses, either with or without an *aan* complement (which might be absent in the restricted context).
 
-```{r, tr-verbs, anchor = "Table"}
-show_defs(c('haten', 'huldigen', 'heffen', 'herroepen'))
-```
+In addition, some verbs can occur in the three argument structures: transitive (with three different senses), intransitive and reflexive.
+In the case of *harden*, the transitive can be concrete, figurative, or concrete with a different sense and in a specific construction, namely *(niet) te harden*; the intransitive structure is similar to the concrete transitive, but taking its object as subject, and the reflexive is similar to the second transitive. If senses of different argument structures were confused, the intransitive would be with the first and the reflexive with the second. The *(niet) te harden* uses should be easy to isolate, with strong agreement between annotators and high confidence.
+For *herstellen*, the transitive structure presents three possible senses: one concrete, one figurative but not presented as such, and one abstract that is very subtly different from the second one. The reflexive is very close to the figurative sense and the intransitive is more specific to concrete healing (rather than repairing) and should not be confused with the others.
 
-#### Transitive and intransitive
+<!-- ```{r, tr3-verbs, anchor = "Table"} -->
+<!-- show_defs(c('harden', 'herstellen')) -->
+<!-- ``` -->
 
-The verbs that alternate between transitive and intransitive constructions (Table \@ref(tab:tr2a-verbs)) are quite subtle and might present a lot of confusion, particularly because the intransitive cases are very similar to one of the transitive cases, and it might seem that the object is just ellided. For *herstructureren*, one transitive sense and the intransitive one (exemplified with a reflexive...) are more specific, regarding companies and with the connotation that the personnel is being reduced, while the other transitive sense is broader and might be selected in contexts with less specificity. It might also depend on world knowledge (whether the annotators know or can guess that a certain object -or the subject in the intransitive construction- is a company) and how prominent the implication of personnel reduction is. For *helpen*, the distinction between the transitive uses is rather subtle (the "collaboration" sense is exclusive of animate subjects, but that's not explicit in the definitions), so there might be some disagreement in their annotation, but if the intransitive sense is confused with the transitive ones, it should only be with the first one.
-
-```{r, tr2a-verbs, anchor = "Table"}
-show_defs(c('helpen', 'herstructureren'))
-```
-
-#### Transitive and reflexive
-
-It could be argued that the distinction between the argument structures in the previous group (transitive versus intransitive) is more clear than that in this group (between transitive and reflexive), since the reflexive pronoun _could_ in some contexts be interpreted as a direct object. However, the intransitive senses in the previous group could also be understood as transitive cases with the object outside of context (true?), while the reflexive argument structure here (Table \@ref(tab:tr2b-verbs)) is more strongly distinguishable from the transitive one. It might be tricky with *diskwalificeren*, where the reflexive argument structure pretty much replicates the transitive senses, in a particular case where someone disqualifies themselves. The possibility to distinguish between the transitive cases, which differ in specificity, relies instead on the clarity of the context. For *herkennen*, the sense distinction between the three transitive uses is quite subtle, and much sharper between transitive and reflexive; for *herhalen*, what could be an object in the transitive senses (but probably wouldn't) is the subject in the reflexive, so the distinction should be very clear, while the transitive uses differ in the kind of objects that they take, with certain prototypical nouns (and the possibility of clauses for the second sense) and maybe some borderline cases. Finally, *herinneren* shows both a clear distinction between reflexive and transitive uses and a further argument structure distinction between transitive uses, either with or without an *aan* complement (which might be absent in the restricted context).
-
-```{r, tr2b-verbs, anchor = "Table"}
-show_defs(c('diskwalificeren', 'herhalen', 'herinneren', 'herkennen'))
-```
-
-#### Transitive, intransitive and reflexive
-
-The verbs in Table \@ref(tab:tr3-verbs) can occur in the three argument structures: transitive (with three different senses), intransitive and reflexive. In the case of *harden*, the transitive can be concrete, figurative, or concrete with a different sense and in a specific construction, namely *(niet) te harden*; the intransitive structure is similar to the concrete transitive, but taking its object as subject, and the reflexive is similar to the second transitive. If senses of different argument structures were confused, the intransitive would be with the first and the reflexive with the second. The *(niet) te harden* uses should be easy to isolate, with strong agreement between annotators and high confidence. For *herstellen*, the transitive structure presents three possible senses: one concrete, one figurative but not presented as such, and one abstract that is very subtly different from the second one. The reflexive is very close to the figurative sense and the intransitive is more specific to concrete healing (rather than repairing) and should not be confused with the others.
-
-```{r, tr3-verbs, anchor = "Table"}
-show_defs(c('harden', 'herstellen'))
-```
-
-#### Haken
-
-*haken* was presented with two transitive senses, two intransitive and one transitive/intransitive. The transitive senses are both concrete and literal and differ in specificity: one sense refers particularly to making somebody trip. Intransitive uses differ in literality and, while both might occur with *blijven*, only the figurative definition mentions it (apparently restricting it). No figurative options are mentioned for the transitive senses, so if they occur annotators might either tag them as transitive concrete, intransitive figurative, or *geen*. Finally, one sense that can occur as transitive or intransitve (ellided object) is that of 'crochet'; it's so specific that it shouldn't be confused with others and would probably have high confidence.
-
-```{r, haken, anchor = "Table"}
-show_defs(c('haken'))
-```
-
+Finally, *haken* was presented with two transitive senses, two intransitive and one transitive/intransitive. The transitive senses can be both concrete and literal and differ in specificity: one sense refers particularly to making somebody trip. Intransitive uses differ in literality and, while both might occur with *blijven*, only the figurative definition mentions it (apparently restricting it). No figurative options are mentioned for the transitive senses, so if they occur annotators might either tag them as transitive concrete, intransitive figurative, or *geen*. Finally, one sense that can occur as transitive or intransitve (ellided object) is that of 'crochet'; it's so specific that it shouldn't be confused with others and would probably have high confidence.
 
 ## Expectations for the annotation
 
+<!-- IDEA Maybe move this to a presentation of what the annotation actually looked like? -->
 Here a first set of expectations for the annotations of the types has been summarized in six points, but discussion and revision are needed. They are formulated as predictions and followed by suggestions on how to confirm them. Some 'technical' terms are:
 
 - **majority sense**, meaning the sense tag that most of the annotators assigned to a given token.
@@ -206,7 +147,7 @@ Here a first set of expectations for the annotations of the types has been summa
 - **(be) confuse(d)**, meaning there is disagreement on the annotation.
 <!-- Should still find out how to talk about the asymmetry: some senses can have alternatives or be alternatives or both. -->
 
-> NOTE: It could also be useful to find some literature into this kind of annotations. I'm identifying the anthropocentrism of some sense distinctions as particularly foregrounded, but other than some considerations in the metaphor literature I don't really have theoretical backup. On the other hand, what I've seen of the 'geen' annotations this far partially supports this intuition: some annotators would refuse to assign the *horde 1* tag to cases of *horde* + *KTM's/vrachtwagens/danceprojecten/insecten*.
+<!-- NOTE: It could also be useful to find some literature into this kind of annotations. I'm identifying the anthropocentrism of some sense distinctions as particularly foregrounded, but other than some considerations in the metaphor literature I don't really have theoretical backup. On the other hand, what I've seen of the 'geen' annotations this far partially supports this intuition: some annotators would refuse to assign the *horde 1* tag to cases of *horde* + *KTM's/vrachtwagens/danceprojecten/insecten*. -->
 
 ### For all types
 
@@ -225,7 +166,6 @@ Concretely:
 If the metaphoric sense is an option distinct from the concrete/literal one, it won't often be confused with the literal counterpart; annotators will agree it's figurative. For metonymy and specialisation, there will be more disagreement and less confidence.
 Concretely:
 
-- *spoor 1.1* and *spoor 1.2* will be confused with each other more than with *spoor 1.3* and also that more than with *spoor 1.4*
 - *blik 1.1* will be confused with *1.2* more than with *1.3*.
 - *grijs 1* will be confused with *2* and *3* more than with *6*.
 - *goedkoop 1* will be confused with *2* and *3* more than with *4*
@@ -274,38 +214,34 @@ The exploration of these samples of concordances also served for the calculation
 
 <!-- SWEET: Our plan for the annotation is to distribute the sample of concordances in batches of 40 tokens and hire students to annotate one batch of each of 12 different types. Hiring 40 students, every token is annotated by 2 different students; since some of them are willing to annotate twice as much, some will be annotated by 3. -->
 
-The sample of tokens was selected almost absolutely randomly. First all the instances of each type were extracted from the corpus; then, for each type as many _files_ as tokens we wanted to extract were selected, and from each file I randomly selected one token. Therefore, there qre no two instances of the same lemma from the same file in the samples.
+The sample of tokens was selected almost absolutely randomly. First all the instances of each type were extracted from the corpus; then, for each type as many _files_ as tokens we wanted to extract were selected, and from each file I randomly selected one token. Therefore, there are no two instances of the same lemma from the same file in the samples. There were, however, a few duplicates, due to repetition of the same fragment on different dates.
 
-The corpus is a selection of the LeNC and TwNC corpora, which include newspapers articles from Flanders and the Netherlands. This selection, performed by [Stefano De Pascale](@de_pascale_token-based_2019) with an eye on a lectally balanced corpus, containes 4,614,267 types and 519,996,217 tokens (roughly 520M, 260 from Flanders and 260 from the Netherlands). The articles in the subcorpus were published between 1999 and 2004 in both quality and popular newspapers from both countries.
+The corpus is a selection of the LeNC and TwNC corpora, which include newspapers articles from Flanders and the Netherlands. This selection, performed by @depascale_2019 with an eye on a lectally balanced corpus, contains 4,614,267 types and 519,996,217 tokens (roughly 520M, 260 from Flanders and 260 from the Netherlands). The articles in the subcorpus were published between 1999 and 2004 in both quality and popular newspapers from both countries.
 
 ## Annotation procedure {#annotation}
 
 ### Assigning batches to annotators
 
-#### Some issues, because we are humans
+In October 2019, 48 students from the General Linguistics course of the 2nd year of the Bachelor in Linguistics in KU Leuven were recruited to work as annotators. Each of them was tasked with annotating 40 tokens of each of 12 types (at least three nouns, four adjectives and four verbs, plus one of either of the categories), a total of 480 tokens, for which we expected them to work an average of 10 hours, spread over 6 weeks. Students had the option of subscribing to double the number of tokens (and hours, and pay). Both the types and the sets of tokens were assigned randomly, while keeping in mind the part-of-speech distribution. It was the intention to shuffle the samples of each lemma before splitting them into batches, but something went wrong with the code and they were ordered by source.
+
+The annotation involved three compulsory tasks and one normally optional. For each of the tokens, the annotators had to:
+
+<!-- TODO add and refer appendix -->
+1. assign a sense from a predefined set of definitions, as shown in Appendix XX. If none of the senses was satisfactory, they may choose a "None of the above" option;
+2. express the confidence of their decision in a Likert scale of 6 values;
+3. identify the words of the context that helped them assign a sense, comprising 15 tokens to the left and to the right of the target, disregarding sentence boundaries but respecting those of the article;
+4. if they couldn't assign a sense, they had to explain why. If they did assign one, they still had the option of adding extra information or thoughts on the annotation process, but it was not compulsory.
 
 ### Annotation tool/interface
 
-At the beginning of October 48 students from the General Linguistics course of the 2nd year of the Bachelor in Linguistics in KU Leuven were recruited to work as annotators of our tokens. Each of them was tasked with annotating 40 tokens of each of 12 types (at least three nouns, four adjectives and four verbs, plus one of either of the categories), a total of 480 tokens, for which we expect them to work an average of 10 hours, spread over 6 weeks. Students had the option of subscribing to double the number of tokens (and hours, and pay). Both the types and the sets of tokens were assigned randomly, while keeping in mind the part-of-speech distribution (the idea was to shuffle the tokens but for an issue in the code they were not, so different batches have tokens from different sources... I noticed too late).
-
-The annotation includes three compulsory pieces of information and one normally optional. For each of the tokens, they had to:
-
-1. assign a sense from a set of definitions/examples we will provide. If none of the senses is satisfactory, they may choose a "None of the above" options.
-2. express the confidence of their decision in a Likert scale of 6 (illustrated as a star rating).
-3. identify the words of the context (15 tokens to the left and to the right of the target, disregarding sentence boundaries but respecting those of the article) that helped them assign a sense.
-4. if they couldn't assign a sense, they have to explain why. If they did assign one, they still have the option of adding extra information or thoughts on the annotation process, but it's not compulsory.
-
-Since entering textual information in a spreadsheet can easily lead to typos and inconsistencies and, furthermore, annotating the relevant context words (cues) is challenging with such system (you either have one row per contextword and decide a value for all the cases, or you select a reliable system for listing the context words, which couldn't be lemma or wordform but, better, position), we designed a user-friendly visual interface that transforms button-output in a json file with all the information required.
+Since entering textual information in a spreadsheet can easily lead to typos and inconsistencies and, furthermore, annotating the relevant context words (cues) is challenging in such a tool, a user-friendly visual interface was designed that transforms button-output into a json file with all the information required.
 
 <!-- COMBAK Make the interface available again in its original form??? -->
-The [interface](http://montesmariana.github.io/Annotation/) had a menu of types and, for the selected type, two tabs: an overview of the concordance lines and an annotation workspace. In the annotation workspace, they could read each line individually, click on the button corresponding to the sense they want to assign, rate their confidence with star rating, click on the words they found useful and enter any other comments. The overview section didn't only let them see the whole set of tokens to analyze, but the target items change color once they have been annotated and are themselves links to the Annotation tab for their concordance lines.
+The [interface](http://montesmariana.github.io/Annotation/) had a menu of types and, for the selected type, two tabs: an overview of the concordance lines and an annotation workspace. In the annotation workspace, they could read each line individually, click on the button corresponding to the sense they wanted to assign, rate their confidence with star rating, click on the words they found useful and enter any other comments. The overview section didn't only let them see the whole set of tokens to analyze, but the target items changed color once they had been annotated and were themselves links to the Annotation tab for their concordance lines.
 
-Since the site is a static webpage (a github page) and public, it doesn't gather information. It is indeed only an interface, and the users had to download the files with the data they have entered, in JSON format. They can also upload/open files from previous work, so they don't need to do everything in one go. Eventually, they had to send the JSON file to us. 
+The interface was rendered as a webpage via Github Pages, but only processed the information: the annotators had to download (and if necessary upload) their progress as a JSON file and eventually send it by mail.
 
-The goals of the interface are twofold:
-
-- it reduces typos and inconsistances for values that should be straightforward and present little variation (it was much faster to design the interface than it would have been to check the typos in 480 tokens times 40 annotators), and
-- it makes the annotation experience simpler and even more pleasant, letting the annotators focus their energies in the lexicographical task itself rather than in technicalities.
+The goals of the interface were twofold. First, it would reduce typos and inconsistencies for values that should be straightforward and present little variation: it was much faster to design the interface than it would have been to check the typos in 480 tokens times 40 annotators. Second, it would make the annotation experience simpler and even more pleasant, letting the annotators focus their energies on the lexicographical task itself rather than in technicalities.
 
 This is particularly evident for the task of selecting the relevant context words. With a spreadsheet, it would be either necessary to have separate rows per context words and annotate all of them (to make sure you are not forgetting any) or make a list of items in a cell of the row of the relevant concordance. That list would need to have something truly identifying of the context word, therefore not the form or the lemma but the position (since a same item could occur more than once in the context and not always have the same relevance), and counting them reliably would be time consuming and prone to errors. Clicking on the words so that the program itself lists the position of the relevant words, also making it visible which words were selected, solves both the easiness and reliability issues.
 
@@ -315,37 +251,41 @@ The interface did have some issues, the consequences of which affect the output.
 
 One technical issue was a bug in the code of the annotation, for which context words selected by an annotator might be replaced by other context words of the same wordform, but in a previous position. Once that bug was found, the annotators were warned, but not all of them necessarily checked their previous annotation very thoroughly. In any case, this only affects wordforms that occur more than once in the same concordance (which is not very often) and could be cleaned with some reasoning.
 
-Another issue had to do with the format of the corpus, and could have been dealt with better. On the one hand, different sentences in the concordance were indiciated with a `<sentence></sentence>`{.html} but had no impact in the rendering of the concordance, they were just replaced by empty spaces. They could've been replaced by `<p></p>`{.html} tags. On the other hand, at some point of the corpus processing (before we had access to it), someone must have replaced all *&* with *and*, so that HTML entities like *\&quot;*, which would've translated into a *&quot;*, are rendered as *andquot;*, which was extremely confusing for the annotators, especially in already complicated concordances full of them. This issue was identified too late (and in any case, if the corpus already reads it as *andquot;* instead of *&quot;*, the confusion is for both).
+Another issue had to do with the format of the corpus, and could have been dealt with better. On the one hand, different sentences in the concordance were indiciated with a `<sentence></sentence>`{.html} but had no impact in the rendering of the concordance, they were just replaced by empty spaces. They could've been replaced by `<p></p>`{.html} tags. On the other hand, at some point of the corpus processing (before we had access to it), someone must have replaced all *&* with *and*, so that HTML entities like *\&quot;*, which would've translated into a quotation mark *"*, are rendered as *andquot;*, which was extremely confusing for the annotators, especially in already complicated concordances full of them. This issue was identified too late (and in any case, if the corpus already reads it as *andquot;* instead of *&quot;*, the confusion is for both).
 
-#### Output
+<!-- #### Output -->
 
-From each student, we received a file in json format where both their username and annotations where recorded. After checking that all tokens were annotated in all required variables (and that all 'geen' cases had comments), the results were turned into tables and merged. After a number of attempts, we have two main tables:
+<!-- <!-- NOTE This should be rephrased, and maybe the data should be included in the tokenclouds repository adding this as documentation. --> -->
 
-First, a [register of tokens](C:/Users/u0118974/Box Sync/Nederlands wolken/Output/Merges/token_annotation.tsv), where each row is a token (id: **token_id**) and the variables are only:
-- **type**: the type that token belongs to;
-- **batch**: the batch (set of 40 tokens) that token belongs to, named with the type plus a number;
-- **majority_sense**: the majority sense, or the tag that most of the annotators agreed on;
-    - When the tag was 'geen' ("none of the above"), I classified the comments into kinds of justification that became alternative senses: *between* (doubt between given alternatives), *not_listed* (suggestion of a different alternative from those given), *unclear* (insufficient or confusing context, unknown words) and *wrong_lemma* (issues with lemmatization, part-of-speech tagging or even spelling, so that the concordance does not really correspond to the wanted target);
-    - when there was no agreement between two annotators (or three in the case of four annotations), the majority sense becomes *no_agreement*;
-- **majority_agree**: the proportion (0-1) of annotators that voted for the majority sense;
-- **majority_conf**: the mean confidence (standardized by username-type combination) of the agreeing annotations;
-- **mean_conf**: the mean confidence (standardized by username-type combination) of all the annotations of the token.
+<!-- From each student, we received a file in json format where both their username and annotations were recorded. After checking that all tokens were annotated in all required variables (and that all 'geen' cases had comments), the results were turned into tables and merged. After a number of attempts, we have two main tables: -->
 
-Second, a [register of annotations](C:/Users/u0118974/Box Sync/Nederlands wolken/Output/Merges/long_tokens.tsv), where each row is a token-annotation combination (there is no row-id, but **token_id** identifies the tokens and **annotator** identifies the annotations as *ann_1*, *ann_2*, *ann_3* or *ann_4*). For each row, the following variables are registered:
-- **type**: the type that token belongs to;
-- **batch**: the batch (set of 40 tokens) that token belongs to, named with the type plus a number;
-- **username**: the name of the annotator (easier for me to keep track of, but nothing to publish);
-- **code**: codename of the annotator, combining the number of 'student' (set of batches of 12 different types) and number of annotator (matching the **annotator** variable);
-- **annotators**: number of annotators who tagged the given token (normally 3). Not a very important variable;
-- **original_sense**: the sense tag applied by the annotator; either a sense represented by the name of the type and a number, or *geen* for "none of the above";
-- **confidence**: the confidence assigned by the annotator, with minimum 0 (1 star) and maximum 5 (6 stars);
-- **conf_std**: standardized confidence values, grouping by **username** and **type**[^conf_std];
-- **comments**: the comments given by the annnotators, which are *normally* empty, unless the sense is *geen* (some annotators also commented tokens where they assigned an actual sense tag);
-- **geen_reason**: a classification of the comments given by the annotators, grouping them in the categories described before (*between*, *other_sense*, *unclear* and *wrong_lemma*);
-- **sense**: the modified sense annotation, replacing the *geen* annotations of **original_sense** with the categories from **geen_reason**;
-- **annotations**: the number of different values of **sense** for that given token (so that 1 equals to total agreement);
-- **agree_nr**: the proportion (0-1) of annotators that assigned the **sense** of a given row to the **token_id** of that row;
-- **agree_fct**: a categorical version of **agree_nr**, where *full* represents full agreement between annotators, *none* no agreement, *half* that two out of four agreed, *minority* that the current row has a disgreeing annotation of the token and *majority* if this annotation agrees with the majority for that token.
-- There is no column with cues, but they are stored _somewhere_ so I can retrieve them when I want to start working on them.
+<!-- First, a [register of tokens](C:/Users/u0118974/Box Sync/Nederlands wolken/Output/Merges/token_annotation.tsv), where each row is a token (id: **token_id**) and the variables are only: -->
 
-[^conf_std]:  There is a lot of variation across annotators in how they used their confidence (even within the same set of tokens). There is also a wide variation depending on type, for each username. It also makes sense to use this criterion.
+<!-- - **type**: the type that token belongs to; -->
+<!-- - **batch**: the batch (set of 40 tokens) that token belongs to, named with the type plus a number; -->
+<!-- - **majority_sense**: the majority sense, or the tag that most of the annotators agreed on; -->
+<!--     - When the tag was 'geen' ("none of the above"), I classified the comments into kinds of justification that became alternative senses: *between* (doubt between given alternatives), *not_listed* (suggestion of a different alternative from those given), *unclear* (insufficient or confusing context, unknown words) and *wrong_lemma* (issues with lemmatization, part-of-speech tagging or even spelling, so that the concordance does not really correspond to the wanted target); -->
+<!--     - when there was no agreement between two annotators (or three in the case of four annotations), the majority sense becomes *no_agreement*; -->
+<!-- - **majority_agree**: the proportion (0-1) of annotators that voted for the majority sense; -->
+<!-- - **majority_conf**: the mean confidence (standardized by username-type combination) of the agreeing annotations; -->
+<!-- - **mean_conf**: the mean confidence (standardized by username-type combination) of all the annotations of the token. -->
+
+<!-- Second, a [register of annotations](C:/Users/u0118974/Box Sync/Nederlands wolken/Output/Merges/long_tokens.tsv), where each row is a token-annotation combination (there is no row-id, but **token_id** identifies the tokens and **annotator** identifies the annotations as *ann_1*, *ann_2*, *ann_3* or *ann_4*). For each row, the following variables are registered: -->
+
+<!-- - **type**: the type that token belongs to; -->
+<!-- - **batch**: the batch (set of 40 tokens) that token belongs to, named with the type plus a number; -->
+<!-- - **username**: the name of the annotator (easier for me to keep track of, but nothing to publish); -->
+<!-- - **code**: codename of the annotator, combining the number of 'student' (set of batches of 12 different types) and number of annotator (matching the **annotator** variable); -->
+<!-- - **annotators**: number of annotators who tagged the given token (normally 3). Not a very important variable; -->
+<!-- - **original_sense**: the sense tag applied by the annotator; either a sense represented by the name of the type and a number, or *geen* for "none of the above"; -->
+<!-- - **confidence**: the confidence assigned by the annotator, with minimum 0 (1 star) and maximum 5 (6 stars); -->
+<!-- - **conf_std**: standardized confidence values, grouping by **username** and **type**[^conf_std]; -->
+<!-- - **comments**: the comments given by the annnotators, which are *normally* empty, unless the sense is *geen* (some annotators also commented tokens where they assigned an actual sense tag); -->
+<!-- - **geen_reason**: a classification of the comments given by the annotators, grouping them in the categories described before (*between*, *other_sense*, *unclear* and *wrong_lemma*); -->
+<!-- - **sense**: the modified sense annotation, replacing the *geen* annotations of **original_sense** with the categories from **geen_reason**; -->
+<!-- - **annotations**: the number of different values of **sense** for that given token (so that 1 equals to total agreement); -->
+<!-- - **agree_nr**: the proportion (0-1) of annotators that assigned the **sense** of a given row to the **token_id** of that row; -->
+<!-- - **agree_fct**: a categorical version of **agree_nr**, where *full* represents full agreement between annotators, *none* no agreement, *half* that two out of four agreed, *minority* that the current row has a disgreeing annotation of the token and *majority* if this annotation agrees with the majority for that token. -->
+<!-- - There is no column with cues, but they are stored _somewhere_ so I can retrieve them when I want to start working on them. -->
+
+<!-- [^conf_std]:  There is a lot of variation across annotators in how they used their confidence (even within the same set of tokens). There is also a wide variation depending on type, for each username. It also makes sense to use this criterion. -->
