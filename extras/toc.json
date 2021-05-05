@@ -1,0 +1,67 @@
+[
+  {
+    fname: "viz_1",
+    heading: "An interface to the world of clouds",
+    note: "Starts PART I",
+    description: "Introduction to the technical/methodological part of the thesis."
+  },
+  {
+    fname: "viz_2",
+    heading: "Parameter settings",
+    description: "Description of the parameter settings used in the models.",
+    todo: "Describe what was not done and why?",
+    note: "Should be after description of the workflow."
+  },
+  {
+    fname: "viz_3",
+    heading: "From corpora to clouds",
+    description: "Description of the workflow: token-level vector space models and dimensionality reduction.",
+    todo: "Describe what was not done and why?"
+  },
+  {
+    fname: "viz_4",
+    heading: "NephoVis",
+    description: "Description of the visualization tool, as a manual ---for now copied from Montes & Heylen."
+  },
+  {
+    fname: "viz_5",
+    heading: "HDBSCAN",
+    description: "Brief explanation of HDBSCAN and how we can use it for this."
+    note: "Maybe add shiny app?"
+  },
+  {
+    fname: "viz_6",
+    heading: "Annotation schema",
+    description: "Description of the annotation procedure and the lemmas",
+    note: "Needs reorganization, bad."
+  },
+  {
+    fname: "theo_1",
+    heading: "Nonsense or no senses?",
+    note: "Starts Part II",
+    description: "Introduction to the theoretical part of the thesis."
+  },
+  {
+    fname: "theo_2",
+    heading: "The nature of clouds",
+    description: "Some rambling about what we think the clouds say and what they actually do.",
+    note: "Yet to select the topics and add more (short?) chapters."
+  },
+  {
+    fname: "index",
+    heading: "Introduction",
+    description: "Introduction to the thesis.",
+    note: "The intro should probably be another file? I don't know, we'll see..."
+  },
+  {
+    fname: "gracias",
+    heading: "Acknowledgements",
+    description: "Acknowledgements, obviously in progress.",
+    note: "Should go before the introduction I think?"
+  },
+  {
+    fname: "viz_1",
+    heading: "An interface to the world of clouds",
+    description: "Introduction to the technical/methodological part of the thesis."
+  }
+]
