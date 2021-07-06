@@ -1,8 +1,24 @@
-# Parameter settings
+# Parameter settings {#params}
 
 In this chapter I will describe the various parameter settings we have explored:
 which are the possible decisions, which ones we have set and which were looked at,
 why. This should be preceded by an explanation of the workflow itself.
+
+
+## Fixed decisions
+
+There are a number of parameters that were set fixed for the studies in this project, but which are by no means the only possibility. In some cases we rely on previous work to set a fixed solution, while in other cases it was rather a matter of practicality: time and resources are limited.
+
+- Corpus: QLVLNews corpus ---language: Dutch, register: newspapers, mode: written, period: 1999-2004
+
+- Unit definition: stem + part of speech (it could have been wordform, just stem, wordform and part of speech, or even include dependency information) See @kiela.clark_2014 [25] for results on English, favoring stemming but not requiring pos tags.
+
+- Cosine distances between vectors See @jurafsky.martin_2020 105, but @kiela.clark_2014 suggest correlation instead; euclidean distances between models; log transformation of ranks... 
+
+- PPMI values [@kiela.clark_2014; @depascale_2019] --- @vandecruys_2008 distinguishes between local and global PPMI; we use global PPMI
+
+- Window size for second order: 4 (used by depascale I think,
+did not show very different results from win 10)
 
 ## First steps
 
@@ -28,7 +44,7 @@ that represent such first-order features.
 In order to visualize the tokens, we have performed dimensionality reduction, i.e.
 a process by which we try to represent relative distances between items in a low-dimensional space
 while preserving the distances in high-dimensional space as much as possible.
-This procedure will be described in [appropriate section].
+This procedure was described in Section \@ref(dim-reduction).
 
 ## First-order selection parameters
 
@@ -103,6 +119,8 @@ To exemplify, let's look at (@expath) and take *herhalen* 'to repeat' as the tar
 
 (@expath) *De geschiedenis rond Remmelink herhaalt zich.* 'The history around Remmelink repeats itself.'
 
+This is different from say @vandecruys_2008 where the combination of dependency relation and item make up the feature (I think). This requires a (carefully planned) type-level matrix with dependency features, which we didn't get to generate, but it might be interesting for future research, if it indeed is better at distinguishing between nouns with different degrees of concreteness (although apparently this is also achieved by a BOW model with global PPMI, which is what we use...).
+
 
 `LEMMAPATH`
 :    This set of dependency-based models selects the features that enter a syntactic
@@ -128,6 +146,8 @@ In (@expath) this corresponds to *Remmelink*, the object of *rond* 'around'.
 :    Features more than 3 steps away from the target are always excluded.
 While some features four steps away can be interesting, such as passive subjects of a verb with two modals, they are not that frequent and may not be worth the noise included by accepting all features with so many steps between them and the target. To catch those relationships, `LEMMAREL` is a more efficient method.
 There are no context words more than three steps away from the target in (@expath).
+
+See @kiela.clark_2014 24-25 for a discussion of type-level results with a similar approach compared to a small BOW window. I don't think it's really comparable though.
 
 `LEMMAREL`
 :    This set of dependency-based models selects the features that enter in a certain
@@ -170,6 +190,9 @@ The selection of second-order features influences the shape of the vectors: how 
 :    Vector length is the number of second-order features and therefore the dimensionality of the matrices on which the distance matrices are based, although the amount is not all that changes. It is applied after filtering by part-of-speech.
 :    We have selected two values: `5000` and `FOC`. The former includes the 5000 most frequent elements of the possible features, while the latter takes the intersection between the possible second-order-features and the first-order-features, regardless of frequency. With `SOC-POS:all`, `FOC` will include all first-order features of that model, while with `SOC-POS:nav`, only those included in Stefano's selection.
 :    The actual number of dimensions resulting from `FOC` depends on the strictness of the first order filter. This information can be found on the plots that, for each staal, show how many first order context words are left after each combination of first order filters.
+
+@kiela.clark_2014 24 say it is not worth it to make it longer than 50k; jurafsky.martin_2020 did mention something of the kind too
+Does stefano say anything?
 
 #### FOC as SOC
 

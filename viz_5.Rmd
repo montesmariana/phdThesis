@@ -1,4 +1,4 @@
-# HDBSCAN
+# HDBSCAN {#hdbscan}
 
 The visual exploration is extremely useful for a thorough, qualitative description
 of the vector space models. However, such an application can also become an obstacle

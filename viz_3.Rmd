@@ -1,46 +1,62 @@
-# From corpora to clouds
+# From corpora to clouds {#workflow}
 
-The main goal of the distributional models discussed in this text is to explore semasiological structure
-from textual data. The starting point is a corpus, and one of the most tangible outputs is the visual representation
-as a cloud.
+The main goal of the distributional models discussed in this text is to explore semasiological structure from textual data.
+The starting point is a corpus, and one of the most tangible outputs is the visual representation as a cloud.
+In this chapter we will describe how to generate clouds from the raw, seemingly indomitable ocean of corpora.
 
-In this chapter we will describe the path needed to take to generate clouds from the raw,
-seemingly indomitable ocean that is a corpus.
-
-First, we will describe token-level vector space models are created.
+First, we will describe how token-level vector space models are created.
 Section \@ref(vector-creation) will explain count-based models, but this is by no means the only viable path.
-Other techniques, such as BERT [@BERT], that can generate vectors for individual instances of a word,
+Other techniques, such as BERT [@BERT]^[See also @devries.etal_2019 for a Dutch version.], that can generate vectors for individual instances of a word,
 can be used for the first stage of this workflow.
 <!-- TODO explain why we don't use them -->
 
-Once we have token-level vectors, we need to process them. For visualization purposes,
-we need to reduce the numerous dimensions of the vectors to a manageable number, such as 2.
+Once we have vector representations of individual instances of a lexical item, we need to process them.
+For visualization purposes, we need to reduce the numerous dimensions of the vectors to a manageable number, such as 2.
 Section \@ref(dim-reduction) will explore and compare a few alternatives.
 
 The same output that is put through dimensionality reduction for the visualization can also
 be submitted to other forms of analysis such as clustering algorithms, whose results may
-even be combined with the visualization. We will look into HDBSCAN in
-<!-- cite appropriate chapter and section. -->
+even be combined with the visualization. We will look at HDBSCAN in particular in Chapter \@ref(hdbscan).
 
 ## A cloud machine {#vector-creation}
 
-At the core of vector space models, *aka* distributional models, we find the Distributional Hypothesis, which is most often linked to Harris's observation that "difference of meaning correlates with difference of distribution" [-@harris_1954 156]. In other words, items that occur in similar contexts in a given corpus will be semantically similar, while those that occur in different contexts will be semantically different. Crucially, this does not imply that we can describe an individual item with their distributional properties, but that comparing the distribution of two items can tell us something about their semantic relationship [@sahlgren_2006 19].
+At the core of vector space models, *aka* distributional models, we find the Distributional Hypothesis, which is most often linked to Harris's observation that "difference of meaning correlates with difference of distribution" [-@harris_1954 156], but also to @firth_1957a and Wittgenstein.
+<!-- TODO read and add Wittgenstein -->
+In other words, items that occur in similar contexts in a given corpus will be semantically similar, while those that occur in different contexts will be semantically different [@jurafsky.martin_2020, Ch. 6; @lenci_2018]. Crucially, this does not imply that we can describe an individual item with their distributional properties, but that comparing the distribution of two items can tell us something about their semantic relatedness [@sahlgren_2006 19].
 
-Distributional models operationalize this idea by representing words as vectors (i.e. arrays of numbers) coding frequency information. Typically, the raw frequency is transformed to some association strength measure, such as pointwise mutual information [PMI, see @church.hanks_1989], which compares the frequency with which two words occur close to each other and the expected frequency if the words were independent. For example, Table \@ref(tab:vec1) shows small vectors representing the English nouns *linguistic*, *lexicography*, *research* and *chocolate*, as well as the adjective *computational*, as series of association strengths with a set of lemmas. Empty cells indicate that the word in the row and the word in the column never co-occur in the corpus (given a certain window span).
+@firth_1957a inspired a whole tradition of corpus linguistics which started to look at collocations as part of the semantic description of a lemma. The Cobuild dictionary was the first to integrate collocational information into their entries. The Birmingham school, pioneered by John Sinclair, used co-occurrence frequency information to describe a lexical item (most often word forms, in English; see @sinclair_1991 [29] and; @stubbs_1995 [23-24]) by the set of those context words most attracted to them. Researchers would normally transform the raw frequencies with association measures such as mutual information
+[@church.hanks_1989; @stubbs_1995 33; @mcenery.etal_2010; @gablasova.etal_2017]
+or t-score
+<!-- TODO add proper sources, probably sinclair, stubbs, others... @gablasova.etal_2017-->
+among others (see @gablasova.etal_2017 for an overview),
+set a threshold (around 3 for mutual information)
+<!-- TODO check references: maybe sinclair and stubbs, also mcenery, gablasova... -->
+and rank the context words that survive such threshold.
+
+Count-based vectors basically compare two items by contrasting their list of collocates, but instead of implementing a binary distinction based on an arbitrary threshold,
+<!-- TODO add citation -->
+the magnitude of the association strengths will play a role. Rather than measuring the overlap between the traditional collocational profiles, it will depend on what the actual values are.
+
+Distributional models operationalize[^oper] this idea by representing words as vectors (i.e. arrays of numbers) coding frequency information. Typically, the raw frequency is transformed to some association strength measure, such as pointwise mutual information [PMI, see @church.hanks_1989], which compares the frequency with which two words occur close to each other and the expected frequency if the words were independent. For example, Table \@ref(tab:vec1) shows small vectors representing the English nouns *linguistic*, *lexicography*, *research* and *chocolate*, as well as the adjective *computational*, as series of association strengths with a set of lemmas. Empty cells indicate that the word in the row and the word in the column never co-occur in the corpus (given a certain window span).
+
+[^oper]: See @stefanowitsch_2010 for a discussion on definitions and operationalizations of *meaning* and their relationship to an overarching theoretical notion of *meaning*.
+<!-- TODO add reference to the appropriate theoretical section -->
 
 ```{r, vec1, echo=FALSE, tab.cap="Example of type-level vectors."}
 vex <- read_csv("assets/vector-examples/vectorexample.csv", col_types = cols()) %>% 
-  mutate_if(is.numeric, round, 2)
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate_if(is.numeric, na2zero)
 vex %>% 
-  select(-`eat/v`) %>% 
+  # select(-`eat/v`) %>%
   flextable() %>% 
-  add_footer_lines("PMI values based on symmetric window of 10; frequency data from GloWbE.") %>% 
-  fit_to_width(max_width = 4.7)
+  add_footer_lines("PMI values based on symmetric window of 10; frequency data from GloWbE.")
 ```
 
-Each row is a vector coding the distributional information of the lemma it represents. As we can see in this example, words with similar vectors (e.g. *linguistics* and *lexicography*) are semantically similar, while words with different vectors (e.g. *linguistics* and *chocolate*) are semantically different.
+Each row is a vector coding the distributional information of the lemma it represents. By *lemma* we refer to the combination of a stem and a part of speech, e.g. *chocolate/n* covers *chocolate*, *chocolates*,  *Chocolate*... How we define the unit is a decision we must make when we build a model (see Chapter \@ref(params)); in computational linguistic research, this unit is often a word form, and the difference between using word forms or lemmas varies drastically depending on the language of the corpus. More importantly, we must remember that the vectors represent a distributional profile of the lemma, which is automatically extracted from a corpus, not of a meaning [Cf. @bolognesi_2020 82].
 
-The vectors in Table \@ref(tab:vec1) are type-level vectors: each of them aggregates over all the instances of a given word, e.g. *linguistics*, to build an overall profile. As a result, it collapses the internal variation of the lemma, i.e. its semasiological structure. In order to uncover such information, we need to build vectors for the individual instances or tokens, relying on the same principle: items occurring in similar contexts will be semantically similar. For instance, we might want to model the three (artificial) occurrences of *study* in (@ex1) through (@ex3), where the target item is in italics.
+Table \@ref(tab:vec1) offers a brief example in which semantically similar lemmas (e.g. *linguistics* and *lexicography*) have similar vectors, while semantically different lemmas (e.g. *linguistics* and *chocolate*) have different vectors.
+
+These are type-level vectors: each of them aggregates over all the instances of a given lemma, e.g. *linguistics*, to build an overall profile. As a result, it collapses the internal variation of the lemma, i.e. its semasiological structure. In order to uncover such information, we need to build vectors for the individual instances or tokens, relying on the same principle: items occurring in similar contexts will be semantically similar. For instance, we might want to model the three (artificial) occurrences of *study* in (@ex1) through (@ex3), where the target item is in italics.
 
 (@ex1) Would you like to *study* lexicography?
 (@ex2) They *study* this in computational linguistics as well.
@@ -50,27 +66,38 @@ Given that, at the aggregate level, a word can co-occur with thousands of differ
 
 For example, we could represent example (@ex1) with the vector for its context word *lexicography*, that is, the second row in Table \@ref(tab:vec1); example (@ex2) with the sum of the vectors for *linguistics* (row 1) and *computational* (row 3); and example (@ex3) with the vector for *chocolate* (row 5). This not only solves the sparsity issue, ensuring overlap between the vectors, but also allows us to find similarity between (@ex1) and (@ex2) based on the similarity between the vectors for *lexicography* and *linguistics*.
 
-From applying this method we obtain numerical representations of occurrences of a word. We can compare them to each other by calculating pairwise distances, which is at the base of clustering analyses and visualization techniques based on dimensionality reduction. However, in order to obtain this result we need to make a number of decisions involved, mostly, in defining the context that will be used to represent an item [Cf. @bolognesi_2020 83].
+From applying this method we obtain numerical representations of occurrences of a word. We can compare them to each other by calculating pairwise distances, which is at the base of clustering analyses (such as HDBSCAN, see Chapter \@ref(hdbscan)) and visualization techniques based on dimensionality reduction (section \@ref(dim-reduction)).
+
+However, in order to obtain this result we need to make a number of decisions related, among other things, with how we define *word* and *context* [Cf. @bolognesi_2020 83]. These decisions will be discussed in Chapter \@ref(params).
 
 ## Dimensionality reduction {#dim-reduction}
 
-<!-- NOTE Dimensionality reduction can also refer to SVD and stuff like that, so we should mention it and dismiss, cite Stefano -->
+Dimensionality reduction algorithms try to reduce the number of dimensions of a high-dimensional entity while retaining as much information as possible. In Latent Semantic Analysys (LSA)
+<!-- NOTE add authors, Sahlgren, Van De Cruys... -->
+it is used to reduce type-level spaces from thousands of dimensions to a few hundred, and the resulting reduced dimensions have been found to correspond to semantic fields.
+@vandecruys_2008 tried both SVD and non-negative matrix factorization on type-level BOW-based models with whole paragraphs as windows but they did not bring any improvement.
 
-Dimensionality reduction refers to algorithms that try to locate different items on a low-dimensional space (e.g. 2D) preserving their distances in the high-dimensional space (e.g. 5000D) as well as possible.
-The literature up to today tends to go for either multidimensional scaling (MDS) or t-stochastic neighbor embeddings (t-SNE),
-which may be run on R with the function `metaMDS()` of the {vegan} package [@R-vegan]
-and `Rtsne()` of the homonymous package [@R-Rtsne], respectively.
+It could also be used for token-level spaces, but the comparisons discussed in @depascale_2019 [246] indicate that they don't necessarily perform better than non reduced spaces. Besides, as we will see in Chapter \@ref(params), we can also generate spaces that are already in the few hundred dimensions by selecting the first order context words as second order features, which does not underperform in our studies. Skipping the SVD step also implies more transparent vectors, facilitating the understanding of what is going on under the hood, but, as many other paths we have not taken, the application of SVD remains a parameter to explore in the future.
+<!-- NOTE Dimensionality reduction can also refer to SVD and stuff like that, so we should mention it and dismiss, cite Stefano [246]
+Also check Van De Cruys' work, some LSA? Remember: Kiela+Clark do not look into this-->
 
-MDS is an ordination technique, like principal components analysis (PCA). It tries out different low-dimensional configurations and tries to maximize the correlation between the pairwise distances in the high-dimensional space and those in the low-dimensional space: items that are close together in one space should stay close together in the other, and items that are far apart in one space should stay far apart in the other.
+Both dimensionality reduction techniques and neural networks are suggested as ways of condensing very long, sparse vectors [@jurafsky.martin_2020; @bolognesi_2020],
+but if the FOC-based selection of second order dimensions suffices, it is not really needed. Indeed, we might want to compare SVD versions and embeddings with these vectors, but for the purposes of understanding what is going on and obtaining meaningful information for corpora, this is still cool!
+
+The algorithms we will discuss in this section, instead, try to locate different items on a low-dimensional space (e.g. 2D) preserving their distances in the high-dimensional space (e.g. 5000D) as well as possible.
+The literature up to today tends to go for either multidimensional scaling (MDS) or t-stochastic neighbor embeddings (t-SNE);
+recently, an interesting alternative called UMAP has been introduced, which we'll discuss shortly.
+
+MDS is an ordination technique, like principal components analysis (PCA). It tries out different low-dimensional configurations aiming to maximize the correlation between the pairwise distances in the high-dimensional space and those in the low-dimensional space: items that are close together in one space should stay close together in the other, and items that are far apart in one space should stay far apart in the other.
 It can be evaluated via the stress level, the complement of the correlation coefficient: if the correlation between the pairwise distances is 0.85, the stress level is 0.15.
-Unlike PCA, however, the dimensions are not meaningful *per se*; two different runs of MDS may result in plots that mirror each other while representing the same thing. Nonethelesss, the R implementation rotates the plot so that the horizontal axis represents the maximum variation.
+Unlike PCA, however, the dimensions are not meaningful *per se*; two different runs of MDS may result in plots that mirror each other while representing the same thing. Nonetheless, the R implementation (in particular, `metaMDS()` of the {vegan} package, see @R-vegan) rotates the plot so that the horizontal axis represents the maximum variation.
 In cognitive linguistics literature both metric [@hilpert.correiasaavedra_2017; @hilpert.flach_2020; @koptjevskaja-tamm.sahlgren_2014]
 and nonmetric MDS [@heylen.etal_2015; @heylen.etal_2012; @depascale_2019; @perek_2016] have been used.
 
 The second technique, t-SNE [@Rtsne2008; @Rtsne2014], has also been incorporated in cognitive distributional semantics [@depascale_2019; @perek_2018].
-The algorithm is quite different from MDS, but for our purposes the crucial point is that it prioritizes preserving local similarity structure instead of the global structure: items that are close together in the high-dimensional space should stay close together in the low-dimensional space, but those that are far apart in the high-dimensional space may be even farther apart in low-dimensional space. This leads to nice, tight clusters but the distance between them is less interpretable than in an MDS plot.
-T-SNE was the state-of-the-art visualization technique for word vectors in computational linguistics [@smilkov.etal_2016] but is now generally being replaced by UMAP.
+It is also popular in computational linguistics [@smilkov.etal_2016; @jurafsky.martin_2020 118]; in R, it can be implemented with the `Rtsne` function of the homonymous package [@R-Rtsne].
+The algorithm is quite different from MDS. For our purposes the crucial point is that it prioritizes preserving local similarity structure instead of the global structure: items that are close together in the high-dimensional space should stay close together in the low-dimensional space, but those that are far apart in the high-dimensional space may be even farther apart in low-dimensional space.
 
-<!-- TODO add stuff about UMAP -->
+This leads to nice, tight clusters but the distance between them is less interpretable than in an MDS plot (where, in any case, tight clusters are a rare occurrence in these studies). In other words, we can interpret tight groups of tokens as being similar to each other, but we cannot extract meaningful information from the distance between these groups. In addition, it would seem that points that are far away in a multidimensional space might show up close together in the low dimensional space [@oskolkov_2021]. Uniform Manifold Approximation and Projection [@mcinnes.etal_2020], instead, penalizes this sort of discrepancies. It would be an interesting avenue for further research, but a brief test on the current data did not reveal such great differences between t-SNE and UMAP to warrant the replacement of the technique within the duration of this project. Other apparent advantages such as speed were not observed in the small samples under consideration (in fact, UMAP ---or at least its R implementation with the {umap} package [@R-umap]--- was even slower).
 
-In both cases we need to state the desired number of dimensions before running the algorithm --for visualization purposes, the most useful choice is 2. Three dimensions are difficult to interpret if projected on a 2D space, such as a screen [@card.etal_1999 18; @wielfaert.etal_2019 222]. In addition, t-SNE requires setting a parameter called perplexity, which basically sets how many neighbors the preserved local structure should cover.
+In both cases we need to state the desired number of dimensions before running the algorithm ---for visualization purposes, the most useful choice is 2. Three dimensions are difficult to interpret if projected on a 2D space, such as a screen [@card.etal_1999 18; @wielfaert.etal_2019 222]. In addition, t-SNE requires setting a parameter called perplexity, which basically sets how many neighbors the preserved local structure should cover.

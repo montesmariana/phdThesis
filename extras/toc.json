@@ -36,16 +36,21 @@
     note: "Needs reorganization, bad."
   },
   {
-    fname: "theo_1",
-    heading: "Nonsense or no senses?",
-    note: "Starts Part II",
-    description: "Introduction to the theoretical part of the thesis."
-  },
-  {
     fname: "theo_2",
     heading: "The nature of clouds",
-    description: "Some rambling about what we think the clouds say and what they actually do.",
-    note: "Yet to select the topics and add more (short?) chapters."
+    note: "Starts Part II",
+    description: "Cloud classification, technical interpretation."
+  },
+  {
+    fname: "theo_1",
+    heading: "Nonsense or no senses?",
+    description: "Semantic interpretation of the clouds: Sinclair's model, prototypicality...",
+    note: "Still discussing with Dirk... and I don't really like the focus on senses."
+  },
+  {
+    fname: "theo_3",
+    heading: "No solution fits all",
+    description: "There is no optimal solution across items, neither for a lemma, nor for a semantic phenomenon."
   },
   {
     fname: "index",
@@ -60,8 +65,19 @@
     note: "Should go before the introduction I think?"
   },
   {
-    fname: "viz_1",
-    heading: "An interface to the world of clouds",
-    description: "Introduction to the technical/methodological part of the thesis."
+    fname: "con_1",
+    heading: "A cloudspotter's guide to IDONTKNOW",
+    description: "Practical tips and suggestions.",
+    note: "Opens part III"
+  },
+  {
+    fname: "con_2",
+    heading: "Avenues of future research",
+    description: "Ideas to expand research, discussion of things I didn't do."
+  },
+  {
+    fname: "con_3",
+    heading: "Concluding thoughts",
+    description: "Conclusion, last chapter!"
   }
 ]

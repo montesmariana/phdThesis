@@ -1,4 +1,4 @@
-# Annotation schema
+# Annotation schema {#ann}
 
 <!-- QUESTION Should we include all the definitions and translations and examples here or in an appendix? What about estimated and actual frequencies? -->
 For these case studies, we selected 34 Dutch lemmas to annotate and model with token level vector spaces, two of which (*herkennen* and *spoor*) were discarded.

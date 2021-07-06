@@ -1,4 +1,4 @@
-# NephoVis
+# NephoVis {#nephovis}
 
 In this chapter we will learn how to use the visualization tool to explore
 and compare token-level vector space models.
@@ -30,7 +30,7 @@ Instead, we will start with the lowest level, [Level 3](#level_3),
 which represents individual token-level clouds,
 zoom out into [Level 2](#level_2), which shows multiple token-level clouds simultaneously,
 which will make the most abstract level, [Level 1](#level_1), more clear.
-Afterwards (Section \@ref(workflow)) we will briefly simulate the path an user would take from Level 1 to Level 3.
+Afterwards (Section \@ref(nephowf)) we will briefly simulate the path an user would take from Level 1 to Level 3.
 This perspective was also taken in @montes.heylen_Submitted.
 Finally, Section \@ref(wishlist) goes into the Beta features
 that require better development and testing, as well as ideas that we might want to
@@ -66,7 +66,7 @@ Because they are model-dependent, highlighted context and searching tokens by co
 
 Level 1 shows one zoomable scatterplot, similar to Level 3, but with each glyph representing one model, instead of one token. As a reminder of the difference, the default shape in Level 1 is a wye (“Y”), while that in the other levels is a circle. The data represented by this scatterplot is not the distance between tokens anymore, but that between models, as described at the beginning of Section 3. This scatterplot aims to represent the similarity between models and allows the user to select the models to inspect according to different criteria. Categorical variables (e.g. whether sentence boundaries are used) can be mapped to colors and shapes, as shown in Figure 5, and numerical variables (e.g. number of tokens in the model) can be mapped to size. A selection of buttons on the left panel, as well as the legends for color and shape, can be used to filter models with a certain parameter setting. Otherwise, models can be selected by clicking on the glyphs that represent them.
 
-## The full story {#workflow}
+## The full story {#nephowf}
 
 The increasing granularity from Level 1 to Level 3 and the manner of access to different functionalities respect the mantra “Overview first, zoom and filter, then details-on-demand” [@shneiderman_1996 97].
 The individual plots in Levels 1 and 3 are literally zoomable; and in all cases it is possible to select items (either models, in Level 1, or tokens, in the other two), for more detailed inspection. Finally, a number of features show details on demand, such as the names of the models in Level 1 and the context of the tokens in the other two levels.

@@ -6,14 +6,23 @@ language:
 rmd_files: [
   "index.Rmd",
   "gracias.Rmd",
+  
+  "introduction.Rmd",
+  
   "viz_1.Rmd",
-  "viz_2.Rmd",
   "viz_3.Rmd",
+  "viz_2.Rmd",
   "viz_4.Rmd",
   "viz_5.Rmd",
   "viz_6.Rmd",
-  "theo_1.Rmd",
+  
   "theo_2.Rmd",
-  "app_1.Rmd",
+  "theo_1.Rmd",
+  "theo_3.Rmd",
+  
+  "con_1.Rmd",
+  "con_2.Rmd",
+  "con_3.Rmd",
+  
   "references.Rmd"
 ]

@@ -12,3 +12,16 @@ Python and R functions), and a sort of manual of how it's used.
 <!-- TODO short introduction of the outline of this PART -->
 
 Visual analytics aims to integrate statistical data analysis with techniques from information visualization so that human analysts can recognize, interpret and reason about the statistical patterns that the data analysis reveals [@card.etal_1999]. Importantly, a visual analytics approach offers a manipulable, interactive visualization that, unlike static diagrams, enables the exploration of a space of parameter values and modeling outputs.
+
+The following chapters interlace some technical explanations of the methodology with
+description of the actual steps taken in this research. Chapter \@ref(workflow) offers an introduction
+to distributional models and everything that a researcher needs to know to go from a corpus
+to the material needed for the visualization. This abstract description is followed by
+an explanation of the specific parameters explored in our case studies in Chapter \@ref(params).
+This information should be enough to understand the usefulness of the visualization,
+thoroughly described in \@ref(nephovis), which builds on @montes.heylen_Submitted.
+Chapter \@ref(hdbscan) expands the analytical possibilities combining the output of the workflow
+with HDBSCAN and visualizing it on a Shiny App.
+Finally, Chapter \@ref(ann) gives an overview of the annotation procedure. While the step itself
+was taken before any modeling was performed, it is only necessary for visual evaluation
+and more relevant to the theoretical insights in the second part of this thesis.

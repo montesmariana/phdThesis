@@ -1,6 +1,7 @@
 bookdown::bs4_book:
   theme:
     primary: "#086a6a"
+  css: assets/style.css
   repo: https://github.com/montesmariana/phdThesis
 bookdown::pdf_book:
   includes:
