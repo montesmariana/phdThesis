@@ -1,0 +1,101 @@
+# Introduction
+
+This dissertation concerns itself with the application of distributional methods,
+developed within the field of Computational Linguistics (Section \@ref(comp)),
+to lexicological research, in particular the theoretical framework of Cognitive Semantics (Section \@ref(cog)).
+In addition, the study makes heavy use of visual analytics (Section \@ref(viz)).
+
+It is part of a larger project, Nephological Semantics, an even a longer research programme within QLVL (Section \@ref(nephosem)).
+
+## Distributional semantics and Computational Linguistics {#comp}
+
+Distributional semantics is a popular technique in Computational Linguistics, where it originated.
+[Brief mention of references, but I will elaborate what it's about in the first technical chapter.]
+It relies on the Distributional Hypothesis, which states a correlation between the distributional properties
+of words and their meaning (or rather, between differences in distribution and differences in meaning).
+
+There are some differences between the use of this technique in Computational Linguistics and what we'll show
+in this thesis.
+
+First, Computational Linguistics is typically task-oriented, and tests its models by comparing their
+results to benchmarks, or gold standards [reference to some of them]. In contrast, we will
+take manual annotation as a guideline, but not as a ground truth, and we are more interested in
+learning what the models can tell us about the behaviour of words and in *how* models differ than
+in their accuracy. [Admittedly, this is in part because there is no best model.]
+
+Second, their distributional models mostly work at type-level and with word forms as units,
+whereas we will look into token-level models with lemmas as units.
+Of course, there is work at token-level in computational linguistics (as I will describe in the first chapter)
+but it is not as popular as the type level. A more recent exception is BERT and family.
+
+Third, since the advent of prediction-based models [Mikolov et al 2013...], word embeddings have become
+increasingly popular; a number of papers have compared the performance of these and count-based models,
+with different results, but in practice, neural networks are the norm in NLP. For these studies, we
+looked into count-based model as a more transparent method, i.e. one in which we can trace the similarities
+between tokens to the words that co-occur with them and their type-level similarity.
+As the rest of the dissertation will show, the models are not necessarily as transparent as we thought they would be,
+but that intuition was still the reasoning behind the preference for count-based models.
+
+[Can I equate Computational Linguistics and NLP?]
+
+## Distributional semantics and Cognitive Semantics {#cog}
+
+[For the computational audience?]
+
+Cognitive Linguistics is a theoretical framework characterized by (among other principles) an emphasis on meaning
+(everything can be meaningful), the notion of fuzzy and prototypical categories and an usage-based approach.
+[Bunch of references!]
+
+These three cornerstones inform our study of distributional models in this dissertation.
+
+First, given that the Distributional Hypothesis that underlies the methodology suggests a correlation between
+distributional differences and semantic differences, what *kind* of semantic differences are at play?
+Can we model different semantic dimensions with different distributional properties?
+What kind of semantic phenomena (specialization, generalization, metaphor, metonymy... or even animacy, concreteness) can be modelled?
+[This from a semasiological point of view; refer to onomasiological and lectometric studies too :) ]
+
+Second, the notion of fuzzy and prototypical categories underlies a sceptical perspective towards the existence of senses
+as discrete categories [more references] and encourages us to pursue a mechanism that can represent semasiological structure
+in a non concrete way. To a certain degree, we need discrete entities to talk about them, we need to classify things,
+and both the sense annotation and the use of clustering algorithms respond to such needs. But we don't take them as a norm; instead,
+we embrace the presence of noise, of degrees of membership, of partial overlap between solutions and general tendencies.
+The full dissertation should be read in this light.
+
+Third, the usage-based approach is easily mapped into this bottom-up, empirical, quantitative methodology,
+within an already established trend in Cognitive Linguistics [references!]. With a few exceptions (we'll see),
+all the examples will be (randomly?^[I like this idea, because it's (1) more honest and (2) fast, but might not return the best illustrations]) extracted from the samples taken for the case studies. The arguments exposed in this
+dissertation are backed up by the data used (which are available in The Cloud) and the specific analyses performed,
+which also means that their generalization power is limited to that data and analyses.
+Given that the results don't *look* like they would be specific to this corpus (not in terms of the concrete descriptions of the lemmas,
+but the methodological and theoretical generalizations), it is likely that they apply to other forms as well, but of course,
+it's an empirical question :)
+
+## Visual analytics {#viz}
+
+Brief introduction of the motivation and rationale of the visualization tools (which will get their own chapter.)
+
+<!-- In order to explore the non discrete organization of attestations in the semantic space, -->
+<!-- we can combine dimensionality reduction techniques with a graphic representation to visualize them -->
+<!-- as points on a 2-dimensional space. While spatial distances represent distributional similarities, -->
+<!-- colour-coding can represent the mapping of manually annotated senses, lects and clustering solutions. -->
+<!-- More importantly, the visual tools developed within our research team and used for this project can also let us explore the -->
+<!-- plots interactively, checking the actual contexts, finding the relative distances of points across different models, -->
+<!-- and retrieving the context words responsible for the organization. -->
+
+## Nephological Semantics {#nephosem}
+
+Brief history and description of the project, how it brings the three points above together,
+and what this PhD shares with previous PhD's/publications within the project or what holes it fills.
+For this I still have to reread the project description, Stefano's subsection on his PhD and your Chapter 1 (any other suggestions?).
+
+## Structure of the dissertation {#str}
+
+The rest of the dissertation will consist of three main parts.
+The first part will focus on the methodological procedure and choices taken in this study:
+the workflow to create vector space models (including an introduction to distributional semantics),
+the visualization tool and clustering algorithms, and the selection of a dataset, its annotation, parameter settings, etc. (Not necessarily in that order.)
+The second part will focus on the most important findings from the study [i.e. three main points].
+The third (and less substantial?) part will round up the dissertation with a general practical guide (tips, tricks and warnings),
+suggestions for further research and a conclusion. [Whether this amounts to one or two chapters, I'll still have to see.]
+<!-- TODO add project number: BOF C1-project (3H150305) “Nephological Semantics: using token clouds for meaning detection in variationist linguistics”; history in Stefano's thesis, pp. 7-8 -->
+
