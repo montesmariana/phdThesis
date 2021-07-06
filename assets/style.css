@@ -1,0 +1,37 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+#main {
+  counter-reset: examples;
+}
+
+ol.example {
+  list-style: decimal;
+}
+
+ol.example li {
+  margin-bottom: 20px;
+  counter-increment: examples; 
+}
+
+ol.example li::marker {
+  content: "(" counter(examples) ")\a0";
+}
+
+.csl-entry {
+  padding-top: 10px;
+  margin-left: 2em;
+  text-indent: -2em;
+}
