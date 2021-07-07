@@ -99,7 +99,7 @@ and rank the context words that survive such threshold.</p>
 the magnitude of the association strengths will play a role. Rather than measuring the overlap between the traditional collocational profiles, it will depend on what the actual values are.</p>
 <p>Distributional models operationalize<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;See &lt;span class="citation"&gt;&lt;a href="references.html#ref-stefanowitsch_2010" role="doc-biblioref"&gt;Stefanowitsch&lt;/a&gt; (&lt;a href="references.html#ref-stefanowitsch_2010" role="doc-biblioref"&gt;2010&lt;/a&gt;)&lt;/span&gt; for a discussion on definitions and operationalizations of &lt;em&gt;meaning&lt;/em&gt; and their relationship to an overarching theoretical notion of &lt;em&gt;meaning&lt;/em&gt;.
 <!-- TODO add reference to the appropriate theoretical section -->&lt;/p&gt;'><sup>4</sup></a> this idea by representing words as vectors (i.e. arrays of numbers) coding frequency information. Typically, the raw frequency is transformed to some association strength measure, such as pointwise mutual information <span class="citation">(PMI, see <a href="references.html#ref-church.hanks_1989" role="doc-biblioref">Church &amp; Hanks 1989</a>)</span>, which compares the frequency with which two words occur close to each other and the expected frequency if the words were independent. For example, Table <a href="workflow.html#tab:vec1">3.1</a> shows small vectors representing the English nouns <em>linguistic</em>, <em>lexicography</em>, <em>research</em> and <em>chocolate</em>, as well as the adjective <em>computational</em>, as series of association strengths with a set of lemmas. Empty cells indicate that the word in the row and the word in the column never co-occur in the corpus (given a certain window span).</p>
-<template id="689b1794-d596-4441-917a-46260be030cd"><style>
+<template id="81d6f4a7-aef2-4391-b973-20a1b2561df3"><style>
 .tabwid table{
   border-collapse:collapse;
   line-height:1;
@@ -135,73 +135,73 @@ background-color: transparent;
 }
 </style>
 <div class="tabwid">
-<style>.cl-bef4e56a{border-collapse:collapse;}.cl-bec32214{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-bec3bddc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bec4a79c{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bec4a79d{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bec4a79e{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bec4a79f{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<div class="inline-table"><table class="cl-bef4e56a">
+<style>.cl-06acf192{border-collapse:collapse;}.cl-0652db30{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-06530218{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-06535006{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06535007{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06535008{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(255, 255, 255, 0.00);border-top: 0 solid rgba(255, 255, 255, 0.00);border-left: 0 solid rgba(255, 255, 255, 0.00);border-right: 0 solid rgba(255, 255, 255, 0.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-06535009{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<div class="inline-table"><table class="cl-06acf192">
 <caption class>
 <span id="tab:vec1">Table 3.1: </span>Example of type-level vectors.
 </caption>
 <thead><tr style="overflow-wrap:break-word;">
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">target</span></p></td>
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">language/n</span></p></td>
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">word/n</span></p></td>
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">flemish/j</span></p></td>
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">english/j</span></p></td>
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">eat/v</span></p></td>
-<td class="cl-bec4a79f"><p class="cl-bec3bddc"><span class="cl-bec32214">speak/v</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">target</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">language/n</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">word/n</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">flemish/j</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">english/j</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">eat/v</span></p></td>
+<td class="cl-06535009"><p class="cl-06530218"><span class="cl-0652db30">speak/v</span></p></td>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">linguistics/n</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">4.37</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">0.99</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">3.16</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">0.41</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">linguistics/n</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">4.37</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">0.99</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">3.16</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">0.41</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">lexicography/n</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">3.51</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">2.18</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">2.19</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">2.09</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">lexicography/n</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">3.51</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">2.18</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">2.19</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">2.09</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">computational/j</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">1.6</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">0.08</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-1</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-1.8</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">computational/j</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">1.6</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">0.08</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-1</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-1.8</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">research/n</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">0.2</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-0.84</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">0.04</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-0.5</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-0.68</span></p></td>
-<td class="cl-bec4a79c"><p class="cl-bec3bddc"><span class="cl-bec32214">-0.38</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">research/n</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">0.2</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-0.84</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">0.04</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-0.5</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-0.68</span></p></td>
+<td class="cl-06535006"><p class="cl-06530218"><span class="cl-0652db30">-0.38</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">chocolate/n</span></p></td>
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">-1.72</span></p></td>
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">-0.53</span></p></td>
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">1.28</span></p></td>
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">-0.73</span></p></td>
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">3.08</span></p></td>
-<td class="cl-bec4a79d"><p class="cl-bec3bddc"><span class="cl-bec32214">-1.13</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">chocolate/n</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">-1.72</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">-0.53</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">1.28</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">-0.73</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">3.08</span></p></td>
+<td class="cl-06535007"><p class="cl-06530218"><span class="cl-0652db30">-1.13</span></p></td>
 </tr>
 </tbody>
-<tfoot><tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-bec4a79e"><p class="cl-bec3bddc"><span class="cl-bec32214">PMI values based on symmetric window of 10; frequency data from GloWbE.</span></p></td></tr></tfoot>
+<tfoot><tr style="overflow-wrap:break-word;"><td colspan="7" class="cl-06535008"><p class="cl-06530218"><span class="cl-0652db30">PMI values based on symmetric window of 10; frequency data from GloWbE.</span></p></td></tr></tfoot>
 </table></div>
-</div></template><div class="flextable-shadow-host" id="407bf213-e753-4a14-95b0-fb389186d5f6"></div>
+</div></template><div class="flextable-shadow-host" id="d6ea3577-51e6-4409-af60-947eee088f1f"></div>
 <script>
-var dest = document.getElementById("407bf213-e753-4a14-95b0-fb389186d5f6");
-var template = document.getElementById("689b1794-d596-4441-917a-46260be030cd");
+var dest = document.getElementById("d6ea3577-51e6-4409-af60-947eee088f1f");
+var template = document.getElementById("81d6f4a7-aef2-4391-b973-20a1b2561df3");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -281,7 +281,7 @@ The algorithm is quite different from MDS. For our purposes the crucial point is
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-07-06.</p>
+    <p>"<strong>Cloudspotting: Visual analytics for distributional semantics</strong>" was written by Mariana Montes. It was last built on 2021-07-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

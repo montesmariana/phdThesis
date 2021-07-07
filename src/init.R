@@ -56,3 +56,44 @@ plotCoords <- function(medoid, cw_data = tibble()) {
     scale_shape(guide = "none") #+
   # theme(legend.position = "bottom")
 }
+
+# Examples ----
+source_names <- c(
+  'nrc_handelsblad' = 'NRC Handelsblad',
+  'de_standaard' = 'De Standaard',
+  'de_morgen' = 'De Morgen',
+  'het_laatste_nieuws' = 'Het Laatste Nieuws',
+  'volkskrant' = 'Volkskrant',
+  'algemeen_dagblad' = 'Algemeen Dagblad',
+  'parool' = 'Het Parool',
+  'het_nieuwsblad' = 'Het Nieuwsblad'
+)
+
+html2md <- function(txt) {
+  str_replace_all(txt, "<strong>([^<]+)</strong>", "*\\1*") %>%
+    str_replace_all("<span class='target'>([^<]+)</span>", "**\\1**") %>% 
+    str_remove_all("<sup>[^<]+</sup>")
+} 
+
+sampleCtxt <- function(l, mnum = 1, clusn = NULL, stag = NULL, cw = NULL, seed = 8541, n = 1) {
+  set.seed(seed)
+  m <- d[[l]]$medoidCoords[[mnum]]$coords
+  if (is.null(clusn)) clusn <- unique(m$cluster)
+  if (is.null(stag)) stag <- unique(m$sense)
+  m <- m %>% filter(
+    cluster %in% clusn,
+    sense %in% stag
+  )
+  if (!is.null(cw)) m <- m %>% filter(map_lgl(cws, has_element, cw))
+  m %>% sample_n(size = 1) %>% 
+    separate(`_id`, into = c('lemma', 'pos', 'source', 'line'), sep = '/') %>% 
+    mutate(
+      numbers = str_replace(source, "[a-z_]+_([0-9_]+)", "\\1") %>% str_replace("_01_", "_"),
+      source = source_names[str_remove(source, paste0("_", numbers))]
+    ) %>% 
+    separate(numbers, into = c("date", "artn"), remove = F) %>% 
+    mutate(date = as.Date(date, format = "%Y%m%d"),
+           txt = str_glue("{ctxt} (*{source}*, {date}, Art. {artn})")) %>% 
+    pull(txt) %>% html2md()
+}
+  
