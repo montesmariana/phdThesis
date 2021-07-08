@@ -15,7 +15,7 @@ description: "This is my PhD dissertation, still a draft, always perfectable."
 ```
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 
 
