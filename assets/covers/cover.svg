@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="340mm"
+   height="240mm"
+   viewBox="0 0 340 240"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="cover.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="551.82718"
+     inkscape:cy="445.43087"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-57)">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#002800;stroke-width:0.30000001;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.30000001, 3.60000018;stroke-dashoffset:3.00000024;stroke-opacity:1;paint-order:normal"
+       id="rect815"
+       width="20.847023"
+       height="253.90604"
+       x="159.29263"
+       y="52.18111" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.11111069px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="207.13097"
+       y="128.8006"
+       id="text819"><tspan
+         sodipodi:role="line"
+         id="tspan817"
+         x="207.13097"
+         y="128.8006"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:Elephant;-inkscape-font-specification:Elephant;stroke-width:0.26458332">Cloudspotting</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;line-height:1.25;font-family:Elephant;-inkscape-font-specification:Elephant;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="256.93115"
+       y="154.50298"
+       id="text823"><tspan
+         sodipodi:role="line"
+         id="tspan821"
+         x="256.93115"
+         y="154.50298"
+         style="font-size:8.46666622px;text-align:center;text-anchor:middle;stroke-width:0.26458332">Visual analytics</tspan><tspan
+         sodipodi:role="line"
+         x="256.93115"
+         y="165.0863"
+         style="font-size:8.46666622px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan825">for</tspan><tspan
+         sodipodi:role="line"
+         x="256.93115"
+         y="175.66965"
+         style="font-size:8.46666622px;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan829">distributional semantics</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.46666622px;line-height:1.25;font-family:Elephant;-inkscape-font-specification:Elephant;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="312.75601"
+       y="261.108"
+       id="text823-0"><tspan
+         sodipodi:role="line"
+         x="312.75601"
+         y="261.108"
+         style="font-size:8.46666622px;text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan829-7">Mariana</tspan><tspan
+         sodipodi:role="line"
+         x="312.75601"
+         y="271.69131"
+         style="font-size:8.46666622px;text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan862">Montes</tspan></text>
+  </g>
+</svg>

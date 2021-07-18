@@ -1,0 +1,243 @@
+type	final_action	majority_agreement	n
+blik	Other	Full	8
+blik	Other	Majority	42
+blik	Other	No agreement	13
+blik	Remove	Majority	2
+blik	Remove	No agreement	2
+blik	Same	Full	117
+blik	Same	Majority	96
+diskwalificeren	Other	Majority	7
+diskwalificeren	Other	No agreement	1
+diskwalificeren	Remove	Full	1
+diskwalificeren	Remove	Majority	1
+diskwalificeren	Same	Full	202
+diskwalificeren	Same	Majority	28
+dof	Other	Full	3
+dof	Other	Majority	14
+dof	Other	No agreement	5
+dof	Remove	Full	5
+dof	Remove	Majority	2
+dof	Remove	No agreement	2
+dof	Same	Full	238
+dof	Same	Majority	50
+dof	Same	No agreement	1
+geestig	Other	Full	10
+geestig	Other	Majority	30
+geestig	Other	No agreement	7
+geestig	Remove	Majority	2
+geestig	Same	Full	155
+geestig	Same	Majority	76
+gekleurd	Other	Full	3
+gekleurd	Other	Majority	7
+gekleurd	Other	No agreement	6
+gekleurd	Remove	Full	2
+gekleurd	Remove	Majority	1
+gekleurd	Remove	No agreement	1
+gekleurd	Same	Full	230
+gekleurd	Same	Majority	27
+gekleurd	Same	No agreement	3
+geldig	Other	Majority	10
+geldig	Other	No agreement	1
+geldig	Remove	Full	3
+geldig	Remove	Majority	1
+geldig	Same	Full	186
+geldig	Same	Majority	39
+gemeen	Other	Full	3
+gemeen	Other	Majority	19
+gemeen	Other	No agreement	25
+gemeen	Remove	Full	10
+gemeen	Remove	Majority	9
+gemeen	Remove	No agreement	4
+gemeen	Same	Full	163
+gemeen	Same	Majority	84
+gemeen	Same	No agreement	3
+goedkoop	Other	Full	7
+goedkoop	Other	Majority	10
+goedkoop	Other	No agreement	20
+goedkoop	Remove	Full	9
+goedkoop	Remove	Majority	6
+goedkoop	Remove	No agreement	2
+goedkoop	Same	Full	174
+goedkoop	Same	Majority	92
+grijs	Other	Full	6
+grijs	Other	Majority	23
+grijs	Other	No agreement	14
+grijs	Remove	Full	7
+grijs	Remove	Majority	6
+grijs	Remove	No agreement	3
+grijs	Same	Full	200
+grijs	Same	Majority	60
+grijs	Same	No agreement	1
+hachelijk	Other	Full	9
+hachelijk	Other	Majority	34
+hachelijk	Other	No agreement	1
+hachelijk	Remove	No agreement	1
+hachelijk	Same	Full	131
+hachelijk	Same	Majority	64
+haken	Other	Full	4
+haken	Other	Majority	45
+haken	Other	No agreement	17
+haken	Remove	Full	39
+haken	Remove	Majority	53
+haken	Remove	No agreement	17
+haken	Same	Full	143
+haken	Same	Majority	41
+haken	Same	No agreement	1
+harden	Other	Majority	4
+harden	Remove	Full	22
+harden	Remove	Majority	16
+harden	Remove	No agreement	3
+harden	Same	Full	237
+harden	Same	Majority	37
+harden	Same	No agreement	1
+haten	Other	Full	5
+haten	Other	Majority	13
+haten	Other	No agreement	4
+haten	Remove	Full	5
+haten	Remove	Majority	2
+haten	Remove	No agreement	4
+haten	Same	Full	181
+haten	Same	Majority	26
+heet	Other	Full	4
+heet	Other	Majority	33
+heet	Other	No agreement	32
+heet	Remove	Full	17
+heet	Remove	Majority	10
+heet	Remove	No agreement	1
+heet	Same	Full	176
+heet	Same	Majority	86
+heet	Same	No agreement	1
+heffen	Remove	Full	7
+heffen	Remove	Majority	9
+heffen	Remove	No agreement	6
+heffen	Same	Full	209
+heffen	Same	Majority	9
+heilzaam	Other	Majority	9
+heilzaam	Other	No agreement	3
+heilzaam	Remove	Full	2
+heilzaam	Remove	Majority	2
+heilzaam	Same	Full	175
+heilzaam	Same	Majority	49
+helpen	Other	Full	15
+helpen	Other	Majority	56
+helpen	Other	No agreement	19
+helpen	Remove	Full	3
+helpen	Remove	Majority	3
+helpen	Remove	No agreement	1
+helpen	Same	Full	74
+helpen	Same	Majority	69
+hemels	Other	Full	7
+hemels	Other	Majority	19
+hemels	Other	No agreement	6
+hemels	Remove	Full	22
+hemels	Remove	Majority	5
+hemels	Remove	No agreement	4
+hemels	Same	Full	132
+hemels	Same	Majority	45
+herhalen	Other	Full	12
+herhalen	Other	Majority	18
+herhalen	Other	No agreement	8
+herhalen	Remove	Full	1
+herhalen	Remove	Majority	4
+herhalen	Remove	No agreement	2
+herhalen	Same	Full	235
+herhalen	Same	Majority	39
+herhalen	Same	No agreement	1
+herinneren	Other	Majority	2
+herinneren	Other	No agreement	3
+herinneren	Same	Full	197
+herinneren	Same	Majority	37
+herinneren	Same	No agreement	1
+herkennen	Other	Full	12
+herkennen	Other	Majority	52
+herkennen	Other	No agreement	25
+herkennen	Same	Full	141
+herkennen	Same	Majority	90
+herroepen	Other	Majority	5
+herroepen	Other	No agreement	3
+herroepen	Remove	Full	3
+herroepen	Remove	Majority	1
+herroepen	Same	Full	177
+herroepen	Same	Majority	50
+herroepen	Same	No agreement	1
+herstellen	Other	Full	2
+herstellen	Other	Majority	18
+herstellen	Other	No agreement	12
+herstellen	Remove	Full	1
+herstellen	Same	Full	150
+herstellen	Same	Majority	57
+herstructureren	Other	Full	5
+herstructureren	Other	Majority	46
+herstructureren	Other	No agreement	23
+herstructureren	Same	Full	69
+herstructureren	Same	Majority	91
+herstructureren	Same	No agreement	6
+hoekig	Other	Full	1
+hoekig	Other	Majority	9
+hoekig	Other	No agreement	4
+hoekig	Remove	Full	6
+hoekig	Remove	Majority	8
+hoekig	Remove	No agreement	2
+hoekig	Same	Full	207
+hoekig	Same	Majority	43
+hoop	Other	Majority	5
+hoop	Remove	Full	2
+hoop	Remove	Majority	6
+hoop	Same	Full	291
+hoop	Same	Majority	16
+hoopvol	Other	Full	3
+hoopvol	Other	Majority	12
+hoopvol	Other	No agreement	2
+hoopvol	Remove	Majority	2
+hoopvol	Same	Full	171
+hoopvol	Same	Majority	50
+horde	Other	Full	10
+horde	Other	Majority	11
+horde	Other	No agreement	4
+horde	Remove	Full	1
+horde	Remove	Majority	1
+horde	Same	Full	233
+horde	Same	Majority	19
+horde	Same	No agreement	1
+huldigen	Other	No agreement	1
+huldigen	Remove	Full	1
+huldigen	Remove	Majority	8
+huldigen	Remove	No agreement	1
+huldigen	Same	Full	207
+huldigen	Same	Majority	22
+schaal	Other	Full	1
+schaal	Other	Majority	7
+schaal	Other	No agreement	8
+schaal	Remove	Full	2
+schaal	Same	Full	281
+schaal	Same	Majority	21
+spoor	Other	Full	17
+spoor	Other	Majority	70
+spoor	Other	No agreement	33
+spoor	Remove	No agreement	2
+spoor	Same	Full	139
+spoor	Same	Majority	96
+spoor	Same	No agreement	3
+spot	Other	Full	13
+spot	Other	Majority	17
+spot	Other	No agreement	3
+spot	Remove	Full	16
+spot	Remove	Majority	4
+spot	Remove	No agreement	1
+spot	Same	Full	173
+spot	Same	Majority	13
+staal	Other	Full	11
+staal	Other	Majority	32
+staal	Other	No agreement	1
+staal	Remove	Full	3
+staal	Remove	Majority	6
+staal	Same	Full	189
+staal	Same	Majority	78
+stof	Other	Full	10
+stof	Other	Majority	24
+stof	Other	No agreement	17
+stof	Remove	Majority	6
+stof	Remove	No agreement	1
+stof	Same	Full	227
+stof	Same	Majority	33
+stof	Same	No agreement	2
