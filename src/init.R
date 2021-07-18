@@ -9,21 +9,35 @@ library(ggpubr)
 library(cowplot)
 library(here)
 
-
 # automatically create a bib database for R packages ----
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown',
-  'cluster', 'vegan', 'Rtsne', 'dbscan', 'umap'
+  'cluster', 'vegan', 'Rtsne', 'dbscan', 'umap',
+  'semvar', 'entropy', 'shiny', 'colorblindr', 'irr',
+  'plotly'
 ), 'assets/bib/packages.bib')
 
+extrafont::loadfonts(device = "pdf")
 # utils ----
+hmean <- function(...){
+  return(1/mean(1/c(...), na.rm = TRUE))
+}
 na2zero <- function(x) {
   x[is.na(x)] <- "-"
   x
 }
 
+pmi2positive <- function(x) {
+  x[is.na(x)] <- 0
+  x[x < 0] <- 0
+  x
+}
+
 cloud_foto <- function(fname){
-  knitr::include_graphics(here("assets", "img", paste0(fname, ".jpg")))
+  knitr::include_graphics(
+    here("assets", "img", paste0(fname, ".jpg")),
+    auto_pdf = T,
+    dpi = 600)
 }
 
 html2md <- function(txt) {
@@ -32,31 +46,125 @@ html2md <- function(txt) {
     str_remove_all("<sup>[^<]+</sup>")
 }
 
+sc <- function(txt){
+  str_glue('<span style="font-variant:small-caps;">{txt}</span>')
+}
+
+latIt <- function(txt){
+  str_replace(r"(\textit{X})", "X", txt)
+}
+
+appPvalue <- function(p) {
+  if (p < 0.001) {
+    return ("p-value < 0.001")
+  } else if (p < 0.01) {
+    return ("p-value < 0.01")
+  } else if (p < 0.05) {
+    return ("p-value < 0.05")
+  } else {
+    template <- r"(p-value $\approx$ X)"
+    return(str_replace(template, "X", as.character(round(p, 3))))
+  }
+}
+
+reportStat <- function(stat){
+  estimate <- stat$estimate
+  p.value <- stat$p.value
+  measure <- str_replace(r"($\greek$)", "greek", names(estimate))
+  str_glue("{measure} = {round(estimate, 2)}, {appPvalue(p.value)}")
+}
+
+nameModel <- function(mname){
+  parts <- str_split(mname, pattern = "\\.")[[1]]
+  if (length(parts) == 4) parts <- c("lemma", parts)
+  foc <- str_remove(parts[[2]], "BOW") %>% str_remove("LEMMA") %>% 
+    str_replace("([A-Z]+)([^A-Z]+)", paste0(sc(tolower("\\1")), "\\2"))
+  pmi <- str_replace(parts[[3]], "PPMI", sc("ppmi"))
+  length <- sc(tolower(str_remove(parts[[4]], 'LENGTH')))
+  socpos <- str_remove(parts[[5]], 'SOCPOS')
+  paste(foc, pmi, length, socpos, sep="-")
+}
+
 # load data ----
-cloud_order <- c("Cumulus", "Stratocumulus", "Cirrus", "Cumulonimbus", "Cirrostratus")
 d <- readRDS(here("assets", "data.rds"))
+lrel <- jsonlite::read_json(here("assets", "lemmarel.json"))
+definitions <- readxl::read_excel(here("assets", "definitions.xlsx")) %>%
+  filter(lemma != 'spoor') %>% 
+  select(lemma, sense = code,
+         enl = example, een = example_translation,
+         dnl = definition, den = definition_translation,
+         rel_freq = my_dist) %>%
+  arrange(lemma, sense) %>%
+  mutate(
+    sense = if_else(
+      str_starts(den, "\\d"),
+      str_extract(den, "\\d(\\.\\d)?"),
+      str_remove(sense, paste0(lemma, "_"))
+    ),
+    dnl = str_remove(dnl, '\\d(\\.\\d)? '),
+    den = str_remove(den, '\\d(\\.\\d)? '),
+    Dutch = if_else(is.na(dnl), str_glue(""), str_glue("{dnl} ({latIt(enl)})")),
+    English = str_glue("{den} ({latIt(een)})")
+    ) %>%
+  select(lemma, sense, Dutch, English) 
+
+heilzaam <- read_tsv(here("assets", "heilzaam.cws.tsv"), col_types = c("sense_4" = "c")) %>% 
+  rename("BOW" = conc_distance, "CW" = cw_type) %>% 
+  mutate(path = str_replace_all(path, "->", r"( $\\rightarrow$ )"),
+         path = str_remove(path, "#"))
+
+lemmas <- read_tsv(here("assets", "lemmas.tsv"), col_types = cols()) %>% 
+  select(pos, lemma = type, frequency, batches) %>% 
+  filter(lemma %in% names(d)) %>% 
+  mutate(
+    pos = fct_relevel(pos, c('noun', 'adj', 'verb')),
+    senses = map(lemma, ~prop.table(table(d[[.x]]$senses$sense))),
+    n_senses = map_dbl(lemma, ~nrow(count(d[[.x]]$senses, sense)))) %>% 
+  arrange(pos, batches, frequency)
+confidence <- read_tsv(here("assets", "confidences.tsv"), col_types = cols()) %>% 
+  filter(! lemma %in% c("spoor", "herkennen")) 
+kappas <- read_tsv(here("assets", "kappas.tsv"), col_types = cols()) %>% 
+  filter(! lemma %in% c("spoor", "herkennen")) 
+final_agreement <- read_tsv(here("assets", "final.agreement.tsv"), col_types = cols()) %>% 
+  filter(! type %in% c("spoor", "herkennen")) %>% 
+  mutate(
+    final_action = fct_relevel(final_action, c("Same", "Other", "Remove")),
+    majority_agreement = fct_relevel(majority_agreement, c("Full", "Majority", "No agreement"))
+  )
+
+cloud_order <- c("Cumulus", "Stratocumulus", "Cirrus", "Cumulonimbus", "Cirrostratus")
+qlvlcorp <- readRDS(here("assets", "qlvlnews.summary.rds"))
 medoid_data <- read_tsv(here("assets", "medoid_data.tsv"), col_types = cols()) %>% 
   mutate(cloud_type = fct_relevel(cloud_type, cloud_order))
 cloud_data <- read_tsv(here("assets", "classification.tsv"), col_types = cols()) %>% 
   mutate(cloud_type = fct_relevel(cloud_type, cloud_order))
+examples <- read_tsv("assets/examples_translated.tsv", col_types = cols())
+
+
+to_show <- c("heet", "stof", "dof", "huldigen", "haten", "hoop")
+popular_medoid <- "BOWbound5lex.PPMIselection.LENGTHFOC.SOCPOSall"
 
 # plots ----
 
-complex_cor <- function(df, x_coord, y_coord, color_var, xlab = "", ylab = "", colorlab = "", add_abline = FALSE){
+complex_cor <- function(df,
+                        x_coord, y_coord, color_var,
+                        xlab = "", ylab = "", colorlab = "",
+                        add_abline = FALSE){
+  ncats <- nrow(count(df, {{ color_var }}))
   baseplot <- df %>% 
     ggplot(aes(x = {{ x_coord }}, y = {{ y_coord }}, color = {{ color_var }})) +
     geom_point(alpha = 0.5, size = 3) +
-    theme_pubr() +
-    scale_colour_viridis_d() +
+    theme_pubr(base_family = "Modern No. 20") +
+    (if (ncats > 3) scale_colour_viridis_d() else scale_colour_grey(start = 0.8, end = 0)) +
     labs(x = xlab, y = ylab, color = colorlab)
   if (add_abline) baseplot <- baseplot + geom_abline()
   
   xplot <- axis_canvas(baseplot, axis = "x") +
     geom_boxplot(data = df, aes(x = {{ x_coord }}, fill = {{ color_var }}), color = "black", alpha = 0.5) +
-    scale_fill_viridis_d()
+    if (ncats > 3) scale_fill_viridis_d() else scale_fill_grey(start = 0.8, end = 0)
   yplot <- axis_canvas(baseplot, axis = "y", coord_flip = TRUE) +
     geom_boxplot(data = df, aes(x = {{ y_coord }}, fill = {{ color_var }}), color = "black", alpha = 0.5) +
-    scale_fill_viridis_d() +
+    (if (ncats > 3) scale_fill_viridis_d() else scale_fill_grey(start = 0.8, end = 0)) +
     coord_flip()
   
   baseplot %>% 
@@ -66,20 +174,21 @@ complex_cor <- function(df, x_coord, y_coord, color_var, xlab = "", ylab = "", c
 }
 
 plotBasic <- function(mdata){
-  m <- d[[mdata$lemma]]$medoidCoords[[mdata$model]]
+  m <- if ("lemma" %in% names(mdata)) d[[mdata$lemma]]$medoidCoords[[mdata$model]] else mdata
+  m <- if ("coords" %in% names(m)) m else list(coords = m)
   m$coords <- mutate(m$coords, sense = "sense")
-  plotCoords(m) + theme(legend.position = 'none')
+  plotCoords(m, colorguide = "none")
 }
 
-plotWithCws <- function(lname, mnum){
+plotWithCws <- function(lname, mnum, colorguide = "right"){
   m <- d[[lname]]$medoidCoords[mnum]
   cw_data <- medoid_data %>% 
     filter(lemma == lname, model == names(m)) %>% 
     select(cluster, cloud_type, top_Cw, topFscore)
-  plotCoords(m[[1]], cw_data)
+  plotCoords(m[[1]], cw_data, colorguide = colorguide)
 }
 
-plotCoords <- function(medoid, cw_data = tibble()) {
+plotCoords <- function(medoid, cw_data = tibble(), colorguide = "right") {
   df <- medoid$coords %>% 
     mutate(
       cluster = if_else(cluster == "0", NA_character_, as.character(cluster))
@@ -95,16 +204,33 @@ plotCoords <- function(medoid, cw_data = tibble()) {
   } else {
     df <- df %>% mutate(cluster = fct_reorder(cluster, as.numeric(cluster)))
   }
+  plotCloud(df, cluster, sense, eps, colorguide = colorguide)
   
-  ggplot(df) +
-    geom_point(aes(x = model.x, y = model.y, color = cluster, shape = sense, alpha = eps),
+}
+
+plotSenses <- function(l, mname){
+  if (!str_starts(mname, l)) mname <- str_glue("{l}.{mname}")
+  df <- d[[l]]$medoidCoords[[mname]]$coords %>% 
+    mutate(sense = str_remove(sense, paste0(l, ".")))
+  plotCloud(df, sense, "shape", 0, "bottom")
+}
+plotNude <- function(df) {
+  plotCloud(df, colorguide = "none")
+}
+plotCloud <- function(df, colorvar = "", shapevar = "", alphavar = 1, colorguide = "right"){
+  g <- ggplot(df) +
+    geom_point(aes(x = model.x, y = model.y,
+                   color = {{ colorvar }},
+                   shape = {{ shapevar }},
+                   alpha = {{ alphavar }}),
                size = 3) +
     theme_void() +
-    scale_color_OkabeIto(darken = 0.1, use_black = TRUE, na.value = "#9b9c9f") +
     coord_fixed() +
-    scale_alpha(range = c(1, 0), guide = "none") +
-    scale_shape(guide = "none") #+
-  # theme(legend.position = "bottom")
+    scale_shape(guide = "none") +
+    theme(legend.position = colorguide)
+  g <- if (g$labels$alpha != "alpha") g + scale_alpha(range = c(1, 0), guide = "none") else g + scale_alpha(guide = "none")
+  g <- if (g$labels$colour != "colour") g + scale_color_OkabeIto(darken = 0.1, use_black = TRUE, na.value = "#9b9c9f") else g + scale_colour_grey()
+  g
 }
 
 network_cws <- function(coords, n = 150) {
@@ -138,15 +264,42 @@ source_names <- c(
   'parool' = 'Het Parool',
   'het_nieuwsblad' = 'Het Nieuwsblad'
 )
+readDutch <- function(ex) {
+  filter(examples, code == ex) %>% 
+    mutate(ctxt = str_glue("{dutch} (*{source}*, {date}, Art. {artn})")) %>% 
+    pull(ctxt)
+}
+readTranslation <- function(ex) {
+  en <- filter(examples, code == ex) %>% 
+    pull(english)
+  return(str_glue("'{en}'"))
+}
+
+readExample <- function(ex) {
+  filter(examples, code == ex) %>% 
+    mutate(ctxt = str_glue("{dutch}   <br><br>\\s\\s{english}   <br> \n <br>    (*{source}*, {date}, Art. {artn})")) %>% 
+    pull(ctxt)
+}
  
 sampleCloud <- function(cloudtype) {
   set.seed(8541)
-  medoid_data %>% 
+  cloud_selection <- medoid_data %>% 
     filter(
       (cloudtype %in% maincat & maincat == cloudtype) |
         (!cloudtype %in% maincat & str_detect(maincat, cloudtype)),
       !Hail
-    ) %>% slice_sample(n = 1)
+    )
+  if (cloudtype == "Cumulonimbus") slice(arrange(cloud_selection, desc(rel_size)), 1) else slice_sample(cloud_selection, n = 1)
+}
+sampleHail <- function() {
+  set.seed(8541)
+  medoid_data %>%
+    filter(maincat != "Cirrostratus") %>% 
+    group_by(lemma, model) %>% 
+    summarize(hail_p = sum(Hail)/n(), n = n()) %>% 
+    ungroup() %>% 
+    filter(hail_p == max(hail_p)) %>% 
+    slice_sample(n = 1)
 }
 
 sampleCtxt <- function(l, mnum = 1, clusn = NULL, stag = NULL, cw = NULL, seed = 8541, n = 1) {
@@ -162,13 +315,26 @@ sampleCtxt <- function(l, mnum = 1, clusn = NULL, stag = NULL, cw = NULL, seed =
   m %>% sample_n(size = 1) %>% 
     separate(`_id`, into = c('lemma', 'pos', 'source', 'line'), sep = '/') %>% 
     mutate(
-      numbers = str_replace(source, "[a-z_]+_([0-9_]+)", "\\1") %>% str_replace("_01_", "_"),
-      source = source_names[str_remove(source, paste0("_", numbers))]
+      numbers = str_replace(source, "[a-z_]+_([0-9_]+)", "\\1"),
+      source = source_names[str_remove(source, paste0("_", numbers))],
+      numbers = str_replace(numbers, "_01_", "_")
     ) %>% 
     separate(numbers, into = c("date", "artn"), remove = F) %>% 
     mutate(date = as.Date(date, format = "%Y%m%d"),
            txt = str_glue("{ctxt} (*{source}*, {date}, Art. {artn})")) %>% 
     pull(txt) %>% html2md()
+}
+
+getBest <- function(l) {
+  medoid_data %>% filter(lemma == l, cloud_type != "Cirrostratus") %>% 
+    mutate(model = str_remove(model, paste0(lemma, "."))) %>% 
+    select(model, entropy) %>% group_by(model) %>% 
+    mutate(mean_entropy = mean(entropy)) %>% 
+    arrange(mean_entropy) %>% 
+    select(model, mean_entropy) %>% 
+    ungroup() %>% 
+    slice(1) %>% 
+    deframe()
 }
 
 # Computations ----
@@ -200,3 +366,21 @@ mean_n_clusters <- cloud_data %>%
   count(lemma, model) %>% group_by(lemma) %>%
   summarize(mean_n_clusters = mean(n)) %>% arrange(mean_n_clusters) %>% 
   deframe %>% round(3)
+
+# Tables ----
+showDefs <- function(lemmas, caption) {
+  subdefs <- filter(definitions, lemma %in% lemmas)
+  kbl(select(subdefs, Dutch, sense, English), escape = F, booktabs = T, caption = caption,
+        longtable = T) %>% 
+    kable_paper(font_size = 7, latex_options = c("repeat_header")) %>% 
+    pack_rows(index = table(subdefs$lemma), hline_before = T, latex_align = "c") %>% 
+    column_spec(2, width = "1em") %>%
+    column_spec(c(1, 3), width = "16em")
+}
+
+countCues <- function(colname, n = 10){
+  heilzaam %>% count({{ colname }}, majority_sense) %>% 
+    arrange(desc(n), desc(majority_sense)) %>% 
+    pivot_wider(names_from = majority_sense, values_from = n, values_fill = 0) %>% 
+    head(n)
+}
