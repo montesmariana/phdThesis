@@ -1,0 +1,185 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Tables}{iii}{chapter*.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Figures}{v}{chapter*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Preface}{ix}{chapter*.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Acknowledgements}{xi}{chapter*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Distributional Semantics and Computational Linguistics}{2}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}Motivation}{2}{subsection.1.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Units of analysis}{3}{subsection.1.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.3}Context-counting and context-predicting}{4}{subsection.1.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Distributional Semantics and Cognitive Semantics}{6}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}Everything is semantics}{6}{subsection.1.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}Prototypicality}{7}{subsection.1.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.3}A usage-based approach}{9}{subsection.1.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Visual analytics}{10}{section.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Nephological Semantics}{11}{section.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Structure of the dissertation}{12}{section.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{I\hspace {1em}The cloudspotter's toolkit}{15}{part.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}From corpora to clouds}{17}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}A cloud machine}{17}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}The chemistry of cloud making}{21}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Association strength: PMI}{22}{subsection.2.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Similarities and distances: cosine}{23}{subsection.2.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Dimensionality reduction for visualization: t-SNE}{25}{subsection.2.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}Clustering: HDBSCAN}{28}{subsection.2.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Making it your own: parameter settings}{29}{section.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}Fixed decisions}{29}{subsection.2.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}First-order selection parameters}{31}{subsection.2.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.3}PPMI selection and weighting}{34}{subsection.2.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.4}Second-order selection}{35}{subsection.2.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.4}The chosen ones: PAM}{35}{section.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.5}Summary}{37}{section.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Visualization tools}{39}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Flying through the clouds}{39}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Level 1}{43}{section.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Level 2}{45}{section.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Level 3}{50}{section.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}ShinyApp}{52}{section.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.6}Summary}{56}{section.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Case studies}{59}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}The lemmas}{61}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}The nouns}{61}{subsection.4.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}The adjectives}{65}{subsection.4.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}The verbs}{69}{subsection.4.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}The dataset}{73}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Summary}{81}{section.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{II\hspace {1em}The cloudspotter's handbook}{83}{part.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}A cloud atlas}{85}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Rationale of the classification}{85}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Types of clouds}{90}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Cumulus clouds}{91}{subsection.5.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Stratocumulus clouds}{92}{subsection.5.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Cirrus clouds}{93}{subsection.5.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.4}Cumulonimbus clouds}{94}{subsection.5.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.5}Cirrostratus clouds}{95}{subsection.5.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.6}Hail}{96}{subsection.5.2.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Patterns across types of clouds}{98}{section.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.4}Summary}{103}{section.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}The language of clouds}{105}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Types of information}{105}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.1}Collocational perspective}{106}{subsection.6.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.2}Semantic perspective}{108}{subsection.6.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1.3}Interaction between dimensions}{109}{subsection.6.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Collocation}{111}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.1}Heterogeneous clouds}{111}{subsection.6.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.2}Dictionary clouds}{113}{subsection.6.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.3}(Proto)typical contexts}{116}{subsection.6.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2.4}Profiling}{120}{subsection.6.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Lexically instantiated colligation}{120}{section.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.1}Heterogeneous clusters}{121}{subsection.6.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.2}Dictionary clouds}{122}{subsection.6.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.3}(Proto)typical contexts}{124}{subsection.6.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3.4}Profiling}{125}{subsection.6.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.4}Semantic preference}{126}{section.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.1}Heterogeneous clusters}{127}{subsection.6.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.2}Dictionary clusters}{128}{subsection.6.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.3}(Proto)typical contexts}{129}{subsection.6.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4.4}Profiling}{131}{subsection.6.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.5}Near-open choice}{132}{section.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5.1}Heterogeneous clusters}{133}{subsection.6.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5.2}Dictionary clusters}{134}{subsection.6.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.6}Summary}{137}{section.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}No sky is the best sky}{139}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}A pile of dust}{139}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Weather forecast gone crazy}{145}{section.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Summary}{148}{section.7.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{III\hspace {1em}The cloudspotter's cheatsheet}{149}{part.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Conclusions and guidelines}{151}{chapter.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Types, tokens and clouds}{152}{section.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Practical tips}{154}{section.8.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}To the sky and beyond}{157}{section.8.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.4}Summing up}{159}{section.8.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliography}{161}{chapter*.6}%

@@ -1,0 +1,35 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'phdThesis.blg'
+[134] biber-MSWIN32:340> INFO - === 
+[181] Biber.pm:415> INFO - Reading 'phdThesis.bcf'
+[498] Biber.pm:952> INFO - Found 117 citekeys in bib section 0
+[517] Biber.pm:4340> INFO - Processing section 0
+[531] Biber.pm:4531> INFO - Looking for bibtex format file 'assets/bib/PhDCitations.bib' for section 0
+[600] bibtex.pm:1689> INFO - LaTeX decoding ...
+[931] bibtex.pm:1494> INFO - Found BibTeX data source 'assets/bib/PhDCitations.bib'
+[1025] Utils.pm:395> WARN - ISBN '978-0-470-31680-1 978-0-471-87876-6' in entry 'kaufman.rousseeuw_1990' is invalid - run biber with '--validate_datamodel' for details.
+[1066] Utils.pm:395> WARN - ISBN '9781402048084' in entry 'agirre.edmonds_2007a' is invalid - run biber with '--validate_datamodel' for details.
+[1086] Utils.pm:395> WARN - ISBN '978-1-68400-034-0 978-1-68400-033-3 978-1-68400-035-7' in entry 'wielfaert.etal_2019' is invalid - run biber with '--validate_datamodel' for details.
+[1098] Utils.pm:395> WARN - ISBN '978-90-272-0801-9 978-90-272-6042-0' in entry 'bolognesi_2020' is invalid - run biber with '--validate_datamodel' for details.
+[1139] Utils.pm:395> WARN - ISBN '978-0-19-870031-9 978-0-19-870030-2' in entry 'geeraerts_2010a' is invalid - run biber with '--validate_datamodel' for details.
+[1143] Utils.pm:395> WARN - ISBN '978-90-272-3544-2 978-90-272-8619-2' in entry 'rudzka-ostyn_1988' is invalid - run biber with '--validate_datamodel' for details.
+[1149] Utils.pm:395> WARN - ISBN '978-3-11-018950-6 3-11-018951-8 978-3-11-018951-3 3-11-018950-X 978-3-11-018950-6' in entry 'kristiansen.etal_2006' is invalid - run biber with '--validate_datamodel' for details.
+[1166] Utils.pm:395> WARN - ISBN '978-0-19-533196-7 0-19-533196-6 978-0-19-533195-0 0-19-533195-8' in entry 'langacker_2008a' is invalid - run biber with '--validate_datamodel' for details.
+[1200] Utils.pm:395> WARN - ISBN '978-90-272-3681-4 978-1-55619-892-2 978-90-272-3728-6 978-1-58811-126-5' in entry 'gibbs.steen_1999' is invalid - run biber with '--validate_datamodel' for details.
+[1210] Utils.pm:395> WARN - ISBN '978-0-19-022486-8 978-0-19-022487-5 978-0-19-022488-2' in entry 'kovecses_2015' is invalid - run biber with '--validate_datamodel' for details.
+[1321] Utils.pm:395> WARN - legacy year field 'Submitted' in entry 'montes.heylen_Submitted' is not an integer - this will probably not sort properly.
+[1457] Utils.pm:395> WARN - ISBN '978-3-11-017374-1 3-11-017374-3 978-3-11-017374-1' in entry 'geeraerts_2003' is invalid - run biber with '--validate_datamodel' for details.
+[1464] Utils.pm:395> WARN - ISBN '978-3-11-017374-1 3-11-017374-3 978-3-11-017374-1' in entry 'croft_2003' is invalid - run biber with '--validate_datamodel' for details.
+[1499] Utils.pm:395> WARN - ISBN '978-90-272-3676-0 978-1-55619-887-8' in entry 'sinclair_1998' is invalid - run biber with '--validate_datamodel' for details.
+[1507] Utils.pm:395> WARN - ISBN '978-0-521-83851-1 978-0-521-54736-9' in entry 'mcenery.hardie_2012' is invalid - run biber with '--validate_datamodel' for details.
+[1516] Utils.pm:395> WARN - ISBN '978-90-272-3544-2 978-90-272-8619-2' in entry 'geeraerts_1988' is invalid - run biber with '--validate_datamodel' for details.
+[1531] Biber.pm:4531> INFO - Looking for bibtex format file 'assets/bib/packages.bib' for section 0
+[1596] bibtex.pm:1689> INFO - LaTeX decoding ...
+[1667] bibtex.pm:1494> INFO - Found BibTeX data source 'assets/bib/packages.bib'
+[1951] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1951] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1951] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1951] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[2133] bbl.pm:654> INFO - Writing 'phdThesis.bbl' with encoding 'UTF-8'
+[2239] bbl.pm:757> INFO - Output to phdThesis.bbl
+[2240] Biber.pm:128> INFO - WARNINGS: 16

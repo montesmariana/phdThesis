@@ -1,0 +1,41 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {2.1}{\ignorespaces Small example of type-level vectors, with \textsc {pmi} values based on a symmetric window of 10. Frequency data extracted from GloWbE.}}{19}{table.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {2.2}{\ignorespaces Small example of token-level vectors of three artificial instances of \emph {to study}.}}{20}{table.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {2.3}{\ignorespaces Cosine distance matrix between the three artificial instances of \emph {to study}.}}{21}{table.2.3}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.1}{Definitions and examples for the senses of each of the 7 analysed nouns. In each sense, the first number indicates the homonym and, if there is a second number, the sense within the homonym.}}{62}{table.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.2}{Definitions and examples for the senses of each of the 13 analysed adjectives.}}{65}{table.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.3}{Definitions and examples for the senses of each of the 12 analysed verbs.}}{69}{table.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.4}{Absolute frequency of the lemmas in the corpus, number of batches and distribution of their senses. The number next to the boxplots indicate the number of different senses.}}{74}{table.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.5}{\ignorespaces Four most frequent dependency paths among the cues of \emph {heilzaam}, with counts per sense. \texttt {NA} indicates that the cue is not in the sentence of the target. In the path, \texttt {CW} stands for the cue and \texttt {T} stands for the target: the head is at the left of \(\rightarrow \) and its dependents are to the right, preceded by the name of the dependency relation.}}{81}{table.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4.6}{\ignorespaces Six most frequent lemmas and window spans among the cues of \emph {heilzaam}, with counts per sense.}}{81}{table.4.6}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces Number of clouds of each type per medoid or model in general; in parenthesis, the number of Hail clouds is specified.}}{90}{table.5.1}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.1}{\ignorespaces Contingency table between the collocational and semantic perspectives, with a few examples.}}{110}{table.6.1}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.1}{\ignorespaces Salient parameter settings per lemma.}}{144}{table.7.1}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

@@ -1,0 +1,145 @@
+# (PART) The cloudspotter's cheatsheet {-}
+
+# Conclusions and guidelines
+
+The focus of this dissertation is methodological: rather than describing a specific phenomenon in language, e.g. metaphorical extensions of temperature terms in Italian, it develops and tests a workflow that could be used in concrete case studies. It combines computational techniques with a Cognitive Semantics framework with the aim of implementing `r sc("nlp")` tools to lexicological and lexicographical research. From this position, the main research questions revolve around the possible mappings between parameter settings, i.e. sets of decisions that generate different models, and semantic phenomena of lexicographic interest:
+
+- Which parameter settings model senses the best?
+- How can we tailor the parameter settings to capture homonymy, metaphor, specialization, argument structure...?
+
+In addition, since manually annotated senses are not taken as a unique truth and, beyond accuracy, we are interested in what makes models (fail to) approximate human-based categories, the study incorporates *ad hoc* visual analytics for a fluid, quantitatively-rich qualitative analysis.
+
+After an initial presentation of the foundations of the study in the [Introduction](#intro), Part I, *The Cloudspotter's toolkit*, laid out the methodological background. Chapter \@ref(workflow) described the computational techniques and the methodological choices, Chapter \@ref(nephovis) showcased the visualization tools and Chapter \@ref(dataset) introduced the selected lemmas and the annotation procedure.
+
+Part II, *The Cloudspotter's handbook*, discussed the results of the analyses. Even though the answer to the original research questions is negative, it is indeed possible to learn something from the models, and these three chapters elaborate on these possibilities.
+Chapter \@ref(shapes) offered a typology of the nephological shapes, for not all the clouds in the sky are white and fluffy. These shapes result from identifiable properties of the contexts and can be interpreted in different ways.
+Chapter \@ref(semantic-interpretation) followed with a systematization of these possible interpretations from a linguistic perspective. A net of phenomena is woven from a combination of paradigmatic relations --- from heterogeneous clusters to clouds that reveal semantic profiling of patterns --- and syntagmatic relations --- from collocations through semantic preference to open-choice tendencies. They are not the same phenomena we set out to investigate initially; although we may find metaphor, metonymy, specialization and argument structure, it greatly depends on each lemma and on how it matches these semasiological categories to its distributional behaviour. It is not enough for a lemma to *have* metaphorical extensions, they also have to correlate with salient contextual patterns. Nevertheless, we do find linguistic properties --- and particularly the kind of properties that corpus-methods can capture while other empirical approaches might not.
+Finally, Chapter \@ref(no-optimal) illustrated the negative answer to the main question: there is no set of parameter settings that works best across the board. Each lemma has a different semasiological structure in terms of distributional behaviour, thus applying the same tool will return different results. If a parameter configuration is a cookie cutter, the various lemmas are kinds of mixtures: lemon-flavoured cookie dough, dough with chips, dough flattened by an embossed rolling pin... or even sourdough or cake batter.
+
+In the remainder of this chapter I will summarize some points that emerge from the dissertation as a whole. First, Section \@ref(naive) offers a possible explanation for the discrepancy between the expectations that we may come to distributional models with and the actual results. However, this shall not stop us: Section \@ref(tips) lists a few technical guidelines for model building, based on the set of models explored here, and Section \@ref(further) is dedicated to general suggestions for further research based on what was not done for this project. Finally, Section \@ref(contributions) summarizes the contributions of this dissertation to distributional approaches to semantics.
+
+## Types, tokens and clouds {#naive}
+
+Distributional models rely on the Distributional Hypothesis: words that occur in similar contexts tend to be semantically similar. That seems to work for types, and projecting the intuition onto the token-level sounds straightforward: attestations occurring in similar contexts will be semantically similar, and those occurring in different contexts will be semantically different. Semantic distinctions between attestations of a word, i.e. their semasiological variation, are normally grouped as senses. So it stands to reason that we can use token-level distributional models to find senses [@schutze_1998; @yarowsky_1995]. However, this line of reasoning has two issues.
+
+On the one hand, there is the issue of patterns.
+At the type-level, vector representations aggregate over all the occurrences, building profiles that take into account patterns of attraction and avoidance across hundreds, thousands or even millions of events. Similar words share the same tendencies; different words prefer different things.
+The intuition behind distributional models is often illustrated with examples like the following [@pantel.lin_2002,613]:
+
+> A bottle of *tezgüno* is on the table.
+>
+> Everyone likes *tezgüno*.
+>
+> *Tezgüno* makes you drunk.
+>
+> We make *tezgüno* out of corn.
+
+The authors make the point that the words in the context of *tezgüno* suggest that it may be a kind of alcoholic beverage, because other alcoholic beverages tend to occur in similar contexts [@pantel.lin_2002,613]. And indeed, at *type-level*, such patterns are likely to generate a distributional profile for *tezgüno* that is similar to that of *beer*, for example.
+<!-- In reality, however, contexts are rarely so spontaneously disambiguating. -->
+<!-- If we think of *beer*, we are likely to find instances such as *She told me over a beer...*, *Let's grab a beer*, etc. -->
+<!-- As anyone that has read actual concordance lines knows, neat sentences that predicate over our target are not the norm, especially if the target is not a noun. Regardless, -->
+And even though actual contexts are rarely as self-explanatory as these examples, type-level distributional models --- to some degree at least --- *work*.
+<!-- But what happens at the token-level? -->
+
+Type-level models will be most similar between words with similar overall *patterns*: tendencies towards or against certain contexts. Each individual context is not enough. The examples above highlight different properties of *tezgüno*, namely that it is a liquid stored in bottles, that people have (positive) opinions about it, that it is alcoholic and that it is made out of corn. The range of items that could occur "in the same context" of *tezgüno* will depend on which of the contexts we take into account. Take, for example, the following replacements:
+
+> A bottle of *water* is on the table.
+>
+> Everyone likes *you*.
+>
+> *Whiskey* makes you drunk.
+>
+> We make *cornflakes* out of corn.
+
+Each context is not enough: at most, they set up situations in which some meaning or meaning dimension fits, while the other dimensions, whatever they are, are backgrounded and irrelevant. Type-level models work because they look at all the contexts together. At the same time, we cannot really know if the *tezgüno* that makes you drunk and the one made of corn are the same *tezgüno*; type-level models build on the assumption that they do, and for that reason they conflate semasiological structure.
+
+In the same way, token-level models look for patterns, i.e. tendencies towards or against certain contexts or context words, but with a much more restricted pool of variables. First, the context of a token contains fewer variables than the aggregated context of a type to draw a pattern from, which results in more polarization and less nuance. Frequently co-occurring words will dominate and define what counts as a pattern, while weaker words will lack the necessary distinctiveness to impose their patterns. And because authentic concordances are not neat, propositional, explanatory descriptions of the targets, these patterns do not necessarily match *senses*.
+
+That is, in fact, the second issue. The possibility of determining what counts as different senses is debatable [@geeraerts_1993; @glynn_2014c], so why should we look for senses in the first place? Indeed, Geeraerts suggests a procedural rather than reified conception of meaning: "words are searchlights that highlight, upon each application, a particular subfield of their domain of application", and adds that "the distinction between what can and what cannot be lit up at the same time is not stable" [@geeraerts_2006e,137]. In terms of clouds, context words compete for the opportunity to signal the subfield highlighted by the target at the moment. The result is imprecise for several reasons.
+First, the context words are represented as type-level vectors that generalize over their most salient patterns, which are not necessarily the relevant dimension in this context, as in the case of *uitspraak herroepen* 'to recant a statement/to void a verdict' discussed in Section \@ref(uitspraak).
+Second, the dimension the context words highlight are not necessarily the ones we are interested in; there is structure in models of *heilzaam* 'healthy/beneficial' discussed in Section \@ref(heilzaam), but it does not correspond to the distinction between literally healthy or healing and metaphorically healthy, i.e. beneficial.
+Third, and in relation to the issue of patterns, the context words might be too infrequent and not distinctive enough for their voice to reach us.
+
+On the bright side, there is so much variation across these patterns that their shapes alone are already interesting information. All words can be described with lists of collocations, but token-level models reveal how strong (or weak), how distinctive, how widespread the collocations are within the scope of the target. And beyond the clouds themselves, visualizing the models can let us see spatial organization that might be missed by clustering solutions, such as the fact that the occurrences of *uitspraak herroepen* 'to recant a statement/to void a verdict' come together while staying close to other instances of *herroepen* 'to void' in a juridical context, or the fact that health-specific and general attestations of *heilzame werking* 'beneficial effect' occupy opposite poles of the same cluster. Distributional models might not replicate our intuitions about the semantic distinctions within a lemma, but will offer us a different, complementary perspective that only they, by scanning and organizing hundreds of empirical observations, may capture.
+
+## Practical tips {#tips}
+
+Even if there is no infallible parameter settings configuration and it is hard to predict their output, some guidelines are possible. In this section I would like to offer some suggestions for a future case study that would use distributional semantics and, of course, the visualization tools presented here, to investigate the semasiological structure of a given lemma. The initial research questions would go along the lines of "How strong are the collocational patterns of this lemma?", for example. Given the variety of results from the 32 lemmas analysed for this dissertation, all these guidelines can offer is a starting point to explore the distributional behaviour of a lemma; further steps to refine the questions and fine-tune the models would depend on the results from such initial exploration. In broad terms, the outline of such a case study would be as follows:
+
+1. Choose your lemma(s)^[They could be separate words, as different case studies, or related words that might overlap in the application. In that case, it would be possible to combine a semasiological perspective, i.e. looking at the distribution of each lemma, with an onomasiological perspective, i.e. exploring the overlap and differences between the lemmas.]. In the Nephological Semantics project we look for ways of scaling up this procedure, but these are suggestions for small-scale studies, where a detailed examination of the clouds is viable.
+
+1. Set up a range of parameter settings that are not too restrictive:
+
+    - keep window sizes above 3;
+    - forget about sentence boundaries;
+    - avoid long, unfiltered type-level vectors;
+    - don't bother with `REL` templates;
+
+1. Generate hundreds of models on a manageable sample of tokens based on those parameters;
+
+1. Explore the plot of models in Level 1 of NephoVis (Section \@ref(nepho1)) to get an idea of how the parameter settings interact;
+    
+3. Compute up to 9 medoids with `r sc("pam")` and explore them in Level 2 of NephoVis;
+
+    - I chose 8 because it was the minimum that kept enough variation across lemmas, but on a lemma-by-lemma basis it could very well be reduced. More than 9 medoids are difficult to visualize simultaneously.
+    
+1. Cluster the models with `r sc("hdbscan")` and explore them with the ShinyApp, finding types of clouds, collocational patterns, etc. The classifications in Chapters \@ref(shapes) and \@ref(semantic-interpretation) will be useful, for example:
+
+    - Cumulus clouds (very tight and salient) tend to be dominated by strong collocates and represent typical usages of a sense.
+    - Cumulonimbus clouds (the huge ones) are normally as good as noise tokens.
+    - When Cirrus clouds (the small, wispy ones) are the most salient clusters, they are capturing the little structure there is. The model is probably characterized by weak collocational patterns.
+    
+1. Interpret the clusters.
+
+    - What are the models saying? Are there collocates, lexically instantiated colligates, semantic preference, or neither? Are the clusters heterogeneous or homogeneous? Could they be considered different senses?
+    - Which medoids exhibit a more interpretable structure? What parameters do they represent?^[For example, via a conditional tree with the clustering solution as response and the parameter settings as predictors.]
+    - How much more data is left to annotate?
+
+1. If necessary, readjust the parameters and/or incorporate manual annotation and start again.
+
+Among the interpretative questions, one of the most crucial ones is: "Could they be considered different senses?". I already mentioned in the introduction that the prototypicality of categories leads us to be sceptical about the existence of discrete senses. Accordingly, the clouds offer an alternative view on the semasiological structure of a lemma: a classification that neither matches dictionary senses nor replaces them, but could inform semantic research nonetheless. In the rest of this section I will elaborate on some of the recommendations made above.
+
+First, I would discourage very restrictive models. We might be tempted to remove as much noise as possible and only leave context words that are very informative, which sounds reasonable in theory. But even assuming you can figure out which words are going to be informative --- e.g. via annotation of cues --- the result might not be what you expect. Restrictive models tend to generate clouds with Hail: dense areas with identical tokens, which override more subtle relationships. The less "relevant" context words might be harmful, but they might also make no impact whatsoever, or even add information we did not expect, like the semantic profiling of specific patterns. That said, some lemmas may require very strict settings because the context words that would then be captured are already varied enough.
+
+Concretely, window sizes smaller than 5 tend to be too restrictive, while the window size of 10 is already bordering into too noisy. Within the dependency-based models, `RELgroup1` models are often too restrictive and rarely informative enough. A wider variety of `REL` templates is more useful, but in any case, designing the templates to fit increasingly complex patterns --- especially when chains of verbs come into play --- is time consuming and never good enough. `REL` models could be discarded altogether, unless the researcher has a good idea of which templates are useful for the specific lemma under study. For example, *haten* 'to hate' tends to occur in active constructions without chains of modals (e.g. *ik haat het* 'I hate it'), while *herroepen* 'to recant, to void' often co-occurs with the passive auxiliary, modals or even both (e.g. *het nachtverbod moest worden herroepen* 'the night ban had to be voided'). As a result, a simple `REL` template capturing the direct object of the verb could be enough for *haten* 'to hate'^[We might want to do this because in the current models the strongest context word is *ik* 'I', which does not contribute to the disambiguation. However, a brief test modelling the direct objects revealed that they were grouped thematically instead of by animacy, and thus could not model the distinction between 'to hate' and 'to dislike' either. Maybe other second-order settings could return a more adequate model.] but would miss many of the *herroepen* 'to recant, to void' tokens.
+
+In a similar vein, `PPMI` can be too restrictive for some lemmas and should be used with care, especially `PPMIweight`, which might enhance the influence of already powerful context words and, for example, cause Cumulonimbus clouds. Since the filtering power of `PPMIselection` depends on the range of association strength values between the target and its context words, it is not straightforward to find a threshold that is just as restrictive as we want it to and not more for every lemma. Instead, it could be fruitful to test out different thresholds --- and even combine other measures --- on a lemma-by-lemma basis.
+
+One parameter setting that should be certainly avoided is `5000all`, which often makes a great impact in the difference between models but never for the better. Either applying a part-of-speech filter or reducing the dimensionality, e.g. by using the first-order context words as second order dimensions (`FOC`), already gives better results. This is most likely due to sparsity and/or low informativeness of the dimensions selected by `5000all`, so applying `r sc("svd")` afterwards might also help.
+
+Finally, ignoring sentence boundaries does not seem to make a difference. In most cases, Level 1 plots place models that are only different on this parameter right next to each other; the few times that it makes a difference, two or three other parameters are already more important.
+
+These tips should help in the selection of parameter settings for future models, but it is still a good idea to generate multiple models and look at their medoids. Chapter \@ref(no-optimal) showed that there is no unique recipe to tailor a model to disambiguate in a certain way. Models find patterns based on the distributional behaviour of the lemma --- how frequent its context words are, how similar they are to each other, how often they co-occur, etc. The degree to which these patterns match senses in general or any sort of semasiological structure --- homonymy relations, metaphor, idioms, argument structure... --- is an empirical question, and that is what this procedure addresses. Fine-tuning can only be implemented after the first set of medoids have traced an outline of the lemma's structure.
+
+What is more, the medoids can also provide an estimation of how much manual annotation is actually needed. Given a model like *heffen* 'to levy/to lift' or *herinneren* 'to remember/to remind', the patterns are so clear and homogeneous that checking the main context words of the different clusters and a few of their concordance lines is enough; at most, you would need to examine some noise tokens more closely. At the same time, in a case like *heilzaam* 'healthy/beneficial' you would immediately see that the collocation-based clouds are semantically heterogeneous, while a case like *haten* 'to hate' might make you want to rethink your life choices. In any case, you don't need to annotate all the tokens at the beginning unless there is an *a priori* classification you are intent in finding. Even then, it's best to keep it under 6 categories, or it becomes really hard to distinguish their colour-coding visually.
+
+These suggestions should avoid a lot of trial and error in case-studies along these lines. Interpreting clouds when we have not seen any before and, especially, if we expect them all to be clearly-defined islands, is quite challenging already. Besides, as @geeraerts_2010 [73] argues, "empirical research involves an empirical cycle in which several rounds of data gathering, testing of hypotheses, and interpretation of the results follow each other", and cloudspotting is no exception.
+
+## To the sky and beyond {#further}
+
+The choices described in the [Introduction](#intro) and Chapter \@ref(workflow) implied leaving out the alternatives, which could very well be explored in future research projects.
+<!-- In the first place, the workflow should be applied to other languages as well, with the appropriate adjustments. -->
+
+At the level of parameter settings, other selections of part-of-speech filters, for example expanding `lex` with proper names and prepositions, could offer a middle point between the two options that were examined, since `lex` was sometimes too restrictive, while `all` could be too noisy. When it comes to dependency-based models, the natural extension is to incorporate the dependency path into the feature, e.g. with "is object of *to eat*" as a feature. This is technically more challenging and likely to result in sparser vectors, but would make the connection between the target and the second-order dimensions more clear. In the current implementation, the relationship between the target token *study$_1$* and its second-order dimension *language/n* in Table \@ref(tab:tokens) is given by the association strength between said second-order dimension and the first-order context word *lexicography/n*: *lexicography/n* occurs in the immediate context of *study$_1$* and has a `r sc("ppmi")` of 4.37 with *language/n*, so the coordinate of *study$_1$* in the *language/n* dimension is 4.37. If dependency relations are built into the feature, e.g. "its object is *lexicography/n*", the dimensions highlighted by that feature would be other verbs that take *lexicography/n* as object.
+
+In relation to this issue, the precise effect of the second-order parameters has not been thoroughly explored, but techniques should be devised to better understand the effect of the second-order dimensions. Moreover, instead of comparing `FOC` second-order vectors with longer ones based on frequency, they could be compared with `FOC` vectors based on different samples: `FOC` models transfer the context words that survived the first-order filters as second-order dimensions, so the same set of parameter-settings on different samples --- particularly on samples of different sizes --- may result in different selections of context words. Additionally, they could be compared to implicit type-level vectors [@lenci_2018], i.e. where the dimensionality was reduced by `r sc("svd")` or nonnegative matrix factorization, or even prediction-based vectors. The original reason not to implement this was to keep the transparency of the vectors to a maximum [@heylen.etal_2015], but the transition to second-order vectors already obscures the meaning of the dimensions to a great extent.
+
+Following this reasoning, the motivation to exclude prediction-based models disappears. On the one hand, type-level word embeddings could be incorporated as representations of the first-order context words. On the other, given the possibilities offered by the family of `r sc("bert")` models, `r sc("bert")`je [@devries.etal_2019] could be applied to the tokens themselves. For a proper comparison between the methods, new models would have to be created with word forms as units, re-tokenizing the corpus with `r sc("bert")`je's tokenizer. The first goal would then be to check how well the classifications presented in Chapters \@ref(shapes) and \@ref(semantic-interpretation) can be mapped to models based on word forms and to what degree they also apply to `r sc("bert")`je models. Nonetheless, concerns about the tokenization should be addressed: the output might be useful for certain `r sc("nlp")` tasks, but if words cannot be captured because the tokenization breaks them (as is the case of *heilzaam*, which is split between *heil* and *##zaam*), the utility of `r sc("bert")`je for lexicographical purposes decreases. A solution might be the implementation of larger units as targets and features in modelling procedure, such as bigrams. That in itself is another interesting avenue for further research, since words do not work in isolation, but technically more challenging.
+
+Not only the model-building process, but also the model-analysis process could use a deeper exploration. First, the possibility of implementing `r sc("umap")` should be explored. Based on initial comparisons, the clarity of the clusters does not seem to be very different from the t-`r sc("sne")` output, but the shapes are different and their relative distances are supposed to be interpretable. In addition, `r sc("hdbscan")` clustering with $minPts = 8$ replicates the visually identified patterns quite well, but it is not always clear when tokens are excluded as noise or how distinctive the clusters have to be to split. That said, switching to `r sc("umap")`, other perplexity values for t-`r sc("sne")` and/or other $minPts$ values for `r sc("hdbscan")` *may* void the warranty on the classifications and descriptions offered in this dissertation.
+
+## Summing up {#contributions}
+
+Distributional semantics addresses an issue for descriptive linguists who would like to use corpus methods
+for semantic analysis. Such a linguist would be eager to exploit the increasingly large available corpora but tired of manually annotating hundreds of concordances with sense tags that might not even be that appropriate^[Or of finding ways for other people to do so.]. Distributional models, on the other hand, present themselves as a scalable, automatic approach that can process large amounts of textual data and extract patterns with semantic correlates. They constitute an irresistible asset for empirical approaches aiming to maximize the automation of the most laborious, quantitative tasks and give the researcher more energy and time for the creative and hermeneutic aspects of research.
+This dissertation was written for such a linguist, and it has good news and bad news.
+
+The bad news is that, although distributional models can indeed reveal patterns and
+offer information that we might not obtain by other means, these are not necessarily *the* patterns and
+information we would have expected. The results from this study suggest that, if we are to use distributional
+semantics for descriptive analyses, we should not do so blindly.
+Unlike what high accuracy scores on benchmarks would suggest, there is no parameter setting that works optimally across the board, because what is relevant in the description of one lexical item might not be for another. For the same reason, different configurations of parameter settings will have different effects on each lemma, highlighting specific aspects that may be more or less interesting from a linguistic perspective. They may be senses, or they may be something else.
+
+The good news is that a user-friendly, comprehensive visualization tool is available for the exploration of such models. Interfaces like the ones described here turn the apparent chaos of distributional models into concrete visual representations for us to examine and interrogate. Rather than despairing in the face of multiple diverse models, we can create a composite picture based on a few representative models: we embrace the complexity and thus achieve a richer, more nuanced description. These tools offer both a fluid interaction with the output of the models and a look into their backstage operations.
+
+In sum, this dissertation illustrates why, as descriptive linguists, we shouldn't trust distributional models blindly, but also how we can exploit them nonetheless. On the one hand, it illustrates a workflow for investigating distributional modelling itself: the same steps followed in this study can be applied to alternative implementations for a better understanding of distributional approaches. On the other hand, with both warnings and suggestions, it offers a framework and tools for future studies implementing token-level distributional models to linguistic research or, as we like to call it, linguistic cloudspotting.

@@ -1,0 +1,133 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \textsc {2d} representation of Dutch \emph {hachelijk} `dangerous/critical'.}}{22}{figure.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Two \textsc {2d} representations of the same model of \emph {hachelijk} `dangerous/critical': bound5all-\textsc {ppmi}weight-\textsc {foc}all. Non-metric \textsc {mds} on the top left, t-\textsc {sne} to its right and \textsc {umap} at the bottom. Colours indicate \textsc {hdbscan} clusters.}}{27}{figure.2.2}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Portal of \url {https://qlvl.github.io/NephoVis/} as of July 2021.}}{41}{figure.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \href {https://qlvl.github.io/NephoVis/level1.html?type=heffen}{Level 1 for \emph {heffen} `to levy/to lift'}.}}{42}{figure.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Level 2 for the medoids of \emph {heffen} `to levy/to lift'.}}{43}{figure.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \href {https://qlvl.github.io/NephoVis/level1.html?type=heffen}{Level 1 for \emph {heffen} `to levy/to lift'}; the plot is colour-coded with first-order part-of-speech settings; \texttt {NA} stands for the dependency-based models.}}{44}{figure.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \href {https://qlvl.github.io/NephoVis/level1.html?type=heffen}{Level 1 for \emph {heffen} `to levy/to lift'} with medoids highlighted.}}{45}{figure.3.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Heatmap of distances between medoids of \emph {heffen} `to levy/to lift'.}}{46}{figure.3.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces 2D representation of medoids of \emph {haten} `to hate', colour-coded with senses, next to the heatmap of distances between models.}}{47}{figure.3.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Level 2 for the medoids of \emph {heffen} `to levy/to lift', colour-coded with categories from manual annotation. Hovering over a token shows its concordance line.}}{48}{figure.3.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Level 2 for the medoids of \emph {heffen}, colour coded with categories from manual annotation. Brushing over an area in a plot selects the tokens in that area and their positions in other models.}}{49}{figure.3.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Level 2 for the medoids of \emph {heffen} `to levy/to lift', and frequency table of the the context words co-occurring with the selected tokens across models.}}{50}{figure.3.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Level 3 for the second medoid of \emph {heffen} `to levy/to lift': bound10all-\textsc {ppmi}weight-\textsc {5000}all with some selected tokens. Hovering over a token shows tailored concordance line.}}{52}{figure.3.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Level 3 for the second medoid of \emph {heffen} `to levy/to lift': bound10all-\textsc {ppmi}weight-\textsc {5000}all. The frequency table gives additional information on the context words co-occurring with the selected tokens.}}{53}{figure.3.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Starting view of the \href {https://marianamontes.shinyapps.io/Level3/}{ShinyApp dashboard}, extension of Level 3.}}{54}{figure.3.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Top boxes of the \textbf {t-SNE} tab of the \href {https://marianamontes.shinyapps.io/Level3/}{ShinyApp dashboard}, with active tooltips.}}{55}{figure.3.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Token-level plot and bottom plot of context words in the \textbf {t-SNE} tab of the \href {https://marianamontes.shinyapps.io/Level3/}{ShinyApp dashboard}, with one context word selected.}}{56}{figure.3.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Heatmap of type-level distances between relevant context words in the \href {https://marianamontes.shinyapps.io/Level3/}{ShinyApp dashboard}.}}{57}{figure.3.16}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Screenshot of the options in the annotation tool.}}{77}{figure.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Agreement between annotators per batch per lemma, computed with \texttt {irr::kappam.fleiss()} \autocite {R-irr}.}}{78}{figure.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Number of tokens per lemma with full, partial (majority) or no agreement, split by whether the majority sense was kept or changed. Removed tokens are not included.}}{79}{figure.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Distribution of confidence values across annotations, by whether the annotators agreed with another in the same token and by whether they selected a sense or ``None of the above''.}}{80}{figure.4.4}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Uncoloured t-\textsc {sne} representations of the same parameter settings (bound5lex-\textsc {ppmi}selection-\textsc {foc}all) across six different lemmas.}}{86}{figure.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces T-\textsc {sne} representations of the same parameter settings (bound5lex-\textsc {ppmi}selection-\textsc {foc}all) across six different lemmas, coloured coded with \textsc {hdbscan} clustering. Some of the \emph {heet} clusters are gray because there are more clusters than colours we can clearly distinguish.}}{87}{figure.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Example of Cumulus cloud: inspiration on the left, plot example on the right (nobound10lex-\textsc {ppmi}weight-\textsc {foc}all of \emph {dof}). Picture by Glg, edited by User:drini - photo taken by Glg, CC BY-SA 2.0 de, \url {https://commons.wikimedia.org/w/index.php?curid=3443830}.}}{91}{figure.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Example of Stratocumulus cloud: inspiration on the left, plot example on the right (bound5all-\textsc {ppmi}no-\textsc {foc}all of \emph {heffen}). Picture by Joydeep - Own work, CC BY-SA 3.0, \url {https://commons.wikimedia.org/w/index.php?curid=20357040}.}}{92}{figure.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of Cirrus cloud: inspiration on the left, plot example on the right (bound5all-\textsc {ppmi}selection-\textsc {foc}all of \emph {herstructureren}). Picture by Dmitry Makeev - Own work, CC BY-SA 4.0, \url {https://commons.wikimedia.org/w/index.php?curid=85153684}.}}{93}{figure.5.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Example of Cumulonimbus cloud: inspiration on the left, plot example on the right (bound10all-\textsc {ppmi}weight-\textsc {foc}all of \emph {stof}). Picture by fir0002flagstaffotos {[}at{]} gmail.comCanon 20D + Canon 17-40mm f/4 L, GFDL 1.2, \url {https://commons.wikimedia.org/w/index.php?curid=887553}.}}{94}{figure.5.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of Cirrostratus cloud: inspiration on the left, model with 100\% noise on the right (nobound10lex-\textsc {ppmi}no-\textsc {foc}all of \emph {hoopvol}). CC BY-SA 3.0, \url {https://commons.wikimedia.org/w/index.php?curid=100381}.}}{96}{figure.5.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Example of cloud with hail: inspiration on the left, plot example on the right (\textsc {rel}1-\textsc {ppmi}selection-\textsc {foc}all of \emph {heet}). Picture by Tiia Monto, CC BY-SA 3.0, \url {https://commons.wikimedia.org/w/index.php?curid=88743807}}}{97}{figure.5.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Mapping between the type-token ratio of the context words and the mean number of context words per token in a cluster of a medoid, by whether the cloud has Hail.}}{97}{figure.5.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Mapping between the highest \(F\) between the clouds of the medoids and a context word and that context word's \textsc {pmi} with the target, coloured by cloud type.}}{99}{figure.5.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Mapping between the highest \(F\) of a context word to a cluster and the type-token ratio (\textsc {ttr}) of context words in the cluster, coloured by cloud type.}}{100}{figure.5.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Range of \(\mitvarepsilon \) values within clouds of different types. Lines join the points belonging to the same cluster.}}{101}{figure.5.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Graphical representation of meteorological clouds at different altitudes. By Christopher M. Klaus at w:en:Argonne National Laboratory - Own work by en:User:Klaus, Public Domain, \url {https://commons.wikimedia.org/w/index.php?curid=2760873}}}{101}{figure.5.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Mapping between the entropy in a medoid and in a cluster by cloud type.}}{102}{figure.5.14}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Cloud of \emph {heilzaam}: bound10all-\textsc {ppmi}weight-\textsc {foc}all. Circles are `healthy, healing', triangles are `beneficial' in general.}}{112}{figure.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Cloud of \emph {schaal}: nobound5all-\textsc {ppmi}weight-\textsc {foc}all. Within the `scale' homonym, circles are `range'; triangles, `ratio', and squares, `magnitude'; for the `dish' homonym, crosses represent `dish' and crossed squares, `dish of a scale'.}}{115}{figure.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Cloud of \emph {heffen}: bound10all-\textsc {ppmi}weight-\textsc {foc}nav. Circles are `to lift', triangles are `to levy'.}}{118}{figure.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Cloud of \emph {hachelijk}: bound5all-\textsc {ppmi}weight-\textsc {foc}all. Circles are `dangerous, risky'; triangles are `critical, hazardous'.}}{119}{figure.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Cloud of \emph {stof}: bound5lex-\textsc {ppmi}selection-\textsc {foc}all. Within the first homonym, circles are `substance'; triangles, `fabric'; filled squares, `topic, material'. For the second, crosses are literal `dust' and crossed square, idiomatic expressions.}}{121}{figure.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Cloud of \emph {herstructureren}: bound3all-\textsc {ppmi}selection-\textsc {foc}all. Circles indicate the transitive, general sense; triangles, the transitive companies-specific sense, and squares, the intransitive (companies-specific) sense.}}{123}{figure.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Cloud of \emph {herhalen}: \textsc {rel}1-\textsc {ppmi}selection-\textsc {foc}all. Circles are `to do again'; triangles, `to say again'; squares, `(reflexive) to happen again', and crosses, `to broadcast again'.}}{123}{figure.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Cloud of \emph {herinneren}: bound10all-\textsc {ppmi}weight-\textsc {5000}nav. Circles indicate `to remind' (with \emph {aan}); triangles, `(reflexive) to remember', and (the very few) squares, `(trans.) to remember'.}}{125}{figure.6.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Cloud of \emph {horde}: bound5all-\textsc {ppmi}selection-\textsc {foc}all. Within the `horde' homonym, circles indicate human members and triangles, nonhuman members; within the `hurdle' homonym, squares show the literal sense and crosses, the metaphorical one.}}{126}{figure.6.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Cloud of \emph {grijs}: bound5all-\textsc {ppmi}no-\textsc {foc}all. Circles represent the literal sense; triangles, `overcast'; squares and crosses, to applications to hair and white-haired people respectively; crossed squares, `boring', and asterisks, `half legal'.}}{127}{figure.6.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Cloud of \emph {herroepen}: bound3all-\textsc {ppmi}selection-\textsc {foc}all. Circles represent `to void'; triangles, `to recant'.}}{129}{figure.6.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Cloud of \emph {haken}: bound3all-\textsc {ppmi}selection-\textsc {foc}all. Circles and triangles represent the transitive and intransitive literal `to hook'; crosses represent the figurative (intransitive) sense; filled squares represent `to make someone trip'; crossed squares, `to corchet', and asterisks, `to strive for' (with \emph {naar}).}}{130}{figure.6.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Cloud of \emph {heet}: bound5all-\textsc {ppmi}no-\textsc {foc}all. Among the literal senses, cricles, filled triangles and filled diamonds represent tactile, weather and body senses; empty squares and triangles represent `spicy' and `attractive' respectively; crosses represent `conflictive', and asterisks, `popular or new'.}}{131}{figure.6.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Cloud of \emph {geldig}: bound10lex-\textsc {ppmi}selection-\textsc {foc}all. Circles represent the specific sense and triangles, the general one.}}{132}{figure.6.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Cloud of \emph {blik}: bound5all-\textsc {ppmi}weight-\textsc {5000}nav. For the first homonym, circles represent `gaze' and triangles, `view, perspective'; for the second, squares represent `tin' and crosses, `made of tin' or `canned food'.}}{135}{figure.6.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Cloud of \emph {huldigen}: nobound3lex-\textsc {ppmi}selection-\textsc {foc}all. Circles represent `to believe, to hold (an opinion)'; triangles, `to honour'.}}{136}{figure.6.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Network of context words of the \emph {huldigen} `to honour' cluster.}}{138}{figure.6.17}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Best medoids of \emph {hoop} (\textsc {path}weight-\textsc {ppmi}no-\textsc {foc}all) and \emph {stof} (bound5lex-\textsc {ppmi}selection-\textsc {foc}all).}}{140}{figure.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Model of \emph {hoop} with the parameters that work best for \emph {stof} and viceversa: bound5lex-\textsc {ppmi}selection-\textsc {foc}all for \emph {hoop} and \textsc {path}weight-\textsc {ppmi}no-\textsc {foc}allfor \emph {stof}}}{143}{figure.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Models of \emph {heet} and \emph {stof} with bound5lex-\textsc {ppmi}selection-\textsc {foc}all.}}{146}{figure.7.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Models of \emph {dof} and \emph {huldigen} with bound5lex-\textsc {ppmi}selection-\textsc {foc}all.}}{147}{figure.7.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Models of \emph {haten} and \emph {hoop} with bound5lex-\textsc {ppmi}selection-\textsc {foc}all.}}{147}{figure.7.5}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

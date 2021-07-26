@@ -1,0 +1,19 @@
+# Concluding remarks {-}
+<!-- \fancyhead[LE]{\thepage --- \nouppercase{Afterword}} -->
+<!-- \fancyhead[RO]{\nouppercase{Afterword} --- \thepage} -->
+<!-- \fancyhead[LO,RE]{} -->
+<!-- \fancyfoot[C]{} -->
+
+Distributional semantics addresses an issue for descriptive linguists who would like to use corpus methods
+for semantic analysis. Such a linguist would be eager to exploit the increasingly large available corpora but tired of manually annotating hundreds of concordances with sense tags that might not even be that appropriate^[Or of finding ways for other people to do so]. Distributional models, on the other hand, present themselves as a scalable, automatic approach that can process large amounts of textual data and extract patterns with semantic correlates. They constitute an irresistible asset for empirical approaches aiming to maximize the automation of the most laborious, quantitative tasks and give the researcher more energy and time for the creative and hermeneutic aspects of research.
+This dissertation was written for such a linguist, and it has good news and bad news.
+
+The bad news is that, although distributional models can indeed reveal patterns and
+offer information that we might not obtain by other means, these are not necessarily *the* patterns and
+information we would have expected. The results from this study suggest that, if we are to use distributional
+semantics for descriptive analyses, we should not do so blindly.
+Unlike what high accuracy scores on benchmarks would suggest, there is no parameter setting that works optimally across the board, because what is relevant in the description of one lexical item might not be for another. For the same reason, different configurations of parameter settings will have different effects on each lemma, highlighting specific aspects that may be more or less interesting from a linguistic perspective. They may be senses, or they may be something else.
+
+The good news is that a user-friendly, comprehensive visualization tool is available for the exploration of such models. Interfaces like the ones described here turn the apparent chaos of distributional models into concrete visual representations for us to examine and interrogate. Rather than despairing in the face of multiple diverse models, we can create a composite picture based on a few representative models: we embrace the complexity and thus achieve a richer, more nuanced description. These tools offer both a fluid interaction with the output of the models and a look into their backstage operations.
+
+In sum, this dissertation illustrates why, as descriptive linguists, we shouldn't trust distributional models blindly, but also how we can exploit them nonetheless. On the one hand, it illustrates a workflow for investigating distributional modelling itself: the same steps followed in this study can be applied to alternative implementations for a better understanding of distributional approaches. On the other hand, with both warnings and suggestions, it offers a framework and tools for future studies implementing token-level distributional models to linguistic research or, as we like to call them, linguistic cloudspotting.

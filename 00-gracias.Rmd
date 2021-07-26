@@ -1,0 +1,30 @@
+# Acknowledgements {-}
+\fancyhead[LE]{\thepage --- \nouppercase{Acknowledgements}}
+\fancyhead[RO]{\nouppercase{Acknowledgements} --- \thepage}
+\fancyhead[LO,RE]{}
+\fancyfoot[C]{}
+
+The words in these pages, the thoughts they try to convey, are the result of years of thinking, discussing, learning. My voice weaves them together,
+but it draws from many sources that have encouraged my growth, stood by me, and fed my curiosity, passion and enthusiasm for everything that makes up this text.
+
+For their support and their ideas, I would like to thank my supervisors Dirk Geeraerts, Dirk Speelman and Benedikt Szmrecsanyi. Thank you for trusting me, for allowing me to be part of this amazing research project.
+Dirk Geeraerts deserves a special acknowledgement for all his patience and trust. It has been an honour to share such interesting, long discussions on semantics and research.
+Every time we talked I became more excited and passionate about my research, more confident and happy. Hartelijk bedankt.
+I am also grateful to Freek Van de Velde, Tim Van de Cruys, Martin Hilpert and Thomas Herbst for their willingness to participate in the jury.
+
+Research is eminently collaborative, but it can feel lonely. I will always appreciate the company and support of my colleagues at the Linguistics Department at KU Leuven, especially my research group, `r sc("qlvl")`. In particular, I would like to thank the members of the Nephological Semantics project, with whom I shared so much of the excitement and frustrations of our common project. I'd like to acknowledge Tao Chen for his amazing work in the Python code and helping me understand it and Stefania Marzo for always making me feel like I had done something right. For the past year and a half, the weekly meetings with Dirk and Dirk, Kris, Karlien, Stefano and Weiwei have been intense but have also kept me grounded. I was constantly learning, rethinking, trying new things. I am grateful for your collaboration and your advice, for being there and letting me know that this research matters. Kris has been an unstoppable source of ideas, Karlien such a great partner for spontaneous experiments, and Stefano so helpful with our shared methodological obstacles (and thank you for proofreading!).
+
+Some colleagues become friends. The first is Danqing, who shares with me the experience of studying and making a life far from home, and who has kindly agreed to do some proofreading in spite of her busy schedule. I am also immensely grateful to Marlieke and Pedro, not only for their proofreading efforts and their invaluable help with the translations of the examples but also, and most importantly, for their company and their friendship. Thank you Ola, Caro, Araceli and Manuel for standing by me even from a distance. To Paula, thank you for challenging me, encouraging me, making me a better researcher and a better person.
+
+From friends we move to family. I honestly wouldn't be where I am today if it weren't for my parents. They have taught me to learn and to teach, to face challenges, to not fear mathematics or programming. My siblings are my strength, thank you for being there, thank you for the mates, the talks, the hugs. My cousin Alex deserves a special acknowledgement for holding my hand while I discovered web design and helping me disentangle a whole new field. Muchas gracias, che.
+
+Finally, I would like to thank my partner, Taihou, who has kept me alive while I was finishing this text, and has always listened to my ramblings, held me when I fell, rejoiced with me when I succeeded.
+
+To all of you, I am forever grateful. This is thanks to you, I hope to make you proud.
+
+\mainmatter
+
+\fancyhead[LE]{\thepage --- \nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark} --- \thepage}
+\fancyhead[LO,RE]{}
+\fancyfoot[C]{}
