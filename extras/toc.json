@@ -1,62 +1,49 @@
 [
   {
     fname: "viz_1",
-    heading: "An interface to the world of clouds",
-    note: "Starts PART I",
-    description: "Introduction to the technical/methodological part of the thesis."
+   heading: "From corpora to clouds",
+    description: "Description of the workflow: token-level vector space models and dimensionality reduction, HDBSCAN, parameter settings, PAM.",
+    note: "Starts PART I"
+    
   },
   {
     fname: "viz_2",
-    heading: "Parameter settings",
-    description: "Description of the parameter settings used in the models.",
-    todo: "Describe what was not done and why?",
-    note: "Should be after description of the workflow."
-  },
-  {
-    fname: "viz_3",
-    heading: "From corpora to clouds",
-    description: "Description of the workflow: token-level vector space models and dimensionality reduction.",
-    todo: "Describe what was not done and why?"
-  },
-  {
-    fname: "viz_4",
     heading: "NephoVis",
     description: "Description of the visualization tool, as a manual ---for now copied from Montes & Heylen."
   },
   {
-    fname: "viz_5",
-    heading: "HDBSCAN",
-    description: "Brief explanation of HDBSCAN and how we can use it for this."
-    note: "Maybe add shiny app?"
-  },
-  {
-    fname: "viz_6",
+    fname: "viz_3",
     heading: "Annotation schema",
     description: "Description of the annotation procedure and the lemmas",
     note: "Needs reorganization, bad."
   },
   {
-    fname: "theo_2",
+    fname: "nephological_shapes",
     heading: "The nature of clouds",
     note: "Starts Part II",
     description: "Cloud classification, technical interpretation."
   },
   {
-    fname: "theo_1",
+    fname: "semantic_interpretation",
     heading: "Nonsense or no senses?",
-    description: "Semantic interpretation of the clouds: Sinclair's model, prototypicality...",
-    note: "Still discussing with Dirk... and I don't really like the focus on senses."
+    description: "Semantic interpretation of the clouds: Sinclair's model, prototypicality...,
   },
   {
-    fname: "theo_3",
+    fname: "no_optimal_solution",
     heading: "No solution fits all",
     description: "There is no optimal solution across items, neither for a lemma, nor for a semantic phenomenon."
   },
   {
     fname: "index",
+    heading: "Abstract",
+    description: "Abstract of the thesis.",
+    note: "Is this necessary?"
+  },
+  {
+    fname: "introduction",
     heading: "Introduction",
-    description: "Introduction to the thesis.",
-    note: "The intro should probably be another file? I don't know, we'll see..."
+    description: "Introduction to the thesis."
+    
   },
   {
     fname: "gracias",
