@@ -1,5 +1,0 @@
-# (PART) Conclusion {-}
-
-# Cloudspotter's guide
-
-[General tips and so on]

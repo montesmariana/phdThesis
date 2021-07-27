@@ -1,15 +1,15 @@
 {
   "nouns": {
-    "1" : "modifiers and determiners of the target, items of which the target is modifier or determiner, and verbs of which the target is object or subject.",
-    "2" : "conjuncts of the target (with or without conjunction), objects of the modifier of the target, and items whose modifier the target is object.",
-    "3" : "objects and modifiers of items of which the target is subject or modifier, subjects and modifiers of items of which the target is subject or modifier, modifiers of the modifiers of the target, and items of whose modifier the target is modifier."
+    "1" : "modifiers and determiners of the target; items of which the target is modifier or determiner, and verbs of which the target is object or subject.",
+    "2" : "conjuncts of the target (with or without conjunction); objects of the modifier of the target, and items on which the target depends via a modifier.",
+    "3" : "Objects and modifiers of items of which the target is subject or modifier; subjects and modifiers of items of which the target is object or modifier; modifiers of the modifiers of the target, and items of whose modifier the target is modifier."
   },
   "verbs" : {
-    "1" : "direct objects, active and passive subjects (with up to two modals for the active one), reflexive complement and prepositions depending directly on the target.",
-    "2" : "conjuncts of the target, complementizers, nouns depending through a preposition and verbal complements or elements of which the target is a verbal complement."
+    "1" : "direct objects; active and passive subjects (with up to two modals for the active one); reflexive complement, and prepositions depending directly on the target.",
+    "2" : "conjuncts of the target; complementizers; nouns depending through a preposition; verbal complements, and elements of which the target is a verbal complement."
   },
   "adjectives" : {
-    "1" : "nouns modified by the target and direct modifiers of it (except for prepositions), subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between.",
-    "2" : "object of the preposition modifying the target, conjunct of the target (with or without conjunction), prepositional object of verb modified by target (as modifier or prepositional complement)."
+    "1" : "nouns modified by the target and direct modifiers of it (except for prepositions); subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between.",
+    "2" : "object of the preposition modifying the target; conjunct of the target (with or without conjunction); prepositional object of verb modified by target (as modifier or prepositional complement)."
   }
 }
