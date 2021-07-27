@@ -1,5 +1,4 @@
 library(tidyverse)
-library(flextable)
 library(kableExtra)
 library(colorblindr)
 library(sna)
@@ -8,16 +7,21 @@ library(gghalves)
 library(ggpubr)
 library(cowplot)
 library(here)
+library(knitr)
+library(extrafont)
+library(jsonlite)
+library(readxl)
+library(network)
 
 # automatically create a bib database for R packages ----
-knitr::write_bib(c(
+write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown',
   'cluster', 'vegan', 'Rtsne', 'dbscan', 'umap',
-  'semvar', 'entropy', 'shiny', 'colorblindr', 'irr',
+  'semvar', 'entropy', 'shiny', 'colorblindr',
   'plotly'
 ), 'assets/bib/packages.bib')
 
-extrafont::loadfonts(device = "pdf")
+loadfonts(device = "pdf")
 # utils ----
 hmean <- function(...){
   return(1/mean(1/c(...), na.rm = TRUE))
@@ -33,9 +37,9 @@ pmi2positive <- function(x) {
   x
 }
 
-cloud_foto <- function(fname){
-  knitr::include_graphics(
-    here("assets", "img", paste0(fname, ".jpg")),
+cloud_foto <- function(fname, extension = "jpg"){
+  include_graphics(
+    here("assets", "img", paste0(fname, ".", extension)),
     auto_pdf = T,
     dpi = 600)
 }
@@ -51,7 +55,7 @@ sc <- function(txt){
 }
 
 latIt <- function(txt){
-  str_replace(r"(\textit{X})", "X", txt)
+  if (is.na(txt)) "" else str_replace(r"((\textit{X}))", "X", txt)
 }
 
 appPvalue <- function(p) {
@@ -73,22 +77,27 @@ reportStat <- function(stat){
   measure <- str_replace(r"($\greek$)", "greek", names(estimate))
   str_glue("{measure} = {round(estimate, 2)}, {appPvalue(p.value)}")
 }
+scUpper <- function(x) {
+  up <- str_extract(x, "[A-Z]+")
+  if (is.na(up)) x else str_replace(x, up, sc(tolower(up)))
+  }
 
 nameModel <- function(mname){
   parts <- str_split(mname, pattern = "\\.")[[1]]
   if (length(parts) == 4) parts <- c("lemma", parts)
   foc <- str_remove(parts[[2]], "BOW") %>% str_remove("LEMMA") %>% 
-    str_replace("([A-Z]+)([^A-Z]+)", paste0(sc(tolower("\\1")), "\\2"))
+    # str_replace("([A-Z]+)([^A-Z]+)", paste0(sc(tolower("\\1")), "\\2"))
+    scUpper
   pmi <- str_replace(parts[[3]], "PPMI", sc("ppmi"))
   length <- sc(tolower(str_remove(parts[[4]], 'LENGTH')))
   socpos <- str_remove(parts[[5]], 'SOCPOS')
-  paste(foc, pmi, length, socpos, sep="-")
+  paste(foc, pmi, paste0(length, socpos), sep="-")
 }
 
 # load data ----
 d <- readRDS(here("assets", "data.rds"))
-lrel <- jsonlite::read_json(here("assets", "lemmarel.json"))
-definitions <- readxl::read_excel(here("assets", "definitions.xlsx")) %>%
+lrel <- read_json(here("assets", "lemmarel.json"))
+definitions <- read_excel(here("assets", "definitions.xlsx")) %>%
   filter(lemma != 'spoor') %>% 
   select(lemma, sense = code,
          enl = example, een = example_translation,
@@ -103,8 +112,10 @@ definitions <- readxl::read_excel(here("assets", "definitions.xlsx")) %>%
     ),
     dnl = str_remove(dnl, '\\d(\\.\\d)? '),
     den = str_remove(den, '\\d(\\.\\d)? '),
-    Dutch = if_else(is.na(dnl), str_glue(""), str_glue("{dnl} ({latIt(enl)})")),
-    English = str_glue("{den} ({latIt(een)})")
+    enl = map_chr(enl, function(x) if (is.na(x)) "" else latIt(x)),
+    een = map_chr(een, function(x) if (is.na(x)) "" else latIt(x)),
+    Dutch = if_else(is.na(dnl), str_glue(""), str_glue("{dnl} {enl}")),
+    English = str_glue("{den} {een}")
     ) %>%
   select(lemma, sense, Dutch, English) 
 
@@ -117,7 +128,8 @@ lemmas <- read_tsv(here("assets", "lemmas.tsv"), col_types = cols()) %>%
   select(pos, lemma = type, frequency, batches) %>% 
   filter(lemma %in% names(d)) %>% 
   mutate(
-    pos = fct_relevel(pos, c('noun', 'adj', 'verb')),
+    pos = if_else(pos == "adj", "adjectives", paste0(pos, "s")),
+    pos = fct_relevel(pos, c('nouns', 'adjectives', 'verbs')),
     senses = map(lemma, ~prop.table(table(d[[.x]]$senses$sense))),
     n_senses = map_dbl(lemma, ~nrow(count(d[[.x]]$senses, sense)))) %>% 
   arrange(pos, batches, frequency)
@@ -132,6 +144,7 @@ final_agreement <- read_tsv(here("assets", "final.agreement.tsv"), col_types = c
     majority_agreement = fct_relevel(majority_agreement, c("Full", "Majority", "No agreement"))
   )
 
+geen <- readRDS(here("assets", "geen_data.rds"))
 cloud_order <- c("Cumulus", "Stratocumulus", "Cirrus", "Cumulonimbus", "Cirrostratus")
 qlvlcorp <- readRDS(here("assets", "qlvlnews.summary.rds"))
 medoid_data <- read_tsv(here("assets", "medoid_data.tsv"), col_types = cols()) %>% 
@@ -154,8 +167,14 @@ complex_cor <- function(df,
   baseplot <- df %>% 
     ggplot(aes(x = {{ x_coord }}, y = {{ y_coord }}, color = {{ color_var }})) +
     geom_point(alpha = 0.5, size = 3) +
-    theme_pubr(base_family = "Modern No. 20") +
-    (if (ncats > 3) scale_colour_viridis_d() else scale_colour_grey(start = 0.8, end = 0)) +
+    theme_pubr(base_family = "Bookman Old Style") +
+    (if (ncats > 3) scale_colour_viridis_d(guide = guide_legend(
+      direction = "horizontal",
+      title.position = "top"
+    )) else scale_colour_grey(start = 0.8, end = 0, guide = guide_legend(
+      direction = "horizontal",
+      title.position = "top"
+    ))) +
     labs(x = xlab, y = ylab, color = colorlab)
   if (add_abline) baseplot <- baseplot + geom_abline()
   
@@ -228,7 +247,7 @@ plotCloud <- function(df, colorvar = "", shapevar = "", alphavar = 1, colorguide
     coord_fixed() +
     scale_shape(guide = "none") +
     theme(legend.position = colorguide)
-  g <- if (g$labels$alpha != "alpha") g + scale_alpha(range = c(1, 0), guide = "none") else g + scale_alpha(guide = "none")
+  g <- if (g$labels$alpha != "alpha") g + scale_alpha(range = c(1, 0), guide = "none") else g + scale_alpha(range = c(0.5, 0.5), guide = "none")
   g <- if (g$labels$colour != "colour") g + scale_color_OkabeIto(darken = 0.1, use_black = TRUE, na.value = "#9b9c9f") else g + scale_colour_grey()
   g
 }
@@ -243,13 +262,13 @@ network_cws <- function(coords, n = 150) {
     map_dbl(all_cws, ~nrow(filter(A, map_lgl(cws, has_element, .x))))
   })
   cws_mtx <- flatten_dbl(cws_mtx) %>% matrix(nrow = length(all_cws), dimnames = list(all_cws, all_cws))
-  net <- network::network(cws_mtx, ignore.eval = FALSE, names.eval = "weights")
+  net <- network(cws_mtx, ignore.eval = FALSE, names.eval = "weights")
   net %v% "freq" = rowSums(cws_mtx)
   cw_freq <- map_dbl(all_cws, ~max(cws_mtx[.x,]))
   net %v% "cw_freq" = case_when(cw_freq > 10 ~ 6, cw_freq > 1 ~ 4, TRUE ~2)
   set.seed(8541)
-  GGally::ggnet2(net, size = "freq", label = TRUE, label.size ="cw_freq",
-                 edge.size = "weights", edge.alpha = 0.3) +
+  ggnet2(net, size = "freq", label = TRUE, label.size ="cw_freq",
+                 edge.size = "weights", edge.alpha = 0.1) +
     guides(size = "none")
 }
 
@@ -371,11 +390,16 @@ mean_n_clusters <- cloud_data %>%
 showDefs <- function(lemmas, caption) {
   subdefs <- filter(definitions, lemma %in% lemmas)
   kbl(select(subdefs, Dutch, sense, English), escape = F, booktabs = T, caption = caption,
-        longtable = T) %>% 
-    kable_paper(font_size = 7, latex_options = c("repeat_header")) %>% 
-    pack_rows(index = table(subdefs$lemma), hline_before = T, latex_align = "c") %>% 
-    column_spec(2, width = "1em") %>%
-    column_spec(c(1, 3), width = "16em")
+        longtable = T, linesep = "\\addlinespace") %>% 
+    kable_paper(font_size = 7, latex_options = c("repeat_header"), full_width = T,
+                repeat_header_method = "replace") %>% 
+    pack_rows(index = table(subdefs$lemma),
+              latex_align = "c",
+              # latex_gap_space = "0.5em",
+              indent = F) %>% 
+    column_spec(2, width = "1.5em") %>%
+    column_spec(c(1, 3), width = "19em") %>% 
+    row_spec(0, align = "c", bold = T, font_size = 9)
 }
 
 countCues <- function(colname, n = 10){

@@ -5,24 +5,15 @@ language:
     chapter_name: "Chapter "
 rmd_files: [
   "index.Rmd",
-  "gracias.Rmd",
+  "00-gracias.Rmd",
+  "01-introduction.Rmd",
+  "02-workflow.Rmd",
+  "03-nephovis.Rmd",
+  "04-case_studies.Rmd",
   
-  "introduction.Rmd",
+  "05-nephological_shapes.Rmd",
+  "06-semantic_interpretation.Rmd",
+  "07-no_optimal_solution.Rmd",
   
-  "viz_1.Rmd",
-  "viz_3.Rmd",
-  "viz_2.Rmd",
-  "viz_4.Rmd",
-  "viz_5.Rmd",
-  "viz_6.Rmd",
-  
-  "theo_2.Rmd",
-  "theo_1.Rmd",
-  "theo_3.Rmd",
-  
-  "con_1.Rmd",
-  "con_2.Rmd",
-  "con_3.Rmd",
-  
-  "references.Rmd"
-]
+  "08-conclusion.Rmd"
+  ]

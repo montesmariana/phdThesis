@@ -1,1 +1,30 @@
 \usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[nottoc]{tocbibind}
+\usepackage{fancyhdr}
+\usepackage[backend=biber,
+  style=unified,
+  maxcitenames=3,
+  maxbibnames=99]{biblatex}
+\usepackage{pdfpages}
+\renewcommand*{\ppspace}{}
+
+\DeclareFieldFormat{postnote}{#1}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{ \markright{#1} }
+\fancyhead[LE]{\thepage --- \nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark} --- \thepage}
+\fancyhead[LO,RE]{}
+\fancyfoot[C]{}
+
+
+\newenvironment{dedication}
+    {\clearpage\vspace*{30ex}\begin{quotation}\begin{center}\begin{em}}
+    {\par\end{em}\end{center}\end{quotation}\clearpage}
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}

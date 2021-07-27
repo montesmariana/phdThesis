@@ -1,14 +1,19 @@
 --- 
-title: "Cloudspotting: Visual analytics for distributional semantics"
+title: "Cloudspotting"
+subtitle: "Visual analytics for distributional semantics"
 author: "Mariana Montes"
-date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
+geometry: 'paperwidth=160mm, paperheight=240mm, margin=2cm, bindingoffset=0cm'
+lof: true
+lot: true
+indent: true
+cover-image: assets/covers/front-cover.png
 bibliography: [assets/bib/PhDCitations.bib, assets/bib/packages.bib]
-biblio-style: apa
+biblio-style: unified
 csl: assets/bib/unified-style-sheet-for-linguistics.csl
 link-citations: yes
-description: "This is my PhD dissertation, still a draft, always perfectable."
+description: "Dissertation for PhD in Linguistics on distributional models applied to lexicography."
 ---
 
 ```{r, code=readLines("src/init.R"), include = FALSE}
@@ -18,54 +23,62 @@ description: "This is my PhD dissertation, still a draft, always perfectable."
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 
+# Preface {-}
 
-# Abstract {-}
+\fancyhead[LE]{\thepage --- \nouppercase{Preface}}
+\fancyhead[RO]{\nouppercase{Preface} --- \thepage}
+\fancyhead[LO,RE]{}
+\fancyfoot[C]{}
 
-The present study is part of the Nephological Semantics research project at QLVL,
-which aims to develop tools for large-scale corpus-based semantic analyses.
-A core aspect of the project involves representing semantic structure with vector space models (VSMs),
+The research described in this dissertation is part of the Nephological Semantics^[https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics] research project at the `r sc("qlvl")` research group in KU Leuven,
+which aims to develop tools for large-scale corpus-based semantic analysis.
+A core aspect of the project involves representing semantic structure with distributional models,
 a computational tool that currently requires a deeper understanding of its inner workings
 and how its results relate to cognitive theories of meaning. 
 
-Count-based VSMs represent words[^word] as vectors of co-occurrence frequencies in a multidimensional space
+Context-counting distributional models represent words[^word] as vectors of co-occurrence frequencies in a multidimensional space
 [@turney.pantel_2010; @lenci_2018]. Basically, a word is represented by
 its association strength to other words.
-They can be generated at both type- and token-level [@heylen.etal_2012; @heylen.etal_2015; @depascale_2019].
+They can be generated at both type and token level [@heylen.etal_2012; @heylen.etal_2015; @depascale_2019].
 At type level, two words are represented as more similar if they are attracted to the same
 contextual features (e.g. other words) and repelled by the same contextual features. This should
 allow us to identify semantic fields and other relationships between words, but collapses the full
 range of contexts of each word into one representation.
-At the token level, instead, we look at individual *occurrences*, and define them as more similar if
+At token level, instead, we look at individual occurrences and define them as more similar if
 the words in their contexts are attracted to and repelled by the same contextual features.
-This way we should be able to map the internal variation of the behavior of individual words,
+This way we should be able to map the internal variation of the behaviour of individual words,
 i.e. their semasiological structure.
 
-Within the larger Nephological Semantics project, this work package is dedicated
-to the understanding of token-level vector space models as a tool
-for the study of polysemy. Concretely, we explore a number of parameter settings for the models,
-i.e. ways of defining the context used to represent each tokens, and their impact on the
+Within the larger Nephological Semantics project, this particular work package is dedicated
+to the understanding of token-level distributional models as a tool
+for the study of polysemy. Concretely, I explored a number of parameter settings for the models
+(i.e. ways of defining the context used to represent each token) and their impact on the
 resulting representation, by means of visual analytics.
-We used manual annotation of sense tags as a heuristic, but without
-considering them a golden standard. Instead, we aim to map parameter settings to various
+Manually annotated sense tags were used as a heuristic, but without
+considering them a golden standard. Instead, the aim was to map parameter settings to various
 semantic phenomena coded in the annotations, such as
 meaning granularity (e.g. distinguishing homonyms and senses within the homonyms).
-The vector space models, which take the form of large matrices,
+The distributional models, which take the form of large matrices,
 can be reduced to two dimensions via different methods,
-such as t-SNE [@Rtsne2008; @Rtsne2014].
+such as t-`r sc("sne")` [@Rtsne2008; @Rtsne2014].
 These coordinates can then be mapped onto a scatterplot, resulting in a variety of
 shapes, which we call *clouds*.
 
 The workflow was applied to a set of 32 Dutch nouns, verbs and adjectives exhibiting
-a range of semantic phenomena. For each of them, 240-320 concordance lines were extracted,
-annotated and modeled. The combination of parameter settings, some of which included syntactic
-information, resulted in 200-212 different models. The models were clustered with Partition
+a range of semantic phenomena. For each of them, 240-320 concordance lines were extracted
+from a corpus of Dutch and Flemish newspapers,
+annotated and modelled. The combination of parameter settings, some of which included syntactic
+information, resulted in 200-212 different models per lemma. The models were clustered with Partition
 Around Medoids [@kaufman.rousseeuw_1990; @R-cluster] so that a manageable, representative set could be explored
-in more depth, in particular visualizing their t-SNE representations.
+in more depth, in particular visualizing their t-`r sc("sne")` representations.
 
-Preliminary results suggest that the shape of the clouds depends on the
-distinctiveness of the collocational patterns, which may or may not match the sense
-annotations. Noisier models can smooth over these sharp distinctions, while more refined
-models emphasize them. More importantly, there is no set of parameters that works
-across the board.
+The contributions of this dissertation are twofold. On the one hand, the exploration of
+the possibilities and limits of distributional models to lexicological research resulted in
+warnings, suggestions and guidelines for practical studies. In other words, it offers
+an assessment and interpretation of distributional models from the perspective of descriptive linguistics.
+On the other hand, it presents a visualization tool designed for the exploration of
+token-level distributional models from such a perspective [@montes.qlvl_2021a]. Its interactive quality makes
+it challenging to describe it adequately in a printed text, so I would strongly
+recommend visiting it in its virtual home^[https://qlvl.github.io/NephoVis/] and explore it.
 
 [^word]: The term *word* is used very loosely here to encompass different possible definitions.

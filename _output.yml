@@ -6,7 +6,12 @@ bookdown::bs4_book:
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
+    before_body: titlepage.tex
+    after_body: afterbody.tex
   latex_engine: xelatex
   citation_package: biblatex
+  dev: "cairo_pdf"
   keep_tex: yes
+  toc_bib: true
+  fig_height: 4
 bookdown::epub_book: default
