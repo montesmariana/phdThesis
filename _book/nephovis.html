@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Visualization tools | Cloudspotting</title>
+<meta name="author" content="Mariana Montes">
+<meta name="description" content="Clouds are the prime matter of these study. They are condensed, information-rich representations of patterns found in a corpus and should, according to the Distributional Hypothesis, tell us...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Visualization tools | Cloudspotting">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/assets/covers/front-cover.png">
+<meta property="og:description" content="Clouds are the prime matter of these study. They are condensed, information-rich representations of patterns found in a corpus and should, according to the Distributional Hypothesis, tell us...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Visualization tools | Cloudspotting">
+<meta name="twitter:description" content="Clouds are the prime matter of these study. They are condensed, information-rich representations of patterns found in a corpus and should, according to the Distributional Hypothesis, tell us...">
+<meta name="twitter:image" content="/assets/covers/front-cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Visual analytics for distributional semantics">Cloudspotting</a>:
+        <small class="text-muted">Visual analytics for distributional semantics</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">The cloudspotter’s toolkit</li>
+<li><a class="" href="workflow.html"><span class="header-section-number">2</span> From corpora to clouds</a></li>
+<li><a class="active" href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></li>
+<li><a class="" href="dataset.html"><span class="header-section-number">4</span> Case studies</a></li>
+<li class="book-part">The cloudspotter’s handbook</li>
+<li><a class="" href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></li>
+<li><a class="" href="semantic-interpretation.html"><span class="header-section-number">6</span> The language of clouds</a></li>
+<li><a class="" href="no-optimal.html"><span class="header-section-number">7</span> No sky is the best sky</a></li>
+<li class="book-part">The cloudspotter’s cheatsheet</li>
+<li><a class="" href="conclusions-and-guidelines.html"><span class="header-section-number">8</span> Conclusions and guidelines</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/montesmariana/phdThesis">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="nephovis" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Visualization tools<a class="anchor" aria-label="anchor" href="#nephovis"><i class="fas fa-link"></i></a>
+</h1>
+<p>Clouds are the prime matter of these study. They are condensed, information-rich representations of patterns found in a corpus and should, according to the Distributional Hypothesis, tell us something about the meaning of the words under examination. But they don’t tell us anything by themselves: we need to develop and implement tools to extract this information. Chief among these tools is a web-based visualization tool <span class="citation">(<a href="references.html#ref-montes.qlvl_2021" role="doc-biblioref">Montes &amp; QLVL 2021</a>)</span>, originally developed by Thomas Wielfaert within the Nephological Semantics project <span class="citation">(see <a href="references.html#ref-wielfaert.etal_2019" role="doc-biblioref">Wielfaert et al. 2019</a>)</span>, and then continued by myself<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;The GitHub repository is linked to Zenodo, so that the released versions can be stored and identified with a &lt;span class="smallcaps"&gt;doi&lt;/span&gt;. Unfortunately, even though the foundations of the code were set by Thomas Wielfaert, because of how the current repository came to be, he has no history as contributor and therefore is not assigned as author in the tool’s citation.&lt;/p&gt;'><sup>17</sup></a>. In this chapter we will present its rationale and the features it offers, as an elaboration of <span class="citation"><a href="references.html#ref-montes.heylen_2022" role="doc-biblioref">Montes &amp; Heylen</a> (<a href="references.html#ref-montes.heylen_2022" role="doc-biblioref">2022</a>)</span>.</p>
+<p>Section <a href="nephovis.html#nepho-overview">3.1</a> will offer an overview of the rationale behind the tool and the minimal path that a researcher could take through its levels. Sections <a href="nephovis.html#nepho1">3.2</a> through <a href="nephovis.html#nepho3">3.4</a> will zoom in on each of the levels, describing the current features and those that are still waiting on our wish list. Section <a href="nephovis.html#shiny">3.5</a> follows with the description of a ShinyApp <span class="citation">(<a href="references.html#ref-R-shiny" role="doc-biblioref">Chang et al. 2021</a>)</span>: an extension<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Currently available at &lt;a href="https://marianamontes.shinyapps.io/Level3/" class="uri"&gt;https://marianamontes.shinyapps.io/Level3/&lt;/a&gt;&lt;/p&gt;'><sup>18</sup></a> to the third level of the visualization with additional features tailored to exploring the relationship between the <span class="smallcaps">2d</span> representations and the <span class="smallcaps">hdbscan</span> output. Finally, we conclude with a summary in Section <a href="nephovis.html#nepho-summary">3.6</a>.</p>
+<div id="nepho-overview" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Flying through the clouds<a class="anchor" aria-label="anchor" href="#nepho-overview"><i class="fas fa-link"></i></a>
+</h2>
+<p>The visualization tool described here, which I will call <em>NephoVis</em>, was written in Javascript, making heavy use of the <a href="https://d3.js"><span class="smallcaps">d3</span>.js</a> library, which was designed for beautiful web-based data-driven visualization <span class="citation">(<a href="references.html#ref-bostock.etal_2011" role="doc-biblioref">Bostock, Ogievetsky &amp; Heer 2011</a>)</span>. The <span class="smallcaps">d3</span> library allows the designer to link elements on the page, such as circles in an <span class="smallcaps">svg</span>, dropdown buttons and titles, to data structures such as arrays and data frames, and manipulate the visual elements based on the values of the linked data items. In addition, it offers handy functions for scaling and mapping, i.e. to fit the relatively arbitrary ranges of the coordinates to pixels on a screen, or to map a colour palette<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;While &lt;span class="smallcaps"&gt;d3&lt;/span&gt; offers a variety of useful colour palettes, the visualization currently relies on a — slightly adapted — colorblind-friendly scale by &lt;span class="citation"&gt;&lt;a href="references.html#ref-okabe.ito_2002" role="doc-biblioref"&gt;Okabe &amp;amp; Ito&lt;/a&gt; (&lt;a href="references.html#ref-okabe.ito_2002" role="doc-biblioref"&gt;2002&lt;/a&gt;)&lt;/span&gt;. The default colour palette for most of the figures in this disseration make use of the same palette, via the R package &lt;code&gt;colorblindr&lt;/code&gt; &lt;span class="citation"&gt;(&lt;a href="references.html#ref-R-colorblindr" role="doc-biblioref"&gt;McWhite &amp;amp; Wilke 2021&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;'><sup>19</sup></a> to a set of categorical values.</p>
+<p>As we have seen in Chapter <a href="workflow.html#workflow">2</a>, the final output of the modelling procedure is a <span class="smallcaps">2d</span> representation of distances between tokens, which can be visualized as a scatterplot. Crucially, we are not only interested in exploring individual models, but in comparing a range of models generated by variable parameters. Section <a href="workflow.html#cosine">2.2.2</a> discussed a procedure to measure the distance between models, which can be provided as input for non-metric <span class="smallcaps">mds</span>, and Section <a href="workflow.html#pam">2.4</a> presented the technique used to select representative models, or medoids. As a result, we have access to the following datasets for each of the lemmas:</p>
+<ul>
+<li>A distance matrix between models.</li>
+<li>A data frame with one row per model, the <span class="smallcaps">nmds</span> coordinates based on the distance matrix, and columns coding the different variable parameters or other pieces of useful information, such as the number of modelled tokens.</li>
+<li>A data frame with one row per token, <span class="smallcaps">2d</span> coordinates for each of their models and other information such as sense annotation (see Chapter <a href="dataset.html#dataset">4</a>), country, type of newspaper, selection of context words and concordance line.</li>
+<li>A data frame with one row per first-order context word and useful frequency information.</li>
+</ul>
+<p>In practice, the data frame for the tokens is split in multiple data frames with coordinates corresponding to different dimensionality reduction algorithms, such as <span class="smallcaps">nmds</span> and t-<span class="smallcaps">sne</span> with different perplexity values, and another data frame for the rest of the information. In addition, one of the most recent features of the visualization tool includes the possibility to compare an individual token-level model with the representation of the type-level modelling of its first-order context words. However, this feature is still under development within NephoVis and can be better explored in the ShinyApp extension (Section <a href="nephovis.html#shiny">3.5</a>).</p>
+<p>In order to facilitate the exploration of all this information, NephoVis is organized in three levels, following Shneiderman’s Visual Information Seeking Mantra: “Overview first, zoom and filter, then details-on-demand” <span class="citation">(<a href="references.html#ref-shneiderman_1996" role="doc-biblioref">1996: 97</a>)</span>. The core of the tool is the interactive, zoomable scatterplot, but its goal and functionality is adapted to each of the three levels.
+In Level 1 the scatterplot represents the full set of models and allows the user to explore the quantitative effect of different parameter settings and to select a small number of models for detailed exploration in Level 2.
+This second level shows multiple token-level scatterplots — one for each of the selected models —, and therefore offers the possibility to compare the shape and organization of the groups of tokens across different models. By selecting one of these models, the user can examine it in Level 3, which focuses on only one at a time. <span class="citation"><a href="references.html#ref-shneiderman_1996" role="doc-biblioref">Shneiderman</a> (<a href="references.html#ref-shneiderman_1996" role="doc-biblioref">1996</a>)</span>’s mantra underlies both the flow across levels and the features within them: each level is a zoomed in, filtered version of the level before it; the individual plots in Levels 1 and 3 are literally zoomable; and in all cases it is possible to select items for more detailed inspection. Finally, a number of features — tooltips and pop-up tables — show details on demand, such as the names of the models in Level 1 and the context of the tokens in the other two levels.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho-index"></span>
+<img src="assets/img/nephovis-index.jpg" alt="Portal of https://qlvl.github.io/NephoVis/ as of July 2021." width="100%"><p class="caption">
+Figure 3.1: Portal of <a href="https://qlvl.github.io/NephoVis/">https://qlvl.github.io/NephoVis/</a> as of July 2021.
+</p>
+</div>
+<p>Currently, <a href="https://qlvl.github.io/NephoVis/">https://qlvl.github.io/NephoVis/</a> hosts the portal shown in Figure <a href="nephovis.html#fig:nepho-index">3.1</a>, which eventually leads the user to the Level 1 page for the lemma of their choice<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;By knowing the lemma, it is possible to go directly to the Level 1 page by replacing &lt;em&gt;lemma&lt;/em&gt; in &lt;a href="https://qlvl.github.io/NephoVis/level1.html?type=lemma" class="uri"&gt;https://qlvl.github.io/NephoVis/level1.html?type=lemma&lt;/a&gt; with the corresponding name of the lemma, e.g. &lt;em&gt;heffen&lt;/em&gt;.&lt;/p&gt;'><sup>20</sup></a>, shown in Figure <a href="nephovis.html#fig:nepho1-basic">3.2</a> and described in more detail in Section <a href="nephovis.html#nepho1">3.2</a>. By exploring the scatterplot of models, the user can look for structure in the distribution of the parameters on the plot.
+For example, colour coding may reveal that models with nouns, adjectives, verbs and adverbs as first-order context words (<code>lex</code>) are very different from those without strong filters for part-of-speech, because mapping these values to colours reveals distinct groups in the plot. In contrast, mapping the sentence boundaries restriction (<code>bound</code>/<code>nobound</code>) might result in a mix of dots of different colours, like a fallen bag of <span class="smallcaps">m&amp;m</span>’s, meaning that the parameter makes little difference. Depending on whether the user wants to compare models similar or different to each other, or which parameters they would like to keep fixed, they will use individual selection or the buttons to choose models for Level 2. The
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg><strong>Select medoids</strong>
+button<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Incorporating this feature is less scalable than the dropdown menus or even the checkbox buttons; it works with the current pipeline, but is not so straightforward to adapt to new data that does not follow the exact same pipeline. Flexibilizing the features to allow for missing data frames is one of the items on the wish list. Ideally, future versions will implement algorithms such as &lt;span class="smallcaps"&gt;pam&lt;/span&gt; to compute on the fly as well.&lt;/p&gt;'><sup>21</sup></a> quickly identifies the predefined medoids. By clicking on the
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM212 140v116h-70.9c-10.7 0-16.1 13-8.5 20.5l114.9 114.3c4.7 4.7 12.2 4.7 16.9 0l114.9-114.3c7.6-7.6 2.2-20.5-8.5-20.5H300V140c0-6.6-5.4-12-12-12h-64c-6.6 0-12 5.4-12 12z"></path></svg><strong>LEVEL 2</strong> button,
+Level 2 is opened in a new tab, as shown in Figure <a href="nephovis.html#fig:nepho2-basic">3.3</a>.</p>
+<p>In Level 2, the user can already compare the shapes that the models take in their respective plots, the distribution of categories like sense labels, and the number of lost tokens. If multiple dimensionality reduction techniques have been used, the
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 48a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm448 16H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></svg><strong>Switch solution</strong> button allows the user to select one and watch the models readjust to the new coordinates in a short animation. In addition, the
+<svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z"></path></svg><strong>Distance matrix</strong> button offers a heatmap of the pairwise distances between the selected models.
+Section <a href="nephovis.html#nepho2">3.3</a> will explore the most relevant features that aid the comparison across models, such as brushing sections of a model to find the same tokens in different models and accessing a table with frequency information of the context words co-occurring with the selected tokens. Either by clicking on the name of a model or through the
+<svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM212 140v116h-70.9c-10.7 0-16.1 13-8.5 20.5l114.9 114.3c4.7 4.7 12.2 4.7 16.9 0l114.9-114.3c7.6-7.6 2.2-20.5-8.5-20.5H300V140c0-6.6-5.4-12-12-12h-64c-6.6 0-12 5.4-12 12z"></path></svg><strong>Go to model</strong> dropdown menu, the user can access Level 3 and explore the scatterplot of an individual model. As Section <a href="nephovis.html#nepho3">3.4</a> will show, Level 2 and Level 3, both built around token-level scatterplots, share a large number of functionalities. The difference lies in the possibility of examining features particular of a model, such as reading annotated concordance lines highlighting the information captured by the model or selecting tokens based on the words that co-occur with it. In practice, the user would switch back and forth between Level 2 and Level 3: between comparing a number of models and digging into particular models.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho1-basic"></span>
+<img src="assets/img/nephovis-level1-base.jpg" alt="Level 1 for heffen ‘to levy/to lift’." width="100%"><p class="caption">
+Figure 3.2: <a href="https://qlvl.github.io/NephoVis/level1.html?type=heffen">Level 1 for <em>heffen</em> ‘to levy/to lift’</a>.
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho2-basic"></span>
+<img src="assets/img/nephovis-level2-base.jpg" alt="Level 2 for the medoids of heffen ‘to levy/to lift.’" width="100%"><p class="caption">
+Figure 3.3: Level 2 for the medoids of <em>heffen</em> ‘to levy/to lift.’
+</p>
+</div>
+<p>Before going into the detailed description of each level, a note is in order. As already mentioned in Section <a href="workflow.html#dim-reduction">2.2.3</a>, the dimensions resulting from <span class="smallcaps">nmds</span> — used in all levels — and t-<span class="smallcaps">sne</span> — used in levels 2 and 3 — are not meaningful. In consequence, there are no axes or axis ticks in the plots. However, the units are kept constant within each plot: one unit on the <span class="math inline">\(x\)</span>-axis has the same length in pixels as one unit on a <span class="math inline">\(y\)</span>-axis within the same scatterplot; this equality, however, is not valid across plots. Finally, the code is open-source and available at <a href="https://github.com/qlvl/NephoVis" class="uri">https://github.com/qlvl/NephoVis</a>.</p>
+</div>
+<div id="nepho1" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Level 1<a class="anchor" aria-label="anchor" href="#nepho1"><i class="fas fa-link"></i></a>
+</h2>
+<p>The protagonist of Level 1 is an interactive zoomable scatterplot where each glyph, by default a steel blue wye (“Y”), represents one model. This scatterplot aims to represent the similarity between models as coded by the <span class="smallcaps">nmds</span> output and allows the user to select the models to inspect according to different criteria. Categorical variables (e.g. whether sentence boundaries are used) can be mapped to colours and shapes, as shown in Figure <a href="nephovis.html#fig:nepho1-colours">3.4</a>, and numerical variables (e.g. number of tokens in the model) can be mapped to size.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho1-colours"></span>
+<img src="assets/img/nephovis-level1-colours.jpg" alt="Level 1 for heffen ‘to levy/to lift’; the plot is colour-coded with first-order part-of-speech settings; NA stands for the dependency-based models." width="100%"><p class="caption">
+Figure 3.4: <a href="https://qlvl.github.io/NephoVis/level1.html?type=heffen">Level 1 for <em>heffen</em> ‘to levy/to lift’</a>; the plot is colour-coded with first-order part-of-speech settings; <code>NA</code> stands for the dependency-based models.
+</p>
+</div>
+<p>A selection of buttons on the left panel, as well as the legends for colour and shape, can be used to filter models with a certain parameter setting. These options are generated automatically by reading the columns in the data frame of models and interpreting column names starting with <code>foc_</code> as representing first-order parameter settings, and those starting with <code>soc_</code> as second-order parameter settings. Different settings of the same parameter interact with an <code>OR</code> relationship, since they are mutually exclusive, while settings of different parameters combine in an <code>AND</code> relationship. For example, by clicking on the grey <code>bound</code> and <code>lex</code> buttons on the bottom left, only <code>BOW</code> models with part-of-speech filter and sentence boundary limits<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Notice that &lt;code&gt;bound&lt;/code&gt; itself, while a &lt;code&gt;BOW&lt;/code&gt; parameter value, also includes the dependency-based models, since they are automatically limited to sentence boundaries.&lt;/p&gt;"><sup>22</sup></a> will be selected. By clicking on both <code>lex</code> and <code>all</code>, all <code>BOW</code> models are selected, regardless of the part-of-speech filter, but dependency-based models (for which part-of-speech is not relevant) are excluded. A counter above, circled in Figure <a href="nephovis.html#fig:nepho1-selection">3.5</a>, keeps track of the number of selected items, since Level 2 only allows up to 9 models for comparison<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;The original design, found in &lt;a href="http://tokenclouds.github.io/LeTok/" class="uri"&gt;http://tokenclouds.github.io/LeTok/&lt;/a&gt;, allowed for larger selections; only 9 models would be actually shown in Level 2, but it would also be possible to remove some of them and make place to the models left on the waiting list. This makes sense when models are selected individually and in a particular order, i.e. by clicking on them, but not so much for selections based on other criteria that we want to explore simultaneously.&lt;/p&gt;'><sup>23</sup></a>. This procedure is meant to aid a selection based on relevant parameters, as described in Section <a href="workflow.html#pam">2.4</a>. In Figure <a href="nephovis.html#fig:nepho1-selection">3.5</a>, instead, the <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"></path></svg><strong>Select medoids</strong> button was used to quickly capture the medoids obtained from <span class="smallcaps">pam</span>.
+Models can also be manually selected by clicking on the glyphs that represent them.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho1-selection"></span>
+<img src="assets/img/nephovis-level1-selection.jpg" alt="Level 1 for heffen ‘to levy/to lift’ with medoids highlighted." width="100%"><p class="caption">
+Figure 3.5: <a href="https://qlvl.github.io/NephoVis/level1.html?type=heffen">Level 1 for <em>heffen</em> ‘to levy/to lift’</a> with medoids highlighted.
+</p>
+</div>
+</div>
+<div id="nepho2" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Level 2<a class="anchor" aria-label="anchor" href="#nepho2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Level 2 shows an array of small scatterplots, each of which represents a token-level model. The glyphs, by default steel blue circles, stand for individual tokens, i.e. attestations of the chosen lemma in a given sample. The original code for this level was inspired by <a href="https://bl.ocks.org/mbostock/3213173">Mike Bostock’s brushable scatterplot matrix</a>, but it is not a scatterplot matrix itself, and its current implementation is somewhat different.</p>
+<p>The dropdown menus on the sidebar (Figure <a href="nephovis.html#fig:nepho2-basic">3.3</a>) read the columns in the data frame of variables, which can include any sort of information for each of the tokens, such as sense annotation, sources, number of context words in a model, concordance lines, etc. Categorical variables can be used for colour- and shape-coding, as shown in Figure <a href="nephovis.html#fig:nepho2-colour">3.8</a>, where the senses of the chosen lemma are mapped to colours; numerical variables, such as the number of context words selected by a given lemma, can be mapped to size. Note that the mapping will be applied equally to all the selected models: the current code does not allow for variables — other than the coordinates themselves — to adapt to the specific model in each scatterplot. That is the purview of Level 3.</p>
+<p>Before further examining the scatterplots, a small note should be made about the distance matrix mentioned above. The heatmap corresponding to the medoids of <em>heffen</em> ‘to levy/to lift’ is shown in Figure <a href="nephovis.html#fig:nepho2-heatmap">3.6</a>.
+The <span class="smallcaps">nmds</span> representation in Level 1 tried to find patterns and keep the relative distances between the models as faithful to their original positions as possible, but such a transformation always loses information. Given a restricted selection of models, however, the actual distances can be examined and compared more easily. A heatmap maps the range of values to the intensity of the colours, making patterns of similar/different objects easier to identify. For example, Figure <a href="nephovis.html#fig:nepho2-heatmap">3.6</a> shows that the sixth medoid is very different from all the other medoids except from the seventh, and that the second medoids is quite different from all the others except the first. Especially when the model selection followed a criterion based on strong parameter settings, e.g. keeping <code>PPMI</code> constant to look at the interaction between window size and part-of-speech filters, such a heatmap could reveal patterns that are slightly distorted by the dimensionality reduction in Level 1 and even hard to pinpoint from visually comparing the scatterplots. But even with the medoid selection, which aims to find representatives that are maximally different from each other (or at least that are the core elements of maximally different <em>groups</em>), the heatmap can show whether some medoids are drastically <em>more</em> different, or conversely, similar to others.
+As a reference, the heatmap is particularly useful to check hypotheses about the visual similarity of models. For example, unlike with <em>heffen</em> ‘to levy/to lift’ in Figure <a href="nephovis.html#fig:nepho2-colour">3.8</a>, if we colour-code the medoids of <em>haten</em> ‘to hate’ with the manual annotation (Figure <a href="nephovis.html#fig:nepho2-haten">3.7</a>), all the models look equally messy. As we will see below, we can brush over sections of the plot to see if, at least, the tokens that are close together in one medoid are also close together in another (spoiler alert: not the case). The heatmap of distances confirms that not all models are equally different from each other, but indeed, each of them are messy in their own particular way.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho2-heatmap"></span>
+<img src="assets/img/nephovis-level2-heatmap.jpg" alt="Heatmap of distances between medoids of heffen ‘to levy/to lift.’" width="100%"><p class="caption">
+Figure 3.6: Heatmap of distances between medoids of <em>heffen</em> ‘to levy/to lift.’
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho2-haten"></span>
+<img src="assets/img/nephovis-level2-haten.png" alt="2D representation of medoids of haten ‘to hate,’ colour-coded with senses, next to the heatmap of distances between models." width="100%"><p class="caption">
+Figure 3.7: 2D representation of medoids of <em>haten</em> ‘to hate,’ colour-coded with senses, next to the heatmap of distances between models.
+</p>
+</div>
+<p>Next to the colour-coding, Figure <a href="nephovis.html#fig:nepho2-colour">3.8</a> also illustrates how hovering over a token shows the corresponding identifier<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;The identifier of a token includes four main pieces of information separated by slashes. The first two, stem and part-of-speech (&lt;em&gt;hef&lt;/em&gt; and &lt;em&gt;verb&lt;/em&gt; in the example) indicate the target lemma. The third section points to the filename from which the token was extracted. The filenames from this corpus have at least three sections split by underscores: the name of the newspaper (&lt;em&gt;De Volkskrant&lt;/em&gt;), the date of publication in &lt;span class="smallcaps"&gt;yyyy-mm-dd&lt;/span&gt; format (2001-06-21) and the number of the article, among those harvested for the corpus (36). The final part points to the index of the token in the article including punctuation: in this case, the word form &lt;em&gt;hieven&lt;/em&gt; (third person plural preteritum of &lt;em&gt;heffen&lt;/em&gt;, ‘(they) lifted’) around which the concordance line is built is the 163rd token in its file.&lt;/p&gt;'><sup>24</sup></a> and concordance line. Figure <a href="nephovis.html#fig:nepho2-selection">3.9</a>, on the other hand, showcases the brush-and-link functionality. By brushing over a specific model, the tokens found in that area are highlighted and the rest are made more transparent. Such a functionality is missing from Level 1, but is also available in Level 3. Level 2 enhances the power of this feature by selecting the same tokens in the rest of the models, whatever area they occupy. Thus, we can see whether tokens that are close together in one model are still close together in a different model, which is specially handy in more uniform plots, like the one for <em>haten</em> ‘to hate’ in Figure <a href="nephovis.html#fig:nepho2-haten">3.7</a>. Figure <a href="nephovis.html#fig:nepho2-selection">3.9</a> reveals that the tokens selected in the second medoid are, indeed, quite well grouped in the other five medoids around it, with different degrees of compactness. It also highlights two glyphs on the right margin of the bottom right plot. In Level 2, this margin gathers all the tokens that were selected for modelling but were lost by the model in question due to lack of context words. In this case medoid 6, with a combination of <code>bound3lex</code> and <code>PPMIselection</code>, is extremely selective, and for a few tokens no context words could be captured.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho2-colour"></span>
+<img src="assets/img/nephovis-level2-colour-and-tooltip.png" alt="Level 2 for the medoids of heffen ‘to levy/to lift,’ colour-coded with categories from manual annotation. Hovering over a token shows its concordance line." width="100%"><p class="caption">
+Figure 3.8: Level 2 for the medoids of <em>heffen</em> ‘to levy/to lift,’ colour-coded with categories from manual annotation. Hovering over a token shows its concordance line.
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho2-selection"></span>
+<img src="assets/img/nephovis-level2-selection.jpg" alt="Level 2 for the medoids of heffen, colour coded with categories from manual annotation. Brushing over an area in a plot selects the tokens in that area and their positions in other models." width="100%"><p class="caption">
+Figure 3.9: Level 2 for the medoids of <em>heffen</em>, colour coded with categories from manual annotation. Brushing over an area in a plot selects the tokens in that area and their positions in other models.
+</p>
+</div>
+<p>In any given model, we expect tokens to be close together because they share a context word, and/or because their context words are distributionally similar to each other: their type-level vectors are near neighbours. Therefore, when inspecting a model, we might want to know which context word(s) pull certain tokens together, or why tokens that we expect to be together are far apart instead. For individual models, this can be best achieved via the ShinyApp described in Section <a href="nephovis.html#shiny">3.5</a>, but NephoVis also includes features to explore the effect of context words, such as frequency tables.
+In Level 2, while comparing different models, the frequency table has one row per context word and one or two columns per selected model, e.g. the medoids. Such a table is shown in Figure <a href="nephovis.html#fig:nepho2-table">3.10</a>.
+The columns in this table are all computed by NephoVis itself based on lists of context words per token per model. Next to the column with the name of the context word, the default table shows two columns called “total” and two per model, headed by the corresponding number and either a “+” or a “-” sign. The “+” columns indicate how many <em>of the selected tokens</em> in that model co-occur with the word in the row; the “-” columns indicate the number of non selected tokens that co-occur with the word. The “total” columns indicate, respectively, the number of selected or non-selected tokens for which that context word was captured by at least one model.
+Here it is crucial to understand that, when it comes to distributional modelling, a <strong>context word</strong> is not simply a word that can be found in the concordance line of the token, but an item captured by a given model. Therefore, a word can be a context word in a model, but be excluded by a different model with stricter filters. For example, the screenshot<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The full picture is impractical to include in a printed text; it is recommended to explore the tool interactively instead.&lt;/p&gt;"><sup>25</sup></a> in Figure <a href="nephovis.html#fig:nepho2-table">3.10</a> gives us a glimpse of the frequency table corresponding to the tokens selected already in Figure <a href="nephovis.html#fig:nepho2-selection">3.9</a>. The most frequent context word for the 31 selected tokens, i.e. the first row of the table, is the noun <em>glas</em> ‘glass,’ which is used in expressions such as <em>een glas heffen op iemand</em> ‘to toast for someone, lit. to lift a glass on someone.’ The columns for models 1 an 2 show that <em>glas</em> ‘glass’ was captured by those models for all 31 selected tokens. In column 3, however, the positive column reads 29, which indicates that the model missed the co-occurrence of <em>glas</em> ‘glass’ in two of the tokens. The names on top of the plots reveal that the first two models have a window size of 10, while the third restricts it to 5, meaning that in the two missed tokens <em>glas</em> ‘glass’ occurs 6 to 10 slots away from the target. These are most likely the orange tokens a bit far to the right of the main highlighted area in the third plot. Finally, in the fourth model, which is hidden behind the table, <em>glas</em> ‘glass’ is missed from one of the 31 tokens but captured in 2 tokens that were excluded from the selection. If we moved the window of the table we would see that this is a <code>PATHweight</code> model: the missed co-occurrence must be within the <span class="smallcaps">bow</span> window span but too far in the dependency path, wile the two captured co-occurrences in the “-” column must be within three steps of the dependency path but beyond the <span class="smallcaps">bow</span> window span of 10. This useful frequency information is available for all the context words that are captured by at least one model in any of the selected tokens. In addition, the <strong>Select information</strong> dropdown menu gives access to a range of transformations based on these frequencies, such as odds ratio, Fisher Exact and cue validity.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho2-table"></span>
+<img src="assets/img/nephovis-level2-table.jpg" alt="Level 2 for the medoids of heffen ‘to levy/to lift,’ and frequency table of the the context words co-occurring with the selected tokens across models." width="100%"><p class="caption">
+Figure 3.10: Level 2 for the medoids of <em>heffen</em> ‘to levy/to lift,’ and frequency table of the the context words co-occurring with the selected tokens across models.
+</p>
+</div>
+<p>The layout of Level 2, showing multiple plots at the same time and linking the tokens across models, is a fruitful source of information, but it has its limits. To exploit more model-specific information, we go to Level 3.</p>
+</div>
+<div id="nepho3" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Level 3<a class="anchor" aria-label="anchor" href="#nepho3"><i class="fas fa-link"></i></a>
+</h2>
+<p>Level 3 of the visualization tool shows a zoomable, interactive scatterplot in which each glyph, by default a steel blue circle, represents a token, i.e. an attestation of the target lexical item. An optional second plot has been added to the right, in which each glyph, by default a steel blue star, represents a first-order context word, and the coordinates derive from applying the same dimensionality reduction technique on the type-level cosine distances between the context words.
+The name of the model, coding the parameter settings, is indicated on the top, followed by information on the dimensionality reduction technique. Like in the other two levels, it is possible to map colours and shapes to categorical variables, e.g. sense labels, and sizes to numerical variables, e.g. number of available context words, and the legends are clickable, allowing the user to quickly select the items with a given value.</p>
+<p>Figure <a href="nephovis.html#fig:nepho3-base">3.11</a> shows what Level 3 looks like if we access it by clicking on the name of the second model in Figure <a href="nephovis.html#fig:nepho2-selection">3.9</a>. Colour-coding and selection are transferred between the levels, so we can keep working on the same information if we wish to do so. Conversely, we could change the mappings and selections on Level 3, based on model-specific information, and then return to Level 2 (and refresh the page) to compare the result across models. For example, if the frequency table in Figure <a href="nephovis.html#fig:nepho2-table">3.10</a> had shown us that <em>glas</em> ‘glass’ was also captured in tokens outside our selection, or if we had reason to believe that not all of the selected tokens co-occurred with <em>glas</em> ‘glass’ in this model, we could input <code>glas/noun</code> on the <code>Features in model</code> field in order to select all the tokens for which <em>glas</em> ‘glass’ was captured in the model, and only those. Or maybe we would like to find the tokens in which <em>glasje</em> ‘small glass’ occurs, but we are not sure how they are lemmatized, so we can input <code>glasje</code> in the <code>Context words</code> field to find the tokens that include this word form in the concordance line, regardless of whether its lemma was captured by the model<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Admittedly, the names of the fields can be confusing and should probably be changed. Both fields work with partial regex matches, but &lt;code&gt;Features in model&lt;/code&gt; look in the list of captured context words, which is a list of lemmas, while &lt;code&gt;Context words&lt;/code&gt; performs the search on the concordance line, i.e. word forms, regardless of whether the model captured them.&lt;/p&gt;"><sup>26</sup></a>.</p>
+<p>In sum, (groups of) tokens can be selected in different ways, either by searching words, inputting the id of the token, clicking on the glyphs or brushing over the plots.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The (beta) feature of the type-level plot on the right side also enables token selection by clicking on the co-occurring context words (and &lt;em&gt;vice versa&lt;/em&gt;) but this is still under development.&lt;/p&gt;"><sup>27</sup></a> Given such a selection, clicking on <svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M312 320h136V56c0-13.3-10.7-24-24-24H24C10.7 32 0 42.7 0 56v400c0 13.3 10.7 24 24 24h264V344c0-13.2 10.8-24 24-24zm129 55l-98 98c-4.5 4.5-10.6 7-17 7h-6V352h128v6.1c0 6.3-2.5 12.4-7 16.9z"></path></svg><strong>Open frequency table</strong> will call a pop-up table with one row per context word, a column indicating in how many of the selected tokens it occurs, and more columns with pre-computed information such as <span class="smallcaps">pmi</span> (see Figure <a href="nephovis.html#fig:nepho3-table">3.12</a>). These values can be interesting if we would like to strengthen or weaken filters for a smarter selection of context words.</p>
+<p>Like Level 2, Level 3 also offers the concordance line of a token when hovering over it. But unlike Level 2, the concordance can be tailored to the specific model on focus, as shown in Figure <a href="nephovis.html#fig:nepho3-base">3.11</a>. The visualization tool itself does not generate a tailored concordance line for each model, but finds a column on the data frame that starts with <code>_ctxt</code> and matches the beginning of the name of the model to identify the relevant format. A similar system is used to find the appropriate list of context words captured by the model for each token. For these models, the selected context words are shown in boldface and, for <code>PPMIweight</code> models such as the one shown in Figure <a href="nephovis.html#fig:nepho3-base">3.11</a>, their <span class="smallcaps">ppmi</span> values with the target, e.g. <em>heffen</em>, are shown in superscript.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho3-base"></span>
+<img src="assets/img/nephovis-level3-base.png" alt="Level 3 for the second medoid of heffen ‘to levy/to lift’: bound10all-ppmiweight-5000all with some selected tokens. Hovering over a token shows tailored concordance line." width="100%"><p class="caption">
+Figure 3.11: Level 3 for the second medoid of <em>heffen</em> ‘to levy/to lift’: bound10all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">5000</span>all with some selected tokens. Hovering over a token shows tailored concordance line.
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:nepho3-table"></span>
+<img src="assets/img/nephovis-level3-table.jpg" alt="Level 3 for the second medoid of heffen ‘to levy/to lift’: bound10all-ppmiweight-5000all. The frequency table gives additional information on the context words co-occurring with the selected tokens." width="100%"><p class="caption">
+Figure 3.12: Level 3 for the second medoid of <em>heffen</em> ‘to levy/to lift’: bound10all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">5000</span>all. The frequency table gives additional information on the context words co-occurring with the selected tokens.
+</p>
+</div>
+<p>As we have seen along this chapter, the modelling pipeline returns a wealth of information that requires a complex visualization tool to make sense of it and exploit it efficiently. The Javascript tool described up to now, NephoVis, was developed and used by the same people within the Nephological Semantics projects, but is meant to be deployed to a much broader audience that could benefit from its multiple features. It can still grow, and its <a href="https://github.com/qlvl/NephoVis/">open-source code</a> makes it possible for anyone to adapt it and develop it further. Nevertheless, for practicality reasons, an extension was developed in a different language: R. The dashboard described in the next section elaborates on some ideas originally thought for NephoVis and particularly tailored to explore the relationship between the t-<span class="smallcaps">sne</span> solutions and the <span class="smallcaps">hdbscan</span> clusters on individual medoids.</p>
+</div>
+<div id="shiny" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> ShinyApp<a class="anchor" aria-label="anchor" href="#shiny"><i class="fas fa-link"></i></a>
+</h2>
+<p>The visualization tool discussed in this section was written in R with the <code>shiny</code> library <span class="citation">(<a href="references.html#ref-R-shiny" role="doc-biblioref">Chang et al. 2021</a>)</span>, which provides R functions that return <span class="smallcaps">html</span>, <span class="smallcaps">css</span> and Javascript for interactive web-based interfaces. The interactive plots have been rendered with <code>plotly</code> <span class="citation">(<a href="references.html#ref-R-plotly" role="doc-biblioref">Sievert et al. 2021</a>)</span>. Unlike NephoVis, this tool requires an R server to run, so it is hosted on <code>shinyapps.io</code> instead of a static Github Page<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;This code is also freely available at &lt;a href="https://github.com/montesmariana/Level3" class="uri"&gt;https://github.com/montesmariana/Level3&lt;/a&gt;.&lt;/p&gt;'><sup>28</sup></a>. It takes the form of a dashboard, shown in Figure <a href="nephovis.html#fig:shiny-basic">3.13</a>, with a few tabs, multiple boxes and dropdown menus to explore different lemmas and their medoids. All the functionalities are described in the About page of the dashboard, so here only the most relevant features will be described and illustrated.</p>
+<p>The sidebar of the dashboard offers a range of controls. Next to the choice between viewing the dashboard and reading the documentation, two dropdown menus offer the available lemmas and their medoids, by number. By selecting one, the full dashboard adapts to return the appropriate information, including the name of the model on the orange header on top. The bottom half of the sidebar gives us control over the definition of relevant context words in terms of minimum frequency, recall and precision, which will be explained below.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:shiny-basic"></span>
+<img src="assets/img/shinyapp-basic.jpg" alt="Starting view of the ShinyApp dashboard, extension of Level 3." width="100%"><p class="caption">
+Figure 3.13: Starting view of the <a href="https://marianamontes.shinyapps.io/Level3/">ShinyApp dashboard</a>, extension of Level 3.
+</p>
+</div>
+<p>The main tab, <strong>t-SNE</strong>, contains four collapsable boxes: the blue ones focus on tokens while the green ones, on first-order context words. The top boxes (Figure <a href="nephovis.html#fig:shiny-tooltips">3.14</a>) show t-<span class="smallcaps">sne</span> representations (perplexity 30) of tokens and their context words respectively, like we would find on Level 3 of NephoVis. However, the differences with NephoVis are crucial.</p>
+<p>First, the colours match pre-computed <span class="smallcaps">hdbscan</span> clusters (<span class="math inline">\(minPts = 8\)</span>) and cannot be changed; in addition, the transparency of the tokens reflects their <span class="math inline">\(\varepsilon\)</span>. The goal of this dashboard is, after all, to combine the <span class="smallcaps">2d</span> visualization and the <span class="smallcaps">hdbscan</span> clustering for a better understanding of the models. This functionality is not currently available in NephoVis because, unlike sense tags, it is a model-dependent categorical variable<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The current code is not suited to adapt the automatic selection of categorical variables to model-dependent ones, and adding the clustering solution for each of the models would clutter the list of categorical variables.&lt;/p&gt;"><sup>29</sup></a>.</p>
+<p>Second, the type-level plot does not use stars but the lemmas of the context words themselves. More importantly, they are matched to the <span class="smallcaps">hdbscan</span> clusters based on the measures of frequency, precision and recall. In short, only context words that can be deemed relevant for the definition or characterization of a cluster are clearly visible and assigned the colour of the cluster they represent best; the rest of the context words are faded in the background. A radio button on the sidebar offers the option to highlight context words that are “relevant” for the noise tokens as well.</p>
+<p>Third, the tooltips offer different information from NephoVis: the list of captured context words in the case of tokens, and the relevance measures as well as the nearest neighbours of the context word in the type-level plot. For example, in the left side of Figure <a href="nephovis.html#fig:shiny-tooltips">3.14</a> we see the same token-level model shown in Figure <a href="nephovis.html#fig:nepho3-base">3.11</a>. Hovering over one of the tokens in the bottom left light blue cluster, we can see the list of context words that the model caputes for it: the same we could have seen in bold in the NephoVis rendering by hovering over the same token. Among them, <em>glas/noun</em> ‘glass’ is highlighted, because it is the only one that surpasses the relevance thresholds we have set. On the right side of the figure, i.e. the type-level plot we can see the similarities between the context words that surpass these thresholds for any cluster, and hovering on one of them provides us with additional information. In the case of <em>glas/noun</em> ‘glass,’ the first line reports that it represents 31 tokens in the light blue <span class="smallcaps">hdbscan</span> clusters, with a recall of 0.94, i.e. it co-occurs with 94% of the tokens in the cluster, and a precision of 1, i.e. it only co-occurs with tokens in that cluster. Below we see a list of the nearest neighbours, that is, the context words most similar to it at type-level and their cosine similarity. The fact that the similarity with its nearest neighbour is 0.77 (in a range from 0 to 1) is worrisome.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:shiny-tooltips"></span>
+<img src="assets/img/shinyapp-tooltips.png" alt="Top boxes of the t-SNE tab of the ShinyApp dashboard, with active tooltips." width="100%"><p class="caption">
+Figure 3.14: Top boxes of the <strong>t-SNE</strong> tab of the <a href="https://marianamontes.shinyapps.io/Level3/">ShinyApp dashboard</a>, with active tooltips.
+</p>
+</div>
+<p>The two bottom boxes of the tab show, respectively, the concordance lines with highlighted context words and information on cluster and sense, and a scatterplot mapping each context word to its precision, recall and frequency in each cluster. The darker lines inside the plot are a guide towards the threshold: in this case, relevant context words need to have minimum precision or recall of 0.5, but if they were modified the lines would move accordingly. The colours indicate the cluster the context word represents, and the size its frequency in it, also reported in the tooltip. Unlike in the type-level plot above, here we can see whether context words co-occur with tokens from different clusters. Figure <a href="nephovis.html#fig:shiny-bottom">3.15</a> shows the right-side box next to the top token-level box. When one of its dots is clicked, the context words co-occurring with that context word — regardless of their cluster — will be highlighted in the token-level plot, and the table of concordance lines will be filtered to the same selection of tokens.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:shiny-bottom"></span>
+<img src="assets/img/shinyapp-selection.jpg" alt="Token-level plot and bottom plot of context words in the t-SNE tab of the ShinyApp dashboard, with one context word selected." width="100%"><p class="caption">
+Figure 3.15: Token-level plot and bottom plot of context words in the <strong>t-SNE</strong> tab of the <a href="https://marianamontes.shinyapps.io/Level3/">ShinyApp dashboard</a>, with one context word selected.
+</p>
+</div>
+<p>The first tab of this dashboard is an extremely useful tool to explore the <span class="smallcaps">hdbscan</span> clusters, their (mis)match with the t-<span class="smallcaps">sne</span> representation and the role of the context words. In addition, the <strong>HDBSCAN structure</strong> tab provides information on the proportion of noise per medoid and the relationship between <span class="math inline">\(\varepsilon\)</span> and sense distribution in each cluster. Finally, the <strong>Heatmap</strong> tab illustrates the type-level distances between the relevant context words, ordered and coloured by cluster, as shown in Figure <a href="nephovis.html#fig:shiny-heatmap">3.16</a>. In some cases, it confirms the patterns found in the type-level plot; in others, like this model, it shows that most of the context words are extremely different from each other, forming no clear patterns. This is a typical result in <code>5000all</code> models like the one shown here and tends to lead to bad token-level models as well.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:shiny-heatmap"></span>
+<img src="assets/img/shinyapp-heatmap.jpg" alt="Heatmap of type-level distances between relevant context words in the ShinyApp dashboard." width="100%"><p class="caption">
+Figure 3.16: Heatmap of type-level distances between relevant context words in the <a href="https://marianamontes.shinyapps.io/Level3/">ShinyApp dashboard</a>.
+</p>
+</div>
+</div>
+<div id="nepho-summary" class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> Summary<a class="anchor" aria-label="anchor" href="#nepho-summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this chapter two visualization tools for the exploration of token-level distributional models have been described. Both are open-source, web-based and interactive. They were developed within the Nephological Semantics projects at KU Leuven and constitute the backbone of the research described in this dissertation.</p>
+<p>Data visualization can be beautiful and contribute to successful communication, but its main goal is to provide insight <span class="citation">(<a href="references.html#ref-card.etal_1999" role="doc-biblioref">Card, Mackinlay &amp; Shneiderman 1999</a>)</span>. Indeed, these tools have provided a valuable interface to an otherwise inscrutable mass of data.
+NephoVis offers an informative path from the organization of models to the organization of tokens, representing abstract differences generated by complicated algorithms as intuitive distances between points on a screen. Selecting different kinds of models and moving back and forth between different levels of granularity is just a click away and incorporates various sources of information simultaneously: find all models with window size of 5, look at them side by side, zoom in on the prettiest one, read a token, read the token next to it, find out its sense annotation, go back to the selection of models… Abstract corpus-based similarities between instances of a word, and between <em>ways</em> of representing these similarities (i.e. the models) become tangible, colourful clouds on a screen.
+Most of the points discussed in the second part of this dissertation would have been simply impossible if it were not for these tools. Hopefully, they will prove at least half as valuable in future research projects.</p>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="workflow.html"><span class="header-section-number">2</span> From corpora to clouds</a></div>
+<div class="next"><a href="dataset.html"><span class="header-section-number">4</span> Case studies</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#nephovis"><span class="header-section-number">3</span> Visualization tools</a></li>
+<li><a class="nav-link" href="#nepho-overview"><span class="header-section-number">3.1</span> Flying through the clouds</a></li>
+<li><a class="nav-link" href="#nepho1"><span class="header-section-number">3.2</span> Level 1</a></li>
+<li><a class="nav-link" href="#nepho2"><span class="header-section-number">3.3</span> Level 2</a></li>
+<li><a class="nav-link" href="#nepho3"><span class="header-section-number">3.4</span> Level 3</a></li>
+<li><a class="nav-link" href="#shiny"><span class="header-section-number">3.5</span> ShinyApp</a></li>
+<li><a class="nav-link" href="#nepho-summary"><span class="header-section-number">3.6</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/montesmariana/phdThesis/blob/master/03-nephovis.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/montesmariana/phdThesis/edit/master/03-nephovis.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Cloudspotting</strong>: Visual analytics for distributional semantics" was written by Mariana Montes. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

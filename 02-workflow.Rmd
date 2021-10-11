@@ -101,7 +101,7 @@ Word Sense Disambiguation
 makes use of clustering algorithms to extract clusters of similar tokens from their models. The idea behind it is that, if distributional similarity correlates with semantic similarity, groups of similar tokens should share the same sense and have a different sense from other groups of tokens. In Chapter \@ref(semantic-interpretation) we will see to what degree this assumption holds in this data and with these methods.
 
 The final step in our workflow is, then, the combination of dimensionality reduction and clustering, which results in the right plot of Figure \@ref(fig:cloud1): by means of dimensionality reduction, tokens are located in a scatterplot so that distributional similarities are approximated as spatial similarities, and groups of similar tokens are assigned different colours.
-In previous research, which did not integrate clustering procedures in this manner, the term *cloud* was used to refer to a full model [@heylen.etal_2015; @wielfaert.etal_2019; @depascale_2019; @montes.heylen_Submitted]. In this study, instead, *cloud* will refer to each of the clusters, identified by colours in the scatterplot.
+In previous research, which did not integrate clustering procedures in this manner, the term *cloud* was used to refer to a full model [@heylen.etal_2015; @wielfaert.etal_2019; @depascale_2019; @montes.heylen_2022]. In this study, instead, *cloud* will refer to each of the clusters, identified by colours in the scatterplot.
 
 (ref:cloud1) `r sc("2d")` representation of Dutch *hachelijk* 'dangerous/critical'.
 

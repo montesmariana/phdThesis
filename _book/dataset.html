@@ -1,0 +1,2837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 Case studies | Cloudspotting</title>
+<meta name="author" content="Mariana Montes">
+<meta name="description" content="Every empirical study needs a dataset. The methodological orientation of this project means that it does not aim for a linguistic description of some phenomenon in itself, but for the development...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Case studies | Cloudspotting">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/assets/covers/front-cover.png">
+<meta property="og:description" content="Every empirical study needs a dataset. The methodological orientation of this project means that it does not aim for a linguistic description of some phenomenon in itself, but for the development...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 Case studies | Cloudspotting">
+<meta name="twitter:description" content="Every empirical study needs a dataset. The methodological orientation of this project means that it does not aim for a linguistic description of some phenomenon in itself, but for the development...">
+<meta name="twitter:image" content="/assets/covers/front-cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Visual analytics for distributional semantics">Cloudspotting</a>:
+        <small class="text-muted">Visual analytics for distributional semantics</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">The cloudspotter’s toolkit</li>
+<li><a class="" href="workflow.html"><span class="header-section-number">2</span> From corpora to clouds</a></li>
+<li><a class="" href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></li>
+<li><a class="active" href="dataset.html"><span class="header-section-number">4</span> Case studies</a></li>
+<li class="book-part">The cloudspotter’s handbook</li>
+<li><a class="" href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></li>
+<li><a class="" href="semantic-interpretation.html"><span class="header-section-number">6</span> The language of clouds</a></li>
+<li><a class="" href="no-optimal.html"><span class="header-section-number">7</span> No sky is the best sky</a></li>
+<li class="book-part">The cloudspotter’s cheatsheet</li>
+<li><a class="" href="conclusions-and-guidelines.html"><span class="header-section-number">8</span> Conclusions and guidelines</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/montesmariana/phdThesis">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="dataset" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Case studies<a class="anchor" aria-label="anchor" href="#dataset"><i class="fas fa-link"></i></a>
+</h1>
+<p>Every empirical study needs a dataset. The methodological orientation of this project means that it does not aim for a linguistic description of some phenomenon in itself, but for the development of a tool that could aid such a description. Therefore, in order to test the workflow described in Chapter <a href="workflow.html#workflow">2</a> and the visualization tools described in Chapter <a href="nephovis.html#nephovis">3</a>, the methodology was applied to a dataset. For that purpose, 32 Dutch nouns, adjectives and verbs exemplifying a range of semasiological phenomena were selected. The phenomena include: homonymy in the case of nouns, interaction between semantic variation and argument structure in the case of verbs and, for all parts of speech, metaphor, metonymy and generalization/specialization. The goal was to explore which phenomena were revealed by distributional models and whether they were related to certain parameter settings.</p>
+<p><strong>Homonymy</strong> occurs when the same lemma has two or more (sets of) senses that are not semantically or etymologically related. The rest of the relationships between senses can be broadly classified as generalization/specialization, metaphor, or metonymy. <strong>Specialization</strong> and <strong>generalization</strong> are two sides of the same coin: one of the senses involved is applied to a particular context or situation, and the other has a much broader application. Crucially, this process involves some additional semantic feature. For example, <em>herstructureren</em> ‘to restructure’ can be applied to a range of situations, but when it applies to companies or parts of companies in particular it does not only mean ‘to change the structure of something’ but also ‘to reduce the personnel,’ which is missing in the general application. The direction of the relationship, i.e. whether the first sense is a generalization of the second or the other way around, is not relevant for the purposes of this study. The relevance is instead linked to the expectation that specialized senses would be more easily identified than general ones.
+Within Cognitive Linguistics, <strong>metaphor</strong> and <strong>metonymy</strong> are understood as cognitive principles that influence semantic structure, rather than mere expressive tools. They are found to interact and, at the same time, the distinction between them is not always unambiguous
+<span class="citation">(<a href="references.html#ref-lakoff.johnson_2003" role="doc-biblioref">Lakoff &amp; Johnson 2003</a>; <a href="references.html#ref-barcelona_2015" role="doc-biblioref">Barcelona 2015</a>; <a href="references.html#ref-lemmens_2015" role="doc-biblioref">Lemmens 2015</a>; <a href="references.html#ref-geeraerts_2003" role="doc-biblioref">Geeraerts 2003</a>)</span>.
+While metaphor is described in terms of comparison, similarity and mapping between different domains, metonymy is described in terms of reference, contiguity and mappings within a domain
+<span class="citation">(<a href="references.html#ref-lemmens_2015" role="doc-biblioref">Lemmens 2015</a>)</span>.
+For example, when <em>grijs</em> ‘gray’ is applied to a weather-related term, e.g. <em>grijze avond</em> ‘gray evening,’ the colour of the overcast sky stands for the weather in a metonymical mapping; when it is applied to an abstract entity like a <em>buurt</em> ‘neighbourhood’ a metaphorical sense ‘boring, sad’ is activated instead. However, the definition of what counts as a domain is not without problems, leaving the boundaries between metaphor and metonymy challenging to define as well <span class="citation">(<a href="references.html#ref-croft_2003" role="doc-biblioref">Croft 2003</a>)</span>. For the purposes of these case studies, the distinction is relevant to the extent that metonymical senses are more likely than metaphorical senses to occur in the same contexts as their literal counterparts.</p>
+<p>In practice, the situation is even more complicated. In the case of structural metaphors
+<span class="citation">(<a href="references.html#ref-lakoff.johnson_2003" role="doc-biblioref">Lakoff &amp; Johnson 2003</a>)</span>,
+metaphorical extensions might be elaborated by means of longer expressions. For example, in <em>we richten de spots op de zoektocht naar kandidaten</em> ‘we aim the spotlights towards the search for candidates,’ <em>richten</em> ‘to direct’ and <em>op</em> ‘on’ can co-occur with either the literal or metaphorical senses of <em>spots</em> ‘spotlight,’ and <em>zoektocht</em> ‘search’ is the cue that makes the literal sense less appropriate. This leads us to a situation already discussed by
+<span class="citation"><a href="references.html#ref-geeraerts_2003" role="doc-biblioref">Geeraerts</a> (<a href="references.html#ref-geeraerts_2003" role="doc-biblioref">2003</a>)</span>
+regarding the interaction of metaphor and metonymy in idiomatic and composite expressions. In a case like <em>hete aardappel</em> ‘hot potato,’ which in the sample always refers to delicate situations that nobody wants to deal with, is the adjective ‘hot’ literal or metaphorical? Following Geeraerts’ prismatic model of composite expressions,
+it could be explained as a combination of literal <em>heet</em> ‘hot to the touch’ with literal <em>aardappel</em> ‘potato’ that together is metaphorically understood as a delicate situation; a reinterpretation could then complete the mapping between the potato and the situation, and between the property of being hot to the touch and that of being delicate and to be avoided. The degree to which these reinterpreted mappings match systematic metaphorical or metonymical mappings of the individual elements is a separate issue: it could be argued for <em>heet</em>, which has a ‘conflictive’ meaning in non idiomatic constructions, but not for <em>aardappel</em> ‘potato.’ As a rule, these cases have been annotated as literal, understanding that it is the situation as a whole that is metaphorical.</p>
+<p>It should be noted that these criteria are argumentative and justify the selection of the lemmas, but cannot go further than that. It is unfortunate, but the intriguing question about mapping parameter settings to these phenomena has a negative answer. As the second part of the dissertation will show, other factors play a role in the formation of the clouds, relegating these traditional semantic categories to a secondary place, if not as extras on the show. Nevertheless, the phenomena are accounted for, the questions have been asked and, no matter how unsatisfactorily, they have been answered.</p>
+<p>Hence, this chapter focuses on the selection, collection and annotation of the dataset on which the methodology was tested. First, Section <a href="dataset.html#selection">4.1</a> will introduce the 32 selected lemmas and their senses, making explicit which of the aforementioned phenomena they exhibit. I will not discuss each lemma in detail; instead, I will expand of those used for illustration in Part II as it becomes relevant. Section <a href="dataset.html#extraction">4.2</a> will focus on how the concordance lines were collected and the manual annotation procedure. Relevant information regarding the annotation itself will also be provided. Finally, Section <a href="dataset.html#ann-summary">4.3</a> rounds up the description and the technical part of this dissertation.</p>
+<div id="selection" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> The lemmas<a class="anchor" aria-label="anchor" href="#selection"><i class="fas fa-link"></i></a>
+</h2>
+<p>The selection of lemmas aimed to cover a wide range of phenomena: metaphor, metonymy, generalization/specialization, and more. The nouns were chosen because they exhibit both homonymy and polysemy: they have unrelated (groups of) meanings and at least one of them presents finer distinctions. The selection of adjectives also includes different kinds of semantic extension which are mostly related to the kind of noun that is modified by it. Finally, the verbs combine syntactic and semantic dimensions. The definitions provided to the annotators with their respective examples and their translations to English will be listed in tables, but no other examples will be shown in this chapter. Instead, relevant tokens and their contexts will be reproduced in the second part of the dissertation to illustrate the results from the analyses. Empty cells in the Dutch columns of the definitions indicate sense tags that were not present in the original selection of senses but instead were included <em>after</em> the annotation procedure — and assigned in a second stage — based on the results of the annotation itself. The Dutch definitions themselves are adaptations made by Dirk Geeraerts and me based on consultation of dictionaries <span class="citation">(e.g. <a href="references.html#ref-vandale_groot" role="doc-biblioref">Sterkenburg 1991</a>; <a href="references.html#ref-vandale_klein" role="doc-biblioref">Boon, Geeraerts &amp; Arts 2007</a>)</span> and pilot surveys of small concordances from the corpus.</p>
+<p>The selection of phenomena was attached to certain expectations. We expected specific senses to be easier to identify than general senses, i.e. to have a more identifiable context. With regard to nouns, homonyms were expected to be discriminated more easily that their internal distinctions. For verbs, instead, the expectation was to find more confusion between senses that either shared the semantic or the syntactic dimension than between senses that did not.
+We also expected metonymical senses to be harder to disambiguate than synaesthetic or metaphorical senses, since they are more likely to have an overlapping context with the more concrete, literal senses.</p>
+<div id="nouns" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> The nouns<a class="anchor" aria-label="anchor" href="#nouns"><i class="fas fa-link"></i></a>
+</h3>
+<p>A set of 7 nouns was selected that exhibit both homonymy and polysemy in at least one of the homonyms<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Originally we selected 8 nouns, but the very interesting &lt;em&gt;spoor&lt;/em&gt; was discarded because of the high disagreement between the annotators and their (and my) difficulty understanding the definitions. It has three homonyms, ‘trace,’ ‘railway’ and ‘spurs,’ and some senses of ‘trace’ can be confused with some of ‘railway.’ In any case, the data is available for future analyses.&lt;/p&gt;"><sup>30</sup></a>, as shown in Table <a href="dataset.html#tab:noundefs">4.1</a>. The purpose of this selection was to examine how models dealt with granularity, i.e. hierarchies of senses: homonyms should be easier to disambiguate than their senses, since they will apply to very different contexts, but maybe it would be possible to tune the parameter settings for different levels of granularity, like adjusting the focus on a camera.</p>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:noundefs">Table 4.1: </span>Definitions and examples for the senses of each of the 7 analysed nouns. In each sense, the first number indicates the homonym and, if there is a second number, the sense within the homonym.
+</caption>
+<thead><tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Dutch
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+sense
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+English
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>blik</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+oogopslag (<em>een blik werpen op iets, een blik van verstandhouding</em>)
+</td>
+<td style="text-align:left;">
+1.1
+</td>
+<td style="text-align:left;">
+gaze (<em>throw a look at something, a look of understanding</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+gezichtsvermogen (<em>een scherpe blik</em>)
+</td>
+<td style="text-align:left;">
+1.2
+</td>
+<td style="text-align:left;">
+sight (<em>a sharp sight</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+inzicht, in intellectuele zin (<em>een brede blik</em>)
+</td>
+<td style="text-align:left;">
+1.3
+</td>
+<td style="text-align:left;">
+perspective, in intellectual sense (<em>a wide view</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+dun geplet metaal, i.h. bijz. vertind dun plaatstaal (<em>dozen uit blik</em>)
+</td>
+<td style="text-align:left;">
+2.1
+</td>
+<td style="text-align:left;">
+thin flattened metal, in particular thin tin-plated steel (<em>boxes of tin</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+voorwerp (i.h.bijz. doos voor voedsel) vervaardigd uit zulk materiaal (<em>stoffer en blik, een blik erwtjes, een maaltijd uit blik</em>)
+</td>
+<td style="text-align:left;">
+2.2
+</td>
+<td style="text-align:left;">
+object (in particular food container) made of tin (<em>brush and dustpan, a can of peas, canned meal</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+voedsel bewaard in een voorwerp als bedoeld in 2.2 (<em>eet je niet teveel blik?</em>)
+</td>
+<td style="text-align:left;">
+2.3
+</td>
+<td style="text-align:left;">
+food contained in an object as described by 2.2 (<em>don’t you eat too much canned food?</em>)
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>hoop</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+ongeordende stapel (<em>een hoop rommel, gooi maar op de hoop</em>)
+</td>
+<td style="text-align:left;">
+1.1
+</td>
+<td style="text-align:left;">
+unordered mass (<em>a pile of junk, just drop it on the pile</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+grote hoeveelheid (<em>een hoop mensen, een hele hoop geld</em>)
+</td>
+<td style="text-align:left;">
+1.2
+</td>
+<td style="text-align:left;">
+great quantity (<em>a bunch of people, a lot of money</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+positieve verwachting, vertrouwen op iets positiefs (<em>hoop koesteren, de hoop uitspreken dat…</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+positive expectation, trust in something positive (<em>to nurture hope, express the hope that…</em>)
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>horde</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+bende, ordeloze groep personen (<em>een woeste horde</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+band, unordered group of people (<em>a ferocious horde</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+1.2
+</td>
+<td style="text-align:left;">
+unordered group of non-people (<em>a horde of computers</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+materiële hindernis, m.n. houten raamwerk gebruikt bij het hordelopen (<em>de 400m horden bij de vrouwen</em>)
+</td>
+<td style="text-align:left;">
+2.1
+</td>
+<td style="text-align:left;">
+material obstacle, namely wooden frames used for hurdling (<em>the 400m hurdles for women</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+hindernis in figuurlijke zin (<em>een horde nemen</em>)
+</td>
+<td style="text-align:left;">
+2.2
+</td>
+<td style="text-align:left;">
+obstacle in figurative sense (<em>to take a hurdle</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>schaal</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+een geordende reeks cijfers, afstanden, hoeveelheden e.d. waarmee iets gemeten wordt (<em>de schaal van Celsius, Richter, op een schaal van 1 tot 5</em>)
+</td>
+<td style="text-align:left;">
+1.1
+</td>
+<td style="text-align:left;">
+an ordered list of numbers, distances, quantities and such, with which something is measured (<em>the scale of Celsius, Richter, on a scale from 1 to 5</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+de verhouding tussen de grootte van iets en de weergave ervan in een kaart, model, grafiek etc. (<em>een schaal van 1:20, een schaal van 10 km</em>)
+</td>
+<td style="text-align:left;">
+1.2
+</td>
+<td style="text-align:left;">
+the ratio between the size of something and its representation in a map, model, graph etc. (<em>a scale of 1:20, a scale of 10km</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+grootteorde, omvang (<em>de schaal van een probleem, op grote/kleine schaal</em>)
+</td>
+<td style="text-align:left;">
+1.3
+</td>
+<td style="text-align:left;">
+magnitude, size (<em>the scale of a problem, on a large/small scale</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+harde buitenbekleding van zekere organische zaken (<em>de schaal van een ei, de schalen van een mossel</em>)
+</td>
+<td style="text-align:left;">
+2.1
+</td>
+<td style="text-align:left;">
+hard exterior of certain organic things (<em>the shell of an egg, the shell of a mussel</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+ondiepe en wijde schotel (<em>een schaal met vruchten</em>)
+</td>
+<td style="text-align:left;">
+2.2
+</td>
+<td style="text-align:left;">
+shallow and wide dish (<em>a platter with fruits</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+elk van de beide schotels die aan de armen van een balans hangen (<em>gewicht in de schaal leggen</em>)
+</td>
+<td style="text-align:left;">
+2.3
+</td>
+<td style="text-align:left;">
+each of the dishes hanging from the arms of a scale (<em>lay a weight on the (dish of a) scale</em>)
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>spot</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+0
+</td>
+<td style="text-align:left;">
+(idiosyncratic usage in sports headlines) (<em>Spot op 1ste</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+oneerbiedige, ridiculiserende uitspraak of behandeling (<em>de spot drijven met, bijtende spot</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+disrespectful, mocking expression or behaviour (<em>mock someone, sarcasm</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+reclameboodschap via radio, televisie, bioscoop (<em>een spotje voor tandpasta</em>)
+</td>
+<td style="text-align:left;">
+2.1
+</td>
+<td style="text-align:left;">
+advertisement via radio, television, cinema (<em>a spot for toothpaste</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+schijnwerper (<em>de spots richten op</em>)
+</td>
+<td style="text-align:left;">
+2.2
+</td>
+<td style="text-align:left;">
+spotlight (<em>direct the spotlights on</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+2.3
+</td>
+<td style="text-align:left;">
+metaphorical spotlight (<em>he likes to be in the spotlight</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>staal</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+zeer hard ijzer met laag koolstofgehalte (<em>twaalf ton staal, ijzer en staal, een man van staal</em>)
+</td>
+<td style="text-align:left;">
+1.1
+</td>
+<td style="text-align:left;">
+very hard iron with low carbon content (<em>twelve tons of steel, iron and steel, man of steel</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+1.3
+</td>
+<td style="text-align:left;">
+steel industry (<em>steel is striking</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+voorwerp of deel van een voorwerp uit zulk metaal (<em>het staal van de velgen is verroest</em>)
+</td>
+<td style="text-align:left;">
+1.2
+</td>
+<td style="text-align:left;">
+object or part of an object made of such metal (<em>the steel in the rims is rusted</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+monster van een stof of materiaal, bij wijze van proef (<em>een staal vragen, goederen op staal verkopen</em>)
+</td>
+<td style="text-align:left;">
+2.1
+</td>
+<td style="text-align:left;">
+sample of a substance or material, as evidence or proof (<em>to ask for a sample, to buy a sample of goods</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+proef, voorbeeld, bewijs (<em>een staaltje van hun kunnen, een staaltje van bewaamheid</em>)
+</td>
+<td style="text-align:left;">
+2.2
+</td>
+<td style="text-align:left;">
+proof, example, evidence (<em>a sample of their abilities, a proof of competence</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+2.3
+</td>
+<td style="text-align:left;">
+sample taken from a population for statistical analysis (<em>a representative sample</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>stof</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+materie, substantie van een bepaald type (<em>giftige stoffen, vaste stof, grijze stof</em>)
+</td>
+<td style="text-align:left;">
+1.1
+</td>
+<td style="text-align:left;">
+matter, substance of a certain kind (<em>poisonous substances, solid substances, gray matter</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+weefsel (<em>wollen en katoenen stoffen</em>)
+</td>
+<td style="text-align:left;">
+1.2
+</td>
+<td style="text-align:left;">
+fabrics (<em>woolen and cotton fabrics</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+onderwerp waarover men spreekt, schrijft, nadenkt etc. (<em>stof voor een roman, stof tot onenigheid</em>)
+</td>
+<td style="text-align:left;">
+1.3
+</td>
+<td style="text-align:left;">
+topic about which people talk, write, think, etc. (<em>material for a novel, topic of disagreement</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+massa zeer kleine droge deeltjes van verschillende oorsprong, door de lucht meegevoerd (<em>een wolk stof, stof afnemen</em>)
+</td>
+<td style="text-align:left;">
+2.1
+</td>
+<td style="text-align:left;">
+mass of very small dry particles of various origin, floating in the air (<em>a cloud of dust, to clean dust (=to dust)</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+massa zeer kleine deeltjes als toestand van een specifieke substantie (<em>iets tot stof vermalen, tot stof verpulveren</em>)
+</td>
+<td style="text-align:left;">
+2.2
+</td>
+<td style="text-align:left;">
+mass of very small particles as state of a specific substance (<em>to bring something to dust</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+2.3
+</td>
+<td style="text-align:left;">
+idiomatic uses of ‘dust’ (<em>lift up dust</em>)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Three nouns have one frequent, monosemous homonym and a less frequent, polysemous one: <em>hoop</em> ‘hope/heap,’ <em>spot</em> ‘ridicule/show or spotlight’ and <em>horde</em> ‘horde/hurdle.’ The polysemy phenomena are varied. First, <em>horde</em> ‘hurdle’ can refer to literal hurdles, e.g. in races, while the other sense is metaphorical: abstract difficulties are talked about as obstacles to be surpassed. In addition, after the annotation a new sense tag derived from ‘horde’ was included, for the cases in which the members of the horde were not human beings, but insects, cars or other entities.
+Second, one of the <em>hoop</em> ‘heap’ senses refers to literal heaps of things that can form a pile, while the other one is a generalization to large quantities, e.g. <em>een hoop werk</em> ‘a lot of work.’ Finally, the polysemous homonym of <em>spot</em> has two main senses linked by metonymy, namely ‘short video,’ e.g. and advertisement spot, or ‘spotlight.’ The ‘spotlight’ sense can also be used either literally or metaphorically (‘to be in the spotlight’); this distinction was not included in the original definitions, but the annotators pointed it out and it was added afterwards.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Next to these more traditional tags, one category (sense 0 in Table &lt;a href="dataset.html#tab:noundefs"&gt;4.1&lt;/a&gt;) represents a selection of confusing lines with the format &lt;em&gt;Spots op {1ste, 2de, 3de}.&lt;/em&gt; There are 13 such tokens in the sample, all from the start of Regional Sports articles from &lt;em&gt;Het Nieuwsblad&lt;/em&gt;, published between 2003-09-10 and 2004-10-27. This category is not like any other sense, but it was included after the annotation just to see what the models did with it.&lt;/p&gt;'><sup>31</sup></a></p>
+<p>The other four nouns have two polysemous homonyms: <em>schaal</em> ‘scale/dish,’ <em>blik</em> ‘gaze/tin,’ <em>stof</em> ‘substance/dust…,’ and <em>staal</em> ‘steel/sample.’
+First, the frequent homonym of <em>blik</em> (‘gaze’) has a concrete sense with two metaphoric extensions: ‘intellectual look,’ which was not attested in the sample, and ‘perspective,’ which is quite infrequent. The infrequent homonym, ‘tin,’ can either refer to the material itself, to an object made of that material (‘tin can’) or its content (‘canned food’); due to their low frequency and the difficulty on part of the annotators to distinguish between the senses, the two last senses were later combined into one.
+Second, the frequent homonym of <em>stof</em> has two concrete, referentially distinct senses (‘substance’ and ‘fabric’) and an abstract one (‘topic, material’). In contrast, for the less frequent homonym we distinguished two senses presenting a subtle, context-specific difference: between ‘dust (in the air)’ and the ‘dust’ in ‘reducing something to dust, to pulverize.’ The last sense was so infrequent that it was excluded, but another distinction emerged from the annotation, namely between literal ‘dust’ and ‘dust’ in idiomatic expressions, such as <em>stof doen opwaaien</em> ‘to be controversial, lit. to stir up dust.’ The new sense was added because, even though within the idiomatic expression the meaning of <em>stof</em> is still ‘dust,’ the annotators kept confusing it with the ‘topic, material’ sense, which actually refers to expressions such as <em>stof voor een roman</em> ‘material for a novel.’
+Third, <em>schaal</em> exhibits subtle perspective shifts in one homonym (‘scale’) and refers to different concrete objects with the second ‘shell/dish,’ of which the very distinctive ‘shell’ sense was removed due to its low frequency.
+Finally, <em>staal</em> ‘steel’ could refer, like <em>blik</em> ‘tin,’ to either the material or the part of an object that is made from it — the latter is very infrequent among our sample, but instead another sense could be identified, namely ‘steel industry.’ The ‘sample’ homonym, on the other hand, originally presented a metaphorical distinction between material samples and ‘evidence’ of abstract characteristics, but was modified after annotation to a specialization distinction between general samples, e.g. a urine sample, and (statistically) representative samples.</p>
+<p>As we can see, the nouns present a variety of semantic phenomena at a finer granularity than homonymy: metaphor in the case of <em>blik</em> ‘gaze,’ <em>horde</em> ‘hurdle’ and <em>spot</em> ‘spotlight,’ metonymy in the case of <em>horde</em> ‘horde,’ <em>blik</em> ‘tin,’ <em>staal</em> ‘steel’ and <em>spot</em> ‘videoclip/spotlight,’ generalization/specialization in the case of <em>staal</em> ‘sample,’ <em>schaal</em> ‘dish’ and <em>hoop</em> ‘heap,’ perspective shifts for <em>schaal</em> ‘scale’ and other relationships in the frequent <em>stof</em> homonym.</p>
+</div>
+<div id="adjs" class="section level3" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> The adjectives<a class="anchor" aria-label="anchor" href="#adjs"><i class="fas fa-link"></i></a>
+</h3>
+<p>The selection of adjectives includes 13 lemmas presenting different kinds of polysemy phenomena (Table <a href="dataset.html#tab:adjdefs">4.2</a>). The purpose of this selection was to examine how models dealt with their semantic relationships and whether they could extract them from the different nouns modified by the target adjective.</p>
+<p>Three adjectives have a metonymic reading: <em>hoopvol</em> ‘hopeful,’ <em>geestig</em> ‘witty’ and <em>hachelijk</em> ‘dangerous/critical.’
+For <em>geestig</em> and <em>hoopvol</em>, one of the senses is anthropocentric, i.e. it’s mainly or exclusively applied to people: witty people against the witty things they say or do, and people who express hope against things that inspire it.
+In <em>hachelijk</em>’s case, the difference is a matter of temporal or telic perspective: between things that might go wrong and situations that are already problematic.</p>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:adjdefs">Table 4.2: </span>Definitions and examples for the senses of each of the 13 analysed adjectives.
+</caption>
+<thead><tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Dutch
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+sense
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+English
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="4">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>dof</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van kleuren en zichtbare dingen) mat, zonder glans, vaal (<em>een doffe blik</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(of colours and visible things) matte, without shine, pale (<em>a dull gaze</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van geluiden) niet luid of scherp, onderdrukt, gesmoord (<em>een doffe kreet</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(of sounds) not loud or sharp, suppressed, smothered (<em>a dull cry</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van personen, gevoelens e.d.) niet opgewekt, lusteloos, zonder energie (<em>doffe onverschilligheid, doffe ellende</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(of people, feelings, etc.) not cheerful, apathetic, without energy (<em>dull apathy, dull misery</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van denkbeelden e.d.) niet scherp voor de geest staand (<em>een doffe herinnering</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(of ideas and such) not sharp in the mind (<em>a dull memory</em>)
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>geestig</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+scherpzinnig en humoristisch van aard (<em>een geestige collega</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+of witty and humoristic nature (<em>a witty colleague</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+blijk gevend van, uitdrukking gevend aan, gekenmerkt door scherpzinnigheid en humor (<em>een geestig boek, een geestige blik, een geestige opmerking</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+giving an impression of, expressing, characterized by wittiness and humor (<em>a witty book, a witty look, a witty remark</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+being perceived as witty (<em>I find this funny</em>)
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>gekleurd</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+met kleur, in letterlijke zin (in het bijzonder, niet zwart, wit of grijs) (<em>gekleurde wangen</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+with colour, in a literal sense (in particular, not black, white or gray) (<em>colored cheeks</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van personen e.a.) niet blank (<em>de gekleurde medemens, van gekleurde afkomst zijn</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(of people a.o.) not white (<em>the fellow colored man, to be of colored origin</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van uitspraken, opvattingen e.d.) niet neutraal, tendentieus (<em>een gekleurde voorstelling van zaken</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(of expressions, concepts) not neutral, tendentious (<em>a colored representation of things</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>geldig</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+van kracht, van toepassing, van waarde zijnde volgens wettelijke of andere regels (<em>een geldig vervoerbewijs, betaalmiddel, juridisch bewijs</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+valid, acceptable, with value according to legal or other rules (<em>a valid driving license, currency, legal evidence</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+van kracht, van toepassing, van waarde in ruimere zin (<em>een geldige redenering</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+valid, acceptable, with value in general sense (<em>a valid reasoning</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>gemeen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+gemeenschappelijk in gebruik of bezit, gedeeld (<em>gemene kosten, een gemene muur</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+common property or of common use, shared (<em>common costs, a common wall</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+openbaar, publiek (<em>de gemene zaak</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+public (<em>the public business</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+alledaags, gewoon, tot de middelmaat behorend (<em>het gemene volk, de gemene man</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+commonplace, normal, mediocre (<em>the common people, the common man</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+boosaardig, kwaadaardig, laaghartig, malicieus (<em>een gemene streek</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+malicious, evil, mean (<em>a mean trick</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+ordinair, plat, onkies, vulgair (<em>gemene praatjes</em>)
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+ordinary, flat, indecent, vulgar (<em>mean conversations</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+cool, awesome, badass
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>goedkoop</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+laag in prijs, betaalbaar, voordelig (<em>goedkope wijn</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+of low price, affordable, advantageous (<em>cheap wine</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+geen hoge prijzen vragend (<em>een goedkoop winkeltje, een goedkope loodgieter</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+not asking a high price (<em>a cheap shop, a cheap plumber</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+waar de prijzen laag zijn (<em>een goedkope buurt</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+where the prices are low (<em>a cheap neighborhood</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+van weinig waarde, makkelijk verkregen, oppervlakkig, banaal (<em>goedkope lof, goedkoop succes, goedkope argumenten</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+with little value, received easily, superficial, banal (<em>cheap praise, cheap success, cheap arguments</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>grijs</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+met een kleur die ligt tussen wit en zwart; vaalwit, grauw (<em>grijs van het stof, de grijze dolfijn</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+with a color between white and black, pale white (<em>gray from the dust, the gray dolphin</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van periodes e.d.) zonder veel zonneschijn, bewolkt, betrokken (<em>een grijze dag</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(of periods and such) without much sunlight, cloudy, covered (<em>a gray day</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van haar) zijn kleur verloren hebbend, m.n. door gevorderde leeftijd (<em>een grijs baardje</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(of hair) having lost its color, namely because of old age (<em>a gray beard</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van personen e.a.) grijsharig, en vandaar, betrekking hebbend op ouderen (<em>de grijze golf</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(of people and related) gray haired, and thus, related to old people (<em>the gray wave</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+saai, kleurloos, vervelend (<em>een grijze buurt</em>)
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+boring, not colorful, tedious (<em>a gray neighborhood</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+niet helemaal volgens de wet of de regels, halflegaal (<em>de grijze economie</em>)
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+not exactly following the law or rules, half legal (<em>the gray economy</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>hachelijk</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+met kans op een ongunstige afloop, (potentieel) gevaarlijk (<em>een hachelijke onderneming</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+with chances of unfavorable outcome, (potentially) dangerous (<em>a dangerous enterprise</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(reëel) gevaarlijk, netelig, kritiek, benard (<em>een hachelijke situatie</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(actually) dangerous, trick, critical, dire (<em>a dangerous situation</em>)
+</td>
+</tr>
+<tr grouplength="7">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>heet</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van dingen) zeer warm (<em>een gloeiend hete kachel</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(of things) very warm (<em>a very hot stove</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van het lichaam) warm aanvoelend, een hogere temperatuur dan normaal hebbend (<em>hete wangen, het heet hebben</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(of the body) feeling warm, having a higher temperature than normal (<em>hot cheeks, to feel hot</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van het weer) zeer warm (<em>hete dagen, hete zomer</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(of the weather) very warm (<em>hot days, hot summer</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van voedsel) pikant (<em>hete sauzen</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(of food) spicy (<em>hot sauce</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van personen) sexueel hartstochtelijk, geil (<em>een hete bok</em>)
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+(of people) sexually attractive, horny (<em>a hot buck</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van gebeurtenissen, periodes e.d.) gekenmerkt door heftige strijd (<em>het ging er heet aan toe, een hete herfst</em>)
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+(of events, periods, etc.) characterized by fierce conflict (<em>it was getting hot, a hot autumn</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+popular, interesting or new, recent
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>heilzaam</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(letterlijk) bijdragend tot gezondheid en lichamelijk welzijn (<em>een heilzaam dieet</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(lit.) that brings health and physical wellbeing (<em>a healthy diet</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(figuurlijk) nuttig, een gunstig effect hebbend (<em>een heilzaam besluit</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(fig.) necessary, having a beneficial effect (<em>a beneficial decision</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>hemels</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+betrekking hebbend op de hemel (<em>de hemelse Vader, de hemelse boodschap</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+related to heaven (<em>de heavenly Father, the heavenly message</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+verrukkelijk, heerlijk, zalig, goddelijk (<em>een hemelse verschijning, een hemelse stem</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+delightful, lovely, blissful, divine (<em>a heavenly appearance, a heavenly voice</em>)
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>hoekig</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van voorwerpen, figuren e.d.) met hoeken of scherpe kanten (<em>een hoekige tekening, een hoekig gezicht</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(of objects, figures, etc.) with angles or sharp edges (<em>an angulous drawing, an angulous face</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van bewegingen, ritmes e.d.) niet vloeiend (<em>een hoekig melodietje</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(of movements, rhythms, etc.) not fluent (<em>a broken melody</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van personen) houterig, stijf, onhandig in de omgang (<em>een hoekig karakter</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(of people) rigid, stiff, clumsy (<em>a clumsy character</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>hoopvol</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(van personen, uitingen, gedragingen etc.) blijk gevend van hoop, vol hoop, optimistisch (<em>een hoopvolle stemming, dat stemt mij hoopvol</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(of people, expressions, behaviors, etc.) giving an impression of hope, full of hope, optimistic (<em>a hopeful mood, that brings me hope (makes me hopeful)</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+reden tot hoop gevend, beloftevol (<em>hoopvolle perspectieven</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+giving reason for hope, promising (<em>hopeful perspectives</em>)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Four adjectives have metaphoric readings: <em>hoekig</em> ‘angular,’ <em>dof</em> ‘dull,’ <em>heilzaam</em> ‘healthy/beneficial’ and <em>gekleurd</em> ‘colourful/person of colour/tainted.’
+<em>Heilzaam</em> has two senses, distinguishing between things that are literally healing, or beneficial for the health, and things that are metaphorically healing, or beneficial in general.
+<em>Hoekig</em> and <em>gekleurd</em> present three sense distinctions, one of which is particularly concrete and the most frequent, ‘of angular form’ and ‘colourful’ respectively, and another one explicitly anthropocentric: ‘clumsy’ and ‘non white.’ The third sense distinction has a different quality: synaesthetic for <em>hoekig</em>, applied to rhythms, and metaphoric for <em>gekleurd</em>, meaning ‘tainted, corrupted.’
+Finally, <em>dof</em> has a concrete sense applied to the visual domain, a synaesthetic extension applied to sounds, and an abstract meaning applied to feelings and emotions; the fourth meaning listed in the table was not attested.</p>
+<p>Three adjectives present some other form of similarity between the readings: <em>geldig</em> ‘valid,’ <em>hemels</em> ‘heavenly’ and <em>gemeen</em> ‘shared/mean….’
+<em>Geldig</em> ‘valid’ and <em>hemels</em> ‘heavenly’ offer two options: one restricted to a specific context (laws and reglaments for <em>geldig</em> and Heaven for <em>hemels</em>) and one much broader.
+The case of <em>gemeen</em> is quite complex, involving a number of rather subtle distinctions that often co-exist in the same attestation: i.e. ‘common’ and ‘shared,’ or ‘average’ and ‘ordinary.’</p>
+<p>Finally, the remaining three adjectives present a more complex picture: <em>heet</em> ‘hot’ and <em>goedkoop</em> ‘cheap’ have literal senses with different kinds of entities but has also metaphorical extensions, while <em>grijs</em> ‘grey’ has both metaphorical and metonymical extensions.
+<em>Heet</em> ‘hot’ presents, first, three very concrete senses that differ in perspective: temperatures of objects, of weather and as it is felt in the body; the other three senses are metaphorical, i.e. the objects to which <em>heet</em> is applied cannot be physically hot. Crucially, there is no exclusive sense tag for idiomatic expressions in which the combination of <em>heet</em> ‘hot’ and its concrete object (e.g. <em>hang_ijzer</em> ‘iron,’ <em>aardappel</em> ‘potato’) is used metaphorically. <em>Goedkoop</em>, on the other hand, presents a modest set of 4 sense distinctions: a concrete, prototypical and frequent sense (i.e. cheap products), two perspectival shifts (i.e. cheap shops and cheap area) and a clear metaphor (i.e. of little values).
+Finally, <em>grijs</em> presents a very frequent, concrete sense, three specific metonymic extensions — to weather and to hair, and from there to old people or generations — and two metaphorical ones — ‘boring’ and ‘half legal.’ In practice, the ‘boring’ reading can include ‘sad, not cheerful,’ and the ‘half legal’ sense is more general, applying to ‘gray areas’ between two poles.</p>
+<p>In sum, the adjectives include more simple semasiological structures with only one kind of semantic extension involved as well as more complex interactions between the phenomena.</p>
+</div>
+<div id="verbs" class="section level3" number="4.1.3">
+<h3>
+<span class="header-section-number">4.1.3</span> The verbs<a class="anchor" aria-label="anchor" href="#verbs"><i class="fas fa-link"></i></a>
+</h3>
+<p>The criterion to select the 12 verbs analysed here was to cover a range of combinations of syntactic and semantic variation, with the goal of exploring how different parameter settings dealt with their interaction or whether certain types of models would focus on one or the other aspect.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The original set of verbs also included &lt;em&gt;herkennen&lt;/em&gt;, but it was excluded because of the extreme subtlety of its sense distinctions, which made the annotation particularly challenging.&lt;/p&gt;"><sup>32</sup></a> Their senses and translations are shown in Table <a href="dataset.html#tab:verbdefs">4.3</a>.</p>
+<p>Four verbs are always transitive and their senses can be distinguished by the objects they can take: people or objects for <em>haten</em> ‘to hate,’ people or opinions for <em>huldigen</em> ‘to honour/to believe,’ concrete objects or taxes for <em>heffen</em> ‘to levy/to lift,’ and statements or decisions for <em>herroepen</em> ‘to recant/to void.’</p>
+<p>Two of the verbs can be transitive, with a distinction based on the direct object, or intransitive: <em>helpen</em> ‘to help’ and <em>herstructureren</em> ‘to restructure.’ In both cases the intransitive sense is semantically similar to one of the transitive senses. For example, the intransitive sense and one of the transitive senses of <em>herstructureren</em> only apply to companies, with the connotation that the personnel is being reduced, while the other transitive sense has a much more general application.</p>
+<p>Three verbs can be transitive, with a distinction based on the direct object, or reflexive: <em>diskwalificeren</em> ‘to disqualify,’ <em>herhalen</em> ‘to repeat’ and <em>herinneren</em> ‘to remember/to remind.’ In the case of <em>diskwalificeren</em> ‘to disqualify’ and, to a lesser degree, <em>herhalen</em> ‘to repeat,’ this opposition can be interpreted as a specific situation where the object and the subject coincide.
+In contrast, <em>herinneren</em> means ‘to remember’ in the reflexive construction and ‘to remind’ in the transitive construction with the preposition <em>aan</em>; the transitive construction without the preposition can also be attested (e.g. <em>ik word herinnered als</em>, ‘I am remembered as’) but very infrequently.</p>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:verbdefs">Table 4.3: </span>Definitions and examples for the senses of each of the 12 analysed verbs.
+</caption>
+<thead><tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Dutch
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+sense
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+English
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>diskwalificeren</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) ongeschikt verklaren en uitsluiten van een bepaalde functie of positie (<em>een getuige diskwalificeren</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) declare unsuitable and exclude from a certain function or position (<em>disqualify a witness</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) wegens onregelmatigheden uitsluiten bij een wedstrijd (<em>FC De Trappers werd gediskwalificeerd wegens wangedrag</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) exclude from a competition because of irregularities (<em>FC De Trappers was disqualified because of misbehaviour</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(reflex.) zichzelf buiten spel zetten, zich onmogelijk maken (<em>met zulk gedrag diskwalificeer je jezelf</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(reflex.) exclude oneself, make oneself impossible (<em>with such a behaviour you disqualify yourself</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>haken</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) met of als met een haak vastmaken (aan, in, achter iets) (<em>een wagen aan een locomotief haken, een sleutel in een ring haken</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) fix something with or as if with a hook (at, to, behind something) (<em>hook a wagon to a locomotive, a key in a key ring</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans.) met of als met een haak vastraken (<em>de doornen haakten aan haar jas, haar paraplu bleef haken aan de deurknop</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(intrans.) get stuck with or as if with a hook (<em>the thorns got stuck in her coat, her umbrella got stuck in the doorknob</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) over een uitgestoken been doen struikelen (<em>hij werd gehaakt in de elfmeter, iemand pootje haken</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(trans.) make trip over a stuck out leg (<em>he was made to trip in the penalty kick, make someone trip</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans., met ‘blijven’) van gedachten, blikken e.d.: haperen, telkens terugkeren (aan of bij iets) (<em>ik bleef haken bij de herinnering aan mijn broer</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(intrans., with ‘to keep’) of thoughts, gazes and such: falter, come back (to something) (<em>I kept going back to the memory of my brother</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans./trans.) zeker handwerk maken door met een staafje met een weerhaak lussen samen te weven (<em>haken tijdens het televisiekijken, hoe ontspannend!, een babymutsje haken</em>)
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+(intrans./trans.) make handcraft by weaving loops together with a hooked needle (<em>crochetting while watching tv, so relaxing!, crochet a baby hat</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+(with ‘towards’) desire, aim for
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>harden</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) hard maken, in letterlijke zin (<em>staal harden</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) make hard, in literal sense (<em>harden steel</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans.) hard worden, in letterlijke zin (<em>snel hardende verven</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(intr.) become hard, in literal sense (<em>quickly hardening paint</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) hard maken in figuurlijke zin; weerstand en veerkracht bijbrengen (<em>een kind harden tegen het klimaat</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(trans.) make hard in figurative sense; impart resistance and resilience (<em>toughen a child against the weather</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(reflex.) bij zichzelf weerstand en veerkracht aankweken (<em>zich harden tegen het lot</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(reflex.) develop resistance and resilience by oneself (<em>toughen oneself against fate</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) uithouden, verdragen (<em>niet te harden</em>)
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+(trans.) endure, tolerate (<em>unbearable (‘not to bear’)</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>haten</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) iem. haat toedragen, een sterk gevoel van afkeer en vijandschap t.o.v. iem. hebben (<em>waarom haat hij mij zo?</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) feel hatred, have a strong feeling of aversion and enmity towards someone (<em>why does he hate me so much?</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) iets onaangenaam, verfoeilijk, verwerpelijk vinden (<em>hoe zou iemand de taalkunde kunnen haten?</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) consider something unpleasant, detestable, reprehensible (<em>how could someone hate linguistics?</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>heffen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. materiële zaken: in de hoogte brengen, optillen (<em>met geheven hoofd; hij heft met gemak 80 kilo in de hoogte</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. material objects: move to a higher position, lift (<em>lifting their head; he easily lifted 80 kg</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. geld e.d.: invorderen, eisen, opleggen (<em>belasting, rente, accijns heffen</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. money and such: collect, demand, impose (<em>collect tax, interest, excise</em>)
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>helpen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) ondersteunen in materiële of morele zin, bijstaan (<em>met raad en daad helpen, een helpende hand, uit de nood helpen</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) support in material or moral sense, assist (<em>help in word and deed, a helping hand, help out</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) iem. assisteren door met hem samen te werken (<em>helpen met het huiswerk; heb je dat alleen gedaan of heeft iemand je geholpen?</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) assist someone by collaborating with them (<em>help with homework, did you do that by yourself or did someone help you?</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans.) voordeel opleveren, nuttig zijn (<em>dat drankje heeft goed geholpen</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(intrans.) yield advantage, be useful (<em>that drink helped a lot</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(trans.) with inanimate entities, be helpful, useful
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+(with ‘to/for’) to provide
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>herhalen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. handelingen of activiteiten: opnieuw uitvoeren (<em>een experiment, een les, een bezoek herhalen</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. acts or activities: perform again (<em>repeat an experiment, a lesson, a visit</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. zinnen, boodschappen e.d.: opnieuw uitspreken (<em>kunt u dat even herhalen?</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. utterances, messages and such: pronounce again (<em>Could you please repeat that?</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(reflex.) zich opnieuw voordoen (<em>de geschiedenis herhaalt zich</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(reflex.) occur again (<em>history repeats itself</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(trans.) of a show or an episode, broadcast again
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>herinneren</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(met ‘aan’) weer te binnen brengen, in het geheugen terugroepen (<em>iemand aan iets herinneren</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(with ‘of’) bring back to the mind, to the memory (<em>remind someone of something</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(reflex.) in het geheugen aanwezig hebben, niet vergeten (<em>zich een gebeurtenis, een persoon herinneren</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(reflex.) have present in the memory, not forget (<em>remember an event, a person</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) met een plechtigheid, monument o.i.d. gedenken (<em>we herinneren vandaag de Slag bij Ronceval</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(trans.) remember with a celebration, monument and such (<em>today we remember the Battle of Roncevaux Pass</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>herroepen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. wetten, besluiten e.d.: intrekken, niet langer geldig verklaren (<em>een besluit, volmacht, decreet herroepen</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. laws, decisions and such: withdraw, declare not valid anymore (<em>annul a decision, power of attorney, decree</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. uitspraken, meningen e.d.: terugnemen en rechtzetten (<em>Trump moest weer een van zijn dwaze tweets herroepen</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. statements, opinions and such: retract and correct (<em>Trump had to retract one of his crazy tweets again</em>)
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>herstellen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) repareren, de eraan ontstane schade wegwerken (<em>het dak herstellen</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) repair, get rid of the damage in something (<em>repair the roof</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) tot de vorige toestand terugbrengen, doen terugkeren (<em>de goede verstandhouding herstellen</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) bring back, make return to the previous state (<em>repair the understanding</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) goedmaken, weer doen vergeten (<em>een fout herstellen</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(trans.) make good, make forget (<em>fix a mistake</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(reflex.) tot de oorspronkelijke toestand terugkeren (<em>de rust herstelt zich</em>)
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+(reflex.) return to the original state (<em>peace is restored</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans.) genezen (<em>van een ziekte herstellen</em>)
+</td>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+(intrans.) heal (<em>heal from a disease</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+</td>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+(intrans.) of a financial/economic entity, recover
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>herstructureren</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) reorganiseren, een nieuwe structuur geven (<em>je kunt deze tekst maar beter herstructureren</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) reorganize, give a new structure (<em>you should restructure this text</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) m.b.t. bedrijven in problemen: activiteiten of personeel afstoten, downsizen (<em>Bayer herstructureert zijn plasticdivisie</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) w.r.t. businesses in difficulties: remove activities or personeel, downsize (<em>Bayer restructures its plastic division</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(intrans.) van bedrijven in problemen: activiteiten of personeel afstoten, downsizen (<em>de chemie moet zich herstructureren</em>)
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+(intrans.) of businesses in difficulties: remove activities or personeel, downsize (<em>chemistry must restructure (itself)</em>)
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid #00000020;">
+<strong>huldigen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) iets of iem. eer bewijzen, vieren (<em>we huldigen de uitvinder van de herbruikbare broodzak</em>)
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+(trans.) celebrate, pay homage to someone or something (<em>we honor the inventor of the reusable bread bag</em>)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+(trans.) erkennen, aankleven, toegedaan zijn (<em>een opvatting, mening, theorie huldigen</em>)
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+(trans.) acknowledge, follow, be commited to (<em>hold a view, an opinion, a theory</em>)
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Two more verbs can be transitive, intransitive or reflexive, with semantic distinctions within the transitive structure: <em>harden</em> ‘to make or become hard/ to tolerate’ and <em>herstellen</em> ‘to repair/ to heal….’ The senses of <em>harden</em> can be split in two main groups. One is more closely related to the property of ‘hardness,’ i.e. to turn something or someone hard or to become hard, in literal or figurative sense, with different constructions: from the intransitive literal sense in <em>om hun kaas te laten harden</em> ‘in order to make their cheese harden’ to the transtive figurative one in <em>Verdriet heeft haar gehard</em> ‘Grief has hardened her.’ The second group, however, includes one transitive construction in a very specific pattern but is more frequent in the sample than all the others combined: <em>(niet) te harden</em> (‘to (not) tolerate,’ always negative).</p>
+<p>Finally, <em>haken</em> ‘to hook’ presents semantic distinctions within both the transitive and the intransitive structures. It can refer literally or metaphorically to hooking something or remaining hooked, but there are also two very specific senses: one characteristic of the football context, meaning ‘to make someone trip (by placing a foot in front of them),’ and ‘to crochet.’</p>
+<p>In sum, the set of verbs includes cases where only the kind of direct object plays a role in the disambiguation and cases where it interacts with syntactic patterns. Moreover, the specific ways in which these kinds of direct objects are defined differ across verbs: from animacy or agency in the case of <em>haten</em> to concreteness in the case of <em>heffen</em>. The semantic distinctions can also rely on a broader context: <em>diskwalificeren</em> will typically have people as direct object, but the sports-related context defines a specific sense, characterised by distinct motivations and consequences.</p>
+</div>
+</div>
+<div id="extraction" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> The dataset<a class="anchor" aria-label="anchor" href="#extraction"><i class="fas fa-link"></i></a>
+</h2>
+<p>For each of the 32 lemmas listed above, about 300 tokens were collected from the <em>QLVLNewsCorpus</em> (described in Section <a href="workflow.html#corpus">2.3.1</a>). All attestations were manually annotated by at least three different people based on the definitions found in the Dutch column of Tables <a href="dataset.html#tab:noundefs">4.1</a>, <a href="dataset.html#tab:adjdefs">4.2</a> and <a href="dataset.html#tab:verbdefs">4.3</a>. Next to the sense assignment, which was later revised for uniformity — and to include senses emerging from the annotation itself, as mentioned above — the annotation included confidence assignment and selection of disambiguating context words.</p>
+<p>The selection of the lemmas involved some introspection as well as consultation of lexical resources and corpus data: thinking of potential candidates, checking the senses reported in dictionaries <span class="citation">(<a href="references.html#ref-vandale_groot" role="doc-biblioref">Sterkenburg 1991</a>; <a href="references.html#ref-vandale_klein" role="doc-biblioref">Boon, Geeraerts &amp; Arts 2007</a>)</span> and estimating their relative frequencies in small concordances. We tried to avoid extremely skewed distributions approximating a monosemous structure or numerous infrequent senses that would be unlikely to stand out in a model.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;In a number of cases, the corpus survey (reading a random concordance of 40-50 lines) invalidated options that intuitively or according to the dictionary definitions would have conformed to our requirements. When judging such a discrepancy, it is important to take into account the composition of the corpus. The topics addressed in newspapers and the terms used to talk about them are certainly not representative of everyday life or the entirety of language.&lt;/p&gt;"><sup>33</sup></a> In the end, as we will see, sense frequency is not really an issue, because clouds don’t model senses anyways.</p>
+<p>The exploration of these samples of concordances also served for the calculation of the number of tokens to model and annotate. Regardless of the actual frequency of the items in the corpus, the minimum sample contained 240 tokens; it was raised to 280 if any of the senses had a relative frequency below 20% in the sample, to 320 if it was below 10%, and to 360 if there were many senses and therefore some had a low frequency (e.g. <em>heet</em>). The lower and upper bound were estimated from pilot studies of clouds as a large enough amount to warrant the use of this methodology and small enough to make sense of in the visualization tool. Table <a href="dataset.html#tab:lemmafreq">4.4</a> shows the absolute frequency (in the <span class="smallcaps">520mw</span> <em>QLVLNewsCorpus</em>) of each selected lemma, the size of the sample and the distribution of the senses: the more the boxplot in the rightmost column goes to the right, the more frequent one of the senses. For example, the long boxplots for <em>blik</em> and <em>hoop</em> indicate a very skewed distribution, i.e. a sense with very high frequency and senses with very low frequencies, while the narrow, centred boxplots for <em>hachelijk</em> and <em>hemels</em> indicate that their senses are equally frequent.
+The sample extraction was almost completely random, with the only restriction that no two instances of the same lemma would be extracted from the same file. There were, however, a few duplicates, due to repetition of the same fragment on different dates.</p>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:lemmafreq">Table 4.4: </span>Absolute frequency of the lemmas in the corpus, number of batches and distribution of their senses. The number next to the boxplots indicate the number of different senses.
+</caption>
+<thead><tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+lemma
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+frequency
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+sample
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+senses
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="7">
+<td colspan="4" style="border-bottom: 1px solid #00000020;">
+<strong>nouns</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+spot
+</td>
+<td style="text-align:right;">
+3496
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+5 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="5.60,8.22 5.60,3.78 12.40,3.78 12.40,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="9.82" y1="8.22" x2="9.82" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="5.13" y1="6.00" x2="5.60" y2="6.00" style="stroke-width: 0.75;"></line><line x1="12.40" y1="6.00" x2="12.40" y2="6.00" style="stroke-width: 0.75;"></line><line x1="5.13" y1="7.11" x2="5.13" y2="4.89" style="stroke-width: 0.75;"></line><line x1="12.40" y1="7.11" x2="12.40" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="5.60,8.22 5.60,3.78 12.40,3.78 12.40,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="26.47" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+horde
+</td>
+<td style="text-align:right;">
+3224
+</td>
+<td style="text-align:right;">
+280
+</td>
+<td style="text-align:right;">
+4 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="8.10,8.22 8.10,3.78 20.80,3.78 20.80,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="11.90" y1="8.22" x2="11.90" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="4.76" y1="6.00" x2="8.10" y2="6.00" style="stroke-width: 0.75;"></line><line x1="29.24" y1="6.00" x2="20.80" y2="6.00" style="stroke-width: 0.75;"></line><line x1="4.76" y1="7.11" x2="4.76" y2="4.89" style="stroke-width: 0.75;"></line><line x1="29.24" y1="7.11" x2="29.24" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="8.10,8.22 8.10,3.78 20.80,3.78 20.80,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+blik
+</td>
+<td style="text-align:right;">
+22175
+</td>
+<td style="text-align:right;">
+280
+</td>
+<td style="text-align:right;">
+4 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="4.31,8.22 4.31,3.78 24.59,3.78 24.59,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="6.63" y1="8.22" x2="6.63" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.54" y1="6.00" x2="4.31" y2="6.00" style="stroke-width: 0.75;"></line><line x1="41.99" y1="6.00" x2="24.59" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.54" y1="7.11" x2="2.54" y2="4.89" style="stroke-width: 0.75;"></line><line x1="41.99" y1="7.11" x2="41.99" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="4.31,8.22 4.31,3.78 24.59,3.78 24.59,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+staal
+</td>
+<td style="text-align:right;">
+5796
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+5 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="3.92,8.22 3.92,3.78 11.35,3.78 11.35,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="4.09" y1="8.22" x2="4.09" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.93" y1="6.00" x2="3.92" y2="6.00" style="stroke-width: 0.75;"></line><line x1="11.35" y1="6.00" x2="11.35" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.93" y1="7.11" x2="2.93" y2="4.89" style="stroke-width: 0.75;"></line><line x1="11.35" y1="7.11" x2="11.35" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="3.92,8.22 3.92,3.78 11.35,3.78 11.35,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="37.11" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+schaal
+</td>
+<td style="text-align:right;">
+14249
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+5 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="4.68,8.22 4.68,3.78 8.55,3.78 8.55,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="6.78" y1="8.22" x2="6.78" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="3.22" y1="6.00" x2="4.68" y2="6.00" style="stroke-width: 0.75;"></line><line x1="8.55" y1="6.00" x2="8.55" y2="6.00" style="stroke-width: 0.75;"></line><line x1="3.22" y1="7.11" x2="3.22" y2="4.89" style="stroke-width: 0.75;"></line><line x1="8.55" y1="7.11" x2="8.55" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="4.68,8.22 4.68,3.78 8.55,3.78 8.55,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="36.17" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+stof
+</td>
+<td style="text-align:right;">
+24502
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+5 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="7.84,8.22 7.84,3.78 10.47,3.78 10.47,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="8.01" y1="8.22" x2="8.01" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="7.68" y1="6.00" x2="7.84" y2="6.00" style="stroke-width: 0.75;"></line><line x1="10.47" y1="6.00" x2="10.47" y2="6.00" style="stroke-width: 0.75;"></line><line x1="7.68" y1="7.11" x2="7.68" y2="4.89" style="stroke-width: 0.75;"></line><line x1="10.47" y1="7.11" x2="10.47" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="7.84,8.22 7.84,3.78 10.47,3.78 10.47,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="25.40" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+hoop
+</td>
+<td style="text-align:right;">
+41946
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="7.80,8.22 7.80,3.78 25.97,3.78 25.97,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="11.35" y1="8.22" x2="11.35" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="4.25" y1="6.00" x2="7.80" y2="6.00" style="stroke-width: 0.75;"></line><line x1="40.58" y1="6.00" x2="25.97" y2="6.00" style="stroke-width: 0.75;"></line><line x1="4.25" y1="7.11" x2="4.25" y2="4.89" style="stroke-width: 0.75;"></line><line x1="40.58" y1="7.11" x2="40.58" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="7.80,8.22 7.80,3.78 25.97,3.78 25.97,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr grouplength="13">
+<td colspan="4" style="border-bottom: 1px solid #00000020;">
+<strong>adjectives</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+hachelijk
+</td>
+<td style="text-align:right;">
+1307
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="25.88,8.22 25.88,3.78 28.70,3.78 28.70,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="25.88" y1="6.00" x2="25.88" y2="6.00" style="stroke-width: 0.75;"></line><line x1="28.70" y1="6.00" x2="28.70" y2="6.00" style="stroke-width: 0.75;"></line><line x1="25.88" y1="7.11" x2="25.88" y2="4.89" style="stroke-width: 0.75;"></line><line x1="28.70" y1="7.11" x2="28.70" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="25.88,8.22 25.88,3.78 28.70,3.78 28.70,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+hemels
+</td>
+<td style="text-align:right;">
+1417
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="26.55,8.22 26.55,3.78 28.03,3.78 28.03,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="26.55" y1="6.00" x2="26.55" y2="6.00" style="stroke-width: 0.75;"></line><line x1="28.03" y1="6.00" x2="28.03" y2="6.00" style="stroke-width: 0.75;"></line><line x1="26.55" y1="7.11" x2="26.55" y2="4.89" style="stroke-width: 0.75;"></line><line x1="28.03" y1="7.11" x2="28.03" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="26.55,8.22 26.55,3.78 28.03,3.78 28.03,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+heilzaam
+</td>
+<td style="text-align:right;">
+1476
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="23.68,8.22 23.68,3.78 30.89,3.78 30.89,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="23.68" y1="6.00" x2="23.68" y2="6.00" style="stroke-width: 0.75;"></line><line x1="30.89" y1="6.00" x2="30.89" y2="6.00" style="stroke-width: 0.75;"></line><line x1="23.68" y1="7.11" x2="23.68" y2="4.89" style="stroke-width: 0.75;"></line><line x1="30.89" y1="7.11" x2="30.89" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="23.68,8.22 23.68,3.78 30.89,3.78 30.89,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+hoopvol
+</td>
+<td style="text-align:right;">
+3680
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="17.36,8.22 17.36,3.78 37.22,3.78 37.22,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="17.36" y1="6.00" x2="17.36" y2="6.00" style="stroke-width: 0.75;"></line><line x1="37.22" y1="6.00" x2="37.22" y2="6.00" style="stroke-width: 0.75;"></line><line x1="17.36" y1="7.11" x2="17.36" y2="4.89" style="stroke-width: 0.75;"></line><line x1="37.22" y1="7.11" x2="37.22" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="17.36,8.22 17.36,3.78 37.22,3.78 37.22,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+geldig
+</td>
+<td style="text-align:right;">
+5128
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="8.35,8.22 8.35,3.78 46.22,3.78 46.22,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="8.35" y1="6.00" x2="8.35" y2="6.00" style="stroke-width: 0.75;"></line><line x1="46.22" y1="6.00" x2="46.22" y2="6.00" style="stroke-width: 0.75;"></line><line x1="8.35" y1="7.11" x2="8.35" y2="4.89" style="stroke-width: 0.75;"></line><line x1="46.22" y1="7.11" x2="46.22" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="8.35,8.22 8.35,3.78 46.22,3.78 46.22,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+hoekig
+</td>
+<td style="text-align:right;">
+1242
+</td>
+<td style="text-align:right;">
+280
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="13.96,8.22 13.96,3.78 25.15,3.78 25.15,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="22.04" y1="8.22" x2="22.04" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="5.89" y1="6.00" x2="13.96" y2="6.00" style="stroke-width: 0.75;"></line><line x1="28.26" y1="6.00" x2="25.15" y2="6.00" style="stroke-width: 0.75;"></line><line x1="5.89" y1="7.11" x2="5.89" y2="4.89" style="stroke-width: 0.75;"></line><line x1="28.26" y1="7.11" x2="28.26" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="13.96,8.22 13.96,3.78 25.15,3.78 25.15,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+geestig
+</td>
+<td style="text-align:right;">
+3970
+</td>
+<td style="text-align:right;">
+280
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="9.55,8.22 9.55,3.78 24.89,3.78 24.89,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="12.69" y1="8.22" x2="12.69" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="6.41" y1="6.00" x2="9.55" y2="6.00" style="stroke-width: 0.75;"></line><line x1="37.08" y1="6.00" x2="24.89" y2="6.00" style="stroke-width: 0.75;"></line><line x1="6.41" y1="7.11" x2="6.41" y2="4.89" style="stroke-width: 0.75;"></line><line x1="37.08" y1="7.11" x2="37.08" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="9.55,8.22 9.55,3.78 24.89,3.78 24.89,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+gekleurd
+</td>
+<td style="text-align:right;">
+4520
+</td>
+<td style="text-align:right;">
+280
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="8.96,8.22 8.96,3.78 23.75,3.78 23.75,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="9.24" y1="8.22" x2="9.24" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="8.68" y1="6.00" x2="8.96" y2="6.00" style="stroke-width: 0.75;"></line><line x1="38.27" y1="6.00" x2="23.75" y2="6.00" style="stroke-width: 0.75;"></line><line x1="8.68" y1="7.11" x2="8.68" y2="4.89" style="stroke-width: 0.75;"></line><line x1="38.27" y1="7.11" x2="38.27" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="8.96,8.22 8.96,3.78 23.75,3.78 23.75,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+dof
+</td>
+<td style="text-align:right;">
+1268
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+4 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="9.29,8.22 9.29,3.78 19.61,3.78 19.61,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="16.64" y1="8.22" x2="16.64" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.27" y1="6.00" x2="9.29" y2="6.00" style="stroke-width: 0.75;"></line><line x1="22.25" y1="6.00" x2="19.61" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.27" y1="7.11" x2="2.27" y2="4.89" style="stroke-width: 0.75;"></line><line x1="22.25" y1="7.11" x2="22.25" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="9.29,8.22 9.29,3.78 19.61,3.78 19.61,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+gemeen
+</td>
+<td style="text-align:right;">
+2997
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+7 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="3.00,8.22 3.00,3.78 9.94,3.78 9.94,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="4.04" y1="8.22" x2="4.04" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="1.96" y1="6.00" x2="3.00" y2="6.00" style="stroke-width: 0.75;"></line><line x1="15.84" y1="6.00" x2="9.94" y2="6.00" style="stroke-width: 0.75;"></line><line x1="1.96" y1="7.11" x2="1.96" y2="4.89" style="stroke-width: 0.75;"></line><line x1="15.84" y1="7.11" x2="15.84" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="3.00,8.22 3.00,3.78 9.94,3.78 9.94,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="30.76" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+grijs
+</td>
+<td style="text-align:right;">
+13567
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+7 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="5.93,8.22 5.93,3.78 8.30,3.78 8.30,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="6.69" y1="8.22" x2="6.69" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="5.85" y1="6.00" x2="5.93" y2="6.00" style="stroke-width: 0.75;"></line><line x1="9.74" y1="6.00" x2="8.30" y2="6.00" style="stroke-width: 0.75;"></line><line x1="5.85" y1="7.11" x2="5.85" y2="4.89" style="stroke-width: 0.75;"></line><line x1="9.74" y1="7.11" x2="9.74" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="5.93,8.22 5.93,3.78 8.30,3.78 8.30,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="25.68" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle><circle cx="1.78" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+goedkoop
+</td>
+<td style="text-align:right;">
+40669
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+4 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="3.47,8.22 3.47,3.78 25.42,3.78 25.42,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="6.10" y1="8.22" x2="6.10" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.12" y1="6.00" x2="3.47" y2="6.00" style="stroke-width: 0.75;"></line><line x1="43.48" y1="6.00" x2="25.42" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.12" y1="7.11" x2="2.12" y2="4.89" style="stroke-width: 0.75;"></line><line x1="43.48" y1="7.11" x2="43.48" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="3.47,8.22 3.47,3.78 25.42,3.78 25.42,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+heet
+</td>
+<td style="text-align:right;">
+10676
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+7 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="3.39,8.22 3.39,3.78 8.59,3.78 8.59,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="4.09" y1="8.22" x2="4.09" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.23" y1="6.00" x2="3.39" y2="6.00" style="stroke-width: 0.75;"></line><line x1="12.47" y1="6.00" x2="8.59" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.23" y1="7.11" x2="2.23" y2="4.89" style="stroke-width: 0.75;"></line><line x1="12.47" y1="7.11" x2="12.47" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="3.39,8.22 3.39,3.78 8.59,3.78 8.59,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="32.33" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr grouplength="12">
+<td colspan="4" style="border-bottom: 1px solid #00000020;">
+<strong>verbs</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+herroepen
+</td>
+<td style="text-align:right;">
+848
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="22.28,8.22 22.28,3.78 32.29,3.78 32.29,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="22.28" y1="6.00" x2="22.28" y2="6.00" style="stroke-width: 0.75;"></line><line x1="32.29" y1="6.00" x2="32.29" y2="6.00" style="stroke-width: 0.75;"></line><line x1="22.28" y1="7.11" x2="22.28" y2="4.89" style="stroke-width: 0.75;"></line><line x1="32.29" y1="7.11" x2="32.29" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="22.28,8.22 22.28,3.78 32.29,3.78 32.29,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+herstructureren
+</td>
+<td style="text-align:right;">
+936
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="16.70,8.22 16.70,3.78 19.80,3.78 19.80,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="16.80" y1="8.22" x2="16.80" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="16.59" y1="6.00" x2="16.70" y2="6.00" style="stroke-width: 0.75;"></line><line x1="22.79" y1="6.00" x2="19.80" y2="6.00" style="stroke-width: 0.75;"></line><line x1="16.59" y1="7.11" x2="16.59" y2="4.89" style="stroke-width: 0.75;"></line><line x1="22.79" y1="7.11" x2="22.79" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="16.70,8.22 16.70,3.78 19.80,3.78 19.80,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+diskwalificeren
+</td>
+<td style="text-align:right;">
+1084
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="11.36,8.22 11.36,3.78 24.90,3.78 24.90,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="16.34" y1="8.22" x2="16.34" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="6.38" y1="6.00" x2="11.36" y2="6.00" style="stroke-width: 0.75;"></line><line x1="33.46" y1="6.00" x2="24.90" y2="6.00" style="stroke-width: 0.75;"></line><line x1="6.38" y1="7.11" x2="6.38" y2="4.89" style="stroke-width: 0.75;"></line><line x1="33.46" y1="7.11" x2="33.46" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="11.36,8.22 11.36,3.78 24.90,3.78 24.90,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+huldigen
+</td>
+<td style="text-align:right;">
+4091
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="16.57,8.22 16.57,3.78 38.01,3.78 38.01,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="16.57" y1="6.00" x2="16.57" y2="6.00" style="stroke-width: 0.75;"></line><line x1="38.01" y1="6.00" x2="38.01" y2="6.00" style="stroke-width: 0.75;"></line><line x1="16.57" y1="7.11" x2="16.57" y2="4.89" style="stroke-width: 0.75;"></line><line x1="38.01" y1="7.11" x2="38.01" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="16.57,8.22 16.57,3.78 38.01,3.78 38.01,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+heffen
+</td>
+<td style="text-align:right;">
+4799
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+2 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="19.98,8.22 19.98,3.78 34.59,3.78 34.59,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="27.29" y1="8.22" x2="27.29" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="19.98" y1="6.00" x2="19.98" y2="6.00" style="stroke-width: 0.75;"></line><line x1="34.59" y1="6.00" x2="34.59" y2="6.00" style="stroke-width: 0.75;"></line><line x1="19.98" y1="7.11" x2="19.98" y2="4.89" style="stroke-width: 0.75;"></line><line x1="34.59" y1="7.11" x2="34.59" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="19.98,8.22 19.98,3.78 34.59,3.78 34.59,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+haten
+</td>
+<td style="text-align:right;">
+4828
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="14.84,8.22 14.84,3.78 25.49,3.78 25.49,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="24.48" y1="8.22" x2="24.48" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="5.20" y1="6.00" x2="14.84" y2="6.00" style="stroke-width: 0.75;"></line><line x1="26.50" y1="6.00" x2="25.49" y2="6.00" style="stroke-width: 0.75;"></line><line x1="5.20" y1="7.11" x2="5.20" y2="4.89" style="stroke-width: 0.75;"></line><line x1="26.50" y1="7.11" x2="26.50" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="14.84,8.22 14.84,3.78 25.49,3.78 25.49,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+herstellen
+</td>
+<td style="text-align:right;">
+28814
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+6 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="4.83,8.22 4.83,3.78 13.86,3.78 13.86,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="9.13" y1="8.22" x2="9.13" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="3.11" y1="6.00" x2="4.83" y2="6.00" style="stroke-width: 0.75;"></line><line x1="20.95" y1="6.00" x2="13.86" y2="6.00" style="stroke-width: 0.75;"></line><line x1="3.11" y1="7.11" x2="3.11" y2="4.89" style="stroke-width: 0.75;"></line><line x1="20.95" y1="7.11" x2="20.95" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="4.83,8.22 4.83,3.78 13.86,3.78 13.86,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+herinneren
+</td>
+<td style="text-align:right;">
+33432
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+3 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="10.17,8.22 10.17,3.78 26.86,3.78 26.86,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="17.87" y1="8.22" x2="17.87" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.46" y1="6.00" x2="10.17" y2="6.00" style="stroke-width: 0.75;"></line><line x1="35.85" y1="6.00" x2="26.86" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.46" y1="7.11" x2="2.46" y2="4.89" style="stroke-width: 0.75;"></line><line x1="35.85" y1="7.11" x2="35.85" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="10.17,8.22 10.17,3.78 26.86,3.78 26.86,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+helpen
+</td>
+<td style="text-align:right;">
+87136
+</td>
+<td style="text-align:right;">
+240
+</td>
+<td style="text-align:right;">
+6 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="6.36,8.22 6.36,3.78 14.96,3.78 14.96,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="8.74" y1="8.22" x2="8.74" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="3.19" y1="6.00" x2="6.36" y2="6.00" style="stroke-width: 0.75;"></line><line x1="19.03" y1="6.00" x2="14.96" y2="6.00" style="stroke-width: 0.75;"></line><line x1="3.19" y1="7.11" x2="3.19" y2="4.89" style="stroke-width: 0.75;"></line><line x1="19.03" y1="7.11" x2="19.03" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="6.36,8.22 6.36,3.78 14.96,3.78 14.96,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+harden
+</td>
+<td style="text-align:right;">
+1050
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+5 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="3.45,8.22 3.45,3.78 13.57,3.78 13.57,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="3.45" y1="8.22" x2="3.45" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="2.16" y1="6.00" x2="3.45" y2="6.00" style="stroke-width: 0.75;"></line><line x1="13.57" y1="6.00" x2="13.57" y2="6.00" style="stroke-width: 0.75;"></line><line x1="2.16" y1="7.11" x2="2.16" y2="4.89" style="stroke-width: 0.75;"></line><line x1="13.57" y1="7.11" x2="13.57" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="3.45,8.22 3.45,3.78 13.57,3.78 13.57,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon><circle cx="36.77" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+herhalen
+</td>
+<td style="text-align:right;">
+16856
+</td>
+<td style="text-align:right;">
+320
+</td>
+<td style="text-align:right;">
+4 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="6.78,8.22 6.78,3.78 22.12,3.78 22.12,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="11.95" y1="8.22" x2="11.95" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="6.04" y1="6.00" x2="6.78" y2="6.00" style="stroke-width: 0.75;"></line><line x1="27.86" y1="6.00" x2="22.12" y2="6.00" style="stroke-width: 0.75;"></line><line x1="6.04" y1="7.11" x2="6.04" y2="4.89" style="stroke-width: 0.75;"></line><line x1="27.86" y1="7.11" x2="27.86" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="6.78,8.22 6.78,3.78 22.12,3.78 22.12,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+haken
+</td>
+<td style="text-align:right;">
+1403
+</td>
+<td style="text-align:right;">
+360
+</td>
+<td style="text-align:right;">
+6 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="5.29,8.22 5.29,3.78 14.91,3.78 14.91,8.22 " style="stroke-width: 0.75; stroke: none; fill: #999999;"></polygon><line x1="7.85" y1="8.22" x2="7.85" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="4.47" y1="6.00" x2="5.29" y2="6.00" style="stroke-width: 0.75;"></line><line x1="20.64" y1="6.00" x2="14.91" y2="6.00" style="stroke-width: 0.75;"></line><line x1="4.47" y1="7.11" x2="4.47" y2="4.89" style="stroke-width: 0.75;"></line><line x1="20.64" y1="7.11" x2="20.64" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="5.29,8.22 5.29,3.78 14.91,3.78 14.91,8.22 " style="stroke-width: 0.75; stroke: none; fill: none;"></polygon></g></svg>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>For each of the tokens a concordance line was extracted with 15 words to either side. Bachelor students of Linguistics at KU Leuven were recruited and hired to manually annotate the samples of the selected lemmas. Each of them was tasked with annotating 40 tokens of each of 12 types (at least three nouns, four adjectives and four verbs, plus one of either of the categories)<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Recall that originally there were 8 nouns and 12 verbs.&lt;/p&gt;"><sup>34</sup></a>: a total of 480 tokens<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;A few of them doubled their load and annotated two sets of 480 tokens.&lt;/p&gt;"><sup>35</sup></a>, to annotate in 6 weeks. In total, each of the 9600 tokens was annotated by at least three annotators; 10% of them were annotated by four. Each lemma was split in 6-9 batches of 40 tokens, each of them annotated by a different group of annotators. The annotators were offered an introductory meeting, a video tutorial and written guidelines, but the procedure itself was performed individually.</p>
+<p>Both the lemmas and the batches were assigned randomly, while keeping in mind the part-of-speech distribution. It was the intention to shuffle the samples of each lemma before splitting them into batches, but something went wrong with the code and they were ordered by source; each batch would have mostly tokens of a different newspaper.
+The annotation involved three tasks:</p>
+<ol style="list-style-type: decimal">
+<li>Assign a sense from a predefined set of definitions, namely the Dutch column in Tables <a href="dataset.html#tab:noundefs">4.1</a> through <a href="dataset.html#tab:verbdefs">4.3</a>. If none of the tags apply, select “None of the above” and explain why;</li>
+<li>Express the confidence of the decision in a scale of 6 values;</li>
+<li>Identify the words of the context that helped in the disambiguation.</li>
+</ol>
+<p>Since entering textual information in a spreadsheet can easily lead to typos and inconsistencies and, furthermore, annotating the helpful context words is particularly challenging in such a tool, a user-friendly visual interface was designed that received input from buttons and returned the output in <span class="smallcaps">json</span> format.
+The interface, which is not available in its original form any more, had a menu with the list of lemmas and two tabs: an overview of the concordance lines of the selected type and an annotation workspace (Figure <a href="dataset.html#fig:semann">4.1</a>). The annotation workspace focused on one concordance line<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;The web-based interface interpreted &lt;span class="smallcaps"&gt;html&lt;/span&gt;, of course. As a consequence, the sentence separator &lt;code&gt;&amp;lt;sentence&amp;gt;&amp;lt;/sentence&amp;gt;&lt;/code&gt; was simply ignored; it should have been replaced with &lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt; to properly render the division, especially after headlines, which lack final stops. Interestingly, this rendering also could have read strings such as &lt;code&gt;&amp;amp;quot;&lt;/code&gt; as &lt;code&gt;"&lt;/code&gt;, but at some earlier stage of pre-processing of the corpus all the &lt;code&gt;&amp;amp;&lt;/code&gt; have been transformed into &lt;code&gt;and&lt;/code&gt;, resulting in a number of confusing appearances of &lt;code&gt;andquot;&lt;/code&gt; in the concordance lines.&lt;/p&gt;'><sup>36</sup></a> (or token) at a time, offering
+first the text, then a series of long radio buttons with the definitions and examples, a star rating option for the confidence evaluation, followed by a clickable reproduction of the text, and a text input field for comments. The long radio buttons meant that the annotators had the full definitions and examples at their disposal every time they had to assign a sense for a given lemma, while the final output transformed their decisions into more manageable codes, such as <code>sense_1</code>, <code>sense_2</code>, etc. The clickable concordance lines let them select the context words they deemed most useful to the annotation procedure by simply clicking on them; the program then translated this as an array of positions relative to the target, e.g. <code>["R1", "L2"]</code> if the first word to the right and the second to the left are selected.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;For a few weeks into the annotation, the code had a bug that meant that if a word form was repeated in the concordance line and one of its instances was selected its first occurrence was recorded even if the chosen one was a later co-occurrence. The bug was fixed as soon as it was reported and the rest of the annotators were warned, but not all the resulting errors were corrected.&lt;/p&gt;"><sup>37</sup></a> Finally, the text input field at the bottom was available to leave any sort of comment and was compulsory when “None of the above” was selected.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:semann"></span>
+<img src="assets/img/semann-annotation.jpg" alt="Screenshot of the options in the annotation tool." width="100%"><p class="caption">
+Figure 4.1: Screenshot of the options in the annotation tool.
+</p>
+</div>
+<p>The dataset obtained from this procedure is very rich and interesting for a variety of purposes. For each token we have sense assignment, confidence evaluation and selection of informative cues by at least three different independent annotators, as well as comments on at least the cases which did not receive a sense. Agreement between the annotators can be measured with coefficients such as Fleiss’ <span class="math inline">\(\kappa\)</span> <span class="citation">(<a href="references.html#ref-fleiss_1971" role="doc-biblioref">Fleiss 1971</a>)</span>, illustrated in Figure <a href="dataset.html#fig:agreement">4.2</a>, but the resulting picture may be unnecessarily complex. First, disagreement is susceptible to granularity: annotators might disagree between senses of a noun but not between the homonyms, except for their confusion between idiomatic senses of <em>stof</em> ‘dust’ and its ‘topic, material’ sense. Second, annotators were not very sensitive to grammatical distinctions (e.g. between transitive and intransitive senses), which was a strong reason for disagreement in <em>herstructureren</em>, <em>helpen</em>, <em>haken</em> and <em>herstellen</em>. Third, disagreements were sometimes concentrated on one annotator, who showed a strong preference for a certain sense; as such, they were not an indicator of the ambiguity of the token but of misunderstandings on the part of the annotator. Some annotators exhibited an almost excessive attention to nuances, while others were much less thorough.</p>
+<p>More importantly, for the great majority of the tokens
+(83.8%)
+the majority of the annotators agreed on one tag that remained as the official sense for that token.
+After gathering and exploring the data, the tokens were reread by me and a final decision was made for their sense tags. Figure <a href="dataset.html#fig:final-agreement">4.3</a> shows the number of tokens with full agreement, a majority agreement (i.e. only one annotator disagreed) or no agreement and whether the same chosen sense was kept in the final annotation, another tag was applied or the token was removed (e.g. tokens of <em>heet</em> that corresponded to the verb <em>heten</em>). The <code>Other</code> category includes new senses suggested by the annotators themselves as well as corrections from misunderstandings, such as the second original sense of <em>blik</em>, which annotators interpreted in different ways and was actually not attested in the dataset. The very few cases of <code>Same</code> with no agreement were tokens annotated by four annotators where two of them selected the senses that remained, while the other two disagreed.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:agreement"></span>
+<img src="phdThesis_files/figure-html/agreement-1.png" alt="Agreement between annotators per batch per lemma, computed with irr::kappam.fleiss() (Gamer et al. 2019)." width="672"><p class="caption">
+Figure 4.2: Agreement between annotators per batch per lemma, computed with <code>irr::kappam.fleiss()</code> <span class="citation">(<a href="references.html#ref-R-irr" role="doc-biblioref">Gamer et al. 2019</a>)</span>.
+</p>
+</div>
+
+<div class="figure">
+<span style="display:block;" id="fig:final-agreement"></span>
+<img src="phdThesis_files/figure-html/final-agreement-1.png" alt="Number of tokens per lemma with full, partial (majority) or no agreement, split by whether the majority sense was kept or changed. Removed tokens are not included." width="672"><p class="caption">
+Figure 4.3: Number of tokens per lemma with full, partial (majority) or no agreement, split by whether the majority sense was kept or changed. Removed tokens are not included.
+</p>
+</div>
+<p>In addition, the final sense distribution is not significantly different from that in the much smaller pilot samples. Distribution across batches, instead, was affected by regional variation. For example, Belgian sources include more sports-related articles than the Netherlandic sources, leading to variation in the sense distribution of lemmas with such a sense (<em>diskwalificeren</em> ‘to disqualify,’ <em>haken</em> ‘to make someone trip’ and <em>horde</em> ‘hurdle’) across regions. This discrepancy in distribution across batches could have been avoided if the tokens had been properly shuffled.</p>
+<p>Around 4% of all the assigned tags where “None of the above,” with a clearly uneven distribution. The lemmas with the largest amount of were <em>haken</em>, with 117 tokens in which three annotators chose “None of the above” and 72 in which two of them did. <em>Heet</em> and <em>harden</em> follow with 69 and 90 tokens with 3 such tags and 14 and 10 with two. Many of these were due to wrong lemmatization: the concordance of <em>haken</em> had many instances of <em>afhaken</em> ‘to stop’ or <em>met haken en ogen</em>, an idiomatic expression in which it is a noun; the concordances of <em>heet</em> and <em>harden</em> included instances of the verb <em>heten</em> ‘to call, to be named’ and the adjective <em>hard</em> respectively. In a similar way, many of the tokens in the concordance of <em>heffen</em> were instances of <em>opheffen</em> ‘to lift/to cancel,’ but the annotators did not always catch these cases. The verbs <em>afhaken</em> and <em>opheffen</em> are separable verbs in Dutch: in some constructions, the prefix is separated from the root, so that a syntactic parser might confuse them with a different verb and a preposition. Next to these issues, annotators assigned “None of the above” in cases where the tokens did not match any of the suggested senses, especially in cases of idiomatic expressions such as <em>hete aardappel</em> ‘hot potato.’ All these annotations where classified in four categories: <code>wrong_lemma</code>, for the cases of wrongly selected concordance lines, was assigned to 413; <code>not_listed</code>, assigned 421 times, indicated that the lemma was correct but none of the suggestions applied; <code>unclear</code> (240 times) was used when the token could not be parsed by the annotator, and <code>between</code> (45 cases) referred to doubt between two or more of the given options. These different classes informed later decisions such as whether to add or remove senses or tokens.</p>
+<p>Tokens were removed for different reasons. Next to the cases where the concordance line did not belong to begin with (including adverbial uses of the adjectives), there were some indecipherable tokens, extremely infrequent senses (e.g. 4, 5 tokens out of 250) and duplicated tokens. In total, 424 tokens were removed, 109 of which belonged to <em>haken</em>.</p>
+<p>Confidence values were explored but not used, because they tend to be similar across batches, lemmas and senses, with a tendency towards the highest values and variation across annotators instead: what is low confidence for some of them is high confidence for others. Figure <a href="dataset.html#fig:confidence">4.4</a> breaks this down in terms of the degree of agreement and whether the assigned tag matched one of the senses offered or not. Note that the top facet, “None of the above,” has much lower counts than the lower facet. We would expect confidence ratings to be lower for annotations that do not agree with the other votes for the same token and, in relative terms, that is the case. Confidence assignment to a “None of the above” tag is ambiguous: some annotators tend to give them the minimum confidence because they are not confident about the meaning of the concordance line, while others assign a high value because they are confident that none of the other options applies.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:confidence"></span>
+<img src="phdThesis_files/figure-html/confidence-1.png" alt="Distribution of confidence values across annotations, by whether the annotators agreed with another in the same token and by whether they selected a sense or “None of the above.”" width="672"><p class="caption">
+Figure 4.4: Distribution of confidence values across annotations, by whether the annotators agreed with another in the same token and by whether they selected a sense or “None of the above.”
+</p>
+</div>
+<p>The selection of cues was consulted when defining parameter settings (Section <a href="workflow.html#params">2.3</a>): if two annotators agreed on both the sense tag and a context word for a given token, that context word was considered an official <strong>cue</strong> for that sense. From the relative position representing the cue in the output of the annotation tool, other information available in the corpus could be extracted and counted, such as the lemma of the context word, its dependency relation (or distance) to the target and its <span class="smallcaps">bow</span> distance to the target. For example, Tables <a href="dataset.html#tab:heilzaamdep">4.5</a> and <a href="dataset.html#tab:heilzaamcues">4.6</a> list the most frequent dependency paths, lemmas and window sizes across the official cues of <em>heilzaam</em> ‘healthy/beneficial’ for each of its senses. As we will see again in Section <a href="semantic-interpretation.html#heilzaam">6.2.1</a>, this lemma is characterised by frequent nouns modified by the target, namely <em>werking</em> ‘effect,’ <em>effect</em> and <em>invloed</em> ‘influence,’ which are ambiguous in terms of the senses of <em>heilzaam</em>: in a sentence such as <em>de heilzame werking van look</em> ‘the healing power of garlic,’ <em>garlic</em> is a better cue in the ‘health/beneficial’ distinction than <em>werking</em> ‘effect, power.’ Nonetheless, annotators did select these context words as cues for both senses, not realising that they were not distinctive of one or the other sense. The pattern fulfilled by <em>garlic</em> in this example was indeed captured by some cues, as shown in the third line of Table <a href="dataset.html#tab:heilzaamdep">4.5</a>, but it is much less frequent.</p>
+
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:heilzaamdep">Table 4.5: </span>Four most frequent dependency paths among the cues of <em>heilzaam</em>, with counts per sense. <code>NA</code> indicates that the cue is not in the sentence of the target. In the path, <code>CW</code> stands for the cue and <code>T</code> stands for the target: the head is at the left of <span class="math inline">\(\rightarrow\)</span> and its dependents are to the right, preceded by the name of the dependency relation.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+path
+</th>
+<th style="text-align:left;">
+examples
+</th>
+<th style="text-align:right;">
+beneficial
+</th>
+<th style="text-align:right;">
+healthy
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 11em; ">
+CW <span class="math inline">\(\rightarrow\)</span> mod:T
+</td>
+<td style="text-align:left;width: 11em; ">
+<strong>heilzame</strong> <em>werking</em> ’healing <em>power</em>
+</td>
+<td style="text-align:right;width: 3em; ">
+60
+</td>
+<td style="text-align:right;width: 3em; ">
+41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 11em; ">
+NA
+</td>
+<td style="text-align:left;width: 11em; ">
+Different sentence
+</td>
+<td style="text-align:right;width: 3em; ">
+13
+</td>
+<td style="text-align:right;width: 3em; ">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 11em; ">
+werking <span class="math inline">\(\rightarrow\)</span> [mod:T,mod:van <span class="math inline">\(\rightarrow\)</span> obj1:CW]
+</td>
+<td style="text-align:left;width: 11em; ">
+de <strong>heilzame</strong> werking van <em>look</em> ’the healing power of <em>garlic</em>
+</td>
+<td style="text-align:right;width: 3em; ">
+8
+</td>
+<td style="text-align:right;width: 3em; ">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 11em; ">
+ben <span class="math inline">\(\rightarrow\)</span> [predc:T,mod:voor <span class="math inline">\(\rightarrow\)</span> obj1:CW]
+</td>
+<td style="text-align:left;width: 11em; ">
+look is <strong>heilzaam</strong> voor de <em>gezondheid</em> ’garlic is beneficial for the <em>health</em>
+</td>
+<td style="text-align:right;width: 3em; ">
+7
+</td>
+<td style="text-align:right;width: 3em; ">
+1
+</td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:heilzaamcues">Table 4.6: </span>Six most frequent lemmas and window spans among the cues of <em>heilzaam</em>, with counts per sense.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+CW
+</th>
+<th style="text-align:right;">
+healthy
+</th>
+<th style="text-align:right;">
+beneficial
+</th>
+<th style="text-align:right;">
+BOW
+</th>
+<th style="text-align:right;">
+healthy
+</th>
+<th style="text-align:right;">
+beneficial
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+werking/noun
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;border-right:1px solid;">
+12
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+effect/noun
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;border-right:1px solid;">
+9
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+38
+</td>
+<td style="text-align:right;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gezondheid/noun
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;border-right:1px solid;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lichamelijk/adj
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;border-right:1px solid;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+medisch/adj
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;border-right:1px solid;">
+0
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+economie/noun
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;border-right:1px solid;">
+4
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+21
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="ann-summary" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Summary<a class="anchor" aria-label="anchor" href="#ann-summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this chapter we looked at the dataset used to test and explore the workflow and the visualization tools. The selection of lemmas was described along with the semantic phenomena they would allow us to test. Afterwards, the annotation procedure was delineated, from the extraction of concordances to the assignment of senses, confidence values and cues.</p>
+<p>As was mentioned before, for each of the lemmas, 200-212 models were generated following the workflow described in Chapter <a href="workflow.html#workflow">2</a>. The cues selected by the annotators informed some of the decisions involved in the parameter settings. The sense annotation was applied to assess how well the models performed at disambiguation: initially, we did not try to match senses to clustering solutions, but looked for a spatial configuration that might hide more subtle relationships. As a few examples in Chapter <a href="nephovis.html#nephovis">3</a> have shown, this is much more straightforward in some lemmas than in others.</p>
+<p>The range of semantic phenomena was meant to provide different possible aspects of meaning that distributional models might be able to capture. From a lexicological point of view, “similarity of distribution correlates with similarity of meaning” is not enough. What is similarity of meaning?<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Sahlgren restricts the notion of meaning, as it can be found in distributional models, to “the meanings that are in the text” &lt;span class="citation"&gt;(&lt;a href="references.html#ref-sahlgren_2008" role="doc-biblioref"&gt;2008: 49&lt;/a&gt;)&lt;/span&gt; and distinguishes between models that capture paradigmatic and syntagmatic relationships (without any further distinctions). Even if we &lt;em&gt;could&lt;/em&gt; be satisfied with such an answer, it only applies to type-level models.&lt;/p&gt;'><sup>38</sup></a> Does this mean that more granular distinctions, such as senses within homonyms, will be more difficult to capture than coarser distinctions, i.e. the homonyms themselves? Are metonymy, metaphor and specialization modelled by the same parameter settings? Can they be discriminated, can we fine-tune models to capture one or the other? And what is the role of constructions: does argument structure interfere in the modelling of senses?
+These were the questions that the case studies presented here tried to address, and the following part of this dissertation will present the answers.</p>
+
+</div>
+</div>
+
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></div>
+<div class="next"><a href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dataset"><span class="header-section-number">4</span> Case studies</a></li>
+<li>
+<a class="nav-link" href="#selection"><span class="header-section-number">4.1</span> The lemmas</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#nouns"><span class="header-section-number">4.1.1</span> The nouns</a></li>
+<li><a class="nav-link" href="#adjs"><span class="header-section-number">4.1.2</span> The adjectives</a></li>
+<li><a class="nav-link" href="#verbs"><span class="header-section-number">4.1.3</span> The verbs</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#extraction"><span class="header-section-number">4.2</span> The dataset</a></li>
+<li><a class="nav-link" href="#ann-summary"><span class="header-section-number">4.3</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/montesmariana/phdThesis/blob/master/04-case_studies.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/montesmariana/phdThesis/edit/master/04-case_studies.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Cloudspotting</strong>: Visual analytics for distributional semantics" was written by Mariana Montes. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

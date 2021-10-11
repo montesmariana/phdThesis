@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 The language of clouds | Cloudspotting</title>
+<meta name="author" content="Mariana Montes">
+<meta name="description" content="In linguistic terms, clouds may provide us with different types of information, both at syntagmatic and paradigmatic level. At the syntagmatic level, they may illustrate cases of collocation,...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 6 The language of clouds | Cloudspotting">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/assets/covers/front-cover.png">
+<meta property="og:description" content="In linguistic terms, clouds may provide us with different types of information, both at syntagmatic and paradigmatic level. At the syntagmatic level, they may illustrate cases of collocation,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 The language of clouds | Cloudspotting">
+<meta name="twitter:description" content="In linguistic terms, clouds may provide us with different types of information, both at syntagmatic and paradigmatic level. At the syntagmatic level, they may illustrate cases of collocation,...">
+<meta name="twitter:image" content="/assets/covers/front-cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Visual analytics for distributional semantics">Cloudspotting</a>:
+        <small class="text-muted">Visual analytics for distributional semantics</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">The cloudspotter’s toolkit</li>
+<li><a class="" href="workflow.html"><span class="header-section-number">2</span> From corpora to clouds</a></li>
+<li><a class="" href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></li>
+<li><a class="" href="dataset.html"><span class="header-section-number">4</span> Case studies</a></li>
+<li class="book-part">The cloudspotter’s handbook</li>
+<li><a class="" href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></li>
+<li><a class="active" href="semantic-interpretation.html"><span class="header-section-number">6</span> The language of clouds</a></li>
+<li><a class="" href="no-optimal.html"><span class="header-section-number">7</span> No sky is the best sky</a></li>
+<li class="book-part">The cloudspotter’s cheatsheet</li>
+<li><a class="" href="conclusions-and-guidelines.html"><span class="header-section-number">8</span> Conclusions and guidelines</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/montesmariana/phdThesis">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="semantic-interpretation" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> The language of clouds<a class="anchor" aria-label="anchor" href="#semantic-interpretation"><i class="fas fa-link"></i></a>
+</h1>
+<p>In linguistic terms, clouds may provide us with different types of information, both at syntagmatic and paradigmatic level. At the syntagmatic level, they may illustrate cases of collocation, colligation, semantic preference or even tendencies towards the open-choice principle. The paradigmatic level, on the other hand, codes the relationship between the clusters and dictionary senses, from heterogeneous clusters to those that represent (proto)typical contexts of a sense.</p>
+<p>Given a naive understanding of the correlation between context and meaning, we would mostly expect, from the paradigmatic perspective, clusters that equal senses: each cloud would cover all the occurrences of a dictionary sense and only the occurrences of that sense. However, even if we relax the requirements, expecting <em>mostly</em> homogeneous clusters covering <em>most</em> of the <em>clustered</em> tokens, this does not arise often. Instead, even homogeneous clusters only group typical contexts within a sense, which, at the syntagmatic level, tend to correspond to collocations. In any case, as we will see in this chapter, the full picture is more complex, and we can obtain much richer information than just lexical collocations representing typical contexts within a sense.</p>
+<p>In this chapter, we will look into the types of syntagmatic and paradigmatic information that the clouds offer. Section <a href="semantic-interpretation.html#infotypes">6.1</a> starts with an overview of the different levels in each dimension and mentions a few examples of their interaction in a contingency table. We then elaborate with more detailed examples of each in situation in sections <a href="semantic-interpretation.html#collocation">6.2</a> through <a href="semantic-interpretation.html#openchoice">6.5</a>, and round up with an overall summary in Section <a href="semantic-interpretation.html#theo1-summary">6.6</a>.</p>
+<div id="infotypes" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Types of information<a class="anchor" aria-label="anchor" href="#infotypes"><i class="fas fa-link"></i></a>
+</h2>
+<p>The linguistic information obtainable from the clusters can be understood from the syntagmatic perspective as co-occurrence patterns of different kinds, and from the paradigmatic perspective in relation to dictionary senses. Both dimensions interlace, resulting in a number of specific phenomena that we may encounter. The relationship is summarized in Table <a href="semantic-interpretation.html#tab:colsem">6.1</a>; the syntagmatic or collocational dimension is represented by the columns and discussed in Section <a href="semantic-interpretation.html#collocationally">6.1.1</a>, and the paradigmatic or semantic dimension is represented by the rows and discussed in Section <a href="semantic-interpretation.html#semantically">6.1.2</a>.</p>
+<div id="collocationally" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> Collocational perspective<a class="anchor" aria-label="anchor" href="#collocationally"><i class="fas fa-link"></i></a>
+</h3>
+<p>In order to interpret the different levels of information that a syntagmatic or collocational perspective may offer us, we can make use of some theoretical concepts from the foundations of Corpus Linguistics. Some of the terms were already coined by <span class="citation"><a href="references.html#ref-firth_1957a" role="doc-biblioref">Firth</a> (<a href="references.html#ref-firth_1957a" role="doc-biblioref">1957</a>)</span>, but they were integrated in a framework for corpus analysis by <span class="citation"><a href="references.html#ref-sinclair_1998" role="doc-biblioref">Sinclair</a> (<a href="references.html#ref-sinclair_1998" role="doc-biblioref">1998: 124–125</a>)</span> and other publications. The framework includes, next to the node, i.e. our targets, four key components: one obligatory — semantic prosody, which will not be discussed here — and three more that will help us make sense of the observed output of the clouds: collocation, colligation and semantic preference.</p>
+<p>In their simplest form, <strong>collocations</strong> are defined as the co-occurrence of two words within a certain span <span class="citation">(<a href="references.html#ref-firth_1957a" role="doc-biblioref">Firth 1957: 13</a>; <a href="references.html#ref-sinclair_1991" role="doc-biblioref">Sinclair 1991: 170</a>; <a href="references.html#ref-sinclair_1998" role="doc-biblioref">Sinclair 1998: 15</a>; <a href="references.html#ref-stubbs_2009" role="doc-biblioref">Stubbs 2009: 124</a>)</span>. They might be further filtered by the statistical significance of their co-occurrence frequency or by their strength of attraction; such as <span class="smallcaps">pmi</span> <span class="citation">(see <a href="references.html#ref-mcenery.hardie_2012" role="doc-biblioref">McEnery &amp; Hardie 2012: 122–133</a> for a discussion)</span>. Even though a collocational relationship is asymmetric, that is, the co-occurrence with a more frequent word B may be more important for the less frequent word A than for B, the measures used to described it are most often symmetrical <span class="citation">(<a href="references.html#ref-gries_2013" role="doc-biblioref">Gries 2013</a>)</span>.
+When it comes to the interpretation of clouds, this category takes a different form and is definitely asymmetric. Considering models built around a target term or node, frequent, distinct context words are bound to make the tokens that co-occur with them similar to each other and different from the rest: they will generate clusters. Such context words do tend to have a high <span class="smallcaps">pmi</span> with the target, but, crucially, they stand out because they are a salient feature among the occurrences of the target, independently from how salient the target would be when modelling the collocate.
+Concretely, we are talking about clusters defined by one context word or a group of co-occurring context words with a high <span class="math inline">\(F\)</span>-score in relation to the cluster: these context words can be interpreted as collocates of the target.
+Unlike in most collocational studies, where you study a list of words that co-occur (significantly) frequently with your target node, vector space models allow you to see whether these context words exclude each other or also co-occur within the context of the target. In fact, we might even find more complex collocational patterns, including multiple context words.</p>
+<p>Whereas collocation is understood as a relationship between words (and, traditionally, as a relationship between word forms), <strong>colligation</strong> is defined as a relationship between a word and grammatical categories or syntactic patterns <span class="citation">(<a href="references.html#ref-firth_1957a" role="doc-biblioref">Firth 1957: 14</a>; <a href="references.html#ref-sinclair_1998" role="doc-biblioref">Sinclair 1998: 15</a>; <a href="references.html#ref-stubbs_2009" role="doc-biblioref">Stubbs 2009: 124</a>)</span>. In order to capture proper colligations as clusters, we would need models in which parts of speech or maybe dependency patterns are used as features, which is not the case in these studies. However, by rejecting a strict separation between syntax and lexis
+(for everything is semantics in Cognitive Linguistics),
+we can make a grammatically-oriented interpretation of collocations with function words, such as frequent prepositions or the passive auxiliary. Given this caveat, we will talk about lexically instantiated colligations when we encounter clusters dominated by items that indicate a specific grammatical function.</p>
+<p><strong>Semantic preference</strong> is defined as the relationship between a word and semantically similar words <span class="citation">(<a href="references.html#ref-sinclair_1998" role="doc-biblioref">Sinclair 1998: 16</a>; <a href="references.html#ref-stubbs_2009" role="doc-biblioref">Stubbs 2009: 125</a>; <a href="references.html#ref-mcenery.hardie_2012" role="doc-biblioref">McEnery &amp; Hardie 2012: 138–140</a>)</span>. Within traditional collocational studies, this implies grouping collocates, that is, already frequently co-occurring items, based on semantic similarity, much as colligation can be the result of grouping collocates based on their grammatical categories. Compared to collocation, its identification requires more interpretation on the part of the researcher.
+In the interpretation of individual clusters, semantic preference appears in clusters that are not dominated by a single collocate or group of co-occurring collocates, but are instead defined by a group of infrequent context words with similar type-level vectors and for which we can give a semantic interpretation. (Cases of similar context words without a semantic interpretation are quite rare, and normally involve pronouns or adverbs.) This is a key contribution of token-level distributional models that may remain inaccessible in traditional collocational studies: next to powerful collocates that group virtually identical occurrences, we can identify patterns in which the context words are not the exact same but are similar enough to emulate a collocate.</p>
+<p>The three notions described above assume identifiable patterns: occurrences that are similar enough to a substantial number of other occurrences, and different enough from other occurrences, to generate a cluster. Going back to <span class="citation"><a href="references.html#ref-sinclair_1991" role="doc-biblioref">Sinclair</a> (<a href="references.html#ref-sinclair_1991" role="doc-biblioref">1991</a>)</span>’s founding notions, we are assuming the domination of the idiom principle:</p>
+<blockquote>
+<p>…a language user has available to him or her a large number of semi-preconstructed phrases that constitute single choices, even though they might appear to be analysable into segments. <span class="citation">(<a href="references.html#ref-sinclair_1991" role="doc-biblioref">Sinclair 1991: 110</a>)</span></p>
+</blockquote>
+<p>The opposite situation would be given by the open-choice principle:</p>
+<blockquote>
+<p>At each point where a unit is completed (a word or a phrase or a clause), a large range of choice opens up and the only restraint is grammaticalness. <span class="citation">(<a href="references.html#ref-sinclair_1991" role="doc-biblioref">Sinclair 1991: 109</a>)</span></p>
+</blockquote>
+<p>The idiom principle and the open-choice principle are supposed to organise the lexicon and the production of utterances. But if, instead, they are understood as poles in the continuum of collocational behaviour, they can help us interpret the variety of shapes that we encounter within and across lemmas. Lemmas in which we tend to find identifiable clusters, with strong collocations, lexically instantiated colligations or sets with semantic preference, can be said to respond to the idiom principle. In contrast, lemmas that exhibit large proportions of noise tokens, and small, diffuse clusters (Cirrus clouds, mostly), can be said to approximate the open-choice principle. They don’t necessarily lack structure, but whatever structure they have is less clear than for other lemmas, and harder to capture with these models.
+With this reasoning, next to the three categories described above, we include <strong>near-open choice</strong> as a fourth category, meant to include the clouds that do not conform to either of the clearer formats.</p>
+</div>
+<div id="semantically" class="section level3" number="6.1.2">
+<h3>
+<span class="header-section-number">6.1.2</span> Semantic perspective<a class="anchor" aria-label="anchor" href="#semantically"><i class="fas fa-link"></i></a>
+</h3>
+<p>In terms of the relationship between the <span class="smallcaps">hdbscan</span> clusters and the manually annotated dictionary senses, we can initially distinguish between heterogeneous clusters, i.e. those that do not exhibit a clear preference for one sense, and homogeneous clusters. Secondly, the homogeneous clusters may cover all the (clustered) tokens of a given sense, or only part of it, i.e. a (proto)typical context of the sense. Additionally, said (proto)typical context may highlight a certain aspect or dimension of the meaning of the target, different from that highlighted by a different context.</p>
+<p>As a result, the semantic dimension covers four different types of situations. The first one, i.e. heterogeneous clusters or clusters with multiple senses, would normally be interpreted as bad modelling, if we consider the senses a gold standard and the target of our models. It is also the most frequent interpretation of the near-open choice clouds. Nonetheless, they can also occur in other kinds of clouds, and as such illustrate the mismatch between contextual and semantic structure: clear contextual patterns do not imply dictionary senses.
+The second type of situation, i.e. clusters that perfectly match senses, is the ideal situation and what we would initially expect from distributional models. Instead, it is quite rare and often indicative of fixed expressions or very particular meanings.
+Rather than full senses, contextual patterns tend to represent (proto)typical contexts of a sense.</p>
+<p>As it was already described in Section <a href="intro.html#prototypicality">1.2.2</a>, the notion of prototypicality in Cognitive Semantics is related to the principle that categories need not be discrete and uniform and to its application to the semasiological structure of lemmas and their meanings <span class="citation">(<a href="references.html#ref-geeraerts_1988" role="doc-biblioref">Geeraerts 1988</a>; <a href="references.html#ref-geeraerts_1997" role="doc-biblioref">Geeraerts 1997</a>)</span>. At the extensional level, which in this case covers the domains or contexts of application of our target item, categories may be defined by a varied set of overlapping features (i.e. context words) and have fuzzy boundaries and/or degrees of membership. The central or more prototypical members of this category exhibit more of these overlapping features; the fewer features co-occur with an item, the weaker its connection to the category.
+As they appear in the clouds, a sense may exhibit one typical context that is much more frequent and clear that the rest, or multiple typical contexts with similar frequencies. Unfortunately, neither t-<span class="smallcaps">sne</span> nor <span class="smallcaps">hdbscan</span> provide a reliable mapping between quantitative properties and relative centrality <em>of</em> the clusters. In contrast, we can identify central cases within an <span class="smallcaps">hdbscan</span> cluster based on their membership probability, which, as briefly mentioned before, is the normalized core distance within a cluster. Items with a higher membership probability lie in a denser area of an <span class="smallcaps">hdbscan</span> cluster, and therefore have more items similar to it than the items in sparser areas. They do not necessarily occur in the euclidean centre in the t-<span class="smallcaps">sne</span> plot, but might form one or more dense cores closer towards an edge instead. In addition, we can distinguish between rather uniform clusters, in which all members have a similar weight, from more diverse clusters with dense cores and sparse peripheries.</p>
+<p>Extensional prototypicality works at multiple levels. We could identify (proto)typical instances/contexts of a lemma, of a particular sense, or of a dimension of a sense. In this last case, we run into an interaction with intensional prototypicality. On the one hand, we find multiple extensionally prototypical patterns, i.e. two or more groups of attestations that instantiate different patterns. On the other, each of these patterns correlates with a different semantic dimension or aspect, wich means that that meaning dimension is salient (intensional prototypicality) to that pattern.</p>
+</div>
+<div id="interaction-between-dimensions" class="section level3" number="6.1.3">
+<h3>
+<span class="header-section-number">6.1.3</span> Interaction between dimensions<a class="anchor" aria-label="anchor" href="#interaction-between-dimensions"><i class="fas fa-link"></i></a>
+</h3>
+<p>As we can see in Table <a href="semantic-interpretation.html#tab:colsem">6.1</a>, the interaction between the four levels of each dimension result in a 4x4 table with all but two cells filled with at least one example. Naturally, not all the combinations are equally frequent or interesting; the most salient one is certainly the collocation that indicates the prototypical context of a sense. But this does not mean that the rest of the phenomena should be ignored: we can still find interesting and useful information with other shapes of clouds, other contextual patterns, other semantic structure.</p>
+<p>In the following sections, we will look in detail at examples of each attested combination. Each section will focus on one level of the collocational dimension, and will be further subdivided by the levels of the semantic dimension.
+The examples will be illustrated with scatterplots in which the colours represent <span class="smallcaps">hdbscan</span> clusters, the shapes indicate manually annotated dictionary senses, and the transparency, the <span class="math inline">\(\varepsilon\)</span> value from <span class="smallcaps">hdbscan</span>. The senses are not specified in the legends, but the clusters will be named with the context word that represents it best (see Section <a href="shapes.html#cloud-types">5.2</a>). Textual reproductions of some tokens will also be offered; in all cases the target will be in bold face and the context words captured by the relevant model, in italics. The name of the newspaper, the date of publication and the number of the article will follow the original text, and the following paragraph will reproduce the English translation between simple inverted commas.</p>
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:colsem">Table 6.1: </span>Contingency table between the collocational and semantic perspectives, with a few examples.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Semantic interpretation
+</th>
+<th style="text-align:left;">
+Single collocation
+</th>
+<th style="text-align:left;">
+Lexically instantiated colligation
+</th>
+<th style="text-align:left;">
+Semantic preference
+</th>
+<th style="text-align:left;">
+Near-open choice
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Heterogeneous clusters
+</td>
+<td style="text-align:left;">
+<em>heilzaam</em> ‘healthy/beneficial’ + <em>werking</em> ‘effect’ (and relatives)
+</td>
+<td style="text-align:left;">
+<em>herstructureren</em> ‘to restructure’ + passive aux. <em>word</em> (part of the two transitive senses); <em>helpen</em> ‘to help’ + <em>om</em> &amp; <em>te</em> ‘in order to’
+</td>
+<td style="text-align:left;">
+<em>geestig</em> ‘witty’ + <em>wijze</em>/<em>manier</em> ‘manner’/various adverbs; <em>grijs</em> ‘grey’ + colours and clothes; <em>herroepen</em> ‘to recant/to void’ + <em>uitspraak</em> ‘statement/verdict’ &amp; juridical field
+</td>
+<td style="text-align:left;">
+<em>blik</em> ‘gaze/tin’ - <em>werpen</em> ‘to throw,’ <em>richten</em> ‘to aim’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dictionary clusters
+</td>
+<td style="text-align:left;">
+<em>staal</em> ‘sample’ + <em>representatief</em> ‘representative’; <em>schaal</em> ‘dish of a scale’ + <em>gewicht</em> ‘weight’; <em>schaal</em> ‘scale’ + <em>Richter</em>
+</td>
+<td style="text-align:left;">
+<em>herhalen</em> ‘to repeat’ + <em>zich</em> ‘itself’; <em>hoop</em> ‘hope/heap,’ in the one model that gets the senses right
+</td>
+<td style="text-align:left;">
+<em>haken</em> ‘to make trip/to crochet’ + sports terms or hobby terms; <em>schaal</em> ‘scale’ + earthquake-topic or kitchen-topic
+</td>
+<td style="text-align:left;">
+<em>huldigen</em> ‘to honour’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+(Proto)typical context
+</td>
+<td style="text-align:left;">
+<em>heffen</em> ‘to levy/to lift’ and all its collocates (except for <em>hand</em>/<em>arm</em>); <em>hachelijk</em> ‘dangerous/critical’ and its collocates
+</td>
+<td style="text-align:left;">
+<em>diskwalificeren</em> ‘to disqualify’ + passive aux. <em>word</em>; <em>helpen</em> ‘to help’ + different pronouns/prepositions (<em>bij</em>, <em>aan</em>) as only remaining context words; <em>herinneren</em> ‘to remember/to remind’ + <em>(er)aan</em> ‘of (it),’ <em>ik</em> ‘I’ &amp; reflexive pron. <em>me</em>, <em>zich</em>
+</td>
+<td style="text-align:left;">
+<em>grijs</em> ‘grey’ + cars; <em>heet</em> ‘hot’ + food; <em>hemels</em> ‘heavenly’ + music; <em>dof</em> ‘dull’ + sounds
+</td>
+<td style="text-align:left;">
+-Not relevant-
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+(Proto)typical context with profiling
+</td>
+<td style="text-align:left;">
+<em>stof</em> ‘substance’ and its adjectives; <em>horde</em> ‘horde’
+</td>
+<td style="text-align:left;">
+<em>horde</em> ‘horde’ + <em>journalist</em> &amp; <em>door</em> ‘by’
+</td>
+<td style="text-align:left;">
+<em>geldig</em> ‘valid’ + tickets &amp; dates / identity documents &amp; <em>voorleggen</em> ‘submit’ /<em>bezitten</em> ‘possess’; <em>staal</em> ‘steel’ + <em>ton</em> &amp; <em>milioen</em> ‘million’ / materials
+</td>
+<td style="text-align:left;">
+-Not relevant-
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="collocation" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Collocation<a class="anchor" aria-label="anchor" href="#collocation"><i class="fas fa-link"></i></a>
+</h2>
+<p>The first level of the collocational or syntagmatic dimension is that of the collocation: clusters dominated by one context word or a group of co-occurring context words. They are most likely to be found as Cumulus clouds, but also as Stratocumulus clouds or, very rarely, Cirrus clouds.</p>
+<div id="heilzaam" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Heterogeneous clouds<a class="anchor" aria-label="anchor" href="#heilzaam"><i class="fas fa-link"></i></a>
+</h3>
+<p>Albeit infrequently, collocations might transcend senses, that is, they might be frequent and even distinctive of a lemma without showing a preference for a specific sense.
+The most clear example is found in <em>heilzaam</em> ‘healthy/beneficial,’ which can mean that something is literally beneficial for the health or be applied, metaphorically, to other domains as well. Its clusters tend to be dominated by one context word that is not indicative of any one sense: mostly <em>werking</em> ‘effect’ and <em>effect</em>, adding in some models the less frequent <em>invloed</em> ‘influence.’ Some examples of are shown in (5) and (6) for the ‘healthy’ sense and (7) and (8) for the ‘beneficial’ sense.</p>
+<ol start="5" class="example" style="list-style-type: decimal">
+<li>
+<p>Het lypoceen, een <em>bestanddeel</em> dat bijdraagt aan <em>de</em> rode <em>kleur</em>, <em>zou</em> <em>een</em> <strong>heilzame</strong> <em>werking</em> <em>hebben</em> <em>op</em> <em>de</em> prostaat. (<em>De Volkskrant</em>, 2003-11-08, Art. 14)</p>
+<p>‘Lypocene, a <em>component</em> that contributes to <em>the</em> red <em>colour</em>, <em>would</em> <em>have</em> <em>a</em> <strong>healing</strong> <em>power</em> <em>on</em> <em>the</em> prostate.’</p>
+</li>
+<li>
+<p>Pierik <em>beschrijft</em> <em>de</em> <strong>heilzame</strong> <em>effecten</em> <em>van</em> <em>alcoholgebruik</em> <em>op</em> <em>de</em> bloedvaten en <em>de</em> bloeddruk, op mogelijke beroerten, galstenen, lichaamsgewicht, vruchtbaarheid, zwangerschap, botontkalking, kanker, verkoudheid, suikerziekte en seniele dementie. (<em>NRC Handelsblad</em>, 1999-11-27, Art. 148)</p>
+<p>‘Pierik <em>describes</em> <em>the</em> <strong>healing</strong> <em>powers</em> <em>of</em> <em>alcohol consumption</em> <em>on</em> [<em>the</em>] blood vessels and [<em>the</em>] blood pressure, on potential strokes, gallstones, body weight, fertility, pregnancy, osteoporosis, cancer, the cold, diabetes and senile dementia.’</p>
+</li>
+<li>
+<p>Voor politici met dadendrang een gruwel, maar als men de casus van de Betuwelijn nog <em>voor</em> <em>de</em> <em>geest</em> haalt dan <em>zou</em> <em>het</em> advocatensysteem zijn <strong>heilzame</strong> <em>werking</em> <em>hebben</em> <em>kunnen</em> <em>bewijzen</em>. (<em>De Volkskrant</em>, 2002-03-29, Art. 79)</p>
+<p>‘For politicians with thirst for action it is an abomination, but when one recalls (lit. `brings <em>to the spirit</em>’) the case of the Betuwe line then <em>the</em> lawyer system <em>would</em> have been <em>able</em> to <em>prove</em> its <strong>beneficial</strong> <em>effect</em>.’</p>
+</li>
+<li>
+<p><em>De</em> <em>kwestie</em> <em>heeft</em> <em>alvast</em> één <strong>heilzaam</strong> <em>effect</em>: <em>het</em> <em>profiel</em> <em>van</em> commerciële boekenprijzen staat opnieuw ter discussie. (<em>De Standaard</em>, 1999-03-27, Art. 133)</p>
+<p>‘<em>The</em> <em>matter</em> <em>certainly</em> <em>has</em> a <strong>beneficial</strong> <em>effect</em>: <em>the</em> <em>profile</em> <em>of</em> commercial book prizes is again under discussion.’</p>
+</li>
+</ol>
+<p>The model is shown in Figure <a href="semantic-interpretation.html#fig:heilzaam">6.1</a>: the clusters dominated by <em>werking</em> ‘effect,’ <em>effect</em> and <em>invloed</em> ‘influence’ are shown in yellow, light blue and green, respectively, and the manually annotated senses are mapped to the shapes: the literal ‘healthy’ sense is coded in circles, and the general sense, in triangles. All but the <em>invloed</em> ‘invloed’ cluster, a Cumulus, are Stratocumulus clouds.</p>
+<p>Within the <em>werking</em> ‘effect’ cluster, the literal tokens (as in (5)) are the majority and tend towards the left side of the cloud, whereas the general ones (like (7)) tend towards the right side. While there is a preference for the literal sense, especially considering that across the full sample the general sense is more frequent, it is far from homogeneous. The balance is even more striking within the <em>effect</em> cluster.
+Such a picture is pervasive across multiple models of <em>heilzaam</em> ‘healthy/beneficial.’ The vague organization within the <em>werking</em> ‘effect’ cluster suggests that it is not necessarily the case that the models do not capture words representative of ‘physical health,’ but they have to compete with the most salient context words, which are not precisely discriminative of these two senses.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:heilzaam"></span>
+<img src="phdThesis_files/figure-html/heilzaam-1.png" alt="Cloud of heilzaam: bound10all-ppmiweight-focall. Circles are ‘healthy, healing,’ triangles are ‘beneficial’ in general." width="672"><p class="caption">
+Figure 6.1: Cloud of <em>heilzaam</em>: bound10all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">foc</span>all. Circles are ‘healthy, healing,’ triangles are ‘beneficial’ in general.
+</p>
+</div>
+<p>This is an issue if we come to the distributional semantics expecting lexical collocates, such as <em>werking</em> ‘werking,’ <em>effect</em>, and <em>invloed</em> ‘influence,’ to unequivocally represent different dictionary senses. On the other hand, <em>ben</em> ‘to be’ and <em>werk</em> ‘to work, to have an effect’ (of which <em>werking</em> is a nominalization), co-occur with the tokens in the orange cluster, dominated by the general sense, and less so outside this cluster; see examples (9) and (10).
+In other words, the most frequent nouns modified by <em>heilzaam</em> ‘beneficial’ tend to occur in attributive constructions (particularly <em>een heilzame werking hebben</em> ‘to have a beneficial/healing effect/power’ and <em>de heilzame werking van</em> ‘the beneficial/healing effect/power of’) and for either sense, whereas the predicative constructions present a wider variety of nouns and a stronger tendency towards the general sense.</p>
+<ol start="9" class="example" style="list-style-type: decimal">
+<li>
+<p>Versterking <em>van</em> <em>de</em> politieke controle <em>op</em> <em>de</em> <em>Commissie</em> <em>kan</em> <strong>heilzaam</strong> <em>zijn</em> <em>maar</em> <em>de</em> <em>huidige</em> ongenuanceerde <em>discussie</em> <em>is</em> <em>gevaarlijk</em> <em>voor</em> Europees beleid en besluitvorming. (<em>De Morgen</em>, 1999-03-18, Art. 45)</p>
+<p>‘Reinforcement <em>of</em> <em>the</em> politicial control <em>at</em> <em>the</em> <em>Commission</em> <em>can</em> <em>be</em> <strong>beneficial</strong>, <em>but</em> <em>the</em> <em>current</em> unnuanced <em>discussion</em> <em>is</em> <em>dangerous</em> <em>for</em> European policy and decision-making.’</p>
+</li>
+<li>
+<p>Ten slotte nog één fundamentele bedenking: ook <em>de</em> permanente actualiteit <em>van</em> <em>de</em> thematiek in <em>de</em> <em>media</em> <em>werkt</em> <strong>heilzaam</strong> <em>op</em> <em>de</em> <em>weggebruikers</em>. (<em>De Morgen</em>, 2001-02-28, Art. 107)</p>
+<p>‘To conclude, one final fundamental thought: <em>the</em> permanent presence <em>of the</em> topic in <em>the media</em> has a beneficial effect (lit. `<em>works</em> <strong>beneficially</strong>’) <em>on road users</em>.’</p>
+</li>
+</ol>
+<p>The models of <em>heilzaam</em> ‘healthy/beneficial’ show that that we cannot take for granted that collocations will be representative of senses. What is more, they illustrate how neither a high <span class="smallcaps">pmi</span> nor their selection as cues by human annotators guarantee that a context word distinguishes predefined senses, given that these words have both a high <span class="smallcaps">pmi</span> with <em>heilzaam</em> ‘healthy/beneficial’ and were often selected as cues by the annotators (recall Tables <a href="dataset.html#tab:heilzaamdep">4.5</a> and <a href="dataset.html#tab:heilzaamcues">4.6</a> in Chapter <a href="dataset.html#dataset">4</a>) .
+When it comes to <span class="smallcaps">pmi</span>, it is understandable: the measure is meant to indicate how distinctive a context word is of the type as a whole, in comparison to other types. It does not take into account how distinctive it is of a group of occurrences against another group of occurrences of the same type.
+When it comes to cueness annotation, however, we could have expected a more reliable selection, but apparently the salience of these context words is too high for the annotators to notice that it is not distinctive of the different senses.</p>
+</div>
+<div id="schaal" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Dictionary clouds<a class="anchor" aria-label="anchor" href="#schaal"><i class="fas fa-link"></i></a>
+</h3>
+<p>In a few cases we can see clusters characterized by one dominant context word that perfectly match a sense, or at least its clustered tokens. These are normally fixed expressions, at least to a degree: the definition of the sense itself may specify a required expression, such as <em>representatieve staal</em> ‘representative sample.’</p>
+<p>An interesting example is shown in Figure <a href="semantic-interpretation.html#fig:schaal">6.2</a>, a model of the noun <em>schaal</em> ‘scale/dish.’ In the plot, the ‘scale’ homonym is represented by circles (‘a range of values, e.g. the scale of Richter, a scale from 1 to 5’), squares (‘magnitude, e.g. on a large scale’) and a few triangles (‘ratio, e.g. a scale of 1:20’), whereas the ‘dish’ homonym is represented by crosses (‘shallow wide dish’) and crossed squares (‘dish of a scale’).
+Both the ‘range’ and the ‘dish of scale’ senses, exemplified in (11) and (12), have a perfect match (or almost) with an <span class="smallcaps">hdbscan</span> cluster, represented by a context word with perfect <span class="math inline">\(F\)</span>-score. All the <em>schaal</em> tokens co-occurring with <em>Richter</em> are grouped in the red Cumulus cloud, and cover almost the full range of attestations of the ‘range’ sense, and all the tokens co-occurring with <em>gewicht</em> ‘weight’ are grouped in the light blue Cumulus cloud and cover all the attestations of the ‘dish of a scale’ sense. The blue cloud of crosses is also an homogeneous Cumulus dedicated to the ‘shallow wide dish’ sense, but not dominated by a collocate, and the rest are variably homogeneous Stratocumulus clouds representing parts of the ‘magnitude’ sense.</p>
+<ol start="11" class="example" style="list-style-type: decimal">
+<li>
+<p>Wenen, Beneden-Oostenrijk en Burgenland zijn dinsdagochtend opgeschrikt door een <em>aardschok</em> <em>van</em> <em>4,8</em> <em>op</em> <em>de</em> <strong>schaal</strong> <em>van</em> <em>Richter</em>. (<em>Het Nieuwsblad</em>, 2000-07-12, Art. 4)</p>
+<p>‘Vienna, Lower Austria and Burgenland have been scared up on Tuesday morning by an <em>earthquake</em> <em>of</em> <em>4.8</em> <em>on</em> <em>the</em> <em>Richter</em> <strong>scale</strong>.’</p>
+</li>
+<li>
+<p>Daarom is het van belang dat Nederland zich deze week achter de VS heeft geschaard, ook al legt ons land natuurlijk minder <em>gewicht</em> <em>in</em> <em>de</em> <strong>schaal</strong> dan <em>Duitsland</em> <em>in</em> het <em>Europese</em> debat over de al dan niet noodzakelijke toestemming van de Veiligheidsraad voor militaire actie tegen Irak. (<em>NRC Handelsblad</em>, 2002-09-07, Art. 160)</p>
+<p>‘Therefore it is important that the Netherlands has united behind the US this week, even though our country has of course less influence (lit. `places less <em>weight on the</em> <strong>dish of the scale</strong>’) than <em>Germany in</em> the <em>European</em> debate on the potentially necessary permission of the Security Council for military action against Iraq.’</p>
+</li>
+</ol>
+<p>In a way, the phenomenon indicates a fixed, idiomatic expression: a combination of two or more words that fully represents a sense. However, the picture is more nuanced.
+First, technically, the ‘range’ sense can potentially occur with more context words than <em>Richter</em>. In fact, one of the examples given to the annotators is <em>schaal van Celsius</em> ‘Celsius scale,’ as well a pattern like the one found in (13), one of the orange circles at the top of Figure <a href="semantic-interpretation.html#fig:schaal">6.2</a>. However, in the corpus used for these studies, <em>Celsius</em> does not co-occur with <em>schaal</em> in a symmetric window of 4; moreover, of the 32 tokens of this sense attested in this model, 22 co-occur with <em>Richter</em>, 3 follow the pattern from (13), and the rest exhibit less fixed patterns or the infrequent <em>glijdende schaal</em> ‘slippery slope’ construction. The few matching (13) are more readily clustered with other tokens co-occurring with the preposition <em>op</em> ‘on,’ such as (14). In other words, in the register of newspapers, the ‘range’ sense of <em>schaal</em> is almost completely exhausted in the <em>schaal van Richter</em> ‘Richter scale’ expression.</p>
+<ol start="13" class="example" style="list-style-type: decimal">
+<li>
+<p>"Misschien deelt de computer mij op grond <em>van</em> <em>statistische</em> analyses <em>op</em> <em>een</em> <strong>schaal</strong> <em>van</em> <em>1</em> <em>tot</em> <em>12</em> <em>in</em> categorie 3", zegt woordvoerder B. Crouwers van de registratiekamer. (<em>NRC Handelsblad</em>, 1999-01-09, Art. 10)</p>
+<p>‘"Maybe the computer on the basis <em>of</em> <em>statistical</em> analyses <em>on</em> <em>a</em> <strong>scale</strong> <em>of</em> <em>1</em> <em>to</em> <em>12</em> puts me <em>in</em> category 3", says spokesperson B. Crouwers of the registration chamber.’</p>
+</li>
+<li>
+<p>Die stad vormde de opmaat tot de latere <em>collectieve</em> <em>regelingen</em> <em>op</em> <em>nationale</em> <strong>schaal</strong>, stellen <em>de</em> auteurs, in navolging van socioloog prof. dr. Abram de Swaan. (<em>De Volkskrant</em>, 2003-05-03, Art. 253)</p>
+<p>‘That city was the prelude to the later <em>collective</em> <em>arrangements</em> <em>at</em> <em>national</em> <strong>level</strong> (lit. `<em>on</em> a <em>national</em> <strong>scale</strong>’), state <em>the</em> authors, in accordance with sociologist Prof. Dr. Abram de Swaan.’</p>
+</li>
+</ol>
+<p>Second, the ‘dish of a scale’ sense need not be used in the metaphorical expression illustrated in (12), but that is indeed the case in our data. Next to <em>gewicht</em> ‘weight,’ these tokens also mostly co-occur with <em>leg</em> ‘to lie, to place’ or, in lesser degree, with <em>werp</em> ‘to throw.’ Even in other models, this cluster tends to be built around the co-occurrence with <em>gewicht</em> ‘weight,’ normally excluding tokens that only co-occur with <em>leg</em> ‘to lie, to place,’ which do not belong to the same sense any more.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:schaal"></span>
+<img src="phdThesis_files/figure-html/schaal-1.png" alt="Cloud of schaal: nobound5all-ppmiweight-focall. Within the ‘scale’ homonym, circles are ‘range’; triangles, ‘ratio,’ and squares, ‘magnitude’; for the ‘dish’ homonym, crosses represent ‘dish’ and crossed squares, ‘dish of a scale.’" width="672"><p class="caption">
+Figure 6.2: Cloud of <em>schaal</em>: nobound5all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">foc</span>all. Within the ‘scale’ homonym, circles are ‘range’; triangles, ‘ratio,’ and squares, ‘magnitude’; for the ‘dish’ homonym, crosses represent ‘dish’ and crossed squares, ‘dish of a scale.’
+</p>
+</div>
+<p>These examples don’t disprove the possibility of clouds dominated by a collocate perfectly covering a sense, as long as we keep in mind the characteristics and limitations of the corpus we are studying and the difference between describing “how a sense is used” and “how a sense is used <em>in this particular corpus</em>.”</p>
+</div>
+<div id="prototypical-clouds" class="section level3" number="6.2.3">
+<h3>
+<span class="header-section-number">6.2.3</span> (Proto)typical contexts<a class="anchor" aria-label="anchor" href="#prototypical-clouds"><i class="fas fa-link"></i></a>
+</h3>
+<p>The most frequent phenomenon among Cumulus and Stratocumulus clouds is a cluster dominated by one context word or group of co-occurring context words that represents a (proto)typical context of a sense. It may be <em>the</em> prototypical context, if the rest of the sense is discarded as noise or spread around less clear clusters, but we might also find multiple clusters representing different typical contexts of the same sense. Neither t-<span class="smallcaps">sne</span> nor <span class="smallcaps">hdbscan</span> can tell whether one of these contexts is more central than the other, at least not in the same sense we would expect from prototype theory. Denser areas of tokens, as perceived by <span class="smallcaps">hdbscan</span>, are those where many tokens are very similar to each other. The more tokens are similar, and the more similar they are, the denser the area. As we will see in this example, this is not a good proxy for prototypicality.</p>
+<p>One of the most clear examples of this phenomenon is found in <em>heffen</em> ‘to levy/to lift,’ whose typical objects are also characteristic of its two main senses (see Figure <a href="semantic-interpretation.html#fig:heffen">6.3</a>). On the one hand, the ‘to levy’ sense occurs mostly with <em>belasting</em> ‘tax,’ <em>tol</em> ‘toll’<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Typical of the Netherlandic sources, since tolls are not levied in Flanders.&lt;/p&gt;"><sup>44</sup></a>, and <em>accijns</em> ‘excise,’ as shown in (15) through (17). Their frequencies are large enough to form three distinct clusters, which tend to merge in the following levels of the <span class="smallcaps">hdbscan</span> hierarchy, that is, they are closer to each other than to the clusters of the other sense. On the other hand, the ‘to lift’ sense occurs with <em>glas</em> ‘glass,’ where the final expression <em>een glas(je) heffen op</em> takes the metonymical meaning ‘to give a toast to’ (see (18)), and with the body-parts <em>hand</em>, <em>arm</em> and <em>vinger</em> ‘finger,’ in which they might take other metonymical meanings. The latter group does not really belong to this “collocation” category but to “semantic preference” (see Section <a href="semantic-interpretation.html#semantic-preference">6.4</a>).</p>
+<ol start="15" class="example" style="list-style-type: decimal">
+<li>
+<p>Op het inkomen boven <em>die</em> drie miljoen <em>gulden</em> <em>wil</em> De <em>Waal</em> <em>honderd</em> <em>procent</em> <em>belasting</em> <strong>heffen</strong>. (<em>Het Parool</em>, 2001-05-02, Art. 99)</p>
+<p>‘De <em>Waal</em> <em>wants</em> to <strong>levy</strong> a <em>one hundred percent tax</em> on all incomes above <em>that</em> three million <em>guilders</em>.’</p>
+</li>
+<li>
+<p>Mobiliteitsproblemen, rekeningrijden, op een andere manier het <em>gebruik</em> van de <em>weg</em> <em>belasten</em>, kilometers <em>tellen</em>, <em>tol</em> <strong>heffen</strong> — de <em>mogelijkheden</em> <em>om</em> de ingebouwde chip <em>te</em> benutten zijn vrijwel onbeperkt. (<em>NRC Handelsblad</em>, 1999-10-02, Art. 31)</p>
+<p>‘Mobility problems, road pricing, <em>taxing</em> the <em>use</em> of <em>roads</em> in a different way, <em>counting</em> kilometres, <strong>levying</strong> <em>taxes</em> — the <em>possibilities</em> <em>to</em> utilize the built-in chip are almost unlimited.’</p>
+</li>
+<li>
+<p>…in landen als Groot-Brittannië (waar de accijnzen op 742 euro per 1.000 liter liggen), Italië <em>en</em> <em>Duitsland</em> (<em>die</em> <em>beide</em> <em>accijnzen</em> <em>boven</em> de <em>400</em> <em>euro</em> <strong>heffen</strong>) komt de <em>harmonisering</em> ten goede van de transportsector. (<em>De Morgen</em>, 2002-07-25, Art. 104)</p>
+<p>‘…in countries like Great Britain (where excise duties are at 742 euros per 1,000 liters), Italy <em>and</em> <em>Germany</em> (<em>both of which</em> <strong>levy</strong> <em>excise duties</em> <em>above</em> <em>400</em> <em>euros</em>) the transport sector benefits from the <em>harmonization</em>.’</p>
+</li>
+<li>
+<p>Nog <em>twaalf</em> andere deelnemers <em>konden</em> <em>maandagavond</em> <em>het</em> <em>glas</em> <strong>heffen</strong> <em>op</em> de <em>hoogste</em> <em>winst</em>. (<em>De Standaard</em>, 2004-10-20, Art. 150)</p>
+<p>‘<em>On Monday night</em> another <em>twelve</em> participants <em>could</em> <strong>raise</strong> <em>their glasses</em> <em>to</em> the <em>highest</em> <em>profit</em>.’</p>
+</li>
+</ol>
+<p>As we can see in Figure <a href="semantic-interpretation.html#fig:heffen">6.3</a>, the model is very successful at separating the two senses and the clusters are semantically homogeneous: the most relevant collocates of <em>heffen</em> ‘to levy/to lift’ are distinctive of one or the other of its senses. Crucially, no single cluster is even close to covering a full sense; instead, each of them represents a prototypical pattern that stands out due to its frequency, internal coherence and distinctiveness.
+It seems reasonable to map the clusters to prototypical patterns because of their frequency and distinctiveness, but we should be careful about how we apply the results of the modelling to this kind of semantic analysis. From the perspective of prototype theory, a feature of a category is more central if it is more frequent, i.e. it is shared by more members, while a member is more central if it exhibits more of the defining features of the categories. As such, within the ‘to levy’ sense, the <em>belasting heffen</em> ‘to levy taxes’ pattern is the most central, and tokens instantiating such a pattern will be more central. In contrast, <span class="smallcaps">hdbscan</span> prioritizes dense areas, that is, groups of tokens that are very similar to each other. Thus, membership probabilities, which we might be tempted to use as proxy for centrality, indicate internal consistency, lack of variation. From such a perspective, given that <em>belasting heffen</em> ‘to levy taxes’ is more frequent and applies to a wider variety of contexts than the other two patterns of ‘to levy,’ its area is less dense, and its tokens have lower membership probabilities within a compound of ‘to levy’ clusters.
+In other words, the models can offer us typical patterns of a lemma and of its senses and tell us how distinctive they are from each other and how much internal variation they present. Beyond this information, they don’t map in a straightforward manner to our understanding of prototypicality.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:heffen"></span>
+<img src="phdThesis_files/figure-html/heffen-1.png" alt="Cloud of heffen: bound10all-ppmiweight-focnav. Circles are ‘to lift,’ triangles are ‘to levy.’" width="672"><p class="caption">
+Figure 6.3: Cloud of <em>heffen</em>: bound10all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">foc</span>nav. Circles are ‘to lift,’ triangles are ‘to levy.’
+</p>
+</div>
+<p>It must be noted that clusters defined by collocations may not be just characterized by one single context word, but by multiple partially co-occurring context words. A clear example is <em>hachelijk</em> ‘dangerous/critical,’ where both senses are characterized by prototypical contexts, exemplified in (19) through (24): <em>onderneming</em> ‘undertaking,’ <em>zaak</em> ‘business’ and <em>avontuur</em> ‘adventure’ for the ‘dangerous, risky’ sense, <em>moment</em>, <em>situatie</em> ‘situation,’ and <em>positie</em> ‘position’ for the ‘critical, hazardous’ sense. A model is shown in Figure <a href="semantic-interpretation.html#fig:hachelijk">6.4</a>, where only the yellow, orange and green clusters are Cumulus clouds, and the rest, Stratocumulus.
+These six frequent context words are paradigmatic alternatives of each other, all taking the slot of the modified noun, i.e. the entity characterized as dangerous or critical. However, unlike its very near type-level neighbour <em>situatie</em> ‘situation,’ <em>positie</em> ‘position’ may also co-occur with <em>bevrijd</em> ‘to free’ (and <em>uit</em> ‘from’) and, additionally, with <em>brandweer</em> ‘firefighter,’ typically in Belgian contexts. The frequency of these co-occurrences in the sample, next to the type-level dissimilarity between these three lexical items, splits the co-occurrences with <em>positie</em> ‘position’ in three clusters (in light blue, green and red in Figure <a href="semantic-interpretation.html#fig:hachelijk">6.4</a>), based on these combinations.</p>
+<ol start="19" class="example" style="list-style-type: decimal">
+<li>
+<p>Het is geen gewaagde stelling dat de deelname van de LPF aan de <em>regering</em> <em>een</em> <strong>hachelijke</strong> <em>onderneming</em> <em>blijft</em>. (<em>De Volkskrant</em>, 2002-08-05, Art. 46)</p>
+<p>‘It is not a bold statement that the participation of the LPF in the <em>government</em> <em>remains</em> <em>a</em> <strong>risky</strong> <em>undertaking</em>.’</p>
+</li>
+<li>
+<p>Daar baseerden de media zich op slechts één bron, en elke journalist weet dat <em>dat</em> <em>een</em> <strong>hachelijke</strong> <em>zaak</em> <em>is</em>. (<em>De Volkskrant</em>, 2004-05-05, Art. 42)</p>
+<p>‘The media relied on only one source, and every journalist knows that <em>that</em> <em>is</em> <em>a</em> <strong>dangerous</strong> <em>thing to do</em>.’</p>
+</li>
+<li>
+<p>…met storm opzij is het <em>inhalen</em> van <em>een</em> <em>vrachtwagen</em> <em>een</em> <strong>hachelijk</strong> <em>avontuur</em>… (<em>Het Parool</em>, 2000-03-17, Art. 34)</p>
+<p>‘…under sidewind conditions <em>overtaking a truck</em> is <em>a</em> <strong>risky</strong> <em>adventure</em>…’</p>
+</li>
+<li>
+<p><em>Kortrijk</em> <em>beleefde</em> <em>enkele</em> <strong>hachelijke</strong> <em>momenten</em> tegen <em>Brussels</em>, dat in zijn ondiep bad bewees zijn vierde plaats in de play-offs waard te zijn. (<em>Het Laatste Nieuws</em>, 2001-05-14, Art. 375)</p>
+<p>‘<em>Kortrijk experienced some</em> <strong>critical</strong> <em>moments</em> against <em>Brussels</em>, who in their shallow pool proved to be worthy of their fourth place in the play-offs.’</p>
+</li>
+<li>
+<p>Kort maar krachtig staat er: ``De <strong>hachelijke</strong> <em>situatie</em> van <em>Palestina</em> <em>is</em> vooral een interne aangelegenheid, hoewel de bezetting en de confrontatie met Israël er de context voor schept." (<em>De Standaard</em>, 2004-10-02, Art. 162)</p>
+<p>‘Short but powerful, it reads: ``The <strong>critical</strong> <em>situation</em> in <em>Palestine is</em> mostly an internal matter, even though the occupation and the confrontation with Israel create the context for it."’</p>
+</li>
+<li>
+<p>Zij toont knappe filmpjes, <em>opgenomen</em> <em>vanuit</em> de <strong>hachelijke</strong> <em>positie</em> van <em>een</em> deltavlieger… (<em>De Morgen</em>, 1999-06-07, Art. 126)</p>
+<p>‘She shows outstanding videos, <em>taken from</em> the <strong>hazardous</strong> <em>position</em> of <em>a</em> hang glider…’</p>
+</li>
+</ol>
+<p>The model does not give us information about the relative centrality of the three <em>positie</em> clusters. They result from the combination of three features, and each cluster exhibits a different degree of membership based on how many of these overlapping features it co-occurs with. At the same time, they have a distinctive regional distribution. Based on this data, we might said that a prototypical context of <em>hachelijke posities</em> ‘dangerous/critical positions’ in Flanders is a situation in which firefighters free someone/something from them, while this core is not present, or at least not nearly as relevant, in the Netherlandic data. We might also say that the same situation is not typical of <em>hachelijke situaties</em> ‘dangerous/critical situations,’ and this therefore presents a (local) distributional difference between two types that otherwise, at corpus level, are near neighbours.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:hachelijk"></span>
+<img src="phdThesis_files/figure-html/hachelijk-1.png" alt="Cloud of hachelijk: bound5all-ppmiweight-focall. Circles are ‘dangerous, risky’; triangles are ‘critical, hazardous.’" width="672"><p class="caption">
+Figure 6.4: Cloud of <em>hachelijk</em>: bound5all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">foc</span>all. Circles are ‘dangerous, risky’; triangles are ‘critical, hazardous.’
+</p>
+</div>
+</div>
+<div id="stof" class="section level3" number="6.2.4">
+<h3>
+<span class="header-section-number">6.2.4</span> Profiling<a class="anchor" aria-label="anchor" href="#stof"><i class="fas fa-link"></i></a>
+</h3>
+<p>Clusters dominated by a context word may not only represent a typical context within a sense, but also one that highlights a different dimension of such sense than other clusters. This is not extremely frequent and requires an extra layer of interpretation, but it is an additional explanation to some of the clustering solutions.</p>
+<p>One example is given by the ‘substance’ meaning of <em>stof</em>, represented as circles in Figure <a href="semantic-interpretation.html#fig:stof">6.5</a>.
+Within this sense, we tend to find clusters dominated by <em>gevaarlijk</em> ‘dangerous,’ <em>schadelijk</em> ‘harmful’ (which also attracts <em>kankerwekkend</em> ‘carcinogenic’) and <em>giftig</em> ‘poisonous’ (which often attracts <em>chemisch</em> ‘chemical’). These dominant context words are nearest neighbours at type-level, and the clusters they govern belong to the same branch in the <span class="smallcaps">hdbscan</span> hierarchy.</p>
+<p>However, we can find additional information, among the context words that co-occur with them, which suggests that frequency is not the only responsible for their separated clusters. Concretely, the tokens in the cluster dominated by <em>schadelijk</em> ‘harmful’ tend to focus on the environment and composition of substances, as indicated by the co-occurrence with <em>uitstoot</em> ‘emissions,’ <em>lucht</em> ‘air,’ <em>stank</em> ‘stench’ and <em>bevat</em> ‘to contain’; meanwhile, those in the cluster dominated by <em>giftig</em> ‘poisonous’ focus on the context of drugs or profile the liberation of substances, with context words such as <em>vorm</em> ‘to form,’ <em>kom_vrij</em> ‘to be released’ and <em>drugs_gebruik</em> ‘drug use.’ The clusters are not distinguished by their meaning as it would be coded in a dictionary entry, but by semantic dimensions that are highlighted in some contexts and hidden in others, but always latent.
+This effect of the less frequent context words is one of the consequences of less restrictive models: at some levels of analysis, one word (<em>gevaarlijk</em> ‘dangerous,’ <em>schadelijk</em> ‘harmful’…) might be enough to disambiguate the target, but this extra information enriches our understanding of how the words are actually used. It is also contextualized information: not just about how <em>stof</em> ‘substance’ is used, but how it is used when in combination with certain frequent collocates.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:stof"></span>
+<img src="phdThesis_files/figure-html/stof-1.png" alt="Cloud of stof: bound5lex-ppmiselection-focall. Within the first homonym, circles are ‘substance’; triangles, ‘fabric’; filled squares, ‘topic, material.’ For the second, crosses are literal ‘dust’ and crossed square, idiomatic expressions." width="672"><p class="caption">
+Figure 6.5: Cloud of <em>stof</em>: bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Within the first homonym, circles are ‘substance’; triangles, ‘fabric’; filled squares, ‘topic, material.’ For the second, crosses are literal ‘dust’ and crossed square, idiomatic expressions.
+</p>
+</div>
+</div>
+</div>
+<div id="colligation" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Lexically instantiated colligation<a class="anchor" aria-label="anchor" href="#colligation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Even without relying on part-of-speech tags or dependency relationships as features for our models, we can obtain grammatical information from lexical collocates. For example, the passive auxiliary <em>word</em> indicates passive constructions, as well as the somewhat less frequent preposition <em>door</em>, which indicates an explicit agent, much like <em>by</em> in English. Other constructions might also be indicated by key function words, such as <em>om te</em> ‘in order to,’ <em>dat</em> ‘that’ for relative clauses, <em>dan</em> ‘than’ for comparatives, and prepositions. The patterns that emerge from clusters with lexically instantiated colligation may cross the boundaries of dictionary senses — resulting in heterogeneous clusters — match senses, or indicate a prototypical configuration within a sense. The following subsections explore examples of these different phenomena.</p>
+<div id="heterogeneous-clusters" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> Heterogeneous clusters<a class="anchor" aria-label="anchor" href="#heterogeneous-clusters"><i class="fas fa-link"></i></a>
+</h3>
+<p>The verb <em>herstructureren</em> ‘to restructure’ was annotated with three sense tags emerging from a combination of specialization, i.e. whether it’s specifically applied to companies, and argument structure, distinguishing between transitive and intransitive <em>herstructureren</em>. The intransitive sense is always specific — companies restructure, undergo a process of restructure.</p>
+<p>Models are typically not very successful at disentangling these three senses, or any one of them, for that matter. Instead, the clusters that emerge tend to highlight either the semantic or the syntactic dimension, disregarding the other one.
+The lexical items that most frequently dominate clusters of <em>herstructureren</em> ‘to restructure’ are the passive auxiliary <em>word</em>, <em>bedrijf</em> ‘company,’ <em>grondig</em> ‘thorough(ly),’ and the pair of prepositions <em>om te</em> ‘in order to,’ as illustrated in (25) through (27).</p>
+<ol start="25" class="example" style="list-style-type: decimal">
+<li>
+<p>OK-score deelt bedrijven op in tien klassen; klasse 1 blaakt van gezondheid, klasse 10 is op sterven na dood, ofwel, staat op de rand van faillissement en <em>moet</em> <em>grondig</em> <em>worden</em> <strong>geherstructureerd</strong>. (<em>Het Parool</em>, 2003-04-16, Art. 69)</p>
+<p>‘The OK-score divides companies into ten classes: class 1 is brimming with health, class 10 is as good as dead, or rather, stands on the edge of bankruptcy and <em>must be thoroughly</em> <strong>restructured</strong>.’</p>
+</li>
+<li>
+<p><em>Ze</em> <strong>herstructureerden</strong> <em>het</em> <em>bedrijf</em> <em>en</em> loodsten het de internationale groep Taylor Nelson Sofres (TNS) binnen. (<em>De Standaard</em>, 2004-01-06, Art. 59)</p>
+<p>‘<em>They</em> <strong>restructured</strong> <em>the company and</em> steered it towards the Taylor Nelson Sofres (TNS) international group.’</p>
+</li>
+<li>
+<p>Uiteindelijk is dat de regering, want toen de crisis uitbrak nam de overheid een belang in de banken <em>om</em> <em>ze</em> <em>te</em> <strong>herstructureren</strong> <em>en</em> <em>uiteindelijk</em> <em>weer</em> te verkopen. (<em>NRC Handelsblad</em>, 2000-11-07, Art. 11)</p>
+<p>‘In the end that is the government, because when the crisis hit the authorities took an interest in the banks <em>in order to</em> <strong>restructure</strong> <em>them and eventually</em> sell them <em>again</em>.’</p>
+</li>
+</ol>
+<p>The two nouns never co-occur, and only occasionally co-occur with <em>word</em> or <em>om te</em>, which themselves co-occur a few times. Both <em>grondig</em> ‘thorough(ly)’ and <em>bedrijf</em> ‘company’ are good cues for the company-specific senses, but may occur with either transitive or intransitive constructions. In contrast, <em>word</em> is a good cue for transitive (specifically, passive) constructions, but may occur with either the company-specific or the general sense. Finally, <em>om te</em> may be attested in either of the three senses. The stark separation of the clusters in Figure <a href="semantic-interpretation.html#fig:herstructureren">6.6</a> would seem to suggest opposite poles, but that is not the case at the semantic level. In fact, unlike Figures <a href="semantic-interpretation.html#fig:heffen">6.3</a> or <a href="semantic-interpretation.html#fig:hachelijk">6.4</a>, dominated by Cumulus and Stratocumulus clouds, the clusters are merely slightly denser areas in a rather uniform, noisy mass of tokens — the green cloud is a Stratocumulus and the other two are Cirrus clouds — and would be much harder for the naked human eye to capture without <span class="smallcaps">hdbscan</span> input. Instead, each cluster indicates a pole of contextual behaviour which itself may code a semantic dimension, in the case of the <em>bedrijf</em> ‘company’ cluster, or a syntactic one, as in the lexically instantiated colligation clusters.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:herstructureren"></span>
+<img src="phdThesis_files/figure-html/herstructureren-1.png" alt="Cloud of herstructureren: bound3all-ppmiselection-focall. Circles indicate the transitive, general sense; triangles, the transitive companies-specific sense, and squares, the intransitive (companies-specific) sense." width="672"><p class="caption">
+Figure 6.6: Cloud of <em>herstructureren</em>: bound3all-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Circles indicate the transitive, general sense; triangles, the transitive companies-specific sense, and squares, the intransitive (companies-specific) sense.
+</p>
+</div>
+</div>
+<div id="dictionary-clouds" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Dictionary clouds<a class="anchor" aria-label="anchor" href="#dictionary-clouds"><i class="fas fa-link"></i></a>
+</h3>
+<p>While a rare thing, we might be able to find a cluster dominated by a grammatical pattern that matches a dictionary sense. One clear case is the reflexive sense of <em>herhalen</em> ‘to repeat,’ characterized by its co-occurrence with <em>zich</em> ‘itself’ in <code>BOW</code> models without part-of-speech filters (<code>all</code>) and in <code>REL</code> models, especially if <code>PPMIweight</code> is applied too.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;&lt;code&gt;PATH&lt;/code&gt; models also capture &lt;em&gt;zich&lt;/em&gt; ‘itself,’ but somehow don’t build clusters around it.&lt;/p&gt;"><sup>45</sup></a>
+In the model shown in Figure <a href="semantic-interpretation.html#fig:herhalen">6.7</a>, it is the clearest cluster, the red Stratocumulus of squares at the bottom. Looking closely, we can see that it is made of two halves: a small one on the left, in which the tokens also co-occur with <em>geschiedenis</em> ‘history,’ and a bigger one on the right, where they do not. This particular model is very restrictive: it normally captures only one or two context words per token, which is all that we need to capture this particular sense.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:herhalen"></span>
+<img src="phdThesis_files/figure-html/herhalen-1.png" alt="Cloud of herhalen: rel1-ppmiselection-focall. Circles are ‘to do again’; triangles, ‘to say again’; squares, ‘(reflexive) to happen again,’ and crosses, ‘to broadcast again.’" width="672"><p class="caption">
+Figure 6.7: Cloud of <em>herhalen</em>: <span class="smallcaps">rel</span>1-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Circles are ‘to do again’; triangles, ‘to say again’; squares, ‘(reflexive) to happen again,’ and crosses, ‘to broadcast again.’
+</p>
+</div>
+<p>We expected this kind of output in other lemmas with purely reflexive senses as well, but it is not easy to achieve. In the case of <em>diskwalificeren</em> ‘to disqualify,’ the very infrequent reflexive sense is typically (but not always) absorbed within the transitive sense that matches it semantically, i.e. the non sports-related sense.
+Alternatively, a lexically instantiated colligation may prefer a certain sense without exhausting its attestations: in that case, it represents a prototypical context, as shown in the following section.</p>
+</div>
+<div id="prototypical-contexts" class="section level3" number="6.3.3">
+<h3>
+<span class="header-section-number">6.3.3</span> (Proto)typical contexts<a class="anchor" aria-label="anchor" href="#prototypical-contexts"><i class="fas fa-link"></i></a>
+</h3>
+<p>The verb <em>herinneren</em> has two main senses defined by well defined constructions: either an intransitive construction co-occurring with the preposition <em>aan</em>, meaning ‘to remind,’ or a reflexive construction meaning ‘to remember’; a third, transitive sense is also attested but very infrequently.
+This lemma is sometimes rendered as three equally sized Stratocumulus clouds, as shown in Figure <a href="semantic-interpretation.html#fig:herinneren">6.8</a>: the orange cluster is characterized by the preposition <em>aan</em> (see (28)), the green one by the subject and reflexive first person pronouns <em>ik</em> and <em>me</em> (see (29)), and the yellow one by the third person reflexive pronoun <em>zich</em> (see (30)). A smaller group of tokens co-occurring with <em>eraan</em>, a compound of the particle <em>er</em> and <em>aan</em> (see example (31), where it works as a placeholder to connects the preposition to a subordinate clause), may form its own Cumulus cloud, like the light blue one in Figure <a href="semantic-interpretation.html#fig:herinneren">6.8</a>, or be absorbed by one of the larger ones.</p>
+<ol start="28" class="example" style="list-style-type: decimal">
+<li>
+<p>Vinocur <strong>herinnert</strong> <em>aan</em> een tekening van Plantu in L’Express. (<em>Het Parool</em>, 2002-05-18, Art. 101)</p>
+<p>‘Vinocur <strong>reminds</strong> [the spectator] <em>of</em> a drawing by Plantu in L’Express.’</p>
+</li>
+<li>
+<p><em>Ik</em> <strong>herinner</strong> <em>me</em> een <em>concert</em> <em>waarop</em> <em>hij</em> hevig gesticulerend applaus in ontvangst kwam nemen. (<em>Het Parool</em>, 2003-11-14, Art. 79)</p>
+<p>‘<em>I</em> <strong>remember</strong> a <em>concert in which he</em> received a round of overwhelming applause.’</p>
+</li>
+<li>
+<p>"Het was <em>die</em> <em>dag</em> <em>bloedheet</em>", <strong>herinnert</strong> de <em>atlete</em> <em>uit</em> <em>Sint-Andries</em> <em>zich</em> <em>nog</em> <em>levendig</em>. (<em>Het Nieuwsblad</em>, 2001-08-08, Art. 192)</p>
+<p>‘"It was <em>scorching hot that day</em>", <strong>remembers</strong> the <em>athlete from Sint-Andries vividly</em>.’</p>
+</li>
+<li>
+<p>In <em>zijn</em> <em>voorwoord</em> <strong>herinnert</strong> Manara <em>eraan</em> <em>dat</em> deze <em>meisjes</em> in hun <em>tijd</em> <em>vaak</em> met toegeknepen oogjes werden aanschouwd. (<em>De Morgen</em>, 2001-11-10, Art. 40)</p>
+<p>‘In <em>his preface</em> Manara <strong>reminds</strong> [the reader] <em>that</em> back in their <em>time</em> these <em>girls</em> were <em>often</em> looked at with squinted eyes.’</p>
+</li>
+</ol>
+<p>As the shape coding in the plot indicates, the clusters are semantically homogeneous<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;With the exception of three tokens in the first-person cluster also co-occurring with &lt;em&gt;aan&lt;/em&gt;, and one instantiating &lt;em&gt;ik zal herinnerd worden als&lt;/em&gt; ‘I will be remembered as.’&lt;/p&gt;"><sup>46</sup></a>, because these function words are perfect cues for the senses. The rest of the co-occurring context words do not make a difference: they are not strong enough, in the face of these pronouns and prepositions, to originate further salient structure. Nonetheless, both the <em>aan</em> and <em>eraan</em> clusters on one side, and the pronoun-based clusters on the other, belong to the same sense. Thus, what these lexically instantiated colligation clusters represent is a typical or salient pattern within each sense.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:herinneren"></span>
+<img src="phdThesis_files/figure-html/herinneren-1.png" alt="Cloud of herinneren: bound10all-ppmiweight-5000nav. Circles indicate ‘to remind’ (with aan); triangles, ‘(reflexive) to remember,’ and (the very few) squares, ‘(trans.) to remember.’" width="672"><p class="caption">
+Figure 6.8: Cloud of <em>herinneren</em>: bound10all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">5000</span>nav. Circles indicate ‘to remind’ (with <em>aan</em>); triangles, ‘(reflexive) to remember,’ and (the very few) squares, ‘(trans.) to remember.’
+</p>
+</div>
+</div>
+<div id="profiling" class="section level3" number="6.3.4">
+<h3>
+<span class="header-section-number">6.3.4</span> Profiling<a class="anchor" aria-label="anchor" href="#profiling"><i class="fas fa-link"></i></a>
+</h3>
+<p>Like clusters defined by collocations, clusters defined by lexically instantiated colligations can also represent a typical context that highlights a specific dimension of the sense of the target. One such case is found in the ‘horde’ sense of <em>horde</em>, whose most salient collocates in this corpus are <em>toerist</em> ‘tourist’ and <em>journalist</em>. The two collocates are quite similar to each other at type-level, but the rest of the context words in their clusters point towards a different dimension of the ‘horde’ sense: hordes of journalists, photographers and fans (other nouns present in the same cluster) will surround and follow celebrities, as suggested by the co-occurrence of <em>omring</em> ‘to surround,’ <em>wacht_op</em> ‘to wait’ and <em>achtervolg</em> ‘to chase,’ among others. In contrast, hordes of tourists will instead flood and move around in the city, with words such as <em>stroom_toe</em> ‘to flood’ and <em>stad</em> ‘city.’
+As it stands, the situation is equivalent to the case of <em>stof</em> ‘substance’ described above. However, in the models that capture function words
+like the one shown in Figure <a href="semantic-interpretation.html#fig:horde">6.9</a>,
+the profiling in these clusters is strengthened by lexically instantiated colligations. The <em>journalist</em> cluster is dominated by the preposition <em>door</em>, which signals explicit agents in passive constructions;
+<!-- as indicated for the orange cluster; -->
+the passive auxiliary <em>word</em> also occurs, albeit less frequently. Meanwhile, the <em>toerist</em> ‘tourist’ cluster includes tokens co-occurring with <em>naar</em> ‘towards.’ The prepositions are coherent with the dimensions of ‘horde’ highlighted by each of the clusters, i.e. aggressivity and flow respectively. Interestingly, they don’t co-occur with all the tokens that also co-occur with <em>journalist</em> and <em>toerist</em> ‘tourist’ respectively, but the nouns and prepositions complement each other instead.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:horde"></span>
+<img src="phdThesis_files/figure-html/horde-1.png" alt="Cloud of horde: bound5all-ppmiselection-focall. Within the ‘horde’ homonym, circles indicate human members and triangles, nonhuman members; within the ‘hurdle’ homonym, squares show the literal sense and crosses, the metaphorical one." width="672"><p class="caption">
+Figure 6.9: Cloud of <em>horde</em>: bound5all-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Within the ‘horde’ homonym, circles indicate human members and triangles, nonhuman members; within the ‘hurdle’ homonym, squares show the literal sense and crosses, the metaphorical one.
+</p>
+</div>
+</div>
+</div>
+<div id="semantic-preference" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Semantic preference<a class="anchor" aria-label="anchor" href="#semantic-preference"><i class="fas fa-link"></i></a>
+</h2>
+<p>Clusters that are not clearly dominated by one context word or group of co-occurring context words, be they lexical collocations or lexically instantiated colligations, may still be the result of coherent distributional and semantic patterns. Representing first-order context words with their type-level vectors allows infrequent near neighbours to join forces and approximate the effect of one context word with their cumulative frequency. These context words may occur one to four times in the sample, that is, in about one every hundred occurrences of the target, but together with other similar context words, they form a visible pattern.</p>
+<div id="uitspraak" class="section level3" number="6.4.1">
+<h3>
+<span class="header-section-number">6.4.1</span> Heterogeneous clusters<a class="anchor" aria-label="anchor" href="#uitspraak"><i class="fas fa-link"></i></a>
+</h3>
+<p>Just like we can have clusters dominated by one context word that is not characteristic of one sense, we can have clusters dominated by multiple similar context words that are not characteristic of any sense. This is the case of names of colours and clothing terms<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;A similar group of context words is responsible for joining the ‘fabric’ and ‘lit. dust’ senses of &lt;em&gt;stof&lt;/em&gt;, even across homonyms.&lt;/p&gt;"><sup>47</sup></a> co-occurring with <em>grijs</em> ‘gray,’ which in a model like the one shown in Figure <a href="semantic-interpretation.html#fig:grijs">6.10</a> also includes <em>haar</em> ‘hair.’
+As a result, <em>grijs</em> ‘gray’ tokens referring to concrete grey objects in general and, specifically, to grey/white hair, form the light blue Stratocumulus cloud on the top right of the figure. Note that, visually, the two senses occupy opposite halves of this cluster: the <em>haar</em> ‘hair’ tokens (squares) occupy their own space, but the type-level similarity of the context word to the names of colours and clothing terms makes them indistinguishable to <span class="smallcaps">hdbscan</span>.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:grijs"></span>
+<img src="phdThesis_files/figure-html/grijs-1.png" alt="Cloud of grijs: bound5all-ppmino-focall. Circles represent the literal sense; triangles, ‘overcast’; squares and crosses, to applications to hair and white-haired people respectively; crossed squares, ‘boring,’ and asterisks, ‘half legal.’" width="672"><p class="caption">
+Figure 6.10: Cloud of <em>grijs</em>: bound5all-<span class="smallcaps">ppmi</span>no-<span class="smallcaps">foc</span>all. Circles represent the literal sense; triangles, ‘overcast’; squares and crosses, to applications to hair and white-haired people respectively; crossed squares, ‘boring,’ and asterisks, ‘half legal.’
+</p>
+</div>
+<p>A second example is the set of juridical terms in <em>herroepen</em>, which means ‘to recant’ when the object is a statement or opinion, and ‘to annul, to void’ when it is a law or decision. In the <em>QLVLNewsCorpus</em>, it is often used in a broad legal or juridical context. However, one of the most frequent collocates of <em>herroepen</em> within this field is <em>uitspraak</em>, which can either mean ‘verdict,’ therefore invoking the ‘to void’ sense like in (32), or ‘statement,’ to which ‘to recant’ applies, like in (33). Unfortunately, the broader context is not clear enough for the models to disambiguate the appropriate meaning of <em>uitspraak herroepen</em> in each instance. At the type-level, <em>uitspraak</em> is very close to a number of context words of the juridical field, namely <em>rechtbank</em> ‘court,’ <em>vonnis</em> ‘sentence,’ <em>veroordeling</em> ‘conviction,’ etc. Together, they constitute the semantic preference of the light blue Stratocumulus cloud in Figure <a href="semantic-interpretation.html#fig:herroepen">6.11</a>, which, similar to the <em>grijs haar</em> ‘gray/white hair’ situation above, is visually split between the tokens co-occurring with <em>uitspraak</em> and those co-occurring with the rest of the juridical terms.</p>
+<ol start="32" class="example" style="list-style-type: decimal">
+<li>
+<p><em>Het</em> beroepscomité <strong>herriep</strong> <em>gisteren</em> <em>de</em> <em>uitspraak</em> van de licentiecommissie en besliste om KV Mechelen toch zijn licentie te geven. (<em>De Standaard</em>, 2002-05-04, Art. 95)</p>
+<p>‘<em>Yesterday the</em> court of appeal <strong>voided</strong> <em>the verdict</em> from the licencing committee and instead decided to grant KV Mechelen a licence.’</p>
+</li>
+<li>
+<p>Onder druk van Commissievoorzitter Prodi heeft Nielson verklaard dat hij verkeerd is geïnterpreteerd, maar hij heeft <em>zijn</em> <em>uitspraak</em> <em>niet</em> <strong>herroepen</strong>. (<em>NRC Handelsblad</em>, 2001-10-04, Art. 79)</p>
+<p>‘Under pressure from committee chairman Prodi, Nielson declared that he had been misinterpreted, but he did <em>not</em> <strong>recant</strong> <em>his statement</em>.’</p>
+</li>
+</ol>
+<p>The result is understandable and interpretable: the context words co-occurring with the tokens in the light blue cluster belong to a semantically coherent set and are distributional near neighbours. The problem is that, in the sample, the sense of <em>uitspraak</em> that occurs the most is not the juridical one like in (32) but ‘statement’ like in (33), therefore representing a different sense of <em>herroepen</em> than its juridical siblings. In some models, the two groups are split as different clusters, but in those like the one shown in Figure <a href="semantic-interpretation.html#fig:herroepen">6.11</a>, they form a heterogeneous cluster generated by semantic preference.</p>
+<p>Interestingly, <em>verklaring</em> ‘statement’ and <em>bekentenis</em> ‘confession’ could be considered part of the same semantic field as well, in broad terms. However, they belong to a different frame within the same field of legal action — a different stage of the process — and, correspondingly, their type-level vectors are different and they tend to represent distinct, homogeneous clusters (the green Cumulus in the figure).</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:herroepen"></span>
+<img src="phdThesis_files/figure-html/herroepen-1.png" alt="Cloud of herroepen: bound3all-ppmiselection-focall. Circles represent ‘to void’; triangles, ‘to recant.’" width="672"><p class="caption">
+Figure 6.11: Cloud of <em>herroepen</em>: bound3all-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Circles represent ‘to void’; triangles, ‘to recant.’
+</p>
+</div>
+</div>
+<div id="dictionary-clusters" class="section level3" number="6.4.2">
+<h3>
+<span class="header-section-number">6.4.2</span> Dictionary clusters<a class="anchor" aria-label="anchor" href="#dictionary-clusters"><i class="fas fa-link"></i></a>
+</h3>
+<p>A few senses can be completely clustered by groups of similar context words.
+One of these cases was already discussed in the context of <em>schaal</em> ‘scale’ tokens: in models that exclude <em>Richter</em> because of its part-of-speech tag <em>name</em>, the tokens co-occurring with it can alternatively be grouped by <em>kracht</em> ‘power,’ <em>aardbeving</em> ‘earthquake’ and related context words. As in the case of <em>Richter</em> as dominating collocate, the semantic field of earthquakes is not part of the definition of the ‘range’ sense of <em>schaal</em>, but the dominating semantic pattern within the corpus under study.</p>
+<p>Another example is found in <em>haken</em>, where the ‘to make someone trip’ sense is characterized by a variety of football-related terms (<em>strafschop</em> ‘penalty kick,’ <em>penalty</em>, <em>scheidsrechter</em> ‘referee,’ etc.), and the very infrequent ‘crochet’ sense, by <em>brei</em> ‘to knit,’ <em>naai</em> ‘to sew,’ <em>hobby</em> and similar words. They are represented as a Stratocumulus of dark blue squares and a Cirrus of light blue crossed squares in Figure <a href="semantic-interpretation.html#fig:haken">6.12</a> respectively. As indicated by the name of the dark blue cluster, the passive auxiliary <em>word</em> is also characteristic of the ‘to make someone trip’ cluster and very rarely occurs outside of it: here, lexically instantiated colligation is working together with the clear semantic preference of the cloud.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:haken"></span>
+<img src="phdThesis_files/figure-html/haken-1.png" alt="Cloud of haken: bound10lex-ppmiselection-focnav. Circles and triangles represent the transitive and intransitive literal ‘to hook’; crosses represent the figurative (intransitive) sense; filled squares represent ‘to make someone trip’; crossed squares, ‘to corchet,’ and asterisks, ‘to strive for’ (with naar)." width="672"><p class="caption">
+Figure 6.12: Cloud of <em>haken</em>: bound10lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>nav. Circles and triangles represent the transitive and intransitive literal ‘to hook’; crosses represent the figurative (intransitive) sense; filled squares represent ‘to make someone trip’; crossed squares, ‘to corchet,’ and asterisks, ‘to strive for’ (with <em>naar</em>).
+</p>
+</div>
+</div>
+<div id="prototypical-contexts-1" class="section level3" number="6.4.3">
+<h3>
+<span class="header-section-number">6.4.3</span> (Proto)typical contexts<a class="anchor" aria-label="anchor" href="#prototypical-contexts-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are several examples of clusters defined by semantically similar infrequent context words representing typical contexts of a sense. In Figure <a href="semantic-interpretation.html#fig:grijs">6.10</a>, for example, the dark blue Stratocumulus is represented by cars, mostly indicated by <em>Mercedes</em> and <em>Opel</em>, next to other brands. In the case of lemmas like <em>dof</em> ‘dull,’ some models might dedicate different clusters to specific collocates, such as <em>klink</em> ‘to sound,’ <em>knal</em> ‘bang,’ <em>klap</em> ‘clap’ and <em>dreun</em> ‘pounding,’ while others group them together in one large cluster defined by a semantic preference indicative of a sense, e.g. sounds.</p>
+<p>A typical semantic group attested in different lemmas is culinary: found with <em>schaal</em> ‘dish’ — the blue Cumulus of crosses in Figure <a href="semantic-interpretation.html#fig:grijs">6.10</a> — and with <em>heet</em> ‘hot,’ the red Stratocumulus of mostly circles in Figure <a href="semantic-interpretation.html#fig:heet">6.13</a>. In the case of <em>heet</em> ‘hot,’ almost all the tokens co-occurring in this cluster refer to literally hot foods and drinks, although the full expression might be idiomatic, like in (34), and only a few of them belong to the much less frequent sense ‘spicy.’ In other models, the tokens co-occurring with <em>soep</em> ‘soup’ and/or those co-occurring with <em>water</em> tokens might form separate clusters.</p>
+<ol start="34" class="example" style="list-style-type: decimal">
+<li>
+<p>Hoogstwaarschijnlijk zal Poetin Ruslands afgeknapte westerse partners discreet laten weten dat zodra hij eenmaal in het Kremlin <em>zit</em>, <em>de</em> <em>soep</em> <em>minder</em> <strong>heet</strong> <em>gegeten</em> <em>zal</em> <em>worden</em>. (<em>De Volkskrant</em>, 1999-12-21, Art. 22)</p>
+<p>‘Most probably Putin will discretely let Russia’s former western allies know that as soon as he <em>is</em> in the Kremlin, things will look up (lit. `<em>the soep will be eaten less</em> <strong>hot</strong>’).’</p>
+</li>
+</ol>
+<p>In addition, <em>aardappel</em> ‘potato’ is at type-level a near neighbour of the context words in this semantic group, but it still tends to form its own cluster, like the orange Cumulus in the figure. This is due both to its frequency and the distinctiveness of its larger cotext, e.g. the co-occurrence with <em>schuif_door</em> ‘to pass on.’ Like other expressions annotated with the ‘hot to the touch’ sense (circles in the figure), including <em>hete hangijzer</em> ‘hot irons’ in yellow and <em>hete adem (in de nek)</em> ‘hot breath (on the neck)’ in light blue, <em>hete aardappel</em> ‘hot potato’ is used metaphorically. In the strict combination of adjective and noun, the meaning of <em>heet</em> proper is still ‘hot to the touch’: it is the combination itself that is then metaphorized <span class="citation">(for a discussion see <a href="references.html#ref-geeraerts_2003" role="doc-biblioref">Geeraerts 2003</a>)</span>.
+The context words themselves are frequent and distinctive enough to generate clusters of their own with the tokens that co-occur with them, but <em>aardappel</em> ‘potato’ tends to stick close to the culinary cluster or even merge with it.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:heet"></span>
+<img src="phdThesis_files/figure-html/heet-1.png" alt="Cloud of heet: bound5all-ppmino-focall. Among the literal senses, cricles, filled triangles and filled diamonds represent tactile, weather and body senses; empty squares and triangles represent ‘spicy’ and ‘attractive’ respectively; crosses represent ‘conflictive,’ and asterisks, ‘popular or new.’" width="672"><p class="caption">
+Figure 6.13: Cloud of <em>heet</em>: bound5all-<span class="smallcaps">ppmi</span>no-<span class="smallcaps">foc</span>all. Among the literal senses, cricles, filled triangles and filled diamonds represent tactile, weather and body senses; empty squares and triangles represent ‘spicy’ and ‘attractive’ respectively; crosses represent ‘conflictive,’ and asterisks, ‘popular or new.’
+</p>
+</div>
+</div>
+<div id="profiling-1" class="section level3" number="6.4.4">
+<h3>
+<span class="header-section-number">6.4.4</span> Profiling<a class="anchor" aria-label="anchor" href="#profiling-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>The adjective <em>geldig</em> ‘valid’ can relate to a legal or regulated acceptability, which is its most frequent sense in the sample, or may have a broader application, to entities like <em>redenering</em> ‘reasoning.’ By definition, and like for most of the lemmas studied here, each sense matches some form of semantic preference. In addition, models of this lemma reveal semantic preference patterns within the frequent, specific sense, each of which, in turns, highlights a different dimension of this sense. These patterns may be only identified as areas in the t-<span class="smallcaps">sne</span> plots or, in models like the one shown in Figure <a href="semantic-interpretation.html#fig:geldig">6.14</a>, as clouds.</p>
+<p>The green Stratocumulus is characterized by context words such as <em>rijbewijs</em> ‘driving license,’ <em>paspoort</em> ‘passport’ and other forms of identification, as well as verbs like <em>leg_voor</em> ‘to present,’ <em>heb</em> ‘to have’ and <em>bezit</em> ‘to possess.’ In other words, it represents contexts in which someone has to demonstrate possession of a valid identification document, as shown in (35). The light blue Cirrus and the yellow Cumulus, on the other hand, co-occur with other kinds of documents (<em>ticket</em>, <em>abonnement</em> ‘subscription’), <em>euro</em>, the preposition <em>tot</em> ‘until,’ and times (<em>maand</em> ‘month,’ <em>jaar</em> ‘year,’ numbers, etc.). In this case, the price of the documents and the duration of their validity are more salient, as illustrated in (36).</p>
+<ol start="35" class="example" style="list-style-type: decimal">
+<li>
+<p>Aan de incheckbalie <em>kon</em> de <em>Somaliër</em> <em>echter</em> geen <strong>geldige</strong> <em>papieren</em> <em>voorleggen</em>. (<em>Het Laatste Nieuws</em>, 2001-08-24, Art. 64)</p>
+<p>‘<em>But</em> the <em>Somali could</em> not <em>show</em> any <em>valid papers</em> at the check-in desk.’</p>
+</li>
+<li>
+<p>Klanten van Kunst In Huis zijn bovendien zeker van variatie: wie lid is, kan elke maand een ander werk uitkiezen, het <em>abonnement</em> <em>blijft</em> een leven <em>lang</em> <strong>geldig</strong> en de <em>maandelijkse</em> <em>huurprijs</em> van 250 <em>frank</em> <em>is</em> <em>ook</em> <em>niet</em> bepaald hoog te noemen. (<em>De Standaard</em>, 1999-05-29, Art. 41)</p>
+<p>‘Moreover, customers of Kunst In Huis (lit. `Art At Home’) are guaranteed variation: members can choose a different work each month; the <em>subscription remains</em> <strong>valid</strong> for a life<em>time</em> and the <em>monthly fee</em> of 250 <em>franks is not</em> particularly high <em>either</em>.’</p>
+</li>
+</ol>
+<div class="figure">
+<span style="display:block;" id="fig:geldig"></span>
+<img src="phdThesis_files/figure-html/geldig-1.png" alt="Cloud of geldig: bound10lex-ppmiselection-focall. Circles represent the specific sense and triangles, the general one." width="672"><p class="caption">
+Figure 6.14: Cloud of <em>geldig</em>: bound10lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Circles represent the specific sense and triangles, the general one.
+</p>
+</div>
+</div>
+</div>
+<div id="openchoice" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Near-open choice<a class="anchor" aria-label="anchor" href="#openchoice"><i class="fas fa-link"></i></a>
+</h2>
+<p>The clouds described up to now in this chapter can be easily interpreted in terms of dominating context words or semantic domains. We would expect this always to be the case: if <span class="smallcaps">hdbscan</span> identifies a cluster, there must be structure; if there is structure, there must be an underlying pattern; if there is an underlying pattern, it can be meaningfully interpreted. Unfortunately, this is not always the case. <span class="smallcaps">hdbscan</span> clusters can also be formed in opposition: as we saw before in the case of the Cumulonimbus clouds, i.e. the massive clusters covering at least half the sampled tokens, the grouping criterion might be a negative definition. There is a strong pattern, and everything else that does not conform to it is dumped together. In other situations, whatever structure the <span class="smallcaps">hdbscan</span> picks up on is very faint, compared to the Cumulus skies we may find in <em>heffen</em> and <em>hachelijk</em> (see Section <a href="semantic-interpretation.html#prototypical-clouds">6.2.3</a>). At present, we do not understand the relationship between <span class="smallcaps">hdbscan</span> and token-level distributional models well enough to make sense of why these less interpretable clusters emerge and how meaningful they really are.</p>
+<p>One of the possible interpretations of these kinds of clusters, from the linguistic point of view, is that some patterns are closer to the “open choice” side of the spectrum, while the cases discussed in Section <a href="semantic-interpretation.html#collocation">6.2</a> are closer to the “idiom” side. The open-choice and idiom principle were not really presented as poles of a continuum, but they do help as interpretative tool to make sense of the variation in cloud shapes within a lemma and across lemmas. We cannot split the data studied here between models that follow the idiom principle and those that don’t, because the degree to which the distributional behaviour of each lemma can be explained by the idiom principle is different.
+When we generate a list of collocations for an item, we see the most relevant patterns; when we read sorted concordances, we focus on the similarities that stand out; with token-level distributional models, instead, we can see how strong or weak these patterns are.</p>
+<p>In this section we will look at examples of clusters that cannot be interpreted in terms of dominating context words or semantic domains. Most of these result in heterogeneous clusters, especially Cumulonimbus clouds, but they can also, occasionally, bring together all the tokens of senses with certain characteristics. What I have not found is cases of near-open choice clusters that represent semantically homogeneous prototypical contexts.</p>
+<div id="blik" class="section level3" number="6.5.1">
+<h3>
+<span class="header-section-number">6.5.1</span> Heterogeneous clusters<a class="anchor" aria-label="anchor" href="#blik"><i class="fas fa-link"></i></a>
+</h3>
+<p>The most common situation in clusters that are not explained by a dominant context word or semantic preference, especially when they are Cumulonimbus clouds, is that they are semantically heterogeneous. These massive clouds occur in models where a small number of tokens that are very similar to each other — typically idiomatic expressions, but not necessarily — stand out as a cluster, and everything else either belongs to the same massive cluster or is noise. In many cases there is barely any noise left, while in others <span class="smallcaps">hdbscan</span> does seem to find a difference between the many, varied tokens in the Cumulonimbus clouds and those that are left as noise.</p>
+<p>One such example is the Cumulonimbus cloud of <em>blik</em> in Figure <a href="semantic-interpretation.html#fig:blik">6.15</a>, shown in orange. The small Cumulus clouds to either side are represented by the co-occurrence of <em>werp</em> ‘to throw’ and <em>richt</em> ‘to aim,’ which indicate prototypical instances of <em>blik</em> ‘gaze’ (see (37) and (38)). Very few tokens are excluded as noise — the patterns they form seem to be too different from the clustered tokens to merge with them, but too infrequent to qualify as a cluster on their own.</p>
+<ol start="37" class="example" style="list-style-type: decimal">
+<li>
+<p>Op zaterdag 27 april zwaait de lokale politie van de zone Kortrijk-Kuurne-Lendelede de deuren wijd <em>open</em> voor <em>al</em> <em>wie</em> <em>een</em> <strong>blik</strong> wil <em>werpen</em> <em>achter</em> <em>de</em> <em>schermen</em> van het politiewerk. (<em>Het Laatste Nieuws</em>, 2002-04-23, Art. 54)</p>
+<p>‘On Saturday 27 April the local police of the Kortrijk-Kuurne-Lendelede zone <em>opens</em> their doors wide for <em>all those who</em> want to <em>have a</em> <strong>look</strong> <em>behind the scenes</em> of police work.’</p>
+</li>
+<li>
+<p>Maar wat is goed genoeg, zo lijkt Staelens zich <em>af</em> te vragen, <em>haar</em> <strong>blik</strong> <em>strak</em> <em>naar</em> <em>beneden</em> <em>gericht</em>. (<em>De Volkskrant</em>, 2003-09-27, Art. 170)</p>
+<p>‘But what is good enough, Staelens seems to wonder, <em>her</em> <strong>gaze</strong> <em>looking straight down</em>.’</p>
+</li>
+</ol>
+<p>The orange cluster may seem homogeneous because of the predominance of the circles, but that is simply an effect of the large frequency of the ‘gaze’ sense, which can also occur in contexts like (39). The other sense of the ‘gaze’ homonym, ‘perspective,’ as shown in (40), and of the ‘tin’ homonym (see (41)), are also part of this massive heterogeneous cluster. If anything brings these tokens together, other than the fact that they normally do not match the patterns in (37) and (38), is that they typically co-occur with <em>een</em> ‘a, an,’ <em>de</em> ‘the,’ <em>met</em> ‘with,’ <em>op</em> ‘on,’ and other frequent prepositions, or more than one at the same time. These frequent, partially overlapping, and not so meaningful patterns bring all those tokens together and, to a degree, set them apart.</p>
+<ol start="39" class="example" style="list-style-type: decimal">
+<li>
+<p>Totdat <em>Walsh</em> <em>met</em> <em>een</em> <em>droevige</em> <strong>blik</strong> <em>in</em> <em>zijn</em> <em>ogen</em> vertelt dat hij het moeilijk heeft. (<em>Het Parool</em>, 2004-03-02, Art. 121)</p>
+<p>‘Until <em>Walsh</em>, <em>with</em> <em>a</em> <em>sad</em> <strong>look</strong> <em>in</em> <em>his</em> <em>eyes</em>, says that he’s having a hard time.’</p>
+</li>
+<li>
+<p>IMF en Wereldbank liggen al jaren onder vuur wegens <em>hun</em> vermeend <em>eenzijdige</em> <strong>blik</strong> <em>op</em> <em>de</em> ontwikkelingsproblemen <em>van</em> <em>Afrika</em>. (<em>Algemeen Dagblad</em>, 2001-02-20, Art. 129)</p>
+<p>‘The IMF and the World Bank have been under attack for years because of <em>their</em> alledgedly <em>unilateral</em> <strong>view</strong> <em>on</em> <em>the</em> delevopment issues <em>in Africa</em>.’</p>
+</li>
+<li>
+<p>Zijn vader had <em>een</em> fabriek waar <em>voedsel</em> <em>in</em> <strong>blik</strong> werd gemaakt. (<em>NRC Handelsblad</em>, 2003-12-05, Art. 120)</p>
+<p>‘His father had <em>a</em> factory where canned food (lit. `<em>food</em> <em>in</em> <strong>tin cans</strong>’) was made.’</p>
+</li>
+</ol>
+<div class="figure">
+<span style="display:block;" id="fig:blik"></span>
+<img src="phdThesis_files/figure-html/blik-1.png" alt="Cloud of blik: bound5all-ppmiweight-5000nav. For the first homonym, circles represent ‘gaze’ and triangles, ‘view, perspective’; for the second, squares represent ‘tin’ and crosses, ‘made of tin’ or ‘canned food.’" width="672"><p class="caption">
+Figure 6.15: Cloud of <em>blik</em>: bound5all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">5000</span>nav. For the first homonym, circles represent ‘gaze’ and triangles, ‘view, perspective’; for the second, squares represent ‘tin’ and crosses, ‘made of tin’ or ‘canned food.’
+</p>
+</div>
+</div>
+<div id="huldigen" class="section level3" number="6.5.2">
+<h3>
+<span class="header-section-number">6.5.2</span> Dictionary clusters<a class="anchor" aria-label="anchor" href="#huldigen"><i class="fas fa-link"></i></a>
+</h3>
+<p>It might seem pointless to look for meaning in clusters that do not respond to either dominating context words or semantically similar context words, but for some lemmas, it might make sense. Such is the case of the model of <em>huldigen</em> shown in Figure <a href="semantic-interpretation.html#fig:huldigen">6.16</a>.</p>
+<p>Like with other transitive verbs, the senses of this lemma are characterized by the kind of direct objects they can take. When the direct object of <em>huldigen</em> is an idea or opinion, it means ‘to hold, to believe’: in our sample, typical cases include <em>principe</em> ‘principle,’ <em>standpunt</em> ‘point of view’ and <em>opvatting</em> ‘opinion’ (see examples (42) through (44)). The three of them are near neighbours at type level, but frequent enough to lead their own Cumulus or Stratocumulus clouds in most models, like in Figure <a href="semantic-interpretation.html#fig:huldigen">6.16</a>.
+In other contexts, <em>huldigen</em> means ‘to honour, to pay homage,’ and the role of patient is normally filled by human beings (see examples (45) and (46)). In practice, the variety of nouns that can take this place is much larger than for ‘to believe,’ and as a result, the clusters that cover ‘to honour’ are less compact and defined than the clusters representing the other sense. And yet, the Cumulonimbus shown in yellow in Figure <a href="semantic-interpretation.html#fig:huldigen">6.16</a> almost perfectly represents the ‘to honour’ sense. How is that possible?</p>
+<ol start="42" class="example" style="list-style-type: decimal">
+<li>
+<p>Jacques: ``Voor het <em>eerst</em> <strong>huldigen</strong> we het <em>principe</em> dat de vervuiler betaalt." (<em>De Morgen</em>, 1999-03-10, Art. 12)</p>
+<p>‘Jacques: ``For the <em>first</em> time we <strong>uphold</strong> the <em>principle</em> that polluters must pay."’</p>
+</li>
+<li>
+<p>De regering in Washington <strong>huldigt</strong> het <em>standpunt</em> dat volgens Amerikaans recht de vader beslist over het domicilie van zijn minderjarige zoon. (<em>NRC Handelsblad</em>, 2000-04-03, Art. 97)</p>
+<p>‘The government in Washington <strong>holds</strong> the <em>view</em> that according to American law fathers decide on the primary residence of their underage sons.’</p>
+</li>
+<li>
+<p>…de objectieve stand van zaken in de buitenwereld zou kunnen <em>weerspiegelen</em>. Rorty <strong>huldigde</strong> <em>voortaan</em> de <em>opvatting</em> dat waarheid synoniem is voor wat goed is voor ons. (<em>De Standaard</em>, 2003-01-09, Art. 93)</p>
+<p>‘…would <em>reflect</em> the objective state of affairs in the outside world. <em>Ever since</em> Rorty <strong>has held</strong> the <em>opinion</em> that the truth is a synonym for what is good for us.’</p>
+</li>
+<li>
+<p>"Elk <em>jaar</em> <strong>huldigen</strong> wij onze <em>kampioenen</em> en sinds enkele jaren richten we een jeugdkampioenschap in", zegt voorzitter Eddy Vermoortele. (<em>Het Laatste Nieuws</em>, 2003-04-15, Art. 121)</p>
+<p>‘"Every <em>year</em> we <strong>honour</strong> our <em>champions</em> and for a few years we’ve been organizing a youth championship", says chairman Eddy Vermoortele.’</p>
+</li>
+<li>
+<p>Langs de versierde straten zijn we naar de kerk gereden en na de plechtigheid hebben we Karel nog <strong>gehuldigd</strong> in <em>feestzaal</em> Santro. Hij is nog een heel kranige man. (<em>Het Laatste Nieuws</em>, 2003-07-18, Art. 256)</p>
+<p>‘We drove through the ornate streets towards the church and after the ceremony we <strong>honoured</strong> Karel at the <em>party hall</em> Santro. He is still a spry man.’</p>
+</li>
+</ol>
+<div class="figure">
+<span style="display:block;" id="fig:huldigen"></span>
+<img src="phdThesis_files/figure-html/huldigen-1.png" alt="Cloud of huldigen: nobound3lex-ppmiselection-focall. Circles represent ‘to believe, to hold (an opinion)’; triangles, ‘to honour.’" width="672"><p class="caption">
+Figure 6.16: Cloud of <em>huldigen</em>: nobound3lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. Circles represent ‘to believe, to hold (an opinion)’; triangles, ‘to honour.’
+</p>
+</div>
+<p>One of the factors playing a role in the layout of this model is that the co-occurrences with <em>principe</em> ‘principle,’ <em>standpunt</em> ‘point of view’ and <em>opvatting</em> ‘opinion’ exhaust about half the attestation of the ‘to believe’ sense. The rest of the tokens are too varied and typically fall into noise. The variety within the ‘to honour’ sense cannot compete against the stark differences between these clusters and everything else. Nonetheless, there is some form of structure within the sense that differentiates it from the equally varied remaining tokens of ‘to believe,’ and that is a family resemblance structure.</p>
+<p>No single semantic field is enough to cover the variety of contexts in which <em>huldigen</em> ‘to honour’ occurs in our sample: instead, we find different aspects and variations of the prototypical situation of ceremonies organized by sports- and city organizations in public places, in honour of successful athletes.
+In order to get a better picture of the syntagmatic relationships between the context words within the cluster, we can represent them in a network, show in Figure <a href="semantic-interpretation.html#fig:huldigennet">6.17</a>. Each node represents one of the 150 most frequent context words co-occurring with tokens from the yellow cloud in Figure <a href="semantic-interpretation.html#fig:huldigen">6.16</a>, and it is connected to each of the context words with which it co-occurs in a token of that cluster. The thickness of the edges represents the frequency with which the context words co-occur within the sample; the size of the nodes summarizes that frequency, and the size of the label roughly represents the frequency of the context word among the tokens in the cluster.</p>
+<p>The most frequent context word is the passive auxiliary <em>word</em>: it is the only context word captured in the tokens of the dense core on the upper right corner of the cloud, and co-occurs with about half the tokens of this cluster. A number of different, less frequent context words partially co-occur with it, such as <em>kampioen</em> ‘champion,’ <em>stadhuis</em> ‘city hall’ and <em>sport_raad</em> ‘sports council.’ They subsequently generate their own productive branches in the family resemblance network. Crucially, this shows how we might have a token that co-occurs with <em>verdienstelijk</em> ‘deserving’ and <em>sport_raad</em> ‘sports council’ and one that co-occurs with <em>gemeente_bestuur</em> ‘municipal administration’ and <em>officieel</em> ‘official,’ both as part of the same cluster.</p>
+<p>Semantically and distributionally, the context words plotted in this network belong to different, loosely related fields, such as sports (<em>kampioen</em> ‘champion,’ <em>winnaar</em> ‘winner,’ <em>sport_raad</em> ‘sports council’), town administration (<em>stad_bestuur</em>, <em>gemeente_bestuur</em> ‘city administration’) and temporal expressions (<em>jaar</em> ‘year,’ <em>weekend</em>). The predominance of the passive auxiliary <em>word</em> — lexically instantiated colligation — the presence of unified semantic fields — multiple semantic preferences — and the family resemblance among tokens, resulting from an intricate network of co-occurrences, work together to model the subtle, complex semantic structure of <em>huldigen</em> ‘to honour.’</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:huldigennet"></span>
+<img src="phdThesis_files/figure-html/huldigennet-1.png" alt="Network of context words of the huldigen `to honour’ cluster." width="100%"><p class="caption">
+Figure 6.17: Network of context words of the <em>huldigen</em> `to honour’ cluster.
+</p>
+</div>
+</div>
+</div>
+<div id="theo1-summary" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Summary<a class="anchor" aria-label="anchor" href="#theo1-summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>Different types of clouds offer us different kinds of information. The ideal result of clusters that equal dictionary senses is only rarely found, and instead we typically find collocations that represent (proto)typical contexts within a sense. Next to this typical result, we encounter a variety of phenomena combining syntagmatic and paradigmatic aspects. Along with collocations, we find colligation and semantic preference as motors behind most of the clusters, but also a number of cases where no clear distributional pattern can be found. These phenomena correlate decently with the types of clouds discussed in Chapter <a href="shapes.html#shapes">5</a>: collocations with Cumulus clouds, lexically instantiated colligation with Stratocumulus clouds, semantic preference with all but Cumulonimbus, and near-open choice with Cumulonimbus. These are, of course, not deterministic mappings, but general tendencies.
+At the paradigmatic or semantic level, next to clusters that represent typical contexts, we find heterogeneous clusters and some that match senses completely. In addition, typical contexts may include richer information regarding different semantic dimensions of a sense that are highlighted in certain contexts, i.e. that are prototypical of that contextual pattern.</p>
+<p>In this chapter we have seen the different combinations of these syntagmatic and paradigmatic phenomena, and the shapes they can take in the models of different lemmas. Clouds do not necessarily match senses, but may offer us other types of information, depending on the distributional properties of the lemma and the dimensions that are most relevant in its semasiological structure. In the following chapter we will look at the (lack of) relationship between the information we obtain and parameter settings.</p>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></div>
+<div class="next"><a href="no-optimal.html"><span class="header-section-number">7</span> No sky is the best sky</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#semantic-interpretation"><span class="header-section-number">6</span> The language of clouds</a></li>
+<li>
+<a class="nav-link" href="#infotypes"><span class="header-section-number">6.1</span> Types of information</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#collocationally"><span class="header-section-number">6.1.1</span> Collocational perspective</a></li>
+<li><a class="nav-link" href="#semantically"><span class="header-section-number">6.1.2</span> Semantic perspective</a></li>
+<li><a class="nav-link" href="#interaction-between-dimensions"><span class="header-section-number">6.1.3</span> Interaction between dimensions</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#collocation"><span class="header-section-number">6.2</span> Collocation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#heilzaam"><span class="header-section-number">6.2.1</span> Heterogeneous clouds</a></li>
+<li><a class="nav-link" href="#schaal"><span class="header-section-number">6.2.2</span> Dictionary clouds</a></li>
+<li><a class="nav-link" href="#prototypical-clouds"><span class="header-section-number">6.2.3</span> (Proto)typical contexts</a></li>
+<li><a class="nav-link" href="#stof"><span class="header-section-number">6.2.4</span> Profiling</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#colligation"><span class="header-section-number">6.3</span> Lexically instantiated colligation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#heterogeneous-clusters"><span class="header-section-number">6.3.1</span> Heterogeneous clusters</a></li>
+<li><a class="nav-link" href="#dictionary-clouds"><span class="header-section-number">6.3.2</span> Dictionary clouds</a></li>
+<li><a class="nav-link" href="#prototypical-contexts"><span class="header-section-number">6.3.3</span> (Proto)typical contexts</a></li>
+<li><a class="nav-link" href="#profiling"><span class="header-section-number">6.3.4</span> Profiling</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#semantic-preference"><span class="header-section-number">6.4</span> Semantic preference</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#uitspraak"><span class="header-section-number">6.4.1</span> Heterogeneous clusters</a></li>
+<li><a class="nav-link" href="#dictionary-clusters"><span class="header-section-number">6.4.2</span> Dictionary clusters</a></li>
+<li><a class="nav-link" href="#prototypical-contexts-1"><span class="header-section-number">6.4.3</span> (Proto)typical contexts</a></li>
+<li><a class="nav-link" href="#profiling-1"><span class="header-section-number">6.4.4</span> Profiling</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#openchoice"><span class="header-section-number">6.5</span> Near-open choice</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#blik"><span class="header-section-number">6.5.1</span> Heterogeneous clusters</a></li>
+<li><a class="nav-link" href="#huldigen"><span class="header-section-number">6.5.2</span> Dictionary clusters</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#theo1-summary"><span class="header-section-number">6.6</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/montesmariana/phdThesis/blob/master/06-semantic_interpretation.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/montesmariana/phdThesis/edit/master/06-semantic_interpretation.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Cloudspotting</strong>: Visual analytics for distributional semantics" was written by Mariana Montes. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

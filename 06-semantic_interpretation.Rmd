@@ -58,17 +58,27 @@ In the following sections, we will look in detail at examples of each attested c
 The examples will be illustrated with scatterplots in which the colours represent `r sc("hdbscan")` clusters, the shapes indicate manually annotated dictionary senses, and the transparency, the $\varepsilon$ value from `r sc("hdbscan")`. The senses are not specified in the legends, but the clusters will be named with the context word that represents it best (see Section \@ref(cloud-types)). Textual reproductions of some tokens will also be offered; in all cases the target will be in bold face and the context words captured by the relevant model, in italics. The name of the newspaper, the date of publication and the number of the article will follow the original text, and the following paragraph will reproduce the English translation between simple inverted commas.
 
 ```{r, colsem, anchor = 'Table'}
-read_tsv(
-  here::here("assets", "collocation-prototypicality-contingency_latex.txt"),
-  # here::here("assets", "collocation-prototypicality-contingency_html.txt"),
-  col_types = cols()
-) %>% 
-  knitr::kable(booktabs = T, escape = F,
-               caption = "Contingency table between the collocational and semantic perspectives, with a few examples.",
-               linesep = "\\addlinespace") %>% 
-  kable_styling(full_width = T, font_size = 8) %>% 
-  landscape() %>% 
-  column_spec(c(1, 5), width = "6em")
+if (knitr::is_latex_output()) {
+  read_tsv(
+    here::here("assets", "collocation-prototypicality-contingency_latex.txt"),
+    here::here("assets", "collocation-prototypicality-contingency_html.txt"),
+    show_col_types = FALSE
+  ) %>% 
+    knitr::kable(booktabs = T, escape = F,
+                 caption = "Contingency table between the collocational and semantic perspectives, with a few examples.",
+                 linesep = "\\addlinespace") %>% 
+    kable_styling(full_width = T, font_size = 8) %>% 
+    landscape() %>% 
+    column_spec(c(1, 5), width = "6em")  
+} else {
+  read_tsv(
+    here::here("assets", "collocation-prototypicality-contingency_html.txt"),
+    show_col_types = FALSE
+  ) %>% 
+    kable(escape = F, caption = "Contingency table between the collocational and semantic perspectives, with a few examples.") %>% 
+    kable_paper()
+}
+
 ```
 
 ## Collocation {#collocation}
@@ -379,7 +389,7 @@ One of these cases was already discussed in the context of *schaal* 'scale' toke
 
 Another example is found in *haken*, where the 'to make someone trip' sense is characterized by a variety of football-related terms (*strafschop* 'penalty kick', *penalty*, *scheidsrechter* 'referee', etc.), and the very infrequent 'crochet' sense, by *brei* 'to knit', *naai* 'to sew', *hobby* and similar words. They are represented as a Stratocumulus of dark blue squares and a Cirrus of light blue crossed squares in Figure \@ref(fig:haken) respectively. As indicated by the name of the dark blue cluster, the passive auxiliary *word* is also characteristic of the 'to make someone trip' cluster and very rarely occurs outside of it: here, lexically instantiated colligation is working together with the clear semantic preference of the cloud.
 
-(ref:haken) Cloud of *haken*: `r nameModel(names(d$herroepen$medoidCoords)[[6]])`. Circles and triangles represent the transitive and intransitive literal 'to hook'; crosses represent the figurative (intransitive) sense; filled squares represent 'to make someone trip'; crossed squares, 'to corchet', and asterisks, 'to strive for' (with *naar*).
+(ref:haken) Cloud of *haken*: `r nameModel(names(d$haken$medoidCoords)[[1]])`. Circles and triangles represent the transitive and intransitive literal 'to hook'; crosses represent the figurative (intransitive) sense; filled squares represent 'to make someone trip'; crossed squares, 'to corchet', and asterisks, 'to strive for' (with *naar*).
 
 ```{r, haken, fig.cap = '(ref:haken)'}
 plotWithCws('haken', 1)

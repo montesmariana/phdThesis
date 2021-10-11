@@ -1,6 +1,6 @@
 library(tidyverse)
 library(kableExtra)
-library(colorblindr)
+source(here::here("src", "scales.R")) # library(colorblindr)
 library(sna)
 library(GGally)
 library(gghalves)
@@ -17,12 +17,16 @@ library(network)
 write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown',
   'cluster', 'vegan', 'Rtsne', 'dbscan', 'umap',
-  'semvar', 'entropy', 'shiny', 'colorblindr',
+  'semvar', 'entropy', 'shiny',
+  'colorblindr',
   'plotly'
-), 'assets/bib/packages.bib')
+), here('assets', 'bib', 'packages.bib'))
 
 loadfonts(device = "pdf")
+loadfonts(device = "win")
+plot_text <- if (knitr::is_latex_output()) "Bookman Old Style" else ""
 # utils ----
+
 hmean <- function(...){
   return(1/mean(1/c(...), na.rm = TRUE))
 }
@@ -55,7 +59,9 @@ sc <- function(txt){
 }
 
 latIt <- function(txt){
-  if (is.na(txt)) "" else str_replace(r"((\textit{X}))", "X", txt)
+  pattern <- if (knitr::is_latex_output()) r"((\textit{X}))" else "(<em>X</em>)"
+  
+  if (is.na(txt)) "" else str_replace(pattern, "X", txt)
 }
 
 appPvalue <- function(p) {
@@ -151,7 +157,7 @@ medoid_data <- read_tsv(here("assets", "medoid_data.tsv"), col_types = cols()) %
   mutate(cloud_type = fct_relevel(cloud_type, cloud_order))
 cloud_data <- read_tsv(here("assets", "classification.tsv"), col_types = cols()) %>% 
   mutate(cloud_type = fct_relevel(cloud_type, cloud_order))
-examples <- read_tsv("assets/examples_translated.tsv", col_types = cols())
+examples <- read_tsv(here('assets', "examples_translated.tsv"), col_types = cols())
 
 
 to_show <- c("heet", "stof", "dof", "huldigen", "haten", "hoop")
@@ -167,7 +173,7 @@ complex_cor <- function(df,
   baseplot <- df %>% 
     ggplot(aes(x = {{ x_coord }}, y = {{ y_coord }}, color = {{ color_var }})) +
     geom_point(alpha = 0.5, size = 3) +
-    theme_pubr(base_family = "Bookman Old Style") +
+    theme_pubr(base_family = plot_text) +
     (if (ncats > 3) scale_colour_viridis_d(guide = guide_legend(
       direction = "horizontal",
       title.position = "top"
@@ -389,17 +395,25 @@ mean_n_clusters <- cloud_data %>%
 # Tables ----
 showDefs <- function(lemmas, caption) {
   subdefs <- filter(definitions, lemma %in% lemmas)
-  kbl(select(subdefs, Dutch, sense, English), escape = F, booktabs = T, caption = caption,
+  the_table <- select(subdefs, Dutch, sense, English)
+  if (knitr::is_latex_output()) {
+    kbl(the_table, escape = F, booktabs = T, caption = caption,
         longtable = T, linesep = "\\addlinespace") %>% 
-    kable_paper(font_size = 7, latex_options = c("repeat_header"), full_width = T,
-                repeat_header_method = "replace") %>% 
-    pack_rows(index = table(subdefs$lemma),
-              latex_align = "c",
-              # latex_gap_space = "0.5em",
-              indent = F) %>% 
-    column_spec(2, width = "1.5em") %>%
-    column_spec(c(1, 3), width = "19em") %>% 
-    row_spec(0, align = "c", bold = T, font_size = 9)
+      kable_paper(font_size = 7, latex_options = c("repeat_header"), full_width = T,
+                  repeat_header_method = "replace") %>% 
+      pack_rows(index = table(subdefs$lemma),
+                latex_align = "c",
+                # latex_gap_space = "0.5em",
+                indent = F) %>% 
+      column_spec(2, width = "1.5em") %>%
+      column_spec(c(1, 3), width = "19em") %>% 
+      row_spec(0, align = "c", bold = T, font_size = 9)  
+  } else {
+    kbl(the_table, escape = F, caption = caption) %>% 
+      kable_paper() %>% 
+      pack_rows(index = table(subdefs$lemma)) %>% 
+      scroll_box(height = '400px')
+  }
 }
 
 countCues <- function(colname, n = 10){

@@ -17,7 +17,7 @@ When we look at the t-`r sc("sne")` plot of a token-level model, we might see di
 ```{r, grey6, fig.cap = '(ref:grey6)'}
 plot_grid(plotlist = map(to_show, ~plotNude(d[[.x]]$medoidCoords[[str_glue("{.x}.{popular_medoid}")]]$coords)),
           labels = to_show,
-          label_fontfamily = "Bookman Old Style",
+          label_fontfamily = plot_text,
           hjust = 0
           )
 ```
@@ -31,7 +31,7 @@ At the stage of the distance matrix, we can establish, for each of our tokens, i
 ```{r, coloured6, fig.cap = '(ref:coloured6)'}
 plot_grid(plotlist = map(to_show, ~plotBasic(d[[.x]]$medoidCoords[[str_glue("{.x}.{popular_medoid}")]])),
           labels = to_show,
-          label_fontfamily = "Bookman Old Style",
+          label_fontfamily = plot_text,
           hjust = 0)
 ```
 
@@ -311,7 +311,7 @@ complex_cor(
 ```
 
 Third, we will look at the $\varepsilon$ values across different cloud types. They were part of their definition, insofar the proportion of tokens with a lower $\varepsilon$ than the lower noise $\varepsilon$ is a criterion for Cumulus, Stratocumulus and Cirrus clouds. Nevertheless, it could be useful to summarize the resulting patterns. In that spirit, Figure \@ref(fig:epsplot) shows, for each of the clusters in the medoids, the minimum, mean and maximum $\varepsilon$ within a cluster. Note that this gives us no insight on the relationship between the $\varepsilon$ of the tokens in the cluster and the values in other tokens, either clustered or noise.
-As we would expect, Cirrostratus clouds tend to have the highest $\varepsilon$: their tokens are disperse, far away from other tokens. Cumulus, Stratocumulus and Cirrus tend to have relatively similar values, although some Cumulus clouds are quite low and Cirrus clouds are quite flat and never very low. The differences between them are more likely to be found in their relationship with the noise $\varepsilon$. Cumulus clouds stand out as dense areas against a very disperse (i.e. high $\varepsilon$) background, whereas Cirrus clouds are just slightly denser than the rest of the clouds in their surroundings. Think of the uniform plots of *haten* and *hoop* in Figure \@ref(fig:grey6) and the `r sc("hdbscan")` interpretation in Figure \@ref(fig:coloured6): all the tokens look, roughly, equally disperse. Finally, Cumulonimbus clouds exhibit the widest range of all: their tokens vary from very dense areas, i.e. very low $\varepsilon$, to very disperse ones, i.e. high $\varepsilon$.
+As we would expect, Cirrostratus clouds tend to have the highest $\varepsilon$: their tokens are disperse, far away from other tokens. Cumulus, Stratocumulus and Cirrus tend to have relatively similar values, although some Cumulus clouds are quite low and Cirrus clouds are quite flat and never very low. The differences between them are more likely to be found in their relationship with the noise $\varepsilon$. Cumulus clouds stand out as dense areas against a very disperse (i.e. high $\varepsilon$) background, whereas Cirrus clouds are just slightly denser than the rest of the clouds in their surroundings. Think of the uniform plots of *haten* and *hoop* in Figure \@ref(fig:grey6) and the `r sc("hdbscan")` interpretation in Figure \@ref(fig:coloured6): all the tokens look, roughly, equally disperse. Finally, Cumulonimbus clouds exhibit the widest range of all: their tokens vary from very dense areas, i.e. very low $\varepsilon$, to very disperse ones, i.e. high $\varepsilon.$
 
 (ref:epsplot) Range of $\varepsilon$ values within clouds of different types. Lines join the points belonging to the same cluster.
 
@@ -328,7 +328,7 @@ medoid_data %>% unite(cluster, model, cluster) %>%
   geom_line(aes(group = cluster), alpha = 0.1, size = 1) +
   scale_color_viridis_d(guide = "none") +
   facet_wrap(~cloud_type) +
-  ggpubr::theme_pubclean(base_family = "Bookman Old Style") +
+  ggpubr::theme_pubclean(base_family = plot_text) +
   labs(x = "Summary of the range within the cluster",
        y = latex2exp::TeX(r"($\epsilon$)"))
 ```

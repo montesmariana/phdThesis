@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 No sky is the best sky | Cloudspotting</title>
+<meta name="author" content="Mariana Montes">
+<meta name="description" content="There is no magic trick to extract neat, semantically homogeneous clouds from the wild sea of corpus attestations. As we have seen in Chapter 5, the clouds can take a number of different shapes,...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 7 No sky is the best sky | Cloudspotting">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/assets/covers/front-cover.png">
+<meta property="og:description" content="There is no magic trick to extract neat, semantically homogeneous clouds from the wild sea of corpus attestations. As we have seen in Chapter 5, the clouds can take a number of different shapes,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 No sky is the best sky | Cloudspotting">
+<meta name="twitter:description" content="There is no magic trick to extract neat, semantically homogeneous clouds from the wild sea of corpus attestations. As we have seen in Chapter 5, the clouds can take a number of different shapes,...">
+<meta name="twitter:image" content="/assets/covers/front-cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Visual analytics for distributional semantics">Cloudspotting</a>:
+        <small class="text-muted">Visual analytics for distributional semantics</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">The cloudspotter’s toolkit</li>
+<li><a class="" href="workflow.html"><span class="header-section-number">2</span> From corpora to clouds</a></li>
+<li><a class="" href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></li>
+<li><a class="" href="dataset.html"><span class="header-section-number">4</span> Case studies</a></li>
+<li class="book-part">The cloudspotter’s handbook</li>
+<li><a class="" href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></li>
+<li><a class="" href="semantic-interpretation.html"><span class="header-section-number">6</span> The language of clouds</a></li>
+<li><a class="active" href="no-optimal.html"><span class="header-section-number">7</span> No sky is the best sky</a></li>
+<li class="book-part">The cloudspotter’s cheatsheet</li>
+<li><a class="" href="conclusions-and-guidelines.html"><span class="header-section-number">8</span> Conclusions and guidelines</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/montesmariana/phdThesis">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="no-optimal" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> No sky is the best sky<a class="anchor" aria-label="anchor" href="#no-optimal"><i class="fas fa-link"></i></a>
+</h1>
+<p>There is no magic trick to extract neat, semantically homogeneous clouds from the wild sea of corpus attestations. As we have seen in Chapter <a href="shapes.html#shapes">5</a>, the clouds can take a number of different shapes, depending on the variability of the context words that co-occur with the target, their frequency and their diversity. Chapter <a href="semantic-interpretation.html#semantic-interpretation">6</a> further shows that these clusters may have various interpretations, both from a syntagmatic perspective and from a paradigmatic perspective, resulting in a diverse net of phenomena. It also explores the role of the similarity and co-occurrence between the context words. In this chapter, we will look at the relationship between these results and the parameter settings that produce them.</p>
+<p>In consonance to the previous analyses, there is no golden law to be drawn from here. There is no set of parameter settings that reliably returns the best output: not for specific parts of speech, nor for specific semantic phenomena.
+This variability will be illustrated in two sections: in Section <a href="no-optimal.html#hoopstof">7.1</a> I will compare the medoids of <em>hoop</em> ‘hope/heap’ and <em>stof</em> ‘substance/dust…’ that best model homonymy in each lemma, while Section <a href="no-optimal.html#paramranking">7.2</a> will look at the shape that the same parameter configuration takes in many different models.</p>
+<div id="hoopstof" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> A pile of dust<a class="anchor" aria-label="anchor" href="#hoopstof"><i class="fas fa-link"></i></a>
+</h2>
+<p>As mentioned in Chapter <a href="dataset.html#dataset">4</a>, we have modelled 7 homonymous and polysemous nouns, with the intention of studying the relationship between parameter settings and granularity of meaning. We expected certain parameters to be better at modelling differences between homonyms and others to be able to capture, at least in some cases, the more subtle differences between senses of a homonym. However, even though homonymy should be relatively easy to model<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;See for example in &lt;span class="citation"&gt;&lt;a href="references.html#ref-schutze_1998" role="doc-biblioref"&gt;Schütze&lt;/a&gt; (&lt;a href="references.html#ref-schutze_1998" role="doc-biblioref"&gt;1998&lt;/a&gt;)&lt;/span&gt;; &lt;span class="citation"&gt;&lt;a href="references.html#ref-yarowsky_1995" role="doc-biblioref"&gt;Yarowsky&lt;/a&gt; (&lt;a href="references.html#ref-yarowsky_1995" role="doc-biblioref"&gt;1995&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;'><sup>48</sup></a>, the results are not so straightforward. As an example, let’s look at the medoids of <em>hoop</em> ‘hope, heap’ and <em>stof</em> ‘substance, dust…’ that most successfully model the manual annotation.</p>
+<p>Figure <a href="no-optimal.html#fig:besthomonym">7.1</a> shows the best medoid of each of the lemmas, in terms of semantic homogeneity of the clusters. By mapping the sense tags to colours, we can see that each of them has a rather well defined, homogeneous area in the t-<span class="smallcaps">sne</span> plot. It should be noted, however, that the areas are relatively uniform, and we would be hard pressed to find such a clear structure without any colour-coding. In fact, <span class="smallcaps">hdbscan</span> only highlights the most salient areas, covering, for example, only the center of the light blue island in the left plot.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:besthomonym"></span>
+<img src="phdThesis_files/figure-html/besthomonym-1.png" alt="Best medoids of hoop (pathweight-ppmino-focall) and stof (bound5lex-ppmiselection-focall)." width="672"><p class="caption">
+Figure 7.1: Best medoids of <em>hoop</em> (<span class="smallcaps">path</span>weight-<span class="smallcaps">ppmi</span>no-<span class="smallcaps">foc</span>all) and <em>stof</em> (bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all).
+</p>
+</div>
+<p>The senses plotted to the colours are coded with numbers to avoid cluttering. The senses of <em>hoop</em> are, for the first homonym, [1] literal ‘heap, pile’ and [2] general ‘heap, bunch,’ and for the second homonym, [3] ‘hope.’ The first homonym of <em>stof</em> includes [1] ‘substance,’ [2] ‘fabric’ and [3] ‘topic, material,’ while the second covers [4] literal ‘dust’ and [6] idiomatic ‘dust.’ There is no sense [5], originally ‘(reduced to) dust,’ because it was not attested.
+Some relevant examples will be given below.</p>
+<p>The parameters that result in these models are in fact very different, although their second-order configuration is equivalent: the union of all the context words captured by the model are also used as second-order dimensions. As a result, the dimensionality of the token-level vectors is quite low: 833 for <em>hoop</em> and 483 for <em>stof</em>.</p>
+<p>The model that works best for <em>hoop</em> is the only medoid that manages to group the tokens of the ‘heap’ homonym away from the larger mass of ‘hoop’ tokens (in green), with even a neat moat in between. If we sacrifice the infrequent literal ‘heap’ sense (in orange), the split is indeed outstanding. This is achieved by a <code>PATHweight</code> model: it uses syntactic information, selects the context words connected up to three steps away from the target, and weights the contribution of each item on that distance, regardless of the precise nature of the syntactic relationship, part-of-speech information or <span class="smallcaps">pmi</span>. The syntactic distances, i.e. the number of steps to the target in the dependency path, are illustrated with the superscripts in examples (47) and (48).</p>
+<p>In (47), the indefinite determiner <em>een</em> and the modified noun <em>onzin</em> ‘nonsense’ are directly linked to the target <em>hoop</em> as dependent and head respectively, so they are taken by the model and receive the highest weight. The first occurrence of the verb <em>is</em> is the head of its subject <em>onzin</em> ‘nonsense,’ hence two steps away of the target: it is included and receives a slightly lower weight. The particle <em>er</em>, which is tagged as a modifier of <em>is</em>, and the second instance of <em>is</em>, as head of the subordinate clause, are three steps away from the target, and therefore obtain a low weight. The rest of the context is ignored by this model.</p>
+<p>Example (48) offers a much more complex picture, particularly because the link between the target <em>hoop</em> ‘hope’ and the verb <em>spreek_uit</em> ‘to express’ (split in <em>sprak</em> and its particle <em>uit</em>), is short. As the core of the dependency tree, the main verb opens the path to many other elements in the sentence.</p>
+<ol start="47" class="example" style="list-style-type: decimal">
+<li>
+<p>Er<sup>3</sup> is<sup>2</sup> een<sup>1</sup><strong>hoop</strong> onzin<sup>1</sup>, talent is<sup>3</sup> niet iedereen gegeven. (<em>Algemeen Dagblad</em>, 2001-01-27, Art. 78)</p>
+<p>‘There is a <strong>lot of</strong> nonsense; talent is not given to everyone.’</p>
+</li>
+<li>
+<p>De<sup>3</sup> trainer<sup>2</sup> van<sup>3</sup> FC Utrecht sprak<sup>1</sup> verder<sup>2</sup> de<sup>1</sup><strong>hoop</strong> uit<sup>2</sup> dat<sup>1</sup> hij<sup>3</sup> binnenkort weer eens mag<sup>2</sup> investeren<sup>3</sup> van de clubleiding. (<em>NRC Handelsblad</em>, 2004-05-24, Art. 93)</p>
+<p>‘The manager of FC Utrecht also expressed the <strong>hope</strong> that the club management would allow him to invest once again soon.’</p>
+</li>
+</ol>
+<p>A key point for this lemma is that <em>hoop</em> ‘hope,’ represented by (48), is a mass noun, and therefore tends to occur with the definite determiner <em>de</em> (40% of the cases). In contrast, <em>hoop</em> ‘heap,’ represented by (47), tends to occur with <em>een</em> ‘a(n)’ (64 out of 76 occurrences). This correlation is hard to extract with a bag-of-words model, which would either filter out function words such as the determiners, or include all determiners, related to the target or not, thus drowning this pattern in noise.</p>
+<p>In contrast, the parameter settings that work best for <em>stof</em> are <code>bound5lex</code> and <code>PPMIselection</code>, i.e. they capture the nouns, verbs, adjectives and adverbs within 5 slots to each side of the target, as long as they are within the limits of the sentence and their <span class="smallcaps">pmi</span> with the target lemma is positive. In the case of (49), for example, the model selects <em>discussie</em> ‘discussion’ and <em>lever_op</em> ‘to bring about, to return,’ in italics in the transcription. Words that might follow after the period would be excluded by this model, as are those before <em>film</em> ‘movie.’ Within the window span of 5 words to each side, <em>die</em> ‘that,’ <em>na</em> ‘after,’ <em>veel</em> ‘much’ and <em>tot</em> ‘to’ are excluded because of the part-of-speech filter. Finally, the nouns <em>film</em> ‘movie’ and <em>afloop</em> ‘end, conclusion,’ which survive the window size and part-of-speech filters, are excluded by the association strength filter, since their <span class="smallcaps">pmi</span> value in relation to <em>stof</em> is lower than 0.</p>
+<ol start="49" class="example" style="list-style-type: decimal">
+<li>
+<p>Dit is een perfect voorbeeld van een film die na afloop veel <strong>stof</strong> tot <em>discussie</em> <em>oplevert</em>. (<em>Algemeen Dagblad</em>, 2003-12-11, Art. 58)</p>
+<p>‘This is a perfect example of a film that afterwards <em>provides</em> a lot of food for thought (lit. `<strong>stuff</strong> for <em>discussion</em>’).’</p>
+</li>
+</ol>
+<p>Being generous, we can find a good representation of granularity of meaning for <em>hoop</em> in Figure <a href="no-optimal.html#fig:besthomonym">7.1</a>. In the case of <em>stof</em>, however, the senses are quite well distinguished but the homonyms are not.
+First, most of the idiomatic ‘dust’ tokens group quite nicely in some sort of appendix to the main cloud. These tokens, which are by definition idiomatic uses of <em>stof</em>, tend to be very tightly grouped in most models. An example can be seen in (50). Notably, they also include a few literal tokens that also co-occur with one of the defining context words, i.e. <em>doe</em> ‘to make’ and <em>waai_op</em> ‘to lift.’</p>
+<ol start="50" class="example" style="list-style-type: decimal">
+<li>
+<p>Het huwelijk tussen de hervormde Maurits en de katholieke Marylene <em>deed</em> de <em>nodige</em> <strong>stof</strong> <em>opwaaien</em>. (<em>Algemeen Dagblad</em>, 1999-12-08, Art. 3)</p>
+<p>‘The wedding between Maurit, a Reformed Christian, and Marylene, a Catholic, inspired a much needed debate (lit. `<em>stirred up</em> the <em>necessary</em> <strong>dust</strong>’).’</p>
+</li>
+</ol>
+<p>The rest of the tokens seem to be organized by sense with subtle borders in between. The most frequent sense, ‘substance,’ even includes a few independent islands on top, already discussed in Section <a href="semantic-interpretation.html#stof">6.2.4</a>.</p>
+<p>Most interestingly, ‘fabric’ and ‘dust,’ in light blue and yellow respectively, like to go together, even though they belong to different homonyms. In fact, <span class="smallcaps">hdbscan</span> merges them together in one cluster, as we will see in Figure <a href="no-optimal.html#fig:popular1">7.3</a>. This is not entirely surprising, given that both senses tend to co-occur with quite concrete context words, such as names for materials and colours (see for example (51) and (52)), while the ‘substance’ sense is more chemically-oriented and the ‘topic, material’ sense, illustrated in (49), co-occurs with the semantic domain of communication instead.</p>
+<ol start="51" class="example" style="list-style-type: decimal">
+<li>
+<p>Dankzij de nieuwe vlekwerende ``stay clean"-behandelingen dringen zelfs vloeistoffen zoals olie, vruchtensap of <em>water</em> niet in de <strong>stof</strong>. (<em>De Standaard</em>, 2001-01-19, Art. 6)</p>
+<p>‘Thanks to the new stain-resistant ``stay clean" treatments even liquids such as oil, fruit juice or <em>water</em> do not penetrate the <strong>fabric</strong>.’</p>
+</li>
+<li>
+<p>Na het <strong>stof</strong> de <em>douche</em>. De tocht door de Hel zit er op. (<em>De Morgen</em>, 2003-04-15, Art. 65)</p>
+<p>‘After the <strong>dust</strong> the <em>shower</em>. The trip through Hell [a cobblestone cycling road] is over.’</p>
+</li>
+</ol>
+<p>This description should suffice to understand how very different parameter configurations are necessary to model such different lemmas. The fact that both of them are homonyms is not enough: other aspects of their structure, such as the kind of contextual features that characterize each sense or homonym, play a role.</p>
+<p>What I have not shown is that other models are not as good. What would come out from applying the parameter settings that work best for one lemma onto the other? This we see in Figure <a href="no-optimal.html#fig:switchbest">7.2</a>.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:switchbest"></span>
+<img src="phdThesis_files/figure-html/switchbest-1.png" alt="Model of hoop with the parameters that work best for stof and viceversa: bound5lex-ppmiselection-focall for hoop and pathweight-ppmino-focallfor stof" width="672"><p class="caption">
+Figure 7.2: Model of <em>hoop</em> with the parameters that work best for <em>stof</em> and viceversa: bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all for <em>hoop</em> and <span class="smallcaps">path</span>weight-<span class="smallcaps">ppmi</span>no-<span class="smallcaps">foc</span>allfor <em>stof</em>
+</p>
+</div>
+<p>Indeed, swapping the configurations returns unsatisfying results. In the case of <em>hoop</em>, we see a similar picture to many other models: a plot overrun by ‘hope,’ with maybe an area with more ‘literal heap’ tokens, while the ‘general heap’ tokens, that were so nicely separated in Figure <a href="no-optimal.html#fig:besthomonym">7.1</a>, are mixed and distributed across one hemisphere. In the case of <em>stof</em>, we keep having a large ‘substance’ area in orange, an isolated blue section for the idiomatic ‘dust’ and a shy green peninsula of ‘topic, material’ tokens, but the concrete senses, ‘fabric’ and ‘dust,’ are disperse and mixed.</p>
+<p>Even for a fairly straightforward task as discriminating homonyms, parameters that succeed in one lemma fail in the other. This is unrelated to the number or frequency of the senses. Instead, it is inextricably linked to the particular distributional behaviour of each lemma. While <em>stof</em> can find collocations or semantic preferences that, to various degrees, represent (parts of) senses, the lexical contexts of <em>hoop</em> are too varied to generate clear clusters. On the other hand, a syntactically informed model can identify determiners as a relevant feature of <em>hoop</em>, while the same information seems less interesting in regard to <em>stof</em>.</p>
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;border-bottom: 0;'>
+<caption>
+<span id="tab:level1">Table 7.1: </span>Salient parameter settings per lemma.
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;" colspan="1">
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">
+Only lex
+</div>
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">
+lex or PPMIweight
+</div>
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">
+No lex effect
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+SOC effect
+</th>
+<th style="text-align:left;">
+radial window
+</th>
+<th style="text-align:left;">
+no window
+</th>
+<th style="text-align:left;">
+radial window
+</th>
+<th style="text-align:left;">
+no window
+</th>
+<th style="text-align:left;">
+radial window
+</th>
+<th style="text-align:left;">
+no window
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;width: 3em; ">
+5000-all
+</td>
+<td style="text-align:left;width: 7em; ">
+horde, gekleurd, hoopvol, haten, helpen
+</td>
+<td style="text-align:left;width: 7em; ">
+staal, blik, hemels, gemeen, grijs
+</td>
+<td style="text-align:left;width: 7em; ">
+stof, dof, geestig, heet
+</td>
+<td style="text-align:left;width: 7em; ">
+</td>
+<td style="text-align:left;width: 7em; ">
+</td>
+<td style="text-align:left;width: 7em; ">
+hoekig, geldig, goedkoop
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3em; ">
+5000 around
+</td>
+<td style="text-align:left;width: 7em; ">
+hachelijk
+</td>
+<td style="text-align:left;width: 7em; ">
+haken
+</td>
+<td style="text-align:left;width: 7em; ">
+spot, schaal
+</td>
+<td style="text-align:left;width: 7em; ">
+heilzaam
+</td>
+<td style="text-align:left;width: 7em; ">
+heffen<span class="math inline">\(^1\)</span>
+</td>
+<td style="text-align:left;width: 7em; ">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;width: 3em; ">
+None
+</td>
+<td style="text-align:left;width: 7em; ">
+hoop, herinneren, herstellen<span class="math inline">\(^1\)</span>, harden<span class="math inline">\(^1\)</span>
+</td>
+<td style="text-align:left;width: 7em; ">
+herhalen, diskwalificeren, herstructureren
+</td>
+<td style="text-align:left;width: 7em; ">
+</td>
+<td style="text-align:left;width: 7em; ">
+huldigen<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;width: 7em; ">
+</td>
+<td style="text-align:left;width: 7em; ">
+herroepen
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>1</sup> Models with window size of 3 are separated, no radial structure.
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>2</sup> Dependency-based models are closer to those with larger window instead of those with smaller window.
+</td>
+</tr>
+</tfoot>
+</table></div>
+</div>
+<div id="paramranking" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Weather forecast gone crazy<a class="anchor" aria-label="anchor" href="#paramranking"><i class="fas fa-link"></i></a>
+</h2>
+<p>Parameter settings do not have an equal effect across all models. Even at Level 1, where we compare models of a lemma with each other, we encounter a variety of patterns.
+Table <a href="no-optimal.html#tab:level1">7.1</a> groups all the lemmas based on the three criteria that make the greatest difference in the organization of the Level 1 plots. The main columns refer to effects of the first-order part-of-speech filter and the <span class="smallcaps">ppmi</span> weighting: in the first group of lemmas, <code>lex</code> models occupy a specific area of the Level 1 plot; in the second they are isolated next to the <code>PPMIweight</code> models (and sometimes <code>REL</code> as well), and in the third, no effect of the part-of-speech setting is found. The next level of columns distinguishes the effect of window size among the <code>BOW</code> models. A radial window configuration means that models with a window of 5 lie between those with a window of 3 and those with a window of 10. Typically, the models with smaller windows are closer to the dependency-based models, with <em>huldigen</em> being an exception. Three of these lemmas do not really exhibit a radial structure, but the models with the smallest window tend to be isolated instead. Finally, the rows indicate an effect of the second-order vectors: the first row gathers the lemmas with a separate section for the <code>5000all</code> second-order configuration; the second, lemmas where models with <code>5000</code> vectors simply have a tendency to wrap around the rest of the models (like the wings of a beetle), and the third row is used for the lemmas where second-order parameters have no special effect on the organization of their models. Models with <code>5000all</code> second-order configuration are consistently messy, and tend to make the type-level distances between all pairs of context words huge.</p>
+<p>As we can see in the table, these patterns are not related to the part-of-speech of the target or the semantic phenomena we expect in it. This variability and the different ranges of distances between the models are the reason why selecting medoids is the most reasonable way of exploring the diversity of models.</p>
+<p>Qualitatively, the same set of parameter settings can generate multiple different solutions, depending on the distributional properties of the lemma being modelled. We already saw this in the comparison between Figures <a href="no-optimal.html#fig:besthomonym">7.1</a> and <a href="no-optimal.html#fig:switchbest">7.2</a>: what works best for one lemma will not necessary give a decent result in another. In this section, we briefly look at the models previously plotted in Figures <a href="shapes.html#fig:grey6">5.1</a> and <a href="shapes.html#fig:coloured6">5.2</a>. In all cases, the parameter settings are the same of the best model of <em>stof</em>:
+bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all. The colour-coding matches the <span class="smallcaps">hdbscan</span> clusters, and the shapes, the annotated senses.</p>
+<p>In Figure <a href="no-optimal.html#fig:popular1">7.3</a>, we see the same model for <em>heet</em> ‘hot’ and <em>stof</em> ‘substance, dust….’ The model of <em>heet</em> ‘hot’ has 12 clusters, with roughly equal proportion of Cumulus, Stratocumulus and Cirrus clouds. Most of them are collocation clusters representing typical patterns within a sense, but we also find cases of semantic preference and a few heterogeneous near-open choice clusters. The <em>stof</em> ‘substance, dust…’ model looks roughly similar, with 7 relatively homogeneous clusters: the three Stratocumulus on the upper left are the collocation clusters discussed in Section <a href="semantic-interpretation.html#stof">6.2.4</a> and, next to the red Cirrus defined by semantic preference, they represent typical uses of the ‘substance’ sense. The rest of the clusters, as discussed above, are more heterogeneous. A further difference between the two lemmas is that, while the homogeneous clouds of <em>stof</em> ‘substance’ represent typical uses that profile different dimensions of the sense, the typical patterns within <em>heet</em> ‘hot’ constitute idiomatic expressions.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:popular1"></span>
+<img src="phdThesis_files/figure-html/popular1-1.png" alt="Models of heet and stof with bound5lex-ppmiselection-focall." width="672"><p class="caption">
+Figure 7.3: Models of <em>heet</em> and <em>stof</em> with bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all.
+</p>
+</div>
+<p>The lemmas shown in Figure <a href="no-optimal.html#fig:popular2">7.4</a>, <em>dof</em> ‘dull’ and <em>huldigen</em> ‘to believe/to honour,’ look rather similar to each other but very different from the ones in Figure <a href="no-optimal.html#fig:popular1">7.3</a>. Even though <em>dof</em> ‘dull,’ not unlike <em>heet</em>, tends to have multiple clusters characterized by collocations with different types of sounds, it takes a different shape in this model. The metaphorical sense represented by the collocation with <em>ellende</em> ‘misery’ forms a neat orange Cumulus on one side; the semantic preference for sounds gives rise to the homogeneous light blue Stratocumulus below, and the rest of the tokens, both those related to the visual sense and the rest of the metaphorical ones, gather in the heterogeneous green Stratocumulus. As we have seen before, <em>huldigen</em> also has some strong collocates, but in this model, the tokens of ‘to believe,’ led by <em>principe</em> ‘principle,’ <em>opvatting</em> ‘opinion’ and <em>standpunt</em> ‘point of view,’ take part of an extremely homogeneous orange Stratocumulus, while most of the ‘to pay homage’ sense covers the light blue Cumulonimbus, like in the case described in Section <a href="semantic-interpretation.html#huldigen">6.5.2</a>.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:popular2"></span>
+<img src="phdThesis_files/figure-html/popular2-1.png" alt="Models of dof and huldigen with bound5lex-ppmiselection-focall." width="672"><p class="caption">
+Figure 7.4: Models of <em>dof</em> and <em>huldigen</em> with bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all.
+</p>
+</div>
+<p>The lemmas in Figure <a href="no-optimal.html#fig:popular3">7.5</a>, <em>haten</em> ‘to hate’ and <em>hoop</em> ‘hope/heap,’ show yet another configuration generated by the same parameter settings. Except for the green Stratocumulus in <em>haten</em>, roughly dominated by <em>mens</em> ‘human, people,’ the rest of the clouds are Cirrus clouds: small, heterogeneous, characterized by many different words.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:popular3"></span>
+<img src="phdThesis_files/figure-html/popular3-1.png" alt="Models of haten and hoop with bound5lex-ppmiselection-focall." width="672"><p class="caption">
+Figure 7.5: Models of <em>haten</em> and <em>hoop</em> with bound5lex-<span class="smallcaps">ppmi</span>selection-<span class="smallcaps">foc</span>all.
+</p>
+</div>
+</div>
+<div id="theo3-summary" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Summary<a class="anchor" aria-label="anchor" href="#theo3-summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>The output of a model is not directly predictable from its parameter settings. Clouds can take many shapes, lemmas exhibit different distributional patterns, and these patterns can have different semantic interpretations. The parameter settings that model one phenomenon best, in a certain model, will not necessarily model the same phenomenon in another lemma, or anything else of interest for that matter.
+The same parameter settings can result in drastically different shapes across lemmas, or even if the shapes are similar and they are the result of comparable distributional behaviours, they might have different semantic interpretations.</p>
+<p>With these cheerful thoughts, the analytical part of this dissertation comes to an end. In the next chapter I will conclude with a brief summary of the findings in the form of guidelines — tips and tricks for the interested cloudspotter — thoughts for further research.</p>
+
+</div>
+</div>
+
+
+
+
+  <div class="chapter-nav">
+<div class="prev"><a href="semantic-interpretation.html"><span class="header-section-number">6</span> The language of clouds</a></div>
+<div class="next"><a href="conclusions-and-guidelines.html"><span class="header-section-number">8</span> Conclusions and guidelines</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#no-optimal"><span class="header-section-number">7</span> No sky is the best sky</a></li>
+<li><a class="nav-link" href="#hoopstof"><span class="header-section-number">7.1</span> A pile of dust</a></li>
+<li><a class="nav-link" href="#paramranking"><span class="header-section-number">7.2</span> Weather forecast gone crazy</a></li>
+<li><a class="nav-link" href="#theo3-summary"><span class="header-section-number">7.3</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/montesmariana/phdThesis/blob/master/07-no_optimal_solution.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/montesmariana/phdThesis/edit/master/07-no_optimal_solution.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Cloudspotting</strong>: Visual analytics for distributional semantics" was written by Mariana Montes. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

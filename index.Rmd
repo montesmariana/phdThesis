@@ -30,7 +30,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 \fancyhead[LO,RE]{}
 \fancyfoot[C]{}
 
-The research described in this dissertation is part of the Nephological Semantics^[https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics] research project at the `r sc("qlvl")` research group in KU Leuven,
+![Cover image](front-cover.png){.cover width=250}
+The research described in this dissertation is part of the [Nephological Semantics](https://www.arts.kuleuven.be/ling/qlvl/projects/current/nephological-semantics) research project at the `r sc("qlvl")` research group in KU Leuven,
 which aims to develop tools for large-scale corpus-based semantic analysis.
 A core aspect of the project involves representing semantic structure with distributional models,
 a computational tool that currently requires a deeper understanding of its inner workings
@@ -77,8 +78,36 @@ the possibilities and limits of distributional models to lexicological research 
 warnings, suggestions and guidelines for practical studies. In other words, it offers
 an assessment and interpretation of distributional models from the perspective of descriptive linguistics.
 On the other hand, it presents a visualization tool designed for the exploration of
-token-level distributional models from such a perspective [@montes.qlvl_2021a]. Its interactive quality makes
+token-level distributional models from such a perspective [@montes.qlvl_2021]. Its interactive quality makes
 it challenging to describe it adequately in a printed text, so I would strongly
-recommend visiting it in its virtual home^[https://qlvl.github.io/NephoVis/] and explore it.
+recommend visiting it in its [virtual home](https://qlvl.github.io/NephoVis/) and explore it.
 
 [^word]: The term *word* is used very loosely here to encompass different possible definitions.
+
+
+::: {.rmdwarning}
+
+This is the web-based version of my dissertation, where I plan to fix typos and add some notes/disclaimers.
+You can find the original, submitted and approved pdf version [here](phdThesis.pdf).
+
+To cite this work, you can use the following bibtex:
+
+```
+
+@phdthesis{montes_2021,
+  type = {{{PhD Dissertation}}},
+  title = {Cloudspotting: Visual Analytics for Distributional Semantics},
+  author = {Montes, Mariana},
+  year = {2021},
+  address = {{Leuven}},
+  abstract = {This PhD study belongs to WP1 of the KU Leuven C1 research programme 'Nephological Semantics', (PI Dirk Geeraerts) which explores the use of distributional semantic methods for linguistic semantics. Specifically, the study aims at a realistic assessment of the possibilities and limitations of vector space semantics and word embeddings. The project will take the form of a number of case studies comparing polysemy analyses under three methods: a definitional lexicographical analysis, a 'behavioral profile' approach, and a semantic vector space approach. In general, the methodological goal of WP1 is to bring together a number of distributional methods that were developed in different contexts, and to refine, complement and systematize them, in order to turn them into an overarching, methodologically unified toolset in support of the analysis of various types of interplay between onomasiological, semasiological, and lectal variation. For validation and descriptive purposes, the methods are applied in case studies on English and Dutch lexical items.},
+  collaborator = {Geeraerts, Dirk and Speelman, Dirk and Szmrecsanyi, Benedikt},
+  copyright = {All rights reserved},
+  langid = {english},
+  school = {KU Leuven}
+}
+
+```
+
+:::
+

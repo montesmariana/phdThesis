@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 From corpora to clouds | Cloudspotting</title>
+<meta name="author" content="Mariana Montes">
+<meta name="description" content="The main goal of the methodological framework presented here is to explore semasiological structure from textual data. The starting point is a corpus, i.e. a selection of texts, and one of the...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 2 From corpora to clouds | Cloudspotting">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/assets/covers/front-cover.png">
+<meta property="og:description" content="The main goal of the methodological framework presented here is to explore semasiological structure from textual data. The starting point is a corpus, i.e. a selection of texts, and one of the...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 From corpora to clouds | Cloudspotting">
+<meta name="twitter:description" content="The main goal of the methodological framework presented here is to explore semasiological structure from textual data. The starting point is a corpus, i.e. a selection of texts, and one of the...">
+<meta name="twitter:image" content="/assets/covers/front-cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="Visual analytics for distributional semantics">Cloudspotting</a>:
+        <small class="text-muted">Visual analytics for distributional semantics</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Preface</a></li>
+<li><a class="" href="acknowledgements.html">Acknowledgements</a></li>
+<li><a class="" href="intro.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">The cloudspotter’s toolkit</li>
+<li><a class="active" href="workflow.html"><span class="header-section-number">2</span> From corpora to clouds</a></li>
+<li><a class="" href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></li>
+<li><a class="" href="dataset.html"><span class="header-section-number">4</span> Case studies</a></li>
+<li class="book-part">The cloudspotter’s handbook</li>
+<li><a class="" href="shapes.html"><span class="header-section-number">5</span> A cloud atlas</a></li>
+<li><a class="" href="semantic-interpretation.html"><span class="header-section-number">6</span> The language of clouds</a></li>
+<li><a class="" href="no-optimal.html"><span class="header-section-number">7</span> No sky is the best sky</a></li>
+<li class="book-part">The cloudspotter’s cheatsheet</li>
+<li><a class="" href="conclusions-and-guidelines.html"><span class="header-section-number">8</span> Conclusions and guidelines</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/montesmariana/phdThesis">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="workflow" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> From corpora to clouds<a class="anchor" aria-label="anchor" href="#workflow"><i class="fas fa-link"></i></a>
+</h1>
+<p>The main goal of the methodological framework presented here is to explore semasiological structure from textual data.
+The starting point is a corpus, i.e. a selection of texts, and one of the most tangible outputs is what we will call <em>clouds</em>: the visual representation of textual patterns as dense areas in a <span class="smallcaps">2d</span> scatterplot.
+In this chapter we will explain how to generate clouds from the raw, seemingly indomitable ocean of a corpus.</p>
+<p>First, we will describe how token-level vector space models are created: these are mathematical representations of the occurrences of a lexical item.
+We will focus on context-counting models, but this is by no means the only viable path.
+Other techniques, such as BERT <span class="citation">(<a href="references.html#ref-BERT" role="doc-biblioref">Devlin et al. 2019</a>)</span><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;See also &lt;span class="citation"&gt;&lt;a href="references.html#ref-devries.etal_2019" role="doc-biblioref"&gt;de Vries et al.&lt;/a&gt; (&lt;a href="references.html#ref-devries.etal_2019" role="doc-biblioref"&gt;2019&lt;/a&gt;)&lt;/span&gt; for a Dutch version.&lt;/p&gt;'><sup>4</sup></a>, that can also generate vectors for individual instances of a word, could be used for the first stage of this workflow.
+<!-- TODO explain why we don't use them -->
+Section <a href="workflow.html#vector-creation">2.1</a> will describe the process and the rationale without assuming a strong mathematical background for the reader, leaving the deeper technicalities to Section <a href="workflow.html#formulae">2.2</a>. In Section <a href="workflow.html#params">2.3</a>, we will break apart the workflow into the multiple choices that the researcher needs to make and that result in a potentially infinite number of models, while Section <a href="workflow.html#pam">2.4</a> briefly presents a method to select a few representative models. Finally, Section <a href="workflow.html#workflow-summary">2.5</a> summarizes the chapter.</p>
+<div id="vector-creation" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> A cloud machine<a class="anchor" aria-label="anchor" href="#vector-creation"><i class="fas fa-link"></i></a>
+</h2>
+<p>At the core of vector space models, <em>aka</em> distributional models, we find the Distributional Hypothesis, which is often linked to Harris’s observation that “difference of meaning correlates with difference of distribution” <span class="citation">(<a href="references.html#ref-harris_1954" role="doc-biblioref">1954: 156</a>)</span>, but also to Firth’s “You shall know a word by the company it keeps” <span class="citation">(<a href="references.html#ref-firth_1957a" role="doc-biblioref">1957: 11</a>)</span> and Wittgenstein’s “the meaning of a word is its use in the language”<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The famous quote is preceded by an appropriate nuance: “For a &lt;em&gt;large&lt;/em&gt; class of cases — though not for all — in which we employ the word ‘meaning’ it can be defined thus: the meaning of a word is its use in the language.”
+<!-- Proposition 43, which fully reads: &quot;Man kann für eine *große* Klasse von Fällen der Benützung des Wortes 'Bedeutung' --- wenn auch nicht für *alle* Fälle seiner Benützung --- dieses Wort so erklären: Die Bedeutung eines Wortes ist sein Gebrauch in der Sprache.&quot;. -->&lt;/p&gt;"><sup>5</sup></a> <span class="citation">(<a href="references.html#ref-wittgenstein_1958" role="doc-biblioref">1958: 20</a>)</span>.
+In other words, items that occur in similar contexts in a given corpus will be semantically similar, while those that occur in different contexts will be semantically different <span class="citation">(<a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020</a>, Ch. 6; <a href="references.html#ref-lenci_2018" role="doc-biblioref">Lenci 2018</a>)</span>. Crucially, this does not imply that we can describe an individual item with their distributional properties, but that comparing the distribution of two items can tell us something about their semantic relatedness <span class="citation">(<a href="references.html#ref-sahlgren_2006" role="doc-biblioref">Sahlgren 2006: 19</a>)</span>.</p>
+<p><span class="citation"><a href="references.html#ref-firth_1957a" role="doc-biblioref">Firth</a> (<a href="references.html#ref-firth_1957a" role="doc-biblioref">1957</a>)</span> inspired generations of corpus linguists to look at collocations as part of the semantic description of a lemma. The Birmingham school, pioneered by John Sinclair, used co-occurrence frequency information to describe a lexical item
+<!-- Most often word forms, in English; see @sinclair_1991 [29] and; @stubbs_1995 [23-24]) -->
+by the set of those context words most attracted to them. Due to the skewed distribution of word frequencies, known as Zipf’s law, this attraction cannot be measured in terms of raw co-occurrence frequencies. For example, the most frequent lemma in the (Dutch) corpus used for this research, discarding punctuation, is <em>de</em> ‘the (fem./masc.),’ which occurs 28.1 million times. The second most frequent lemma, <em>van</em> ‘from,’ occurs 12.6 milion times, and it is followed by <em>het</em> ‘the (neutral)’ and <em>een</em> ‘a, an,’ with corresponding frequencies of 11.7 and 11.1 million times each. For every 100 words in the corpus, excluding punctuation, <span class="math inline">\(14\)</span> are one of these four words. Of the total of 4.6 million different words, 61% are <em>hapax legomena</em>, i.e. they occur once, and 172 lemmas cover 50% of all the occurrences. As a consequence, co-occurrences with very frequent words are not as informative as those with less frequent words, and hence raw co-occurrence frequencies are transformed to measures of <strong>association strength</strong>, such as mutual information (see Section <a href="workflow.html#pmi">2.2.1</a>) or t-score, among others <span class="citation">(for an overview see <a href="references.html#ref-evert_2009" role="doc-biblioref">Evert 2009</a>; <a href="references.html#ref-gablasova.etal_2017" role="doc-biblioref">Gablasova, Brezina &amp; McEnery 2017</a>)</span>.
+In collocational studies, researchers typically set a threshold of association strength and only look at the context words that surpass it.</p>
+<p>At their core, context-counting <strong>vectors</strong> are lists of association strength values. Each word is represented by its association strength to a long array of words that it might co-occur with, as shown in Table <a href="workflow.html#tab:vec1">2.1</a>. Unlike in collocation studies, low values — or even lack of co-occurrence — are not excluded, but used in the comparison with other words that might. Going back to the Firthian motto, a collocational study would describe me with the list of people that I talk to the most, whereas a distributional model would compare me to someone else based on who either of us talks to and how often we talk to them. The more people we have in common, the more similar we are, but people that neither of us talks to have no impact on the comparison.</p>
+<p>Table <a href="workflow.html#tab:vec1">2.1</a> shows small vectors representing the English nouns <em>linguistics</em>, <em>lexicography</em>, <em>research</em> and <em>chocolate</em>, as well as the adjective <em>computational</em>, with co-occurrence information obtained from the GloWbE (Global Word-based English) corpus. The values are their association strength <span class="smallcaps">pmi</span> with each of the lemmas in the columns: the higher the values, the stronger the attraction between the word in the row and the word in the column (See Section <a href="workflow.html#pmi">2.2.1</a>). From a collocational perspective, <em>linguistics</em> is strongly attracted to both <em>language</em> and <em>English</em>, i.e. they occur very often in a span of 10 words from each other, considering their individual frequencies; it is less attracted to <em>word</em> and <em>to speak</em>, and does not co-occur with either <em>to eat</em> or <em>Flemish</em> within that window, in this corpus.</p>
+
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;border-bottom: 0;'>
+<caption>
+<span id="tab:vec1">Table 2.1: </span>Small example of type-level vectors, with <span class="smallcaps">pmi</span> values based on a symmetric window of 10. Frequency data extracted from GloWbE.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+target
+</th>
+<th style="text-align:left;">
+language/n
+</th>
+<th style="text-align:left;">
+word/n
+</th>
+<th style="text-align:left;">
+flemish/j
+</th>
+<th style="text-align:left;">
+english/j
+</th>
+<th style="text-align:left;">
+eat/v
+</th>
+<th style="text-align:left;">
+speak/v
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+linguistics/n
+</td>
+<td style="text-align:left;">
+4.37
+</td>
+<td style="text-align:left;">
+0.99
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+3.16
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+0.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lexicography/n
+</td>
+<td style="text-align:left;">
+3.51
+</td>
+<td style="text-align:left;">
+2.18
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+2.19
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+2.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+computational/j
+</td>
+<td style="text-align:left;">
+1.6
+</td>
+<td style="text-align:left;">
+0.08
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+-1
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+-1.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+research/n
+</td>
+<td style="text-align:left;">
+0.2
+</td>
+<td style="text-align:left;">
+-0.84
+</td>
+<td style="text-align:left;">
+0.04
+</td>
+<td style="text-align:left;">
+-0.5
+</td>
+<td style="text-align:left;">
+-0.68
+</td>
+<td style="text-align:left;">
+-0.38
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+chocolate/n
+</td>
+<td style="text-align:left;">
+-1.72
+</td>
+<td style="text-align:left;">
+-0.53
+</td>
+<td style="text-align:left;">
+1.28
+</td>
+<td style="text-align:left;">
+-0.73
+</td>
+<td style="text-align:left;">
+3.08
+</td>
+<td style="text-align:left;">
+-1.13
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Part-of-speech is indicated after a slash: n = noun, j = adjective, v = verb
+</td>
+</tr>
+</tfoot>
+</table></div>
+<p>Each row in Table <a href="workflow.html#tab:vec1">2.1</a> is a vector coding the distributional information of the lemma it represents. By <strong>lemma</strong> we refer to the combination of a stem and a part of speech, e.g. <em>chocolate/n</em> covers <em>chocolate</em>, <em>chocolates</em>, <em>Chocolate</em>, etc.
+<!-- This approach is different from the dominant tendency in computational linguistics, where vectors would represent word forms^[See @turney.pantel_2010 155 and @kiela.clark_2014 25. for a brief discussion, but more crucially: this is not always made explicit in papers on distributional methods. Curiously, Normally this is not even made explicit, but the few examples of lists of context words show that it is the case]. Identifying lemmas requires some corpus processing, namely stemming and part-of-speech tagging, but makes more sense from a lexicographical point of view (see Section \@ref(params) for a discussion). -->
+<!-- Regardless, the vectors still represent forms, not meanings: the vector of *linguistics* codes co-occurrence frequency of *Linguistics* and *linguistics*, but that is not equal to the concept <span style="font-variant:small-caps;">linguistics</span>. -->
+<!-- More importantly, we must remember that the vectors represent a distributional profile of the lemma, which is automatically extracted from a corpus, not of a meaning [Cf. @bolognesi_2020 82]. -->
+These vectors are meant to code the distributional behaviour of the linguistic forms they represent — in this case lemmas —, in order to operationalize the notion of distributional similarity and, consequently, model their meaning. For example, in Table <a href="workflow.html#tab:vec1">2.1</a> the first two rows, representing <em>linguistics</em> and <em>lexicography</em>, are similar to each other: both words have a similar attraction to <em>language</em> and to <em>English</em>, even if the values for <em>word</em> and <em>to speak</em> are more different. More importantly, they are more similar to each other than to other rows in the table, which have lower values for those four columns and might even co-occur with <em>Flemish</em> and <em>to eat</em> as well.
+The Distributional Hypothesis expresses the observation that words that are distributionally similar, like <em>linguistics</em> and <em>lexicography</em>, are semantically similar or related, whereas words that are distributionally different, like <em>linguistics</em> and <em>chocolate</em>, are semantically different or unrelated.</p>
+<p>The rows in this table are <strong>type-level vectors</strong>: each of them aggregates over all the attestations of a given lemma in a given corpus to build an overall profile. As a result, it collapses the internal variation of the lemma, i.e. its different senses or semasiological structure. In order to uncover such information, we need to build vectors for the individual instances or <strong>tokens</strong>, relying on the same principle: items occurring in similar contexts will be semantically similar. For instance, we might want to model the three (artificial) occurrences of <em>study</em> in (1) through (3), where the target item is in bold and some context words are in italics.</p>
+<ol class="example" style="list-style-type: decimal">
+<li>Would you like to <strong>study</strong> <em>lexicography</em>?</li>
+<li>They <strong>study</strong> this in <em>computational linguistics</em> as well.</li>
+<li>I eat <em>chocolate</em> while I <strong>study</strong>.</li>
+</ol>
+<p>Given that, at the aggregate level, a word can co-occur with thousands of different words, type-level vectors can include thousands of values. In contrast, token-level vectors can only have as many nonzero values as the individual window size comprises, which drastically reduces the chances of overlap between vectors. In fact, the three examples don’t share any item other than the target. As a solution, inspired by <span class="citation"><a href="references.html#ref-schutze_1998" role="doc-biblioref">Schütze</a> (<a href="references.html#ref-schutze_1998" role="doc-biblioref">1998</a>)</span>, (a selection of) the context words around the token is replaced with their respective type-level vectors <span class="citation">(<a href="references.html#ref-heylen.etal_2012" role="doc-biblioref">Heylen, Speelman &amp; Geeraerts 2012</a>; <a href="references.html#ref-heylen.etal_2015" role="doc-biblioref">Heylen et al. 2015</a>; <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>)</span>.
+Concretely, example (1) is represented by the vector for its context word <em>lexicography</em>, that is, the second row in Table <a href="workflow.html#tab:vec1">2.1</a>; example (2) by the sum of the vectors for <em>linguistics</em> (row 1) and <em>computational</em> (row 3); and example (3) by the vector for <em>chocolate</em> (row 5). This not only solves the sparsity issue, ensuring overlap between the vectors, but also allows us to find similarity between (1) and (2) based on the similarity between the vectors for <em>lexicography</em> and <em>linguistics</em>. As we will see in Section <a href="workflow.html#params">2.3</a>, we can even use the association strength between the context words and the target type, i.e. <em>to study</em>, and give more weight to the context words that are more characteristic of the lemma we try to model.
+The result of this procedure is a co-occurrence matrix like the one shown in Table <a href="workflow.html#tab:tokens">2.2</a>. Each row represents an instance of the target lemma, e.g. <em>to study</em>, and each column, a lemma occurring in the corpus<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Which lemmas in particular are a matter for Section &lt;a href="workflow.html#soc"&gt;2.3.4&lt;/a&gt;, but in any case, lemmas that do not co-occur with any of the context words of the tokens will have zeros in all the rows and therefore be dropped.&lt;/p&gt;'><sup>6</sup></a>; the values are the (sum of the) association strength between the words that occur around the token, i.e. their <strong>first-order context words</strong>, and each of the words in the columns, i.e. the <strong>second-order context words</strong>. In addition, all negative and missing values value have been set to zero, due to the unreliability of negative <span class="smallcaps">pmi</span> values (see Section <a href="workflow.html#pmi">2.2.1</a>).</p>
+
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:tokens">Table 2.2: </span>Small example of token-level vectors of three artificial instances of <em>to study</em>.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+target
+</th>
+<th style="text-align:right;">
+language/n
+</th>
+<th style="text-align:right;">
+word/n
+</th>
+<th style="text-align:right;">
+english/j
+</th>
+<th style="text-align:right;">
+speak/v
+</th>
+<th style="text-align:right;">
+flemish/j
+</th>
+<th style="text-align:right;">
+eat/v
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+study<span class="math inline">\(_1\)</span>
+</td>
+<td style="text-align:right;">
+4.37
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+3.16
+</td>
+<td style="text-align:right;">
+0.41
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+study<span class="math inline">\(_2\)</span>
+</td>
+<td style="text-align:right;">
+5.97
+</td>
+<td style="text-align:right;">
+1.07
+</td>
+<td style="text-align:right;">
+2.16
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+study<span class="math inline">\(_3\)</span>
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1.28
+</td>
+<td style="text-align:right;">
+3.08
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>The next step in the workflow is to compare the items to each other. We can achieve this by computing cosine distances between the vectors (see Section <a href="workflow.html#cosine">2.2.2</a> for the technical description). The resulting distance matrix, shown in Table <a href="workflow.html#tab:tokdists">2.3</a>, tells us how different each token is to itself, which takes the minimum value of 0, and to each of the other tokens, with a maximum value of 1. We can see that (1) and (2) are very similar to each other, because they co-occur with similar context words, i.e. <em>linguistics</em> and <em>lexicography</em>, but drastically different from (3), which was modelled based on <em>chocolate</em>. The specific selection of context words is crucial: if we had selected <em>computational</em> but not <em>lexicography</em> to model (2), it would have resulted in a larger difference with (1). The series of choices that we can make and that have been made for this research project are discussed in Section <a href="workflow.html#params">2.3</a>.</p>
+
+<div class="inline-table"><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>
+<span id="tab:tokdists">Table 2.3: </span>Cosine distance matrix between the three artificial instances of <em>to study</em>.
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+study<span class="math inline">\(_1\)</span>
+</th>
+<th style="text-align:right;">
+study<span class="math inline">\(_2\)</span>
+</th>
+<th style="text-align:right;">
+study<span class="math inline">\(_3\)</span>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+study<span class="math inline">\(_1\)</span>
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+study<span class="math inline">\(_2\)</span>
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+study<span class="math inline">\(_3\)</span>
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Table <a href="workflow.html#tab:tokdists">2.3</a> is small and simple, but what if we had hundreds of tokens? The more items we compare to one another, the larger and more complex the distance matrix becomes. In order to interpret it, we need more stages of processing. On the one hand, dimensionality reduction techniques such as <span class="smallcaps">mds</span>, t-<span class="smallcaps">sne</span> and <span class="smallcaps">umap</span>, which will be discussed in Section <a href="workflow.html#dim-reduction">2.2.3</a>, offer us a way of visualizing the distances between all the models by projecting them to a <span class="smallcaps">2d</span> space. We can then represent each model into a scatterplot, like in the plots of Figure <a href="workflow.html#fig:cloud1">2.1</a>, where each point represents a token, and their distances in <span class="smallcaps">2d</span> space approximate their distances in the multidimensional space of the co-occurrence matrix. Visual analytics, such as the tool described in Chapter <a href="nephovis.html#nephovis">3</a>, can then help us explore the scatterplot to figure out how tokens are distributed in space, why they form the groups they form, etc.</p>
+<p>Word Sense Disambiguation
+<!-- TODO add references -->
+makes use of clustering algorithms to extract clusters of similar tokens from their models. The idea behind it is that, if distributional similarity correlates with semantic similarity, groups of similar tokens should share the same sense and have a different sense from other groups of tokens. In Chapter <a href="semantic-interpretation.html#semantic-interpretation">6</a> we will see to what degree this assumption holds in this data and with these methods.</p>
+<p>The final step in our workflow is, then, the combination of dimensionality reduction and clustering, which results in the right plot of Figure <a href="workflow.html#fig:cloud1">2.1</a>: by means of dimensionality reduction, tokens are located in a scatterplot so that distributional similarities are approximated as spatial similarities, and groups of similar tokens are assigned different colours.
+In previous research, which did not integrate clustering procedures in this manner, the term <em>cloud</em> was used to refer to a full model <span class="citation">(<a href="references.html#ref-heylen.etal_2015" role="doc-biblioref">Heylen et al. 2015</a>; <a href="references.html#ref-wielfaert.etal_2019" role="doc-biblioref">Wielfaert et al. 2019</a>; <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>; <a href="references.html#ref-montes.heylen_2022" role="doc-biblioref">Montes &amp; Heylen 2022</a>)</span>. In this study, instead, <em>cloud</em> will refer to each of the clusters, identified by colours in the scatterplot.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:cloud1"></span>
+<img src="phdThesis_files/figure-html/cloud1-1.png" alt="2d representation of Dutch hachelijk ‘dangerous/critical.’" width="672"><p class="caption">
+Figure 2.1: <span class="smallcaps">2d</span> representation of Dutch <em>hachelijk</em> ‘dangerous/critical.’
+</p>
+</div>
+</div>
+<div id="formulae" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> The chemistry of cloud making<a class="anchor" aria-label="anchor" href="#formulae"><i class="fas fa-link"></i></a>
+</h2>
+<p>A typical vector space model is an item-by-feature matrix: its rows code items, its columns code features, and its cells code information related to the frequency with which the items and features co-occur. The first distributional models counted the occurrences of words in documents and represented them in word-by-document matrices; the models described here are token-by-feature matrices, in which the rows are attestations of a lexical item and the features are second-order co-occurrences, i.e. context words of the context words of the token. <span class="citation"><a href="references.html#ref-turney.pantel_2010" role="doc-biblioref">Turney &amp; Pantel</a> (<a href="references.html#ref-turney.pantel_2010" role="doc-biblioref">2010</a>)</span> offer an overview of different kinds of matrices, based on the items modelled and the features used to describe them.
+Besides matrices, vector space models can be tensors, which are generalisations of matrices for more dimensions and can allow for more complex interactions, e.g. subject-verb-object triples in <span class="citation"><a href="references.html#ref-vandecruys.etal_2013" role="doc-biblioref">Van de Cruys, Poibeau &amp; Korhonen</a> (<a href="references.html#ref-vandecruys.etal_2013" role="doc-biblioref">2013</a>)</span>; see also <span class="citation"><a href="references.html#ref-lenci_2018" role="doc-biblioref">Lenci</a> (<a href="references.html#ref-lenci_2018" role="doc-biblioref">2018</a>)</span>.</p>
+<p>Models can be based on co-occurrence counts, as is the case in these studies, or on machine-learning algorithms trained to predict the context around a word or fill in an empty slot given a few words around it. These context-predicting models use the weights of their neural networks as features in the vectorial representations of the words they predict. A number of papers have explored which kind of models work best for different tasks, with uncertain results <span class="citation">(<a href="references.html#ref-baroni.etal_2014" role="doc-biblioref">Baroni, Dinu &amp; Kruszewski 2014</a>; <a href="references.html#ref-levy.etal_2015" role="doc-biblioref">Levy, Goldberg &amp; Dagan 2015</a>)</span>.
+As explained before, such context-predicting models will not be explored in this dissertation, although their integration would be interesting for further avenues of research.</p>
+<p>The workflow described in the previous section relies on mathematical principles to obtain linguistic patterns from a (mostly) raw corpus. A full understanding of the formulae that underlie each step is not necessary to grasp the gist of this methodology, but it is required for an appropriate implementation.
+In this section, we will take a deeper look into the technical aspects the machinery behind the process, in particular association strengths, similarity metrics, dimensionality reduction techniques and clustering algorithms.</p>
+<div id="pmi" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> Association strength: PMI<a class="anchor" aria-label="anchor" href="#pmi"><i class="fas fa-link"></i></a>
+</h3>
+<p>The distribution of words in a corpus follows a power law: a few items are extremely frequent, and most of the items are extremely infrequent. Association measures transform raw frequency information to measure the attraction between two items while taking into account the relative frequencies with which they occur. They typically manipulate, in different ways, the frequency of the node <span class="math inline">\(f(n)\)</span>, the frequency of its collocate <span class="math inline">\(f(c)\)</span>, their frequency of co-occurrence <span class="math inline">\(f(n,c)\)</span> and the size of the corpus <span class="math inline">\(N\)</span>. <span class="citation"><a href="references.html#ref-evert_2009" role="doc-biblioref">Evert</a> (<a href="references.html#ref-evert_2009" role="doc-biblioref">2009</a>)</span> and <span class="citation"><a href="references.html#ref-gablasova.etal_2017" role="doc-biblioref">Gablasova, Brezina &amp; McEnery</a> (<a href="references.html#ref-gablasova.etal_2017" role="doc-biblioref">2017</a>)</span> offer an overview of how different measures are computed and used in corpus linguistics; <span class="citation"><a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela &amp; Clark</a> (<a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">2014</a>)</span>
+<!-- And anyone else? -->
+compare measures used in distributional models.</p>
+<p>In the studies discussed here, I will only use <strong>(positive) pointwise mutual information</strong>, or <span class="smallcaps">(p)pmi</span> <span class="citation">(<a href="references.html#ref-church.hanks_1989" role="doc-biblioref">Church &amp; Hanks 1989</a>)</span>, one of the most popular measures both in collocation studies and distributional semantics <span class="citation">(<a href="references.html#ref-bullinaria.levy_2007" role="doc-biblioref">Bullinaria &amp; Levy 2007</a>; <a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela &amp; Clark 2014</a>; <a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020</a>; <a href="references.html#ref-lapesa.evert_2014" role="doc-biblioref">Lapesa &amp; Evert 2014</a>)</span>.
+Its formula is shown in equation <a href="workflow.html#eq:pmi">(2.1)</a>, where <span class="math inline">\(p(n) = \frac{f(n)}{N}\)</span>, i.e. the proportion of occurrences in the corpus that correspond to <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display" id="eq:pmi">\[\begin{equation}
+  I(n, c) = \log \frac{p(n,c)}{p(n)p(c)} = \log \left( \frac{f(n,c)}{f(n)f(c)} N \right)
+  \tag{2.1}
+\end{equation}\]</span></p>
+<!-- $$PMI(n, c) = \log \frac{p(n, c)}{p(n)p(n)}$$ -->
+<p>Negative <span class="smallcaps">pmi</span> values tend to be unreliable, so positive <span class="smallcaps">pmi</span> or <span class="smallcaps">ppmi</span> is used, in which the negative <span class="smallcaps">pmi</span> values are turned to zeros <span class="citation">(<a href="references.html#ref-bullinaria.levy_2007" role="doc-biblioref">Bullinaria &amp; Levy 2007</a>; <a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela &amp; Clark 2014</a>; <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>; <a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020: 109</a>)</span>.
+Furthermore, <span class="smallcaps">pmi</span> is known for its bias towards infrequent events: when either <span class="math inline">\(p(n)\)</span> or <span class="math inline">\(p(c)\)</span> is very low, <span class="smallcaps">pmi</span> tends to be very high. In collocation studies, this bias may be counteracted by combining <span class="smallcaps">pmi</span> filters with other measures that favour frequent co-occurrences, such as t-scores or log-likelihood ratio <span class="citation">(<a href="references.html#ref-mcenery.etal_2010" role="doc-biblioref">McEnery, Xiao &amp; Tono 2010</a>)</span>. In distributional semantics, the accuracy of models that rely on <span class="smallcaps">ppmi</span> seems not to be affected by the issue presented by this bias;
+moreover, in these studies any lemma with <span class="math inline">\(f(n) &lt; 217\)</span>, i.e. occurring less than once every two million tokens, was excluded, to avoid too sparse, uninformative vectors.</p>
+</div>
+<div id="cosine" class="section level3" number="2.2.2">
+<h3>
+<span class="header-section-number">2.2.2</span> Similarities and distances: cosine<a class="anchor" aria-label="anchor" href="#cosine"><i class="fas fa-link"></i></a>
+</h3>
+<p>After obtaining the token-by-feature matrices, the distances between the vectors must be computed. Typically, the implementations for the dimensionality reduction and clustering can take the item-by-feature matrices as input and compute the distances under-the-hood, but they do not necessarily offer the option of computing our distance measure of choice, cosine.</p>
+<p>Cosine is a measure of similarity between vectors <span class="math inline">\(\mathbf{v}\)</span> and <span class="math inline">\(\mathbf{w}\)</span> and is defined in equation <a href="workflow.html#eq:cosine">(2.2)</a>; it coincides with the normalised dot product of the vectors <span class="citation">(<a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020: 105</a>)</span>.</p>
+<p><span class="math display" id="eq:cosine">\[\begin{equation}
+  \mathrm{cosine}(\mathbf{v}, \mathbf{w}) = \frac{\mathbf{v} \cdot \mathbf{w}}{\left|\mathbf{v}\right|\left|\mathbf{w}\right|} = \frac{\sum\limits_{i=1}^N v_iw_i}{\sqrt{\sum\limits_{i=1}^N v_i^2}\sqrt{\sum\limits_{i=1}^N w_i^2}}
+  \tag{2.2}
+\end{equation}\]</span></p>
+<p>For positive values, e.g. when using <span class="smallcaps">ppmi</span>, the cosine similarity ranges between 0 and 1: it will be 1 between identical vectors and 0 for orthogonal vectors, which do not share nonzero dimensions, like study<span class="math inline">\(_1\)</span> and study<span class="math inline">\(_3\)</span> in Table <a href="workflow.html#tab:tokens">2.2</a>. Cosine is sensitive to the angle between the vectors, and not to their magnitude: the similarity between study<span class="math inline">\(_1\)</span> and a vector created by multiplying all the cells in study<span class="math inline">\(_1\)</span> by any constant will still be 1.</p>
+<p>Cosine similarity is the most common metric in distributional models <span class="citation">(<a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020: 105</a>)</span> and has been shown to outperform other measures, especially when combined with <span class="smallcaps">ppmi</span> <span class="citation">(<a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela &amp; Clark 2014</a>; <a href="references.html#ref-lapesa.evert_2014" role="doc-biblioref">Lapesa &amp; Evert 2014</a>; <a href="references.html#ref-bullinaria.levy_2007" role="doc-biblioref">Bullinaria &amp; Levy 2007</a>)</span><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;span class="citation"&gt;&lt;a href="references.html#ref-kiela.clark_2014" role="doc-biblioref"&gt;Kiela &amp;amp; Clark&lt;/a&gt; (&lt;a href="references.html#ref-kiela.clark_2014" role="doc-biblioref"&gt;2014&lt;/a&gt;)&lt;/span&gt; also recommend a Correlation similarity.&lt;/p&gt;'><sup>7</sup></a>. One of the ways in which it is used is for semantic similarity tasks: the nearest neighbours of an item are extracted, by selecting the vectors with highest cosine similarity to the target vector. In these studies, similarities are usually transformed to distances by inverting the scale (<span class="math inline">\(\mathrm{cosine}_{\mathrm{dist}} = 1- \mathrm{cosine}_{\mathrm{sim}}\)</span>), so that identical vectors — and each vector to itself — have a cosine distance of 0 and orthogonal vectors have a cosine distance of 1, as shown in Table <a href="workflow.html#tab:tokdists">2.3</a>.</p>
+<p>Before applying dimensionality reduction or clustering algorithms, the cosine distances were further transformed with the aim of giving more weight to short distances, i.e. nearest neighbours, and decreasing the impact of long distances. For each token vector <span class="math inline">\(\mathbf{v}\)</span> with <span class="math inline">\(n\)</span> dimensions, we define the transformed vector <span class="math inline">\(\mathbf{v}_{\mathrm{transformed}}\)</span> as <span class="math inline">\(\mathbf{v}_{\mathrm{transformed}_i} = \log (1 + \log rank(\mathbf{v})_i)\)</span> for each <span class="math inline">\(i\)</span>, with <span class="math inline">\(1 \le i \le n\)</span>, and where <span class="math inline">\(rank(\mathbf{v})_i\)</span> is the similarity rank of the <span class="math inline">\(i\)</span>th value in <span class="math inline">\(\mathbf{v}\)</span>. For example, if originally we have the distances <span class="math inline">\(\mathbf{v} = [0, 0.2, 0.8, 0.3]\)</span>, the rank transformation returns <span class="math inline">\(rank(\mathbf{v}) = [1, 2, 4, 3]\)</span>, which after the first logarithm transformation becomes <span class="math inline">\([0, 0.693, 1.39, 1.099]\)</span> and, after the second transformation, <span class="math inline">\(\mathbf{v}_{\mathrm{transformed}} = [0, 0.52, 0.86, 0.74]\)</span>. On the one hand, the magnitude of the distance is not as important as its ranking among the nearest neighbours. On the other, the lower the ranking, the smaller the impact: the difference between the final values for ranks 1 and 2 is larger than between ranks 2 and 3.
+The new matrix, where each row <span class="math inline">\(\mathbf{v}\)</span> has been replaced with its <span class="math inline">\(\mathbf{v}_{\mathrm{transformed}}\)</span>, is converted to euclidean distances.</p>
+<p>While cosine distances are used to measure the similarity between token-level vectors, euclidean distances will be used to compare two vectors of the same token across models, and thus compare models to each other. Concretely, let’s say we have two matrices, <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span>, which are two models of the same sample of tokens, built with different parameter settings, and we want to know how similar they are to each other, i.e. how much of a difference those parameter settings make. Their values are already transformed cosine distances. A given token <span class="math inline">\(i\)</span> has a vector <span class="math inline">\(\mathbf{a}_i\)</span> in matrix <span class="math inline">\(\mathbf{A}\)</span> and a vector <span class="math inline">\(\mathbf{b}_i\)</span> in matrix <span class="math inline">\(\mathbf{B}\)</span>. For example, <span class="math inline">\(i\)</span> could be example (2) above, and its vector in <span class="math inline">\(\mathbf{A}\)</span> is based on the co-occurrence with <em>computational</em> and <em>linguistics</em>, as shown in Table <a href="workflow.html#tab:tokens">2.2</a>, while its vector in <span class="math inline">\(\mathbf{B}\)</span> is only based on <em>computational</em>. The euclidean distance between <span class="math inline">\(\mathbf{a}_i\)</span> and <span class="math inline">\(\mathbf{b}_i\)</span> is computed with the formula shown in equation <a href="workflow.html#eq:eucli">(2.3)</a>. After running the same comparison for each of the tokens, the distance between the models <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{B}\)</span> is then computed as the mean of those tokenwise distances across all the tokens modelled by both: <span class="math inline">\(d(\mathbf{A},\mathbf{B}) = \frac{\sum_{i=1}^nd(\mathbf{a}_i, \mathbf{b}_i)}{N}\)</span>. Alternatively, the distances between models could come from procrustes analysis<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Run with &lt;code&gt;vegan::procrustes()&lt;/code&gt; &lt;span class="citation"&gt;(&lt;a href="references.html#ref-R-vegan" role="doc-biblioref"&gt;Oksanen et al. 2020&lt;/a&gt;)&lt;/span&gt;&lt;/p&gt;'><sup>8</sup></a>, like <span class="citation"><a href="references.html#ref-wielfaert.etal_2019" role="doc-biblioref">Wielfaert et al.</a> (<a href="references.html#ref-wielfaert.etal_2019" role="doc-biblioref">2019</a>)</span> do, which has the advantage of returning a value between 0 and 1. However, this method is much faster and returns comparable results.</p>
+<p><span class="math display" id="eq:eucli">\[\begin{equation}
+    d(\mathbf{a}_i, \mathbf{b}_i) = \sqrt{\sum\limits_{i=j}^n(a_j-b_j)^2}
+    \tag{2.3}
+\end{equation}\]</span></p>
+</div>
+<div id="dim-reduction" class="section level3" number="2.2.3">
+<h3>
+<span class="header-section-number">2.2.3</span> Dimensionality reduction for visualization: t-SNE<a class="anchor" aria-label="anchor" href="#dim-reduction"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dimensionality reduction algorithms try to reduce the number of dimensions of a high-dimensional entity while retaining as much information as possible. In distributional models, they have two main applications: one that reduces thousands of dimensions to a few hundred, and one that reduces them to only two.</p>
+<p>The first application of dimensionality reduction, with techniques like <span class="smallcaps">svd</span> (Singular Value Decomposition), is meant to deal with the sparsity of high-dimensional vectors. Due to the frequency distribution discussed above, many words never occur in the vicinity of each other, resulting in many zeros in their context-counting representations and therefore inflated differences between the vectors. In particular, techniques like Latent Semantic Analysis <span class="citation">(<a href="references.html#ref-landauer.dumais_1997" role="doc-biblioref">Landauer &amp; Dumais 1997</a>)</span> are based on the observation that the dimensions obtained from this process are semantically interpretable.
+<!-- <!-- NOTE add authors, Sahlgren, Van De Cruys... -->
+<!-- <!-- @vandecruys_2008 tried both SVD and non-negative matrix factorization on type-level BOW-based models with whole paragraphs as windows but they did not bring any improvement. -->
+It could also be used for token-level spaces, but the comparisons discussed in <span class="citation"><a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale</a> (<a href="references.html#ref-depascale_2019" role="doc-biblioref">2019: 246</a>)</span> indicate that they don’t necessarily perform better than non reduced spaces.
+<!-- Also check Van De Cruys' work, some LSA? Remember: Kiela+Clark do not look into this-->
+Both dimensionality reduction techniques and neural networks are suggested as ways of condensing very long, sparse vectors <span class="citation">(<a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020</a>; <a href="references.html#ref-bolognesi_2020" role="doc-biblioref">Bolognesi 2020</a>)</span>.
+We will not go into the technical aspects because these techniques have not been implemented in the studies described here. Instead, we have compared vectors of different lengths based on other selection methods for the second-order features. Combining them with <span class="smallcaps">svd</span> is a possible avenue for future comparisons.</p>
+<p>The second application of dimensionality reduction is used for visualization purposes. A token-by-feature matrix can be understood as a multidimensional space: each of the columns is a dimension of space and the values of cells are the coordinates of the items in each of these dimensions. That is why we can use cosine distances, which measures angles: if we draw a vector from the origin (zero in all dimensions) to the point with those coordinates, it diverges from other vectors with a given angle that grows wider as the vectors diverge, leading to larger cosine distances. We can mentally picture or even draw positions, vectors and angles in up to 3 dimensions, but distributional models have hundreds if not thousands of dimensions. These applications of dimensionality reduction, then, are built to project the distances between items in the multidimensional space to euclidean distances in a low-dimensional space that we can visualize. The different implementations can receive the token-by-feature matrix as input, but will not typically compute cosine distances between the items, so the distance matrix is provided as input instead.
+The literature tends to go for either multidimensional scaling (<span class="smallcaps">mds</span>) or t-stochastic neighbour embeddings (t-<span class="smallcaps">sne</span>); recently, an interesting alternative called <span class="smallcaps">umap</span> has been introduced, which I’ll discuss shortly.</p>
+<p>The first option, <span class="smallcaps">mds</span>, is an ordination technique, like principal components analysis (<span class="smallcaps">pca</span>). It has been used for decades in multiple areas <span class="citation">(e.g. <a href="references.html#ref-cox.cox_2008" role="doc-biblioref">Cox &amp; Cox 2008</a>)</span>; its most relevant application for this case, non-metric multidimensional scaling, was developed by <span class="citation"><a href="references.html#ref-kruskal_1964" role="doc-biblioref">Kruskal</a> (<a href="references.html#ref-kruskal_1964" role="doc-biblioref">1964</a>)</span>. It tries out different low-dimensional configurations aiming to maximize the correlation between the pairwise distances in the high-dimensional space and those in the low-dimensional space: items that are close together in one space should stay close together in the other, and items that are far apart in one space should stay far apart in the other.
+The output from <span class="smallcaps">mds</span> can be evaluated by means of the stress level, i.e. the complement of the correlation coefficient: the smaller the stress, the better the correlation between the measures.
+Unlike <span class="smallcaps">pca</span>, however, the dimensions are not meaningful <em>per se</em>; two different runs of <span class="smallcaps">mds</span> may result in plots that mirror each other while representing the same thing. Nonetheless, the R implementation <code><a href="https://rdrr.io/pkg/vegan/man/metaMDS.html">vegan::metaMDS()</a></code> <span class="citation">(<a href="references.html#ref-R-vegan" role="doc-biblioref">Oksanen et al. 2020</a>)</span> rotates the plot so that the horizontal axis represents the maximum variation.
+In cognitive linguistics literature both metric <span class="citation">(<a href="references.html#ref-koptjevskaja-tamm.sahlgren_2014" role="doc-biblioref">Koptjevskaja-Tamm &amp; Sahlgren 2014</a>; <a href="references.html#ref-hilpert.correiasaavedra_2017" role="doc-biblioref">Hilpert &amp; Correia Saavedra 2017</a>; <a href="references.html#ref-hilpert.flach_2020" role="doc-biblioref">Hilpert &amp; Flach 2020</a>)</span>
+and non-metric <span class="smallcaps">mds</span> <span class="citation">(<a href="references.html#ref-heylen.etal_2012" role="doc-biblioref">Heylen, Speelman &amp; Geeraerts 2012</a>; <a href="references.html#ref-heylen.etal_2015" role="doc-biblioref">Heylen et al. 2015</a>; <a href="references.html#ref-perek_2016" role="doc-biblioref">Perek 2016</a>; <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>)</span> have been used.</p>
+<p>The second technique, t-<span class="smallcaps">sne</span> <span class="citation">(<a href="references.html#ref-Rtsne2008" role="doc-biblioref">van der Maaten &amp; Hinton 2008</a>; <a href="references.html#ref-Rtsne2014" role="doc-biblioref">van der Maaten 2014</a>)</span>, has also been incorporated in cognitive distributional semantics <span class="citation">(<a href="references.html#ref-perek_2018" role="doc-biblioref">Perek 2018</a>; <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>)</span>.
+It is also popular in computational linguistics <span class="citation">(<a href="references.html#ref-smilkov.etal_2016" role="doc-biblioref">Smilkov et al. 2016</a>; <a href="references.html#ref-jurafsky.martin_2020" role="doc-biblioref">Jurafsky &amp; Martin 2020</a>)</span>; in R, it can be implemented with <code><a href="https://rdrr.io/pkg/Rtsne/man/Rtsne.html">Rtsne::Rtsne()</a></code> <span class="citation">(<a href="references.html#ref-R-Rtsne" role="doc-biblioref">Krijthe 2018</a>)</span>.
+The algorithm is quite different from <span class="smallcaps">mds</span>: it transforms distances into probability distributions and relies on different functions to approximate them. Moreover, it prioritises preserving local similarity structure rather than the global structure: items that are close together in the high-dimensional space should stay close together in the low-dimensional space, but those that are far apart in the high-dimensional space may be even farther apart in low-dimensional space.
+Compared to <span class="smallcaps">mds</span>, we obtain nicer, tighter clouds (see Figure <a href="workflow.html#fig:drviz">2.2</a>), but the distance between them is less interpretable: even if we trust that tokens that are very close to each other are also similar to each other in the high-dimensional space, we cannot extract meaningful information from the distance <em>between</em> these groups.</p>
+<p>In addition, it would seem that points that are far away in a high-dimensional space might show up close together in the low-dimensional space <span class="citation">(<a href="references.html#ref-oskolkov_2021" role="doc-biblioref">Oskolkov 2021</a>)</span>.
+In contrast, Uniform Manifold Approximation and Projection, or <span class="smallcaps">umap</span> <span class="citation">(<a href="references.html#ref-mcinnes.etal_2020" role="doc-biblioref">McInnes, Healy &amp; Melville 2020</a>)</span>, penalizes this sort of discrepancies. It would be an interesting avenue for further research, but a test on the current data did not reveal substantial improvements between t-<span class="smallcaps">sne</span> and <span class="smallcaps">umap</span> that would warrant the replacement of the technique within the duration of this project (see Figure <a href="workflow.html#fig:drviz">2.2</a> for an example with default parameters. In other models, differences include longer shapes). Other known advantages such as increased speed were not observed in the small samples under consideration — in fact, the R implementation of <span class="smallcaps">umap</span> <span class="citation">(<a href="references.html#ref-R-umap" role="doc-biblioref">Konopka 2020</a>)</span> was even slower.</p>
+
+<div class="figure">
+<span style="display:block;" id="fig:drviz"></span>
+<img src="phdThesis_files/figure-html/drviz-1.png" alt="Two 2d representations of the same model of hachelijk ‘dangerous/critical’: bound5all-ppmiweight-focall. Non-metric mds on the top left, t-sne to its right and umap at the bottom. Colours indicate hdbscan clusters." width="672"><p class="caption">
+Figure 2.2: Two <span class="smallcaps">2d</span> representations of the same model of <em>hachelijk</em> ‘dangerous/critical’: bound5all-<span class="smallcaps">ppmi</span>weight-<span class="smallcaps">foc</span>all. Non-metric <span class="smallcaps">mds</span> on the top left, t-<span class="smallcaps">sne</span> to its right and <span class="smallcaps">umap</span> at the bottom. Colours indicate <span class="smallcaps">hdbscan</span> clusters.
+</p>
+</div>
+<p>Unlike <span class="smallcaps">mds</span>, t-<span class="smallcaps">sne</span> requires setting a parameter called <strong>perplexity</strong>, which roughly indicates how many neighbours the preserved local structure should cover. Low values of perplexity lead to numerous small groups of items, while higher values of perplexity return more uniform, round configurations <span class="citation">(<a href="references.html#ref-wattenberg.etal_2016" role="doc-biblioref">Wattenberg, Viégas &amp; Johnson 2016</a>)</span>. I have explored perplexity values of 10, 20, 30 and 50, and for this dataset 30 — the default value in the R implementation — has proved to be the most stable and meaningful. Unless otherwise stated, the figures in this text — including Figure <a href="workflow.html#fig:cloud1">2.1</a> — will illustrate t-<span class="smallcaps">sne</span> token-level representations with perplexity of 30. To represent distances between models, instead, non-metric <span class="smallcaps">mds</span> is used (only in Section <a href="nephovis.html#nepho1">3.2</a>).</p>
+<p>For both <span class="smallcaps">mds</span> and t-<span class="smallcaps">sne</span> we need to state the desired number of dimensions before running the algorithm — for visualization purposes, the most useful choice is 2. Three dimensions are difficult to interpret if projected on a <span class="smallcaps">2d</span> space, such as a screen or paper <span class="citation">(<a href="references.html#ref-card.etal_1999" role="doc-biblioref">Card, Mackinlay &amp; Shneiderman 1999</a>; <a href="references.html#ref-wielfaert.etal_2019" role="doc-biblioref">Wielfaert et al. 2019</a>)</span>.
+<!-- I think UMAP didn't need to state it beforehand? CHECK -->
+As we mentioned before, the dimensions themselves are meaningless, hence no axes or axis ticks will be included in the plots. However, the scales of both coordinates are kept fixed: given three points <span class="math inline">\(a=(1, 1.5)\)</span>, <span class="math inline">\(b=(1, 0.5)\)</span> and <span class="math inline">\(c=(0, 1.5)\)</span>, the distance between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (1 unit along the <span class="math inline">\(x\)</span>-axis) will be the same as the distance between <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> (1 unit along the <span class="math inline">\(y\)</span>-axis).</p>
+</div>
+<div id="hdbscan" class="section level3" number="2.2.4">
+<h3>
+<span class="header-section-number">2.2.4</span> Clustering: HDBSCAN<a class="anchor" aria-label="anchor" href="#hdbscan"><i class="fas fa-link"></i></a>
+</h3>
+<p>In word sense disambiguation tasks, the vectorial representations of different attestations are clustered into groups of similar tokens. There is a variety of clustering algorithms, appropriate for different kinds of data and structures. I will not offer an overview of the options, but only describe the techniques used in these studies. This section is dedicated to <span class="smallcaps">hdbscan</span>, the algorithm that returns the coloured clusters in Figures <a href="workflow.html#fig:cloud1">2.1</a> and <a href="workflow.html#fig:drviz">2.2</a>. Section <a href="workflow.html#pam">2.4</a> will discuss <span class="smallcaps">pam</span>, which will be uses to select representative models.</p>
+<p>Hierarchical Density-Based Spatial Clustering of Applications with Noise, <span class="smallcaps">hdbscan</span> for the friends <span class="citation">(<a href="references.html#ref-campello.etal_2013" role="doc-biblioref">Campello, Moulavi &amp; Sander 2013</a>)</span>, is a clustering algorithm, i.e. a procedure to identify groups of similar items that are different from other groups. Unlike its better-known cousins, it does not try to place <em>all</em> the items in the sample in different groups, but instead assumes that the dataset might be noisy and that the items may have various degrees of membership to their respective clusters. In addition, as a density-based algorithm, it tries to discriminate between dense areas, i.e. groups of elements that are very similar to each other, from sparse areas, i.e. larger distances between the elements.
+<!-- For that purpose, given a minimum number of points $minPts$, it establishes a value $\varepsilon$ (epsilon) for each of the elements, defined as the minimum radius that covers the $minPts - 1$ nearest neighbours of the element. If $minPts$ is set to 8, the $\varepsilon$ of item $x$ is given by the radius around $x$ in which we can find the 7 items that are most similar to it. The smaller the $\varepsilon$, the denser the area in which $x$ is located. --></p>
+<p>In <span class="smallcaps">hdbscan</span>, the density of the area in which we find a point <span class="math inline">\(a\)</span> is estimated by calculating its
+core distance <span class="math inline">\(core_{k}(a)\)</span>, which is the distance to its <span class="math inline">\(k\)</span> nearest neighbour, <span class="math inline">\(k\)</span> being a parameter <span class="math inline">\(minPts - 1\)</span>.
+This measure is at the base of the mutual reachability distance, shown in equation <a href="workflow.html#eq:mreach">(2.4)</a>, which is used to compute a new distance matrix for a single-linkage hierarchical clustering algorithm. As a result, the items are organised in a hierarchical tree, from which clusters are selected based on the <span class="math inline">\(minPts\)</span> requirement and their densities. A related notion to <span class="math inline">\(core_k(a)\)</span> is <span class="math inline">\(\varepsilon\)</span>, which is defined as the radius around a point in which <span class="math inline">\(minPts - 1\)</span> can be found.</p>
+<p><span class="math display" id="eq:mreach">\[\begin{equation}
+    d_{mreach}(a,b) = \max(core_{k}(a), core_{k}(b), d(a,b))
+    \tag{2.4}
+\end{equation}\]</span></p>
+<p>In <span class="smallcaps">dbscan</span>, we need to set both <span class="math inline">\(minPts\)</span> and a <span class="math inline">\(\varepsilon\)</span> threshold; the procedure is different, but its result is equivalent to cutting the hierarchical tree from <span class="smallcaps">hdbscan</span> at a fixed <span class="math inline">\(\varepsilon\)</span>, so that the items above that threshold are discarded as noise, and those below it are grouped into their respective clusters. In contrast, its hierarchical version, <span class="smallcaps">hdbscan</span>, implements variable thresholds to maximize the stability of the clusters, and therefore only requires us to input <span class="math inline">\(minPts\)</span><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;For a friendly description of how the algorithm works, I recommend &lt;span class="citation"&gt;&lt;a href="references.html#ref-mcinnes.etal_2016" role="doc-biblioref"&gt;McInnes, Healy &amp;amp; Astels&lt;/a&gt; (&lt;a href="references.html#ref-mcinnes.etal_2016" role="doc-biblioref"&gt;2016&lt;/a&gt;)&lt;/span&gt; or even their conference presentations in YouTube.&lt;/p&gt;'><sup>9</sup></a>.</p>
+<p>In R, the algorithm can be implemented with <code><a href="https://rdrr.io/pkg/dbscan/man/hdbscan.html">dbscan::hdbscan()</a></code> <span class="citation">(<a href="references.html#ref-R-dbscan" role="doc-biblioref">Hahsler &amp; Piekenbrock 2021</a>)</span>. Its input can be an item-by-feature matrix or, like in this case, a distance matrix. The output includes, among other things, the cluster assignment, with noise points assigned to a cluster 0, membership probability values, which are core distances normalized per cluster, and <span class="math inline">\(\varepsilon\)</span> values, which can be used as an estimate of density.</p>
+</div>
+</div>
+<div id="params" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Making it your own: parameter settings<a class="anchor" aria-label="anchor" href="#params"><i class="fas fa-link"></i></a>
+</h2>
+<p>Building models implies making a number of choices, from the source of the data and the unit of analysis, to the definition of what counts as context, to the techniques and parameters for visualization and clustering. Making these decisions explicit is crucial: on the one hand, they are necessary to interpret the models themselves, but on the other, they are essential for reproducibility.</p>
+<p>For each of the 32 lemmas studied in this project, 200-212 models were created, resulting from the combination of parameter settings meant to define the first-order and second-order contexts. Other choices have been kept fixed across all models in this study, for various reasons, among which are practicality and best performance in the literature. The parameter space is virtually infinite, and exploring even more variations did would have increased the number of models exponentially and made the kind of thorough, qualitative descriptions performed here infeasible. Admittedly, some of the variable parameters could have remained fixed, and some of the fixed parameters could have been varied. Such paths remain open for future projects.
+In this section, I will discuss these decisions: both the ones that have remained fixed across all the studies and the variations that characterize the multiple models under study. Fixed decisions are not specified in the names of the models; variable parameters, which distinguish models from each other, are coded in their names. When mentioned in further sections, they will be described in three parts: first-order parameters (Section <a href="workflow.html#foc">2.3.2</a>), <code>PPMI</code> (Section <a href="workflow.html#pmisel">2.3.3</a>) and second-order parameters (Section <a href="workflow.html#soc">2.3.4</a>). The values of the parameter settings will be set in <code>monospace</code>.</p>
+<div id="corpus" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> Fixed decisions<a class="anchor" aria-label="anchor" href="#corpus"><i class="fas fa-link"></i></a>
+</h3>
+<p>First, the analyses presented in this dissertation were performed on a corpus of Dutch and Flemish newspapers: the mode is written and the genre, journalistic. Called the <em>QLVLNewsCorpus</em> <span class="citation">(<a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019: 30</a>)</span>, it combines parts of the Twente Nieuws Corpus of Netherlandic Dutch <span class="citation">(<a href="references.html#ref-ordelman.etal_2007" role="doc-biblioref">Ordelman et al. 2007</a>)</span> and the yet unpublished Leuven Nieuws Corpus. It comprises articles published between 1999 and 2004, belonging to popular and quality sources for both regions in equal proportion<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The newspapers include &lt;em&gt;Het Laatste Nieuws&lt;/em&gt;, &lt;em&gt;Het Nieuwsblad&lt;/em&gt;, &lt;em&gt;De Standaard&lt;/em&gt; and &lt;em&gt;De Morgen&lt;/em&gt; as Flemish sources and &lt;em&gt;Algemeen Dagblad&lt;/em&gt;, &lt;em&gt;Het Parool&lt;/em&gt;, &lt;em&gt;NRC Handelsblad&lt;/em&gt; and &lt;em&gt;De Volkskrant&lt;/em&gt; as Netherlandic sources.&lt;/p&gt;"><sup>10</sup></a> and amounting to a total of 520 million tokens, including punctuation. The corpus was lemmatized and tagged with part-of-speech and dependency relations with Alpino <span class="citation">(<a href="references.html#ref-vannoord_2006" role="doc-biblioref">van Noord 2006</a>)</span>.</p>
+<p>Second, the unit of analysis, the <strong>lemma</strong>, was defined as a combination of stem and part-of-speech<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;The corpus was not lemmatized by stemmed.&lt;/p&gt;"><sup>11</sup></a>. This applies to items at all levels: the definition of a target, the first-order context features and the second-order features; co-occurrence frequencies and association strength measures are always computed with the lemma as unit. Both distributional models and some traditions in collocation research may use word forms instead<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;See &lt;span class="citation"&gt;&lt;a href="references.html#ref-turney.pantel_2010" role="doc-biblioref"&gt;Turney &amp;amp; Pantel&lt;/a&gt; (&lt;a href="references.html#ref-turney.pantel_2010" role="doc-biblioref"&gt;2010: 155&lt;/a&gt;)&lt;/span&gt; and &lt;span class="citation"&gt;&lt;a href="references.html#ref-sahlgren_2008" role="doc-biblioref"&gt;Sahlgren&lt;/a&gt; (&lt;a href="references.html#ref-sahlgren_2008" role="doc-biblioref"&gt;2008: 47–48&lt;/a&gt;)&lt;/span&gt; for a discussion and &lt;span class="citation"&gt;&lt;a href="references.html#ref-kiela.clark_2014" role="doc-biblioref"&gt;Kiela &amp;amp; Clark&lt;/a&gt; (&lt;a href="references.html#ref-kiela.clark_2014" role="doc-biblioref"&gt;2014: 25&lt;/a&gt;)&lt;/span&gt; for performance comparisons.&lt;/p&gt;'><sup>12</sup></a>. On the one hand, stemming and tagging add a layer of processing and interpretation to the text; on the other, word forms of the same lemma tend to behave in different ways. From a lexicographic and lexicological perspective, however, it makes sense to use a lemma as a unit. It is the head of dictionary entries and a more typical unit of linguistic analysis. Furthermore, the (mis)match between word forms and lemmas strongly depends on the language under study: in languages like Spanish, French, Japanese and Dutch, verbs can take many more different forms than in English; conversely, Mandarin lacks morphological variation or even spaces between what could count as words. Concretely, the word form <em>hoop</em> in Dutch can correspond to the noun meaning either ‘hope’ or ‘heap,’ or the verb meaning ‘to hope,’ which can also take other forms such as <em>hopen</em>, <em>hoopt</em>, <em>hoopte</em> and <em>gehoopt</em> depending on person, number and tense. Our interest, from a lexicological perspective, lies more in line with studying the behaviour of the noun <em>hoop</em> and its meanings, than in conflating the noun with one of verbal forms of the homographic verb.</p>
+<p>In that respect, a practical note is in order. The target items under study will be represented with dictionary forms in italics, followed by their approximate English translations in single quotation marks: e.g. <em>hoop</em> ‘hope/heap,’ <em>heilzaam</em> ‘healthy/beneficial,’ <em>herstructureren</em> ‘to restructure.’ Context words might be represented in figures with the stem and part-of-speech combination used by the lemmas, e.g. <em>word/verb</em>, but when mentioned in text the part-of-speech will be excluded, e.g. the passive auxiliary <em>word</em>. The English translations will belong to the same part-of-speech as the Dutch term in italics and be as unambiguous as possible. When the Dutch term and its English translations are written in the same way, no translation will be included, e.g. <em>journalist</em>.</p>
+<p>Third, the context words at both first-order and second-order can, in principle, have any part of speech — except for punctuation — and must have a minimum relative frequency of 1 in 2 million (absolute frequency of 227) after discarding punctuation from the token count in the full <em>QLVLNewscorpus</em>. There are 60533 such lemmas in the corpus.</p>
+<p>Finally, as described in Section <a href="workflow.html#pmi">2.2.1</a>, attraction between types were measured with <span class="smallcaps">ppmi</span>, computed on the full co-occurrence matrix, i.e. across the full corpus, based on a symmetric window of 4 tokens to either side, including punctuation; see <span class="citation"><a href="references.html#ref-turney.pantel_2010" role="doc-biblioref">Turney &amp; Pantel</a> (<a href="references.html#ref-turney.pantel_2010" role="doc-biblioref">2010</a>)</span> and <span class="citation"><a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela &amp; Clark</a> (<a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">2014</a>)</span> for alternatives. Token-level vectors are made by adding the type-level vectors of its context words.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Alternatively, they could be multiplied or averaged, but the results were not all that different.&lt;/p&gt;"><sup>13</sup></a>
+For vector comparison, cosine distances were used and then transformed, as explained in Section <a href="workflow.html#cosine">2.2.2</a>. The transformed cosine distances were used both as input for visualization techniques and the clustering algorithm. Both non-metric <span class="smallcaps">mds</span> and t-<span class="smallcaps">sne</span> with perplexity values of 10, 20, 30 and 50 were explored, but the analyses discussed in the second part of the dissertation are based on the output from solutions with perplexity 30. Clustering was performed with <span class="smallcaps">hdbscan</span> setting <span class="math inline">\(minPts = 8\)</span>.</p>
+</div>
+<div id="foc" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> First-order selection parameters<a class="anchor" aria-label="anchor" href="#foc"><i class="fas fa-link"></i></a>
+</h3>
+<p>The immediate context of a token is the <strong>first order context</strong>: therefore, first-order parameters are those that influence which elements in the immediate environment of the token will be included in modelling said token. This was performed in two stages: one dependent on whether syntactic information was used, discussed in this section, and one independent of it, shown in Section <a href="workflow.html#pmisel">2.3.3</a>.</p>
+<p>The decisions were based on a mix of literature <span class="citation">(e.g. <a href="references.html#ref-kiela.clark_2014" role="doc-biblioref">Kiela &amp; Clark 2014</a>)</span>, tradition within the Nephological Semantics project, linguistic intuition and generalisations over the annotation of the concordance lines. As we will see in Chapter <a href="dataset.html#dataset">4</a>, the manual annotation procedure included selecting words in the context of each token that were the most helpful for the disambiguation. The window spans and dependency information of these chosen context words were used to inform some of the decisions below.</p>
+<p>In a first stage, the main distinction is made between models based on bag-of-words (<code>BOW</code>), i.e. that do not care about word order or syntactic relationship, and those based on dependency (i.e. syntactic) information. Within the former group, models may vary based on whether sentence boundaries were respected, the length of the window size, and part-of-speech filters. The latter group includes models that select context words based on the distance between them and their target in terms of syntactic relationships (<code>(LEMMA)PATH</code> models), and models that find the context word that match specific, predefined templates (<code>(LEMMA)REL</code>). Each of these parameters will be described in more detail below.</p>
+<p>The first split in <code>BOW</code> models distinguishes between those that include words outside the sentence of the target (<code>nobound</code>) and those that do not (<code>bound</code>). The goal was to make the models more comparable to dependency-based models, which by definition only include words in the same sentence as the target. However, models that only differ with respect to this parameter tend to be extremely similar.
+More relevant is the window size: models can select context words on a symmetric window of 3, 5, or 10 tokens to either side of the target, including punctuation. Window sizes are typically larger for token-level models than for type-level models <span class="citation">(e.g. <a href="references.html#ref-schutze_1998" role="doc-biblioref">Schütze 1998</a>; <a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale 2019</a>)</span>, but, at the same time, the great majority of the context words selected in the annotation were within the span of 3 words to either side. In practice, such a small span tends to be too restrictive.
+Finally, some models refine their first-order selection with part-of-speech filters: <code>lex</code> models only include common nouns, adjectives, verbs and adverbs, while <code>all</code> models do not implement any restrictions. The selection defined for <code>lex</code> was the result of some trial and errors, but could use more refinement for future studies, e.g. expanding the lexical set to proper names, pronouns or only certain prepositions. Moreover, it could be useful to distinguish between modal verbs and auxiliaries, on one side, and other kinds of verbs, information that is not coded in the part-of-speech tags used in this corpus. In practice, <code>all</code> models tend to behave similarly to dependency-based models, while <code>lex</code> tends to be redundant with <span class="smallcaps">ppmi</span>-based selection, which will be described later.
+Bag-of-words models will be indicated by a sequence of three values pointing to these three parameters: e.g. <code>bound5all</code> indicates a model that respects boundaries, with a window span of 5 words to each side and no part-of-speech filter.</p>
+<p>The distinction between <code>BOW</code> and dependency-based models doesn’t depend so much on which context words are selected but on how tailored the selection is to the specific
+tokens. For example, a closed-class element like a preposition may be distinctive of particular usage patterns in which a term might occur. However, such a frequent, multifunctional word could easily occur in the immediate raw context of the target without actually being related to it. Unfortunately, just narrowing the window span doesn’t solve the problem, since it would also drastically reduce the number of context words available for the token and for any other token in the model.
+In contrast, we might also be interested in context words that are tightly linked to the target in syntactic terms but separated by many other words in between, but widening the window to include them would imply too much noise for this token and for any other token in the model.
+A dependency-based model, instead, will only include context words in a certain syntactic relationship to the target, regardless of the number of words in between from a <code>BOW</code> perspective.
+To exemplify, let’s look at (4), where <em>herhalen</em> ‘to repeat,’ in bold, is the target, and the items in italics where captured by a <code>PATH</code> model.</p>
+<ol start="4" class="example" style="list-style-type: decimal">
+<li>
+<p><em>Als</em> <em>de</em> <em>geschiedenis</em> <em>zich</em> <em>werkelijk</em> <em>mocht</em> <strong>herhalen</strong>, zijn Vitales dagen <em>geteld</em>. (<em>De Morgen</em>, 2004-08-02, Art. 98)</p>
+<p>‘<em>If</em> [<em>the</em>] <em>history</em> <em>really</em> <strong>repeated</strong> <em>itself</em>, Vitales’ days are <em>counted</em>.’</p>
+</li>
+</ol>
+<p>The <code>PATH</code> models count the steps between a target and all the words syntactically related to it and base the selection according to that distance. A one-step dependency path is either the head of the target or its direct dependent (the parent or the child, in kinship terms): in the case of (4) this includes the reflexive pronoun <em>zich</em> and the modifying adverb <em>werkelijk</em> ‘really,’ which depend directly on it <em>herhalen</em> ‘to repeat,’ as well as the modal <em>mocht</em>, on which the target depends.
+A two-step dependency path is either the head of the head of the target (grandparent), the dependent of its dependent (grandchild), or its sibling. In (4) this includes the subject <em>geschiedenis</em> ‘history,’ because it is linked to the target through the modal, and <em>Als</em> ‘if.’ All <code>PATH</code> models include the features in a one-step or two-step path from the target.
+A three-step dependency path is either the head of the head of the head of the target (great-grandparent), the sibling of the head of its head (great-aunt), the dependent of the dependent of its dependent (great-grandchild), or the dependent of a sibling (niece). In (4) this corresponds to <em>de</em> ‘the,’ which depends on <em>geschiedenis</em> ‘history,’ and <em>geteld</em> ‘counted,’ which <em>als</em> ‘if’ depends on. <code>PATHselection2</code> models do not include the three-steps path, and none of the <code>PATH</code> models include context words beyond these steps. The threshold was set based on the most frequent syntactic distance between the lemmas from the case studies and the context words selected as relevant for disambiguation. Next to <code>selection2</code>, <code>PATH</code> models take two more formats. While <code>selection3</code> models include context words up to 3 steps away from the target, <code>PATHweight</code> models also incorporate the distance information and give more weight to context words that are more directly closely to the target in the syntactic path.</p>
+<p>Finally, <code>REL</code> models base their selection on specific, predefined patterns. For these purpose, templates tailored to the parts of speech of the target were designed, based on the relationships between the annotated types and the context words selected as most informative during the annotation process. The most restrictive model, <code>RELgroup1</code>, selects the following patterns:</p>
+<ul>
+<li>For nouns: modifiers and determiners of the target; items of which the target is modifier or determiner, and verbs of which the target is object or subject.</li>
+<li>For adjectives: nouns modified by the target and direct modifiers of it (except for prepositions); subject and direct objects of the verbs of which the target is direct modifier or predicate complement, with up to one modal or auxiliary in between.</li>
+<li>For verbs: direct objects; active and passive subjects (with up to two modals for the active one); reflexive complement, and prepositions depending directly on the target.</li>
+</ul>
+<p>It is typically too restrictive: for many lemmas, it is responsible for the loss of a large proportion of tokens which do not have context words that match these patterns, while the remaining tokens often have only one or two context words left. The <code>RELgroup2</code> models expand the selection as follows:</p>
+<ul>
+<li>For nouns: conjuncts of the target (with or without conjunction); objects of the modifier of the target, and items on which the target depends via a modifier.</li>
+<li>For adjectives: object of the preposition modifying the target; conjunct of the target (with or without conjunction); prepositional object of verb modified by target (as modifier or prepositional complement).</li>
+<li>For verbs: conjuncts of the target; complementizers; nouns depending through a preposition; verbal complements, and elements of which the target is a verbal complement.</li>
+</ul>
+<p>Finally, nouns also have a <code>RELgroup3</code> setting that incorporates the following relations:</p>
+<ul>
+<li>Objects and modifiers of items of which the target is subject or modifier; subjects and modifiers of items of which the target is object or modifier; modifiers of the modifiers of the target, and items of whose modifier the target is modifier.</li>
+</ul>
+<p>All the first-order parameters procure filters to select the context words in the environment of each token that will be used to model it. Alternatively, dependency information could have been included as a feature or dimension. For example, instead of selecting <em>zich</em> ‘itself’ as context word of the token in (4) based on its bag-of-word distance, part-of-speech filter or dependency relation to the target, we could use <code>(zich, se)</code> i.e. “has <em>zich</em> as reflexive subject” as a first-order feature. Its type-level vector then would have information on all the other verbs that take <em>geschiedenis</em> ‘history’ as its subject. For technical and practical reasons, this was not implemented in the studies discussed here, but would be a fruitful path for further research.</p>
+<p>In the remainder of this dissertation, <code>BOW</code> will be used to refer to all bag-of-words based models, as opposed to the dependency-based models; <code>PATH</code> and <code>REL</code> will also be umbrella terms for the models that use the different kinds of dependency-based selection, and more specific terms, e.g. <code>PATHweight</code> will be used for finer grained distinctions.</p>
+</div>
+<div id="pmisel" class="section level3" number="2.3.3">
+<h3>
+<span class="header-section-number">2.3.3</span> PPMI selection and weighting<a class="anchor" aria-label="anchor" href="#pmisel"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <code>PPMI</code> parameter<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;I use verbatim to refer to this parameter for two reasons. First, because, like &lt;code&gt;PATH&lt;/code&gt;, it is also a value: the parameter itself is the association-strength-based filtering or weighting, but it was fixed to &lt;span class="smallcaps"&gt;ppmi&lt;/span&gt;. Second, this way it is easier to distinguish the parameter setting from &lt;span class="smallcaps"&gt;ppmi&lt;/span&gt; as a measure. It is not the best idea, but so it is coded into the current names of the models.&lt;/p&gt;'><sup>14</sup></a> is taken outside the set of first-order parameters because it applies to both <code>BOW</code> and dependency-based models, although it also affects the selection of first order context words. The rationale behind it is that words in the vicinity of the target token, regardless of their part-of-speech and distance, are not equally informative of the meaning of the target. For example, in (4) <em>geschiedenis</em> ‘history’ and <em>zich</em> ‘itself’ are more informative of the meaning of <em>herhalen</em> ‘to repeat’ than <em>werkelijk</em> ‘really’ or <em>als</em> ‘if.’ Association strength measures like <span class="smallcaps">ppmi</span> could then be used to give more influence to the more informative context words; indeed, given a symmetric windowsize of 4 for the <span class="smallcaps">ppmi</span> computation in the <em>QLVLNewsCorpus</em>, the <span class="smallcaps">ppmi</span> of <em>geschiedenis</em> ‘history’ and <em>zich</em> ‘itself’ with <em>herhalen</em> ‘to repeat’ are 3.79 and 1.97 respectively, while the values for <em>werkelijk</em> ‘really’ and <em>als</em> ‘if’ are 0.06 and 0.112.
+<span class="citation"><a href="references.html#ref-heylen.etal_2015" role="doc-biblioref">Heylen et al.</a> (<a href="references.html#ref-heylen.etal_2015" role="doc-biblioref">2015</a>)</span> weight the contribution of each context word by their <span class="smallcaps">ppmi</span> with the target, and <span class="citation"><a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale</a> (<a href="references.html#ref-depascale_2019" role="doc-biblioref">2019</a>)</span> adds <span class="smallcaps">ppmi</span> and <span class="smallcaps">llr</span> (log-likelihood ratio) thresholds to the selection of context words. However, these measures are meant to represent the relationship <em>between</em> types, not to distinguish between senses of the same type: a context word may be indicative of a sense of a word and yet not be particularly attracted to the word as a whole. An example is the English verb <em>to go</em>, which due to its high frequency does not have a strong attraction to the noun <em>church</em>, and yet is necessary to distinguish the specific sense of ‘religious service’ in <em>to go to church</em>.</p>
+<p>For that reason, models can take three different settings in relation to the <code>PPMI</code> parameter: <code>weight</code>, <code>selection</code> and <code>no</code>. Both <code>weight</code> and <code>selection</code> apply an additional filter to the output from the first-order parameters and only select the context words with a positive <span class="smallcaps">pmi</span> with the target. They are distinct from the <code>PPMIno</code> models, which do not apply such thresholds. The difference between the first two is that <code>weight</code> also multiplies the type-level vector of each context word by their <span class="smallcaps">pmi</span> with the target, giving words that are more strongly associated to the target type a greater impact in the final vector of the target. The three settings are applied to each of the models resulting from the first-order combinations, with one exception: <code>PATHweight</code> models do not combine with <code>PPMIweight</code>.</p>
+</div>
+<div id="soc" class="section level3" number="2.3.4">
+<h3>
+<span class="header-section-number">2.3.4</span> Second-order selection<a class="anchor" aria-label="anchor" href="#soc"><i class="fas fa-link"></i></a>
+</h3>
+<p>The selection of second-order features influences the shape of the vectors: how the selected first-order features are represented. Next to the fixed window size and association measure used to calculate the values of the vectors, there are two variable parameters. First, a part-of-speech filter may be applied. When its value is <code>nav</code>, second-order features are extracted from a pool of 13771 nouns, adjectives and verbs used in <span class="citation"><a href="references.html#ref-depascale_2019" role="doc-biblioref">De Pascale</a> (<a href="references.html#ref-depascale_2019" role="doc-biblioref">2019</a>)</span><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;The selection was originally made to ensure an unbiased regional distribution of the vectors for the lectometric studies performed in &lt;span class="citation"&gt;&lt;a href="references.html#ref-depascale_2019" role="doc-biblioref"&gt;De Pascale&lt;/a&gt; (&lt;a href="references.html#ref-depascale_2019" role="doc-biblioref"&gt;2019&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;'><sup>15</sup></a>. The alternative, <code>all</code>, applies no further filters. Second, we might reduce the length of the vector, i.e. the number of second-order features. One of the values, <code>5000</code>, selects the 5000 most frequent features from the pool remaining after the part-of-speech filter. Pilot studies have also explored models with 10000 dimensions, but they are very similar to the ones with 5000 dimensions.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;span class="citation"&gt;&lt;a href="references.html#ref-kiela.clark_2014" role="doc-biblioref"&gt;Kiela &amp;amp; Clark&lt;/a&gt; (&lt;a href="references.html#ref-kiela.clark_2014" role="doc-biblioref"&gt;2014&lt;/a&gt;)&lt;/span&gt; discourage using vectors with more than 50,000 dimensions.&lt;/p&gt;'><sup>16</sup></a> The other value for the vector length is <code>FOC</code>, which stands for “first-order context,” and it uses the union of first-order context words for all tokens as second-order dimensions. As a consequence, the second-order dimensions are tailored to the context of the sample, not necessarily so frequent, and their numbers remain in the hundreds, rarely surpassing 1500. In practice, there is not much of a difference between models with different second-order parameters, except for <code>5000all</code> models, which tend to perform the worst. Examination of the distance matrices between the type-level vectors of the context words reveals that the cosine distances between all of them are really large, probably due to the sparseness of the vectors. I that sense, it would be interesting to compare <span class="smallcaps">svd</span> matrices based on the <code>5000</code> models with the already smaller (and presumably denser) <code>FOC</code> models.</p>
+</div>
+</div>
+<div id="pam" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> The chosen ones: PAM<a class="anchor" aria-label="anchor" href="#pam"><i class="fas fa-link"></i></a>
+</h2>
+<p>The multiple variable parameters return a large number of models: 212 for each of the nouns — because of the additional <code>REL</code> templates — and 200 for verbs and adjectives. As we will see in Chapter <a href="nephovis.html#nephovis">3</a>, we can combine distances between the models with dimensionality reduction techniques to represent the similarities between the models on a <span class="smallcaps">2d</span> space. In addition, if we only wanted to evaluate the models in relation to the manual annotation, we could rank the accuracy of their clustering solutions. However, if we want to understand the qualitative effect of the parameter settings on the modelling, and especially if we do not consider the manual annotation as a ground truth, we need to examine clouds individually, and it is not feasible for a human to look at each of the hundreds of models of each lemma.</p>
+<p>One approach for an efficient exploration of the parameter space is to identify the settings that make the greater differences between models. For example, if we see that models with different <code>PPMI</code> settings are more different from each other than models with different vector-length settings, we would prioritize looking at models that differ on the former parameter, setting the latter to a constant value. Unfortunately, the quantitative effect of parameters is not so straightforward. First, the parameters that tend to make a big difference in the modelling include the choice between dependency and <code>BOW</code> and, within it, both window size and part-of-speech filters, as well as the distinction between <code>REL</code> and <code>PATH</code>. The resulting combinations are still too numerous to examine simultaneously (see Chapter <a href="nephovis.html#nephovis">3</a>). Second, the relevant parameters interact with each other: <code>PPMI</code> often makes little difference among <code>lex</code> models — it tends to be redundant, since the open-class items captured by <code>lex</code> tend to have higher <span class="smallcaps">ppmi</span> — but it makes a greater difference among <code>all</code> or dependency-based models. Finally, the various parameter settings do not have the same impact within each lemma, so they have to be revised for each of the lemmas under study.</p>
+<p>The approach based on the quantitative effect of parameter settings on the distances between models does reduce the number of models to examine, but not to a great degree. Given the limited number of models that we can look at simultaneously while still making sense of them — around 8 or 9 — and the need to cover multiple combinations of these strong parameters, we would still need to look at four or five partially overlapping sets of 8-9 models per lemma. For example, a set of 9 models could be generated by taking <code>bound3</code> and <code>bound10</code> models with <code>PPMIweight</code> and <code>FOCnav</code> second-order vectors, in order to look at the effect of part-of-speech filter with little window-size variation, <code>PATH</code> and <code>REL</code>. Then, <code>PPMIweight</code> could be switched for <code>PPMIno</code> to look at the effect in the new conditions, resulting in 9 other models. If the effect is indeed different, which is likely, a different set of 8-9 models could then be generated with different values of <code>PPMI</code>, while keeping the part-of-speech to a constant value. These groups are not maximally different from each other: due to the interaction between parameters, many models are extremely similar, and a proper qualitative description becomes challenging. Moreover, a given set of models could reveal a pattern that was not captured in a previous set of models, and the researcher might want to go back and look for it.</p>
+<p>An alternative approach is to use a clustering algorithm that, next to selecting groups of similar models, identifies the models that represent each of the clusters. <strong>Partition Around Medoids</strong>, or <span class="smallcaps">pam</span> <span class="citation">(<a href="references.html#ref-kaufman.rousseeuw_1990" role="doc-biblioref">Kaufman &amp; Rousseeuw 1990</a>)</span>, implemented in R with <code><a href="https://rdrr.io/pkg/cluster/man/pam.html">cluster::pam()</a></code> <span class="citation">(<a href="references.html#ref-R-cluster" role="doc-biblioref">Maechler et al. 2021</a>)</span>, does exactly that. Unlike <span class="smallcaps">hdbscan</span> and other clustering algorithms, it requires us to set a number of clusters beforehand, and then tries to find the organization that maximizes internal similarity within the cluster and distances with other clusters.
+For our purpose, we have settled for 8 medoids for each lemma. The number is not meant to achieve the best clustering solutions — no number could be applied to all the lemmas with equal success, given their variability in the differences between the models. The goal, instead, is to have a set of models that is small enough to visualize simultaneously (on a screen, in reasonable size) and big enough to cover the variation across models. For some lemmas, there might not be that much variation, and the <strong>medoids</strong>, i.e. the representative models, might be redundant with each other. However, as long as we can cover (most of) the visible variation across models and the medoids are reasonably good representatives of the models in their corresponding clusters, the method is fulfilling its goal.</p>
+<p>The representativeness of medoids for the lemmas studied here has been tested in different ways.
+<!-- Silhouette values --- a common measure of cluster quality --- have been computed, but they are not really relevant (nor high, I'm afraid). -->
+We don’t require the clusters of models to be different from each other, as long as the medoids represent them properly. Instead, the priority was to check for patterns within the models represented by each medoid, e.g. in terms of accuracy towards annotated senses. For example, if a medoid tends to group senses together very well (measured for example with <code>kNN</code> and <code>SIL</code>, as explained in Chapter <a href="shapes.html#shapes">5</a> applied to clustering solutions), the models it represents have similar tendencies as well.
+More importantly, different patterns previously identified in the plots while exploring the models with the first approach were looked for in the medoid selection, to corroborate that the medoids covered at least as much variation as the more time- and energy-consuming approach. All such patterns were found. In addition, small random samples within each cluster of models were visually scanned — but not thoroughly examined — to assess their similarity to their representative medoid. In the great majority of the cases the comparison was satisfactory. This has a wonderful effect on the visual exploration, because it lets us focus on 8-9 models that are quite different from each other instead of multiple sets of models with less variation. Visually, the medoids approach is more informative and less tiresome.</p>
+<p>As a result from these explorations, the qualitative analyses will be based on medoids: representative models selected by <span class="smallcaps">pam</span>. While this is a clustering algorithm, in order to avoid confusion with clusters of tokens, which take centre stage, I will avoid referring to the clusters of models as such — or, if I do, I will specify that they are clusters <em>of models</em>. The preferred name will be “the models represented by the medoid.” Given that the only clustering algorithm used on the tokens is <span class="smallcaps">hdbscan</span>, <em>medoid</em> will always refer to a representative model.</p>
+</div>
+<div id="workflow-summary" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Summary<a class="anchor" aria-label="anchor" href="#workflow-summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>The process through which token-level vector space models and the clouds studied here in particular are created, takes a number of transformative steps. In this chapter we have broken down this process and detailed the layers of mathematical and linguistic processing lying between the raw corpus and the final clouds. Next to an overall description of the workflow, the technical background of the most important aspects was introduced in some detail. Afterwards, I explained the parameter settings that characterize the models analyzed in this project.
+Choices have been made and alternatives have been suggested: the path taken here was one out of so many possible alternatives. In fact, at the core of this research project is the exploration of alternatives, the investigation of the effect of the variable parameters on the final linguistic representation, and the search for clues, guidelines, a recipe for the clouds we seek. This exploration combines quantitative techniques — the heart of the process of cloud creation — with qualitative analyses meant to describe what and how the clouds are really modelling.</p>
+<p>By combining the vector representations with visualization techniques and/or clustering algorithms, we can make sense of patterns that would otherwise escape us. Visual analytics provides us with tools to explore the output in comfortable, intuitive — but sometimes deceiving — ways. In the next chapter, we will look at the two visualization tools developed within the larger project of Nephological Semantics to enable and support these qualitative analyses.</p>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="intro.html"><span class="header-section-number">1</span> Introduction</a></div>
+<div class="next"><a href="nephovis.html"><span class="header-section-number">3</span> Visualization tools</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#workflow"><span class="header-section-number">2</span> From corpora to clouds</a></li>
+<li><a class="nav-link" href="#vector-creation"><span class="header-section-number">2.1</span> A cloud machine</a></li>
+<li>
+<a class="nav-link" href="#formulae"><span class="header-section-number">2.2</span> The chemistry of cloud making</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pmi"><span class="header-section-number">2.2.1</span> Association strength: PMI</a></li>
+<li><a class="nav-link" href="#cosine"><span class="header-section-number">2.2.2</span> Similarities and distances: cosine</a></li>
+<li><a class="nav-link" href="#dim-reduction"><span class="header-section-number">2.2.3</span> Dimensionality reduction for visualization: t-SNE</a></li>
+<li><a class="nav-link" href="#hdbscan"><span class="header-section-number">2.2.4</span> Clustering: HDBSCAN</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#params"><span class="header-section-number">2.3</span> Making it your own: parameter settings</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#corpus"><span class="header-section-number">2.3.1</span> Fixed decisions</a></li>
+<li><a class="nav-link" href="#foc"><span class="header-section-number">2.3.2</span> First-order selection parameters</a></li>
+<li><a class="nav-link" href="#pmisel"><span class="header-section-number">2.3.3</span> PPMI selection and weighting</a></li>
+<li><a class="nav-link" href="#soc"><span class="header-section-number">2.3.4</span> Second-order selection</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#pam"><span class="header-section-number">2.4</span> The chosen ones: PAM</a></li>
+<li><a class="nav-link" href="#workflow-summary"><span class="header-section-number">2.5</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/montesmariana/phdThesis/blob/master/02-workflow.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/montesmariana/phdThesis/edit/master/02-workflow.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Cloudspotting</strong>: Visual analytics for distributional semantics" was written by Mariana Montes. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

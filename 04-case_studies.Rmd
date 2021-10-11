@@ -116,7 +116,7 @@ The sample extraction was almost completely random, with the only restriction th
 (ref:lemmafreq) Absolute frequency of the lemmas in the corpus, number of batches and distribution of their senses. The number next to the boxplots indicate the number of different senses.
 
 ```{r, lemmafreq}
-lemmas %>%
+lemmafreq <- lemmas %>%
   select(-pos, -senses) %>%
   rename(sample = batches, senses = n_senses) %>% 
   mutate(sample = sample*40) %>%
@@ -125,6 +125,7 @@ lemmas %>%
               repeat_header_method = "replace") %>%
   column_spec(4, image = spec_boxplot(lemmas$senses, col = "gray60", medcol = "black")) %>% 
   pack_rows(index = table(lemmas$pos))
+if (knitr::is_latex_output()) lemmafreq else scroll_box(lemmafreq, height = "400px")
 ```
 
 
@@ -162,7 +163,7 @@ kappas %>%
   filter(p.value < 0.05) %>%
   ggplot(aes(x = kappa, y = reorder(lemma, kappa, hmean))) +
   geom_point(size = 3, alpha = 0.7) +
-  theme_pubr(base_family = "Bookman Old Style", base_size = 10) + 
+  theme_pubr(base_family = plot_text, base_size = 10) + 
   labs(
     x = latex2exp::TeX(r"(Fleiss' $\kappa$)"),
     y = "Lemma")
@@ -176,7 +177,7 @@ final_agreement %>%
   filter(final_action != "Remove") %>% 
   ggplot() +
   geom_col(aes(y = reorder(type, n, max), x = n, fill = majority_agreement)) +
-  theme_pubr(base_family = "Bookman Old Style") +
+  theme_pubr(base_family = plot_text) +
   facet_wrap(~final_action) +
   scale_fill_grey(start = 0.7, end = 0.2) +
   theme(axis.text.y = element_text(size = 9)) +
@@ -198,7 +199,7 @@ ggplot(confidence) +
   geom_bar(aes(x = confidence, fill = majority), position = "dodge") +
   facet_grid(NOTA ~ ., scale = "free_y") +
   scale_fill_grey(start = 0.3, end = 0.7) +
-  theme_pubr(base_family = "Bookman Old Style") +
+  theme_pubr(base_family = plot_text) +
   labs(x = "Confidence rating", y = "Annotations", fill = "Agreement in token")
 ```
 
@@ -207,13 +208,23 @@ The selection of cues was consulted when defining parameter settings (Section \@
 (ref:heilzaamdep) Four most frequent dependency paths among the cues of *heilzaam*, with counts per sense. `NA` indicates that the cue is not in the sentence of the target. In the path, `CW` stands for the cue and `T` stands for the target: the head is at the left of $\rightarrow$ and its dependents are to the right, preceded by the name of the dependency relation.
 
 ```{r, heilzaamdep}
-countCues(path, 4) %>%
-  mutate(examples = c(
+path_examples <- if (knitr::is_latex_output()) {
+  c(
     r"($\textbf{heilzame}$ $\textit{werking}$ 'healing $\textit{power}$')",
     "Different sentence",
     r"(de $\textbf{heilzame}$ werking van $\textit{look}$ 'the healing power of $\textit{garlic}$')",
     r"(look is $\textbf{heilzaam}$ voor de $\textit{gezondheid}$ 'garlic is beneficial for the $\textit{health}$')"
-  )) %>% 
+  )
+} else {
+  c(
+    "**heilzame** *werking* 'healing *power*",
+    "Different sentence",
+    "de **heilzame** werking van *look* 'the healing power of *garlic*",
+    "look is **heilzaam** voor de *gezondheid* 'garlic is beneficial for the *health*"
+  )
+}
+countCues(path, 4) %>%
+  mutate(examples = path_examples) %>% 
   select(path, examples, everything()) %>% 
   kable(caption = "(ref:heilzaamdep)", booktabs = T, escape = F, linesep = "\\addlinespace") %>% 
   kable_paper(full_width = T, latex_options = c("scale_down")) %>% 
