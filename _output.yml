@@ -3,6 +3,7 @@ bookdown::bs4_book:
     primary: "#086a6a"
   css: assets/style.css
   repo: https://github.com/montesmariana/phdThesis
+  url: https://montesmariana.github.io/phdThesis/
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
