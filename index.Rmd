@@ -87,7 +87,7 @@ recommend visiting it in its [virtual home](https://qlvl.github.io/NephoVis/) an
 
 ::: {.rmdwarning}
 
-This is the web-based version of my dissertation, where I plan to fix typos and add some notes/disclaimers.
+This is the web-based version of my dissertation, where I plan to fix typos and add some notes/disclaimers (highlighted like this).
 You can find the original, submitted and approved pdf version [here](phdThesis.pdf).
 
 To cite this work, you can use the following bibtex:

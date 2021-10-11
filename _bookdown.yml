@@ -1,5 +1,6 @@
 book_filename: "phdThesis"
 delete_merged_file: true
+output_dir: "docs"
 language:
   ui:
     chapter_name: "Chapter "
@@ -15,5 +16,6 @@ rmd_files: [
   "06-semantic_interpretation.Rmd",
   "07-no_optimal_solution.Rmd",
   
-  "08-conclusion.Rmd"
+  "08-conclusion.Rmd",
+  "references.Rmd"
   ]
